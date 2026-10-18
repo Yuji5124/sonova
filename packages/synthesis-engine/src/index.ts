@@ -72,3 +72,4 @@ export function renderInstrumentDemo(dna: InstrumentDNA, seconds = 6, sampleRate
   const report = master(bus.left, bus.right, { sampleRate, targetRmsDb: -18, ceilingDb: -1, maxGainDb: 18 });
   return { buffer: bus, report, notes };
 }
+export * from './rock/index.ts';

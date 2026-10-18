@@ -1,0 +1,263 @@
+{
+  "workNumber": "SONOVA-ROCK-0001",
+  "title": "Everything Is an Amplifier",
+  "seed": "sonova-rock-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "rock": "sonova-rock/1.0.0",
+    "rock_render": "sonova-rock-render/1.0.0"
+  },
+  "band": {
+    "guitar": "inst-9c884039-187482",
+    "drums": "inst-87643426-187482",
+    "voice": "inst-a9dac2de-187482"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "plan": {
+    "guitarAmp": {
+      "gain": 57.242,
+      "midBoostDb": 5.837,
+      "cabinetHz": 5276,
+      "clean": 0
+    },
+    "bassAmp": {
+      "gain": 5.423,
+      "midBoostDb": 2,
+      "cabinetHz": 1967,
+      "clean": 0.45
+    },
+    "leadAmp": {
+      "gain": 72.115,
+      "midBoostDb": 8,
+      "cabinetHz": 5113,
+      "clean": 0
+    },
+    "kit": {
+      "kickHz": 48.999,
+      "snareHz": 213.039,
+      "tomHz": [
+        130.813,
+        97.999,
+        77.782
+      ],
+      "plateAspect": 0.788,
+      "cymbalBaseHz": 462.045,
+      "decay": 0.988,
+      "snares": 0.906
+    },
+    "guitarPluck": {
+      "t60": 4.042,
+      "damping": 0.16,
+      "pickPosition": 0.165,
+      "brightness": 0.919
+    },
+    "bassPluck": {
+      "t60": 2.782,
+      "damping": 0.775,
+      "pickPosition": 0.22,
+      "brightness": 0.356
+    },
+    "bytebeat": {
+      "formula": "t @ 8000Hz; s = riff[floor(t/828) % 16]; v = (floor(t * 130.813*2^(s/12) * 256/8000) & 192) ^ ((t>>6) & (t>>9) & 31)",
+      "rootHz": 130.813
+    },
+    "image": {
+      "lowHz": 5500,
+      "highHz": 14500,
+      "rows": 120
+    },
+    "derivations": [
+      {
+        "choice": "guitar.amp.gain",
+        "value": 57.242,
+        "from": "bark.interaction_rules.emission",
+        "rule": "働きかけの強い素材ほど深く歪む"
+      },
+      {
+        "choice": "guitar.amp.cabinet_hz",
+        "value": 5276,
+        "from": "bark.harmonics.brightness",
+        "rule": "素材の明るさ → キャビネットの高域"
+      },
+      {
+        "choice": "guitar.string.pick_position",
+        "value": 0.165,
+        "from": "bark.noise.amount",
+        "rule": "粗い素材ほどブリッジから離れた位置を弾く"
+      },
+      {
+        "choice": "guitar.string.t60",
+        "value": 4.042,
+        "from": "bark.decay",
+        "rule": "素材の減衰 → 弦の減衰時間"
+      },
+      {
+        "choice": "bass.string.damping",
+        "value": 0.775,
+        "from": "sunset.harmonics.brightness",
+        "rule": "暗い素材ほど丸いベース"
+      },
+      {
+        "choice": "lead.amp.gain",
+        "value": 72.115,
+        "from": "sunset.modulation.fm_index",
+        "rule": "彩度 (FM の深さ) → リードの歪み"
+      },
+      {
+        "choice": "drums.kick_hz",
+        "value": 48.999,
+        "from": "key",
+        "rule": "キックを曲の属音 (5度) に合わせる"
+      },
+      {
+        "choice": "drums.toms",
+        "value": "130.813/97.999/77.782",
+        "from": "key",
+        "rule": "タムを主音・5度下・短3度下に合わせる"
+      },
+      {
+        "choice": "drums.snare_hz",
+        "value": 213.039,
+        "from": "tower.resonance.q",
+        "rule": "格子の規則性 → スネアの胴の高さ"
+      },
+      {
+        "choice": "drums.plate_aspect",
+        "value": 0.788,
+        "from": "tower.resonance.q",
+        "rule": "素材の格子の規則性 → シンバル (板) の縦横比 → 倍音の並び"
+      },
+      {
+        "choice": "drums.cymbal_hz",
+        "value": 462.045,
+        "from": "tower.harmonics.brightness",
+        "rule": "明るさ → シンバルの高さ"
+      }
+    ]
+  },
+  "derivations": [
+    {
+      "choice": "key",
+      "value": "C minor",
+      "from": "bark.pitch_range.root_pc",
+      "rule": "ギターになった素材の主音。ロックなので自然短音階"
+    },
+    {
+      "choice": "bpm",
+      "value": 145,
+      "from": "bark.interaction_rules.emission, tower.resonance.amount",
+      "rule": "働きかけの強い素材ほど速く、共鳴する素材がドライブ感を足す"
+    },
+    {
+      "choice": "tuning",
+      "value": "drop C",
+      "from": "key",
+      "rule": "最低弦を主音に下げる (ドロップチューニング) と主音のパワーコードが最も重く鳴る"
+    },
+    {
+      "choice": "riff.hits",
+      "value": 10,
+      "from": "bark.rhythm.pulses",
+      "rule": "ギター素材のエッジ密度 (発音数) → リフの音数"
+    },
+    {
+      "choice": "drums.ca_rule",
+      "value": 150,
+      "from": "tower.resonance.amount",
+      "rule": "ドラム素材の反復の強さでセルオートマトンのルールを選ぶ"
+    },
+    {
+      "choice": "drums.ca_seed",
+      "value": "x...x...x...x...",
+      "from": "tower.rhythm",
+      "rule": "ドラム素材のユークリッドリズムを最初の世代にする"
+    },
+    {
+      "choice": "lead.slide",
+      "value": 0.6030936,
+      "from": "sunset.attack",
+      "rule": "ゆっくり立ち上がる素材ほどリードが音をつなげて (スライドで) 弾く"
+    }
+  ],
+  "techniques": [
+    {
+      "technique": "Extended Karplus–Strong strings + amp feedback (Jaffe & Smith 1983, Sullivan 1990)",
+      "used_for": "guitar, bass, lead",
+      "reference": "mrahtz/javascript-karplus-strong (ideas only, no licence), CCRMA EKS"
+    },
+    {
+      "technique": "Wave Digital Filter diode clipper with Wright-ω (Werner et al. 2015, D'Angelo et al. 2019)",
+      "used_for": "amp distortion",
+      "reference": "Chowdhury-DSP/chowdsp_wdf, jatinchowdhury18/KlonCentaur (BSD-3, studied, not copied)"
+    },
+    {
+      "technique": "Modal synthesis: circular membrane (Bessel zeros) + rectangular plate",
+      "used_for": "drums and cymbals",
+      "reference": "baconpaul/ripplerx (GPL-3, ideas only)"
+    },
+    {
+      "technique": "1-D elementary cellular automaton as rhythm",
+      "used_for": "hats, ghost notes, fills, breakdown, solo rhythm",
+      "reference": "mhitchman/IMS (ideas only, no licence)"
+    },
+    {
+      "technique": "Bytebeat (formula as instrument)",
+      "used_for": "intro and breakdown",
+      "reference": "greggman/html5bytebeat (MIT, studied)"
+    },
+    {
+      "technique": "Image painted into the spectrogram",
+      "used_for": "bridge (bark.png)",
+      "reference": "LeviBorodenko/spectrographic (MIT, studied)"
+    }
+  ],
+  "render": {
+    "ms": 127997,
+    "stems": {
+      "guitarL": {
+        "gainDb": -8.8,
+        "samples": 8081706
+      },
+      "guitarR": {
+        "gainDb": -8.9,
+        "samples": 8081706
+      },
+      "bass": {
+        "gainDb": 7.1,
+        "samples": 8081706
+      },
+      "lead": {
+        "gainDb": 0,
+        "samples": 8081706
+      },
+      "drums": {
+        "gainDb": 1.6,
+        "samples": 8081706
+      }
+    },
+    "master": {
+      "inputPeak": 1.8333221673965454,
+      "inputRms": 0.16691137385508886,
+      "appliedGainDb": 3.0502813629239167,
+      "maxReductionDb": -9.315057002548315,
+      "outputPeak": 0.8912509083747864
+    }
+  }
+}

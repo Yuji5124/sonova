@@ -22,6 +22,7 @@ import {
 
 export * from './wav.ts';
 export * from './works.ts';
+export * from './rock.ts';
 
 export const COMPOSITION_ENGINE_VERSION = 'sonova-composition/1.0.0';
 

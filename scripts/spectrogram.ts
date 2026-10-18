@@ -1,10 +1,11 @@
-/** Render a log-frequency spectrogram PNG of a WAV (for checking renders by eye). Usage: tsx scripts/spectrogram.ts in.wav out.png */
+/** Render a log-frequency spectrogram PNG of a WAV (for checking renders by eye).
+ * Usage: tsx scripts/spectrogram.ts in.wav out.png [startSec endSec fMin fMax] */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
 import { fft } from '@sonova/source-analyzer';
 import { decodeWav } from '@sonova/composition-engine';
 
-const [input, output] = process.argv.slice(2);
+const [input, output, startArg, endArg, fMinArg, fMaxArg] = process.argv.slice(2);
 if (!input || !output) throw new Error('usage: spectrogram.ts in.wav out.png');
 const wav = decodeWav(new Uint8Array(readFileSync(input)));
 const N = 2048;
@@ -13,16 +14,18 @@ const H = 300;
 const mono = new Float64Array(wav.frames);
 for (let i = 0; i < wav.frames; i++) mono[i] = wav.data.reduce((s, ch) => s + ch[i], 0) / wav.channels;
 const png = new PNG({ width: W, height: H + 40 });
-const hop = Math.max(1, Math.floor((wav.frames - N) / W));
-const fMin = 40;
-const fMax = 16000;
+const s0 = Math.floor(Number(startArg ?? 0) * wav.sampleRate);
+const s1 = Math.min(wav.frames, endArg ? Math.floor(Number(endArg) * wav.sampleRate) : wav.frames);
+const hop = Math.max(1, Math.floor((s1 - s0 - N) / W));
+const fMin = Number(fMinArg ?? 40);
+const fMax = Number(fMaxArg ?? 16000);
 for (let x = 0; x < W; x++) {
   const re = new Float64Array(N);
   const im = new Float64Array(N);
-  for (let i = 0; i < N; i++) re[i] = (mono[x * hop + i] ?? 0) * (0.5 - 0.5 * Math.cos((2 * Math.PI * i) / (N - 1)));
+  for (let i = 0; i < N; i++) re[i] = (mono[s0 + x * hop + i] ?? 0) * (0.5 - 0.5 * Math.cos((2 * Math.PI * i) / (N - 1)));
   fft(re, im);
   let rms = 0;
-  for (let i = 0; i < N; i++) rms += (mono[x * hop + i] ?? 0) ** 2;
+  for (let i = 0; i < N; i++) rms += (mono[s0 + x * hop + i] ?? 0) ** 2;
   rms = Math.sqrt(rms / N);
   for (let y = 0; y < H; y++) {
     const f = fMin * Math.pow(fMax / fMin, 1 - y / H);

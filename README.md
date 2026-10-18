@@ -18,7 +18,8 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | 1 | PNG 3 枚 → Instrument DNA → 3 つの音色、ブラウザで試聴 | ✅ |
 | 2 | 3 楽器の相互作用で 30 秒 × 3 候補 | ✅ |
 | 3 | WAV・JSON 生成、SOUNDVAULT への登録と再生確認 | ✅ ローカルで登録・再生確認済み / ⏸ GitHub 上の SOUNDVAULT への反映は承認待ち |
-| 4–7 | 3D・文章・コード、90 秒、3〜5 分の完成曲、シリーズ化 | 未着手 (設計のみ) |
+| 6 (先行) | ロック寄りの完成曲 **SONOVA-ROCK-0001**（3分03秒）。他の人の GitHub から珍しい手法を調査して独自実装 | ✅ [experiments/rock/REPORT.md](experiments/rock/REPORT.md)、調査 [research/github-survey-rock.md](research/github-survey-rock.md) |
+| 4, 5, 7 | 3D・文章・コード、90 秒、シリーズ化 | 未着手 (設計のみ) |
 
 結果: [experiments/REPORT.md](experiments/REPORT.md) / 評価: [docs/evaluation-phase0-3.md](docs/evaluation-phase0-3.md)
 
@@ -35,6 +36,23 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 
 素材画像 (`experiments/sources/*.png`) もコードで生成したオリジナル (`scripts/make-sample-images.ts`)。
 
+### SONOVA-ROCK-0001 *Everything Is an Amplifier*
+
+同じ 3 枚の画像がロックバンドになる: **木の年輪 → ギター**、**建物の外壁 → ドラム**、**夕焼け → ベースとリード**。145 BPM・C minor・ドロップ C。
+
+| 手法（参考） | 曲での役割 |
+|---|---|
+| 拡張 Karplus–Strong + アンプ帰還（Sullivan 1990 / mrahtz/javascript-karplus-strong） | 弦の物理モデルのギター。アンプの音が弦に戻り、本当にハウリングする |
+| WDF ダイオードクリッパー（chowdsp_wdf, KlonCentaur） | 回路方程式を解いて歪むアンプ |
+| 円形膜のモーダル合成（ripplerx の考え方） | ベッセル関数の零点で鳴る太鼓、外壁の格子比で鳴るシンバル |
+| 1 次元セルオートマトン（mhitchman/IMS） | 小節ごとに進化するハイハット・フィル・ソロのリズム。サビ2のハウリングがルールを変える |
+| バイトビート（greggman/html5bytebeat） | イントロで数式がリフを鳴らす |
+| 画像のスペクトログラム描画（LeviBorodenko/spectrographic） | ブリッジのスペクトログラムに木の年輪が浮かぶ |
+
+```bash
+npm run rock          # 約2分で output/rock/SONOVA-ROCK-0001.wav / .mid、experiments/rock/*.json と REPORT.md
+```
+
 ## 使い方
 
 Node.js 22.12 以上（Windows / macOS / Linux）。
@@ -42,7 +60,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 32 テスト
+npm test             # 43 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 
@@ -105,5 +123,5 @@ output/                     WAV など生成物 (Git 管理外)
 | TypeScript, playwright-core | Apache-2.0 | 型検査・ブラウザ検証（任意） |
 | ffmpeg (外部コマンド) | LGPL/GPL | OGG 変換（任意、同梱しない） |
 
-Tone.js・DDSP・Strudel などの評価は [research/github-survey.md](research/github-survey.md)。外部リポジトリのコードはコピーしていない（Freeverb とユークリッドリズムは公開アルゴリズムとして再実装）。
+Tone.js・DDSP・Strudel などの評価は [research/github-survey.md](research/github-survey.md)、ロック曲のための手法調査は [research/github-survey-rock.md](research/github-survey-rock.md)。外部リポジトリのコードはコピーしていない（Freeverb、ユークリッドリズム、Karplus–Strong、WDF、モーダル合成、セルオートマトン、バイトビート、スペクトログラム描画はすべて公開アルゴリズムから再実装）。GPL のリポジトリ（ripplerx）とライセンスのないリポジトリ（javascript-karplus-strong, IMS）は考え方だけを参考にした。
 SONOVA が生成した音と素材画像はオリジナル（SOUNDVAULT では `license: "Original"`）。
