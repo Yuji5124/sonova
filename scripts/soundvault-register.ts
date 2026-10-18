@@ -47,6 +47,38 @@ for (const preset of EXPERIMENT_PRESETS) {
   jobs.push({ wav: join(ROOT, 'output/phase2', `${workNumber}.wav`), meta: experimentMetadata(workNumber, arr, gen, dnas, createdAt, files), minDur: 29.9, maxSilent: 0.12 });
 }
 
+// SONOVA-ROCK-0001 (complete song → COMPOSITION). Run `npm run rock` first.
+{
+  const rockJson = join(ROOT, 'experiments/rock/SONOVA-ROCK-0001.generation.json');
+  if (existsSync(rockJson)) {
+    const g = JSON.parse(readFileSync(rockJson, 'utf8'));
+    const song = JSON.parse(readFileSync(join(ROOT, 'experiments/rock/SONOVA-ROCK-0001.song.json'), 'utf8'));
+    const dur = Math.round(song.durationSec);
+    jobs.push({
+      wav: join(ROOT, 'output/rock/SONOVA-ROCK-0001.wav'),
+      minDur: 180,
+      maxSilent: 0.03,
+      meta: {
+        workNumber: 'SONOVA-ROCK-0001',
+        title: song.title,
+        type: 'COMPOSITION',
+        bpm: song.bpm,
+        materialIds: g.sources.map((s: { sha256: string }) => s.sha256),
+        sources: g.sources.map((s: { name: string; sha256: string }) => ({ name: s.name, type: 'image', sha256: s.sha256 })),
+        instruments: dnas.map((d) => ({ instrument_id: d.instrument_id, dna_hash: d.dna_hash, name: d.name })),
+        seed: g.seed,
+        algorithms: g.techniques.map((t: { technique: string }) => t.technique),
+        engines: g.engines,
+        license: 'Original',
+        createdAt,
+        description: `画像の楽器によるロック曲 (${Math.floor(dur / 60)}分${String(dur % 60).padStart(2, '0')}秒)。木の年輪 → ギター、建物の外壁 → ドラム、夕焼け → ベースとリード。拡張 Karplus–Strong とアンプ帰還、WDF 歪み、モーダル打楽器、セルオートマトン、バイトビート、ブリッジでは木の年輪をスペクトログラムに描画。`,
+        tags: ['rock', 'composition', 'karplus-strong', 'wdf', 'modal', 'cellular-automaton', 'bytebeat', 'spectrogram-art', 'bark', 'tower', 'sunset'],
+        sonovaFiles: ['song', 'generation', 'events', 'verification'].map((k) => `experiments/rock/SONOVA-ROCK-0001.${k}.json`).concat('experiments/rock/REPORT.md'),
+      },
+    });
+  }
+}
+
 let failed = 0;
 for (const job of jobs) {
   if (!existsSync(job.wav)) {
