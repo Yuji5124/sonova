@@ -96,7 +96,7 @@ npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space �
 | テンポ | ナンカロウのテンポカノン（nanc-in-a-can/canon-generator の考え方） | ブリッジでリフを 3:4:5 の 3 つのテンポで重ね、ソロの 1 拍目で同時に着地 |
 | リズム | リセット・リズム（tmhglnd/risset-rhythm-effect・MIT の考え方） | カノンの下で永遠に加速し続けて聴こえるドラム |
 | 音高 | シェパード=リセットのグリッサンド | 最後のサビの前、終わらずに上がり続ける 6 本の弦 |
-| 声 | トークボックス（Peterson & Barney の母音フォルマント）＋ 声道の物理モデルの歌手（Kelly–Lochbaum、Pink Trombone の考え方） | リードが "everything is an instrument" の母音でしゃべり、サビ（0:46〜）では歌手が**何語でもない言葉**でフックを歌う。言葉の音は夕焼けの画像から決まる |
+| 声 | トークボックス（Peterson & Barney の母音フォルマント）＋ 声道の物理モデルの歌手（Kelly–Lochbaum、Pink Trombone の考え方） | リードが "everything is an instrument" の母音でしゃべり、サビ（0:46〜）では歌手が**何語でもない言葉**でフックを歌う。言葉の音は夕焼けの画像から決まる。声は男女の中間（声道 16 cm）から始まり、サビごとに人の声の範囲の外へ（13 cm / 19.9 cm）、音程に同調した弦の共鳴が育つ |
 
 ```bash
 npm run xrock        # 約4分
@@ -109,7 +109,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 56 テスト
+npm test             # 59 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

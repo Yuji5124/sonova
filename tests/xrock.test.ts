@@ -121,3 +121,34 @@ describe('XROCK singer', () => {
     expect(one.text.split(' / ').length).toBeGreaterThan(2); // phrases end on long notes
   });
 });
+
+describe('XROCK voice journey', () => {
+  it('a shorter tract moves the resonances up without changing the pitch; the ring stays stable', async () => {
+    const { renderSinger, tractLengthCm } = await import('@sonova/synthesis-engine');
+    const sing = (formantScale: number, ring = 0) => renderSinger([{ time: 0.1, duration: 1.2, midi: 57, velocity: 0.9, syllable: { vowel: 'i' } }], 1.5, SR, 't', { formantScale, ring, vibratoCents: 0, breathiness: 0, scoopCents: 0 });
+    const centroid = (x: Float32Array) => {
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 8192);
+      let num = 0;
+      let den = 0;
+      spec.mag.forEach((m, k) => {
+        const hz = k * spec.binHz;
+        if (hz > 1200 && hz < 5000) {
+          num += hz * m;
+          den += m;
+        }
+      });
+      return num / den;
+    };
+    const pitchPeak = (x: Float32Array) => {
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 16384);
+      return bandEnergyDb(spec, 215, 225) - bandEnergyDb(spec, 180, 200);
+    };
+    const human = sing(1);
+    const small = sing(1.3);
+    expect(centroid(small)).toBeGreaterThan(centroid(human) * 1.1);
+    expect(pitchPeak(small)).toBeGreaterThan(10); // still sings A3 (220 Hz)
+    expect(tractLengthCm(1.07)).toBeCloseTo(16, 0);
+    const ringing = sing(1.3, 0.8);
+    expect(ringing.every((v) => Number.isFinite(v))).toBe(true);
+  });
+});

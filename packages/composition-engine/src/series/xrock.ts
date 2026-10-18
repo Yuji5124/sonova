@@ -11,7 +11,7 @@
 import { Rng, type InstrumentDNA } from '@sonova/instrument-dna';
 import { generateRock, type RockEvent, type RockSong } from '@sonova/music-generator';
 import { fft } from '@sonova/source-analyzer';
-import { compress, midiToHz, mixInto, pingPong, renderDrumHit, renderRig, renderSinger, type DrumName, type RigEvent, type SpectroImage, type StereoBuffer } from '@sonova/synthesis-engine';
+import { compress, midiToHz, mixInto, pingPong, renderDrumHit, renderRig, renderSinger, reverb, tractLengthCm, type SingerOptions, type DrumName, type RigEvent, type SpectroImage, type StereoBuffer } from '@sonova/synthesis-engine';
 import { renderRock, rockPlan, type RockBand, type RockRenderResult } from '../rock.ts';
 import { inventLanguage, romanizeWord, setLyrics, type Language } from './glossolalia.ts';
 
@@ -252,8 +252,16 @@ export interface XRockResult {
   risset: { layers: number; megabarSec: number; hits: number; start: number; end: number };
   shepard: { start: number; seconds: number; octaveSec: number; octavesRisen: number };
   talkbox: { text: string; vowels: string[]; notes: number };
-  singer: { language: Omit<Language, 'words'> & { words: string[] }; choruses: Array<{ section: string; start: number; lyrics: string; notes: number; syllables: number; octave: number; doubled: boolean }> };
+  singer: { language: Omit<Language, 'words'> & { words: string[] }; choruses: Array<{ section: string; start: number; lyrics: string; notes: number; syllables: number; octave: number; doubled: boolean; tractCm: number[]; ring: number[]; openQuotient: number[]; note: string }> };
 }
+
+/** The singer's way out of the human voice, one step per chorus. */
+export const VOICE_JOURNEY: Array<{ lead: SingerOptions; double?: SingerOptions; note: string }> = [
+  { lead: { formantScale: 1.07, ring: 0.1, openQuotient: 0.58, breathiness: 0.2 }, note: '男女の中間: 声道 16 cm、声門の開き方も中間' },
+  { lead: { formantScale: 1.12, ring: 0.3, openQuotient: 0.6, breathiness: 0.2 }, note: '声道が少し短くなり、音程に同調した弦の共鳴が育ち始める' },
+  { lead: { formantScale: 1.2, ring: 0.5, openQuotient: 0.62, breathiness: 0.22 }, double: { formantScale: 0.97, ring: 0.45, openQuotient: 0.55, breathiness: 0.26, vibratoRate: 5.1 }, note: '2 声に分かれる: 短い声道と長い声道' },
+  { lead: { formantScale: 1.32, ring: 0.72, openQuotient: 0.64, breathiness: 0.22 }, double: { formantScale: 0.86, ring: 0.65, openQuotient: 0.52, breathiness: 0.26, vibratoRate: 5.1 }, note: '人の声の範囲 (約 14–18 cm) の外へ。声は半分弦になる' },
+];
 
 const DRUM_PAN: Record<DrumName, number> = { kick: 0, snare: 0.04, hat: 0.38, hatOpen: 0.38, crash: -0.42, ride: -0.35, tom1: 0.3, tom2: -0.05, tom3: -0.35 };
 
@@ -453,22 +461,28 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
       }
 
       // ---- 5. voice: the singer ----
+      // A voice between male and female (tract 16 cm, open quotient between the two) that moves away
+      // from human wavelengths chorus by chorus: the tract leaves the human range (≈14–18 cm) — one voice
+      // shorter, the doubled one longer — and a resonance tuned to the sung pitch grows inside it.
+      const hallL = new Float32Array(len);
+      const hallR = new Float32Array(len);
+      const pre = at(0.045);
       choruses.forEach((c, ci) => {
         log(`singer ${c.name}`);
+        const j = VOICE_JOURNEY[Math.min(ci, VOICE_JOURNEY.length - 1)];
         const octave = ci === choruses.length - 1 ? -12 : 0; // the last chorus' hook is an octave up for the guitar; the voice stays
         const notes = leadOf(c).map((e) => ({ time: e.time - c.start + 0.25, duration: e.duration!, midi: e.midi! + octave, velocity: e.velocity!, slide: e.slide }));
         const { sung, text: lyrics } = setLyrics(notes, lang, seed, ci === choruses.length - 1 ? 1 : 0);
         const segSec = c.end - c.start + 1.5;
-        const doubled = ci >= 2;
-        const voices = [renderSinger(sung, segSec, sampleRate, `${seed}:${c.name}`)];
-        if (doubled) voices.push(renderSinger(sung.map((n) => ({ ...n, time: n.time + 0.017, midi: n.midi + 0.08 })), segSec, sampleRate, `${seed}:${c.name}:double`, { breathiness: 0.26, vibratoRate: 5.1 }));
+        const voices = [renderSinger(sung, segSec, sampleRate, `${seed}:${c.name}`, j.lead)];
+        if (j.double) voices.push(renderSinger(sung.map((n) => ({ ...n, time: n.time + 0.017, midi: n.midi + 0.08 })), segSec, sampleRate, `${seed}:${c.name}:double`, j.double));
         const vg = voices.map((v) => Math.pow(10, -16 / 20) / (rms(v) || 1));
         const off = at(c.start - 0.25);
         const dry = new Float32Array(voices[0].length);
         voices.forEach((v, k) => {
-          const pan = doubled ? (k === 0 ? -0.18 : 0.18) : 0;
-          const gl = Math.cos(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (doubled ? 0.75 : 1);
-          const gr = Math.sin(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (doubled ? 0.75 : 1);
+          const pan = j.double ? (k === 0 ? -0.22 : 0.22) : 0;
+          const gl = Math.cos(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (j.double ? 0.75 : 1);
+          const gr = Math.sin(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (j.double ? 0.75 : 1);
           for (let i = 0; i < v.length && off + i < len; i++) {
             if (off + i < 0) continue;
             const y = v[i] * vg[k];
@@ -477,17 +491,39 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
             dry[i] += y;
           }
         });
-        // a quarter-note ping-pong and a generous reverb send, as a rock vocal would have
-        const [pl, pr] = pingPong(dry, new Float32Array(dry.length), sampleRate, 60 / song.bpm, 0.3, 0.3);
+        // a dotted-eighth ping-pong, a send to the band's room, and the voice's own long hall
+        const [pl, pr] = pingPong(dry, new Float32Array(dry.length), sampleRate, (60 / song.bpm) * 0.75, 0.38, 0.35);
         for (let i = 0; i < dry.length && off + i < len; i++) {
           if (off + i < 0) continue;
-          mix.left[off + i] += pl[i] * 0.22;
-          mix.right[off + i] += pr[i] * 0.22;
-          wet.left[off + i] += dry[i] * 0.35;
-          wet.right[off + i] += dry[i] * 0.35;
+          mix.left[off + i] += pl[i] * 0.2;
+          mix.right[off + i] += pr[i] * 0.2;
+          wet.left[off + i] += dry[i] * 0.2;
+          wet.right[off + i] += dry[i] * 0.2;
+          if (off + i + pre < len) {
+            hallL[off + i + pre] += dry[i] + pl[i] * 0.3;
+            hallR[off + i + pre] += dry[i] + pr[i] * 0.3;
+          }
         }
-        singer.push({ section: c.name, start: r3(c.start), lyrics, notes: sung.length, syllables: sung.filter((n) => n.syllable).length, octave, doubled });
+        singer.push({
+          section: c.name,
+          start: r3(c.start),
+          lyrics,
+          notes: sung.length,
+          syllables: sung.filter((n) => n.syllable).length,
+          octave,
+          doubled: !!j.double,
+          tractCm: [tractLengthCm(j.lead.formantScale!), ...(j.double ? [tractLengthCm(j.double.formantScale!)] : [])],
+          ring: [j.lead.ring!, ...(j.double ? [j.double.ring!] : [])],
+          openQuotient: [j.lead.openQuotient!, ...(j.double ? [j.double.openQuotient!] : [])],
+          note: j.note,
+        });
       });
+      log('vocal hall');
+      const [hl, hr] = reverb(hallL, hallR, { roomSize: 0.93, damping: 0.22, sampleRate });
+      for (let i = 0; i < len; i++) {
+        mix.left[i] += hl[i] * 0.42;
+        mix.right[i] += hr[i] * 0.42;
+      }
     },
   });
   return {

@@ -309,7 +309,17 @@
         "notes": 56,
         "syllables": 44,
         "octave": 0,
-        "doubled": false
+        "doubled": false,
+        "tractCm": [
+          16
+        ],
+        "ring": [
+          0.1
+        ],
+        "openQuotient": [
+          0.58
+        ],
+        "note": "男女の中間: 声道 16 cm、声門の開き方も中間"
       },
       {
         "section": "chorus2",
@@ -318,7 +328,17 @@
         "notes": 56,
         "syllables": 39,
         "octave": 0,
-        "doubled": false
+        "doubled": false,
+        "tractCm": [
+          15.3
+        ],
+        "ring": [
+          0.3
+        ],
+        "openQuotient": [
+          0.6
+        ],
+        "note": "声道が少し短くなり、音程に同調した弦の共鳴が育ち始める"
       },
       {
         "section": "chorus3",
@@ -327,7 +347,20 @@
         "notes": 56,
         "syllables": 42,
         "octave": 0,
-        "doubled": true
+        "doubled": true,
+        "tractCm": [
+          14.3,
+          17.6
+        ],
+        "ring": [
+          0.5,
+          0.45
+        ],
+        "openQuotient": [
+          0.62,
+          0.55
+        ],
+        "note": "2 声に分かれる: 短い声道と長い声道"
       },
       {
         "section": "chorus4",
@@ -336,12 +369,25 @@
         "notes": 56,
         "syllables": 40,
         "octave": -12,
-        "doubled": true
+        "doubled": true,
+        "tractCm": [
+          13,
+          19.9
+        ],
+        "ring": [
+          0.72,
+          0.65
+        ],
+        "openQuotient": [
+          0.64,
+          0.52
+        ],
+        "note": "人の声の範囲 (約 14–18 cm) の外へ。声は半分弦になる"
       }
     ]
   },
   "render": {
-    "ms": 210802,
+    "ms": 216202,
     "stems": {
       "guitarL": {
         "gainDb": -8.8,
@@ -366,9 +412,9 @@
     },
     "master": {
       "inputPeak": 1.6797075271606445,
-      "inputRms": 0.17107197994124768,
-      "appliedGainDb": 2.836422363589808,
-      "maxReductionDb": -8.341096038839966,
+      "inputRms": 0.174433583782667,
+      "appliedGainDb": 2.667397928460657,
+      "maxReductionDb": -8.172071295084947,
       "outputPeak": 0.8912509083747864
     }
   },
@@ -380,12 +426,12 @@
     "bitsPerSample": 16,
     "durationSec": 216.362,
     "peakDbfs": -1,
-    "rmsDbfs": -13.288,
+    "rmsDbfs": -13.29,
     "clippedSamples": 0,
-    "dcOffset": -0.000005527,
+    "dcOffset": -0.000008439,
     "silences": [],
     "silentRatio": 0,
-    "stereoCorrelation": 0.792
+    "stereoCorrelation": 0.757
   },
   "wav": "output/xrock/SONOVA-XROCK-0001.wav"
 }
