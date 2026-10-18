@@ -1,0 +1,104 @@
+[
+  {
+    "workNumber": "SONOVA-EXP-0001",
+    "title": "Rings Wake the Tower",
+    "type": "EXPERIMENT",
+    "soundvaultId": "sonova_exp_0001_ogg",
+    "file": "/sounds/bgm/sonova-exp-0001-rings-wake-the-tower.ogg",
+    "format": "ogg",
+    "wavSha256": "9aa90eb7284a76bd42b21b1bd6a71c784179f07dfa99c65391261b6cb0f86d77",
+    "fileSha256": "4cf5cf115173c69a0bcedb754784c8e1e6e1236a360557a89c6909d8c80dd32c",
+    "registeredAt": "2026-10-18T09:28:13.206Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7"
+  },
+  {
+    "workNumber": "SONOVA-EXP-0002",
+    "title": "Facade Tide",
+    "type": "EXPERIMENT",
+    "soundvaultId": "sonova_exp_0002_ogg",
+    "file": "/sounds/bgm/sonova-exp-0002-facade-tide.ogg",
+    "format": "ogg",
+    "wavSha256": "5b1ad3463c397bf11f8102ca6b271ef25144e7d21a5c6d28bb320fdc35002b12",
+    "fileSha256": "06db7d28a0ab9edf99f8060a8539aa823a9a9e9a7ec3c238ea4c8c16a69db690",
+    "registeredAt": "2026-10-18T09:27:21.676Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.73s 再生 · decode 30.01s/2ch/44100Hz · peak 0.925"
+    }
+  },
+  {
+    "workNumber": "SONOVA-EXP-0003",
+    "title": "Sunset Cascade",
+    "type": "EXPERIMENT",
+    "soundvaultId": "sonova_exp_0003_ogg",
+    "file": "/sounds/bgm/sonova-exp-0003-sunset-cascade.ogg",
+    "format": "ogg",
+    "wavSha256": "d6fc74ffdfcc1d732df36feff7235d7b1180ce6bfafac58653b5e49e940940b0",
+    "fileSha256": "9bcc798fc335419e740af20be98265a06f9883df04c92e984ef9d2b6ed8b9677",
+    "registeredAt": "2026-10-18T09:27:22.828Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.71s 再生 · decode 30.02s/2ch/44100Hz · peak 0.909"
+    }
+  },
+  {
+    "workNumber": "SONOVA-INST-0001",
+    "title": "bark instrument",
+    "type": "INSTRUMENT",
+    "soundvaultId": "sonova_inst_0001_ogg",
+    "file": "/sounds/fx/sonova-inst-0001-bark-instrument.ogg",
+    "format": "ogg",
+    "wavSha256": "2f9b41710467d622e79bb04525b36551bae42986239036e9d0b5c2bd97532ff3",
+    "fileSha256": "a0441dd2bcbeb1c036680e1e5daa89526f686958de429744d4d88ab616d7ca18",
+    "registeredAt": "2026-10-18T09:27:18.125Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.56s 再生 · decode 6.02s/2ch/44100Hz · peak 0.918"
+    }
+  },
+  {
+    "workNumber": "SONOVA-INST-0002",
+    "title": "tower instrument",
+    "type": "INSTRUMENT",
+    "soundvaultId": "sonova_inst_0002_ogg",
+    "file": "/sounds/fx/sonova-inst-0002-tower-instrument.ogg",
+    "format": "ogg",
+    "wavSha256": "7a81fb57f21563c3c66beb8ab111560bfda070c9d7ca63579237526a6d3190c3",
+    "fileSha256": "fee0989aae97586dbb3c999de931c9cad3697997ade8fe1b1d7a19567a471b3d",
+    "registeredAt": "2026-10-18T09:27:18.636Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.56s 再生 · decode 6.02s/2ch/44100Hz · peak 0.695"
+    }
+  },
+  {
+    "workNumber": "SONOVA-INST-0003",
+    "title": "sunset instrument",
+    "type": "INSTRUMENT",
+    "soundvaultId": "sonova_inst_0003_ogg",
+    "file": "/sounds/fx/sonova-inst-0003-sunset-instrument.ogg",
+    "format": "ogg",
+    "wavSha256": "09b8d9a3d0d7d40f2d3e922269d0bb761d2c717fd16632daea495afdcc108033",
+    "fileSha256": "ade92a1026887abd06d94700e371692add809162ceb4c40afc70893349db751b",
+    "registeredAt": "2026-10-18T09:27:19.083Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.55s 再生 · decode 6.00s/2ch/44100Hz · peak 0.446"
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "@sonova/synthesis-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sonova/instrument-dna": "*"
+  }
+}
