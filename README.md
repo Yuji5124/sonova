@@ -79,7 +79,7 @@ SONOVA-ROCK-0001 のバンド（ギター ← 木の年輪、ドラム ← 外�
 |---|---|---|
 | [SONOVA-ROCK-GROW-0001](experiments/rock-series/SONOVA-ROCK-GROW-0001.md) | *Grown in the Feedback* — 116 BPM（重く遅く）、C minor | アンプの後ろの共鳴板（外壁の画像から）が区間ごとにギターとベースを聴いて育つ。次の区間のリードは板の強いモードの音程で弾く |
 | [SONOVA-ROCK-HEAL-0001](experiments/rock-series/SONOVA-ROCK-HEAL-0001.md) | *Broken Strings, Living Band* — 162 BPM（ライブの勢い）、C minor | ケーブル抜け・リードの半音ずれ・弦切れ・ベースアンプ落ちを、モニターエンジニアのように各チャンネルの音を聴いて検知し、他のメンバーが補う。修復なし版つき |
-| [SONOVA-ROCK-SPACE-0001](experiments/rock-series/SONOVA-ROCK-SPACE-0001.md) | *The Room Is the Amp* — 132 BPM、C# minor | 会場の最低モードがキー、会場の幅の往復時間がテンポ。リードは会場のモードに吸い寄せられて微分音になり、バンドの音で会場が細長いホールへ変形する |
+| [SONOVA-ROCK-SPACE-0001](experiments/rock-series/SONOVA-ROCK-SPACE-0001.md) | *The Room Is the Amp* — 132 BPM、C# minor | 会場の最低モードがキー、会場の幅の往復時間がテンポ。リードは会場のモードに吸い寄せられて微分音になり、バンドの音で会場が細長いホールへ変形する。**ドラムも会場が叩く**: 天井の高さで周期が決まるポリメーターのキック、部屋のモード比の連符 (Rhythmicon)、部屋の変形量でずれるスネア (Turing Machine)、初期反射を引き伸ばしたフィル |
 
 ```bash
 npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space を引数で 1 曲だけ
@@ -92,7 +92,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 51 テスト
+npm test             # 52 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

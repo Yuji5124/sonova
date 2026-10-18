@@ -185,6 +185,8 @@ export interface RockHooks {
   /** Called after guitars and bass are rendered; returns the lead events to use instead of the song's. */
   leadEvents?: (ctx: { guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => RockEvent[];
   /** Called with every stem in place, before the shared reverb and the master. */
+  /** Called before the drums are rendered; returns the drum events to use instead of the song's. */
+  drumEvents?: (ctx: { plan: RockRenderPlan; sampleRate: number; song: RockSong }) => RockEvent[];
   beforeReverb?: (ctx: { mix: StereoBuffer; wet: StereoBuffer; guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; lead: Float32Array; drums: StereoBuffer; drumGain: number; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => void;
 }
 
@@ -235,6 +237,10 @@ export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, 
   mixInto(wet, lead, 0, 0.1, 0.22);
 
   log('drums');
+  if (hooks.drumEvents) {
+    const replaced = hooks.drumEvents({ plan, sampleRate, song });
+    song = { ...song, events: [...song.events.filter((e) => e.part !== 'drums'), ...replaced].sort((a, b) => a.time - b.time || a.id - b.id) };
+  }
   const drums = createBus(secs, sampleRate);
   const room = createBus(secs, sampleRate);
   for (const e of song.events) {

@@ -7,7 +7,7 @@
  *                lead's (microtonal) notes, and is heard through image-source reflections
  */
 import type { InstrumentDNA } from '@sonova/instrument-dna';
-import { Rng, clamp } from '@sonova/instrument-dna';
+import { Rng, clamp, euclid } from '@sonova/instrument-dna';
 import { generateRock, type RockEvent, type RockSong } from '@sonova/music-generator';
 import { averageSpectrum, bandEnergyDb, energyAtDb, hzToMidi, spectralPeaks } from '@sonova/source-analyzer';
 import { midiToHz, mixInto, plateModes, renderRig, type SpectroImage } from '@sonova/synthesis-engine';
@@ -357,10 +357,159 @@ export interface RockSpaceResult {
   rooms: Array<{ section: string; start: number; room: Room; rt60: number; lowestModeHz: number; heard: { low: number; mid: number; high: number } }>;
   changes: Array<{ section: string; param: string; from: number; to: number; cause: string }>;
   microtonalLead: number;
+  drummer: RoomDrummerSection[];
 }
 
 type Vec = [number, number, number];
 const C = 343;
+
+// ---- The room drummer ------------------------------------------------------------------------
+// The drums of ROCK-SPACE are played by the venue of each section. Ideas (no code copied):
+//  · polymeter loops whose length is not the bar (Grids' euclidean mode, pichenettes/eurorack, GPL-3 — idea only)
+//  · Rhythmicon (Theremin & Cowell 1931): pulse rate ∝ frequency → cymbal tuplets ∝ the room's axial modes
+//  · a looping shift register that slips with a probability (Music Thing Turing Machine, CC-BY-SA — idea only);
+//    here the slip probability is how much the room has just changed
+//  · fills = the room's own early reflections (image-source method, Allen & Berkley 1979) slowed down
+export interface RoomDrummerSection {
+  section: string;
+  kickCycle: number;
+  kickPulses: number;
+  hatTuplet: number;
+  rideTuplet: number;
+  slip: number;
+  register: string;
+  displaced: number;
+  echoFill: { hits: number; stretch: number } | null;
+  reasons: string[];
+}
+
+const ROOM_DRUMMER_KEEP = new Set(['intro', 'bridge']);
+
+export function roomDrummer(song: RockSong, rooms: Array<{ section: string; room: Room }>, seed: string): { events: RockEvent[]; sections: RoomDrummerSection[] } {
+  const barSec = song.barSec;
+  const slot = barSec / 16;
+  const original = song.events.filter((e) => e.part === 'drums');
+  const out: RockEvent[] = [];
+  const sections: RoomDrummerSection[] = [];
+  let id = 2e6;
+  const hit = (time: number, drum: RockEvent['drum'], velocity: number, text: string): RockEvent => {
+    const bar = Math.floor(time / barSec + 1e-9);
+    const e: RockEvent = { id: id++, time: Math.round(time * 1e6) / 1e6, bar, slot: Math.round((time - bar * barSec) / slot), part: 'drums', kind: 'hit', drum, velocity: r3(clamp(velocity, 0.05, 1)), depth: 1, text };
+    out.push(e);
+    return e;
+  };
+  song.sections.forEach((sec, g) => {
+    const inSec = original.filter((e) => e.time >= sec.start - 1e-6 && e.time < sec.end - 1e-6);
+    if (ROOM_DRUMMER_KEEP.has(sec.name) || g === 0) {
+      out.push(...inSec);
+      return;
+    }
+    const room = rooms[g].room;
+    const prev = rooms[Math.max(0, g - 1)].room;
+    const [Lx, Ly, Lz] = room.L;
+    // markers, crashes (one of them sets off the amp), the kicks the bass and guitar lock to, and bars the arrangement leaves empty
+    const kept = inSec.filter((e) => e.kind !== 'hit' || e.drum === 'crash' || (e.drum === 'kick' && (e.slot === 0 || e.cause?.rule === 'entrain')));
+    out.push(...kept);
+    const busy = new Set(inSec.filter((e) => e.kind === 'hit').map((e) => e.bar));
+    const chorus = sec.name.startsWith('chorus') || sec.name === 'solo';
+    const half = sec.name.startsWith('verse') || sec.name === 'breakdown';
+    // polymeter kick: the higher the ceiling, the longer the loop (1.5 sixteenths per metre)
+    let kickCycle = clamp(Math.round(1.5 * Lz), 5, 17);
+    if (kickCycle === 8 || kickCycle === 12 || kickCycle === 16) kickCycle += 1;
+    const kickPulses = Math.max(2, Math.round(kickCycle * 0.4));
+    const kickLoop = euclid(kickCycle, kickPulses, g);
+    // Rhythmicon cymbals: pulses per bar ∝ the axial modes c/2L
+    const hatTuplet = clamp(Math.round((4 * Lx) / Lz), 3, 13);
+    const rideTuplet = clamp(Math.round((2 * Lx) / Ly), 3, 11);
+    // Turing-machine register; the loop slips as much as the room just moved
+    const moved = (Math.abs(Lx / prev.L[0] - 1) + Math.abs(Ly / prev.L[1] - 1) + Math.abs(Lz / prev.L[2] - 1)) / 3 + Math.abs(room.absorption - prev.absorption);
+    const slip = r3(clamp(moved * 3, 0.05, 0.6));
+    const rng = new Rng(`room-drummer:${seed}:${sec.name}`);
+    let reg = Math.floor(rng.next() * 65536);
+    let displaced = 0;
+    // fills: the drum riser's early reflections to the listener, slowed down to two beats
+    const src: Vec = [Lx * 0.5, Ly * 0.92, 1.1];
+    const ear: Vec = [Lx * 0.5, Ly * 0.3, 1.6];
+    const echoes = imageSources(room, src, 2)
+      .map((im) => {
+        const d = Math.hypot(im.pos[0] - ear[0], im.pos[1] - ear[1], im.pos[2] - ear[2]);
+        const axis = im.pos[0] !== src[0] ? 0 : im.pos[1] !== src[1] ? 1 : im.pos[2] !== src[2] ? 2 : -1;
+        return { t: d / C, gain: Math.pow(Math.sqrt(1 - room.absorption), im.order) / Math.max(1, d), order: im.order, axis };
+      })
+      .sort((a, b) => a.t - b.t);
+    const merged: typeof echoes = [];
+    for (const e of echoes) {
+      const last = merged[merged.length - 1];
+      if (last && e.t - last.t < 0.004) last.gain += e.gain;
+      else merged.push({ ...e });
+    }
+    const fillEchoes = merged.slice(0, 11);
+    const span = fillEchoes[fillEchoes.length - 1].t - fillEchoes[0].t || 1;
+    const stretch = r3((barSec / 2) / span);
+    const gMax = Math.max(...fillEchoes.map((e) => e.gain));
+    let echoFill: RoomDrummerSection['echoFill'] = null;
+    for (let b = sec.startBar; b < sec.startBar + sec.bars; b++) {
+      if (!busy.has(b)) continue;
+      const t0 = sec.start + (b - sec.startBar) * barSec;
+      const lastBar = b === sec.startBar + sec.bars - 1 && sec.bars >= 4;
+      // register step: the bit falling off the end comes back, flipped with probability `slip`
+      const out1 = reg & 1;
+      reg = (reg >> 1) | ((rng.next() < slip ? out1 ^ 1 : out1) << 15);
+      for (let k = 0; k < 16; k++) {
+        if (lastBar && k >= 8) break;
+        const step = (b - sec.startBar) * 16 + k;
+        const nearKept = kept.some((e) => e.drum === 'kick' && e.bar === b && Math.abs(e.slot - k) <= 1);
+        if (k !== 0 && !nearKept && kickLoop[step % kickCycle]) hit(t0 + k * slot, 'kick', step % kickCycle === 0 ? 0.92 : 0.78, `polymeter kick ${kickPulses}/${kickCycle}`);
+      }
+      // snare: backbeat anchor, displaced by the register
+      const backs = half ? [8] : [4, 12];
+      for (const bs of backs) {
+        if (lastBar && bs >= 8) continue;
+        const bit = (reg >> bs) & 3;
+        const s2 = bit === 3 ? bs + 1 : bit === 2 && bs > 4 ? bs - 1 : bs;
+        if (s2 !== bs) displaced++;
+        hit(t0 + s2 * slot, 'snare', 0.9, s2 === bs ? 'backbeat' : `backbeat displaced ${s2 - bs > 0 ? '+' : ''}${s2 - bs}/16 (register)`);
+      }
+      const ghost = (reg >> 4) & 15;
+      if (ghost % 2 === 1 && !(lastBar && ghost >= 8)) hit(t0 + ghost * slot, 'snare', 0.22, 'ghost (register)');
+      // Rhythmicon cymbals: true tuplets, off the 16th grid
+      const tup = chorus ? rideTuplet : hatTuplet;
+      const cym = chorus ? 'ride' : 'hat';
+      const lim = lastBar ? 0.5 : 1;
+      for (let k = 0; k < tup; k++) {
+        if (k / tup >= lim) break;
+        hit(t0 + (k * barSec) / tup, cym, (k === 0 ? 0.6 : 0.38) + 0.08 * Math.cos((2 * Math.PI * k * 2) / tup), `rhythmicon ${tup}:${cym === 'ride' ? `2·Lx/Ly` : `4·Lx/Lz`}`);
+      }
+      if (chorus) for (let k = 0; k < 4; k++) if (!(lastBar && k >= 2)) hit(t0 + k * 4 * slot, 'hat', 0.3, 'pulse');
+      if (lastBar) {
+        const toms = ['tom1', 'tom2', 'tom3'] as const;
+        for (const e of fillEchoes) {
+          const drum = e.order === 0 ? 'snare' : e.order === 1 ? toms[e.axis] : e.axis === 2 ? 'kick' : 'snare';
+          hit(t0 + barSec / 2 + (e.t - fillEchoes[0].t) * stretch * 0.97, drum, 0.45 + 0.5 * Math.sqrt(e.gain / gMax), `echo fill (order ${e.order}${e.axis >= 0 ? `, ${'xyz'[e.axis]} wall` : ''})`);
+        }
+        echoFill = { hits: fillEchoes.length, stretch };
+      }
+    }
+    sections.push({
+      section: sec.name,
+      kickCycle,
+      kickPulses,
+      hatTuplet,
+      rideTuplet,
+      slip,
+      register: reg.toString(2).padStart(16, '0'),
+      displaced,
+      echoFill,
+      reasons: [
+        `キックは 16分 ${kickCycle} 個の周期に ${kickPulses} 打 (天井の高さ ${Lz.toFixed(2)} m × 1.5)、小節線をまたいでずれていく`,
+        `${chorus ? `ライドは 1 小節 ${rideTuplet} 連 (幅と奥行きのモード比 2·Lx/Ly)` : `ハイハットは 1 小節 ${hatTuplet} 連 (幅と高さのモード比 4·Lx/Lz)`}`,
+        `スネアのずれの確率 ${slip} (部屋が直前にどれだけ変形したか)`,
+        echoFill ? `フィル = 会場の初期反射 ${fillEchoes.length} 本を ${stretch.toFixed(0)} 倍に引き伸ばしたもの` : 'フィルなし',
+      ],
+    });
+  });
+  return { events: out.sort((a, b) => a.time - b.time || a.id - b.id), sections };
+}
 
 export function renderRockSpace(band: RockBand, seed: string, image: SpectroImage, log: (m: string) => void = () => undefined): RockSpaceResult {
   const w = band.drums;
@@ -378,7 +527,15 @@ export function renderRockSpace(band: RockBand, seed: string, image: SpectroImag
   const rooms: RockSpaceResult['rooms'] = [];
   const changes: RockSpaceResult['changes'] = [];
   let microtonalLead = 0;
+  let drummer: RoomDrummerSection[] = [];
+  let finalSong = song;
   const render = renderRock(song, band, image, 44100, log, {
+    drumEvents: ({ song: s }) => {
+      const d = roomDrummer(s, rooms, seed);
+      drummer = d.sections;
+      finalSong = { ...s, events: [...s.events.filter((e) => e.part !== 'drums'), ...d.events].sort((a, b) => a.time - b.time || a.id - b.id) };
+      return d.events;
+    },
     leadEvents: ({ guitarL, guitarR, bass, sampleRate, song: s }) => {
       const heardBand = monoSum(guitarL, guitarR, bass);
       const out: RockEvent[] = [];
@@ -494,7 +651,7 @@ export function renderRockSpace(band: RockBand, seed: string, image: SpectroImag
       }
     },
   });
-  return { song, render, rooms, changes, microtonalLead };
+  return { song: finalSong, render, rooms, changes, microtonalLead, drummer };
 }
 
 export type { InstrumentDNA };

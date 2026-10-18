@@ -183,7 +183,7 @@
     }
   ],
   "render": {
-    "ms": 167435,
+    "ms": 191187,
     "stems": {
       "guitarL": {
         "gainDb": -8.7,
@@ -202,15 +202,15 @@
         "samples": 8858087
       },
       "drums": {
-        "gainDb": 1.8,
+        "gainDb": 0.8,
         "samples": 8858087
       }
     },
     "master": {
-      "inputPeak": 1.240358829498291,
-      "inputRms": 0.1452760021088993,
-      "appliedGainDb": 4.256122402547369,
-      "maxReductionDb": -7.127069194146456,
+      "inputPeak": 1.0350584983825684,
+      "inputRms": 0.1442717447979701,
+      "appliedGainDb": 4.316374317761628,
+      "maxReductionDb": -5.61567187866485,
       "outputPeak": 0.8912509083747864
     }
   },
@@ -222,12 +222,12 @@
     "bitsPerSample": 16,
     "durationSec": 200.864,
     "peakDbfs": -1,
-    "rmsDbfs": -13.202,
+    "rmsDbfs": -13.104,
     "clippedSamples": 0,
-    "dcOffset": 9.896e-8,
+    "dcOffset": 0.000003427,
     "silences": [],
     "silentRatio": 0,
-    "stereoCorrelation": 0.611
+    "stereoCorrelation": 0.622
   },
   "wav": "output/rock-series/SONOVA-ROCK-SPACE-0001.wav",
   "rooms": [
@@ -1024,5 +1024,327 @@
       "cause": "outro の 低/中/高 = 8/79/12%、音量 1.6 dB (平均比)"
     }
   ],
-  "microtonalLead": 324
+  "microtonalLead": 324,
+  "drummer": [
+    {
+      "section": "riffA",
+      "kickCycle": 5,
+      "kickPulses": 2,
+      "hatTuplet": 11,
+      "rideTuplet": 3,
+      "slip": 0.05,
+      "register": "1101010011100011",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 20.925
+      },
+      "reasons": [
+        "キックは 16分 5 個の周期に 2 打 (天井の高さ 3.60 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 11 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.05 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 21 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "verse1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 10,
+      "rideTuplet": 4,
+      "slip": 0.6,
+      "register": "1101101100110110",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 16.19
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.53 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.6 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 16 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 10,
+      "rideTuplet": 5,
+      "slip": 0.428,
+      "register": "0010100001110000",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 14.249
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.92 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.428 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 14 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 12,
+      "rideTuplet": 6,
+      "slip": 0.182,
+      "register": "1010010101001101",
+      "displaced": 5,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 12.424
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.79 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 6 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.182 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 12 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffB",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 7,
+      "slip": 0.449,
+      "register": "0000110100010101",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 11.632
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 5.82 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.449 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 12 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "verse2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 8,
+      "slip": 0.185,
+      "register": "0110110101110000",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.331
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.37 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.185 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 9,
+      "slip": 0.147,
+      "register": "0000010111100001",
+      "displaced": 1,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.051
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.36 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.147 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus2",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 11,
+      "rideTuplet": 10,
+      "slip": 0.173,
+      "register": "1100111100100001",
+      "displaced": 6,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 10.06
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 6.05 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 10 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.173 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "solo",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 9,
+      "slip": 0.279,
+      "register": "0101010100111101",
+      "displaced": 8,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 10.758
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 6.02 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 9 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.279 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "breakdown",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 10,
+      "slip": 0.297,
+      "register": "1000111000001010",
+      "displaced": 0,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 10.877
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.99 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.297 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffA2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 10,
+      "slip": 0.062,
+      "register": "1111011000011111",
+      "displaced": 5,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.159
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.92 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.062 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre3",
+      "kickCycle": 11,
+      "kickPulses": 4,
+      "hatTuplet": 8,
+      "rideTuplet": 10,
+      "slip": 0.165,
+      "register": "0110101100011000",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 10.698
+      },
+      "reasons": [
+        "キックは 16分 11 個の周期に 4 打 (天井の高さ 7.62 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 8 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.165 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus3",
+      "kickCycle": 11,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 11,
+      "slip": 0.251,
+      "register": "0000000110000111",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 9.785
+      },
+      "reasons": [
+        "キックは 16分 11 個の周期に 4 打 (天井の高さ 7.01 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 11 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.251 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus4",
+      "kickCycle": 13,
+      "kickPulses": 5,
+      "hatTuplet": 8,
+      "rideTuplet": 11,
+      "slip": 0.275,
+      "register": "0011011101101111",
+      "displaced": 8,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.754
+      },
+      "reasons": [
+        "キックは 16分 13 個の周期に 5 打 (天井の高さ 8.25 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 11 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.275 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffA3",
+      "kickCycle": 14,
+      "kickPulses": 6,
+      "hatTuplet": 7,
+      "rideTuplet": 11,
+      "slip": 0.227,
+      "register": "0000010110100100",
+      "displaced": 1,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.894
+      },
+      "reasons": [
+        "キックは 16分 14 個の周期に 6 打 (天井の高さ 9.64 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 7 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.227 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "outro",
+      "kickCycle": 17,
+      "kickPulses": 7,
+      "hatTuplet": 7,
+      "rideTuplet": 11,
+      "slip": 0.108,
+      "register": "1110100000101010",
+      "displaced": 3,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.73
+      },
+      "reasons": [
+        "キックは 16分 17 個の周期に 7 打 (天井の高さ 10.35 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 7 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.108 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    }
+  ]
 }

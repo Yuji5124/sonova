@@ -165,7 +165,7 @@ if (which === 'all' || which === 'space') {
   const work = 'SONOVA-ROCK-SPACE-0001';
   const seed = 'sonova-rock-space-0001';
   const r = renderRockSpace(band, seed, image, log);
-  const v = save(work, seed, r.song, r.render, { rooms: r.rooms, changes: r.changes, microtonalLead: r.microtonalLead });
+  const v = save(work, seed, r.song, r.render, { rooms: r.rooms, changes: r.changes, microtonalLead: r.microtonalLead, drummer: r.drummer });
   const md = `${header(work, r.song, seed, v)}
 ## 原理（SONOVA 004 のロック版）: 音が空間を作る
 
@@ -177,6 +177,21 @@ if (which === 'all' || which === 'space') {
 | 区間 | 開始 | 幅×奥行き×高さ (m) | 吸音率 | RT60 | 最低モード | 聴こえた 低/中/高 |
 |---|---|---|---|---|---|---|
 ${r.rooms.map((g) => `| ${g.section} | ${mmss(g.start)} | ${g.room.L.map((x) => x.toFixed(2)).join(' × ')} | ${g.room.absorption.toFixed(2)} | ${g.rt60.toFixed(2)}s | ${g.lowestModeHz.toFixed(1)} Hz | ${(g.heard.low * 100).toFixed(0)} / ${(g.heard.mid * 100).toFixed(0)} / ${(g.heard.high * 100).toFixed(0)} % |`).join('\n')}
+
+## 会場が叩くドラム
+
+ドラムも会場が決める (イントロとブリッジは元のまま)。他の人の GitHub / 研究から借りた考え方 (コードは写さず独自実装):
+
+| 手法 (参考) | ドラムでの役割 |
+|---|---|
+| 小節と長さの違うループ = ポリメーター (Mutable Instruments Grids のユークリッドモード、pichenettes/eurorack・GPL-3 のため考え方のみ) | キックの周期 = 天井の高さ (m) × 1.5 個の 16分 (5〜17)。小節線をまたいでずれ続ける |
+| Rhythmicon (テルミンとカウエル、1931): 鳴る速さを周波数に比例させる | ハイハット/ライドの連符数 = 部屋の軸モードの比 (4·Lx/Lz、2·Lx/Ly)。16分の格子から外れる |
+| ずれていくシフトレジスタ (Music Thing Modular Turing Machine、TomWhitwell/TuringMachine・CC-BY-SA のため考え方のみ) | スネアのバックビートを前後にずらし、ゴーストを置く。ずれる確率 = 直前に部屋がどれだけ変形したか |
+| 鏡像音源法 (Allen & Berkley 1979) | 区間の最後のフィル = ドラムから聴き手への初期反射の到着時刻を引き伸ばしたもの。反射した壁でタムを選ぶ |
+
+| 区間 | キック (打/周期) | ハット連符 | ライド連符 | ずれ確率 | スネアがずれた回数 | エコーフィル |
+|---|---|---|---|---|---|---|
+${r.drummer.map((d) => `| ${d.section} | ${d.kickPulses}/${d.kickCycle} | ${d.hatTuplet} | ${d.rideTuplet} | ${d.slip} | ${d.displaced} | ${d.echoFill ? `${d.echoFill.hits} 打 ×${d.echoFill.stretch.toFixed(0)}` : '—'} |`).join('\n')}
 
 ### 変形の記録（抜粋）
 

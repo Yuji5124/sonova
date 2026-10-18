@@ -112,3 +112,30 @@ describe('rock versions of 002–004', () => {
     expect(a.song.derivations.some((d) => d.choice === 'bpm' && d.from === 'series')).toBe(true);
   });
 });
+
+describe('ROCK-SPACE room drummer', () => {
+  it('derives polymeter, tuplets and echo fills from the room, deterministically', async () => {
+    const { roomDrummer } = await import('@sonova/composition-engine');
+    const { generateRock } = await import('@sonova/music-generator');
+    const song = generateRock({ guitar: bark, drums: tower, voice: sunset }, 't');
+    const rooms = song.sections.map((s, g) => ({ section: s.name, room: { L: [10 + g * 0.4, 7 - g * 0.2, 3.6 + g * 0.35] as [number, number, number], absorption: 0.3 } }));
+    const a = roomDrummer(song, rooms, 't');
+    expect(roomDrummer(song, rooms, 't').events).toEqual(a.events);
+    // intro and bridge keep the original drums
+    for (const name of ['intro', 'bridge']) {
+      const sec = song.sections.find((s) => s.name === name)!;
+      const inSec = (e: { time: number }) => e.time >= sec.start - 1e-6 && e.time < sec.end - 1e-6;
+      expect(a.events.filter(inSec)).toEqual(song.events.filter((e) => e.part === 'drums' && inSec(e)));
+    }
+    // the kick loop grows with the ceiling and is never the bar length
+    const cycles = a.sections.map((s) => s.kickCycle);
+    expect(cycles[cycles.length - 1]).toBeGreaterThan(cycles[0]);
+    expect(cycles.every((c) => c % 4 !== 0)).toBe(true);
+    // cymbal tuplets fall off the 16th grid; echo fills exist
+    const slot = song.barSec / 16;
+    expect(a.events.filter((e) => e.kind === 'hit' && Math.abs(e.time / slot - Math.round(e.time / slot)) > 0.08).length).toBeGreaterThan(100);
+    expect(a.sections.filter((s) => s.echoFill).length).toBeGreaterThan(5);
+    // the crash that sets off the amp survives
+    expect(a.events.some((e) => e.drum === 'crash' && e.text === 'crash')).toBe(true);
+  });
+});
