@@ -24,7 +24,8 @@
     "s002": "tsx scripts/sonova-002.ts",
     "s003": "tsx scripts/sonova-003.ts",
     "s004": "tsx scripts/sonova-004.ts",
-    "rock:series": "tsx scripts/rock-series.ts"
+    "rock:series": "tsx scripts/rock-series.ts",
+    "xrock": "tsx scripts/xrock.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

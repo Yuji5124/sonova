@@ -296,3 +296,4 @@ export * from './series/grow.ts';
 export * from './series/heal.ts';
 export * from './series/space.ts';
 export * from './series/rock-series.ts';
+export * from './series/xrock.ts';
