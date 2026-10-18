@@ -1,0 +1,1111 @@
+{
+  "workNumber": "SONOVA-ROCK-HEAL-0001",
+  "title": "Broken Strings, Living Band",
+  "seed": "sonova-rock-heal-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "rock": "sonova-rock/1.0.0",
+    "rock_render": "sonova-rock-render/1.0.0",
+    "rock_series": "sonova-rock-series/1.0.0"
+  },
+  "band": {
+    "guitar": "inst-9c884039-187482",
+    "drums": "inst-87643426-187482",
+    "voice": "inst-a9dac2de-187482"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "bpm": 162,
+  "key": {
+    "root_pc": 0,
+    "mode": "aeolian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ]
+  },
+  "durationSec": 164.5,
+  "sections": [
+    {
+      "name": "intro",
+      "start": 0,
+      "bars": 4
+    },
+    {
+      "name": "riffA",
+      "start": 5.925926,
+      "bars": 4
+    },
+    {
+      "name": "verse1",
+      "start": 11.851852,
+      "bars": 8
+    },
+    {
+      "name": "pre1",
+      "start": 23.703704,
+      "bars": 4
+    },
+    {
+      "name": "chorus1",
+      "start": 29.62963,
+      "bars": 8
+    },
+    {
+      "name": "riffB",
+      "start": 41.481481,
+      "bars": 4
+    },
+    {
+      "name": "verse2",
+      "start": 47.407407,
+      "bars": 8
+    },
+    {
+      "name": "pre2",
+      "start": 59.259259,
+      "bars": 4
+    },
+    {
+      "name": "chorus2",
+      "start": 65.185185,
+      "bars": 8
+    },
+    {
+      "name": "bridge",
+      "start": 77.037037,
+      "bars": 8
+    },
+    {
+      "name": "solo",
+      "start": 88.888889,
+      "bars": 8
+    },
+    {
+      "name": "breakdown",
+      "start": 100.740741,
+      "bars": 4
+    },
+    {
+      "name": "riffA2",
+      "start": 106.666667,
+      "bars": 4
+    },
+    {
+      "name": "pre3",
+      "start": 112.592593,
+      "bars": 4
+    },
+    {
+      "name": "chorus3",
+      "start": 118.518519,
+      "bars": 8
+    },
+    {
+      "name": "chorus4",
+      "start": 130.37037,
+      "bars": 8
+    },
+    {
+      "name": "riffA3",
+      "start": 142.222222,
+      "bars": 4
+    },
+    {
+      "name": "outro",
+      "start": 148.148148,
+      "bars": 8
+    }
+  ],
+  "derivations": [
+    {
+      "choice": "key",
+      "value": "C minor",
+      "from": "bark.pitch_range.root_pc",
+      "rule": "ギターになった素材の主音。ロックなので自然短音階"
+    },
+    {
+      "choice": "bpm",
+      "value": 162,
+      "from": "series",
+      "rule": "ライブの勢い: 元のテンポ 145 の 1.12 倍"
+    },
+    {
+      "choice": "tuning",
+      "value": "drop C",
+      "from": "key",
+      "rule": "最低弦を主音に下げる (ドロップチューニング) と主音のパワーコードが最も重く鳴る"
+    },
+    {
+      "choice": "riff.hits",
+      "value": 10,
+      "from": "bark.rhythm.pulses",
+      "rule": "ギター素材のエッジ密度 (発音数) → リフの音数"
+    },
+    {
+      "choice": "drums.ca_rule",
+      "value": 150,
+      "from": "tower.resonance.amount",
+      "rule": "ドラム素材の反復の強さでセルオートマトンのルールを選ぶ"
+    },
+    {
+      "choice": "drums.ca_seed",
+      "value": "x...x...x...x...",
+      "from": "tower.rhythm",
+      "rule": "ドラム素材のユークリッドリズムを最初の世代にする"
+    },
+    {
+      "choice": "lead.slide",
+      "value": 0.6030936,
+      "from": "sunset.attack",
+      "rule": "ゆっくり立ち上がる素材ほどリードが音をつなげて (スライドで) 弾く"
+    }
+  ],
+  "render": {
+    "ms": 186601,
+    "stems": {
+      "guitarL": {
+        "gainDb": -8.9,
+        "samples": 7254450
+      },
+      "guitarR": {
+        "gainDb": -8.9,
+        "samples": 7254450
+      },
+      "bass": {
+        "gainDb": 7.1,
+        "samples": 7254450
+      },
+      "lead": {
+        "gainDb": 0,
+        "samples": 7254450
+      },
+      "drums": {
+        "gainDb": 1.5,
+        "samples": 7254450
+      }
+    },
+    "master": {
+      "inputPeak": 2.0663976669311523,
+      "inputRms": 0.1673909516427877,
+      "appliedGainDb": 3.025360431918555,
+      "maxReductionDb": -10.329638618862464,
+      "outputPeak": 0.8912509083747864
+    }
+  },
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 164.5,
+    "peakDbfs": -1,
+    "rmsDbfs": -13.452,
+    "clippedSamples": 0,
+    "dcOffset": -0.0000023,
+    "silences": [],
+    "silentRatio": 0,
+    "stereoCorrelation": 0.773
+  },
+  "wav": "output/rock-series/SONOVA-ROCK-HEAL-0001.wav",
+  "faults": [
+    {
+      "kind": "dropout",
+      "part": "guitar",
+      "section": "verse1",
+      "startBar": 11,
+      "bars": 4,
+      "story": "ギターのケーブルが抜ける"
+    },
+    {
+      "kind": "wrong",
+      "part": "lead",
+      "section": "chorus1",
+      "startBar": 22,
+      "bars": 3,
+      "story": "リードが半音ずれて弾く"
+    },
+    {
+      "kind": "dropout",
+      "part": "lead",
+      "section": "solo",
+      "startBar": 62,
+      "bars": 4,
+      "story": "ソロの途中でリードの弦が切れる"
+    },
+    {
+      "kind": "dropout",
+      "part": "bass",
+      "section": "chorus3",
+      "startBar": 81,
+      "bars": 4,
+      "story": "ベースのアンプが落ちる"
+    },
+    {
+      "kind": "wrong",
+      "part": "lead",
+      "section": "chorus4",
+      "startBar": 92,
+      "bars": 3,
+      "story": "最後のサビでリードがまた半音ずれる"
+    }
+  ],
+  "events": [
+    {
+      "bar": 11,
+      "time": 16.296,
+      "kind": "fault",
+      "part": "guitar",
+      "text": "ギターのケーブルが抜ける (4 小節、故障の注入)"
+    },
+    {
+      "bar": 11,
+      "time": 16.296,
+      "kind": "detect",
+      "part": "guitar",
+      "text": "guitar が聴こえない (基準より -83.4 dB)"
+    },
+    {
+      "bar": 12,
+      "time": 17.778,
+      "kind": "repair",
+      "part": "guitar",
+      "by": "lead",
+      "text": "リードギターがリフとコードを弾いて穴を埋める"
+    },
+    {
+      "bar": 15,
+      "time": 22.222,
+      "kind": "recover",
+      "part": "guitar",
+      "by": "lead",
+      "text": "guitar が戻ったのを聴いて lead は元の役に戻る"
+    },
+    {
+      "bar": 22,
+      "time": 32.593,
+      "kind": "fault",
+      "part": "lead",
+      "text": "リードが半音ずれて弾く (3 小節、故障の注入)"
+    },
+    {
+      "bar": 22,
+      "time": 32.593,
+      "kind": "detect",
+      "part": "lead",
+      "text": "リードの半音隣りが 18.6 dB 強い → E がずれている"
+    },
+    {
+      "bar": 23,
+      "time": 34.074,
+      "kind": "repair",
+      "part": "lead",
+      "by": "bass",
+      "text": "ベースが根音を C に変え、E を和音の音にする"
+    },
+    {
+      "bar": 25,
+      "time": 37.037,
+      "kind": "recover",
+      "part": "lead",
+      "by": "bass",
+      "text": "ずれが消えたのを聴いてベースは元の根音に戻る"
+    },
+    {
+      "bar": 62,
+      "time": 91.852,
+      "kind": "fault",
+      "part": "lead",
+      "text": "ソロの途中でリードの弦が切れる (4 小節、故障の注入)"
+    },
+    {
+      "bar": 63,
+      "time": 93.333,
+      "kind": "detect",
+      "part": "lead",
+      "text": "lead が聴こえない (基準より -100.4 dB)"
+    },
+    {
+      "bar": 64,
+      "time": 94.815,
+      "kind": "repair",
+      "part": "lead",
+      "by": "guitar",
+      "text": "リズムギターがリードのメロディを引き受ける"
+    },
+    {
+      "bar": 66,
+      "time": 97.778,
+      "kind": "recover",
+      "part": "lead",
+      "by": "guitar",
+      "text": "lead が戻ったのを聴いて guitar は元の役に戻る"
+    },
+    {
+      "bar": 81,
+      "time": 120,
+      "kind": "fault",
+      "part": "bass",
+      "text": "ベースのアンプが落ちる (4 小節、故障の注入)"
+    },
+    {
+      "bar": 81,
+      "time": 120,
+      "kind": "detect",
+      "part": "bass",
+      "text": "bass が聴こえない (基準より -90.4 dB)"
+    },
+    {
+      "bar": 82,
+      "time": 121.481,
+      "kind": "repair",
+      "part": "bass",
+      "by": "guitar",
+      "text": "ギターがベースラインを低い弦で弾く"
+    },
+    {
+      "bar": 85,
+      "time": 125.926,
+      "kind": "recover",
+      "part": "bass",
+      "by": "guitar",
+      "text": "bass が戻ったのを聴いて guitar は元の役に戻る"
+    },
+    {
+      "bar": 92,
+      "time": 136.296,
+      "kind": "fault",
+      "part": "lead",
+      "text": "最後のサビでリードがまた半音ずれる (3 小節、故障の注入)"
+    },
+    {
+      "bar": 92,
+      "time": 136.296,
+      "kind": "detect",
+      "part": "lead",
+      "text": "リードの半音隣りが 19.7 dB 強い → E がずれている"
+    },
+    {
+      "bar": 93,
+      "time": 137.778,
+      "kind": "repair",
+      "part": "lead",
+      "by": "bass",
+      "text": "ベースが根音を C に変え、E を和音の音にする"
+    },
+    {
+      "bar": 95,
+      "time": 140.741,
+      "kind": "recover",
+      "part": "lead",
+      "by": "bass",
+      "text": "ずれが消えたのを聴いてベースは元の根音に戻る"
+    }
+  ],
+  "health": [
+    {
+      "bar": 0,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 1,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 2,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 3,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 4,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 5,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 6,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 7,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 8,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 9,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 10,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 11,
+      "health": 0.667,
+      "missing": [
+        "guitar"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 12,
+      "health": 1,
+      "missing": [
+        "guitar"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 13,
+      "health": 1,
+      "missing": [
+        "guitar"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 14,
+      "health": 1,
+      "missing": [
+        "guitar"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 15,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 16,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 17,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 18,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 19,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 20,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 21,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 22,
+      "health": 0.6,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 23,
+      "health": 1,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 24,
+      "health": 1,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 25,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 26,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 27,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 28,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 29,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 30,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 31,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 32,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 33,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 34,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 35,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 36,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 37,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 38,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 39,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 40,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 41,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 42,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 43,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 44,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 45,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 46,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 47,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 48,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 49,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 50,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 51,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 52,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 53,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 54,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 55,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 56,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 57,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 58,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 59,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 60,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 61,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 62,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 63,
+      "health": 0.667,
+      "missing": [
+        "lead"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 64,
+      "health": 1,
+      "missing": [
+        "lead"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 65,
+      "health": 1,
+      "missing": [
+        "lead"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 66,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 67,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 68,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 69,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 70,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 71,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 72,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 73,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 74,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 75,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 76,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 77,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 78,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 79,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 80,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 81,
+      "health": 0.667,
+      "missing": [
+        "bass"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 82,
+      "health": 1,
+      "missing": [
+        "bass"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 83,
+      "health": 1,
+      "missing": [
+        "bass"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 84,
+      "health": 1,
+      "missing": [
+        "bass"
+      ],
+      "wrong": []
+    },
+    {
+      "bar": 85,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 86,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 87,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 88,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 89,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 90,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 91,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 92,
+      "health": 0.6,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 93,
+      "health": 1,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 94,
+      "health": 1,
+      "missing": [],
+      "wrong": [
+        "lead"
+      ]
+    },
+    {
+      "bar": 95,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 96,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 97,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 98,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 99,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 100,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 101,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 102,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 103,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 104,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 105,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 106,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "bar": 107,
+      "health": 1,
+      "missing": [],
+      "wrong": []
+    }
+  ]
+}

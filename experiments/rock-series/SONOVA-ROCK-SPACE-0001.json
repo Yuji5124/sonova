@@ -1,0 +1,1350 @@
+{
+  "workNumber": "SONOVA-ROCK-SPACE-0001",
+  "title": "The Room Is the Amp",
+  "seed": "sonova-rock-space-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "rock": "sonova-rock/1.0.0",
+    "rock_render": "sonova-rock-render/1.0.0",
+    "rock_series": "sonova-rock-series/1.0.0"
+  },
+  "band": {
+    "guitar": "inst-9c884039-187482",
+    "drums": "inst-87643426-187482",
+    "voice": "inst-a9dac2de-187482"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "bpm": 132,
+  "key": {
+    "root_pc": 1,
+    "mode": "aeolian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ]
+  },
+  "durationSec": 200.863636,
+  "sections": [
+    {
+      "name": "intro",
+      "start": 0,
+      "bars": 4
+    },
+    {
+      "name": "riffA",
+      "start": 7.272727,
+      "bars": 4
+    },
+    {
+      "name": "verse1",
+      "start": 14.545455,
+      "bars": 8
+    },
+    {
+      "name": "pre1",
+      "start": 29.090909,
+      "bars": 4
+    },
+    {
+      "name": "chorus1",
+      "start": 36.363636,
+      "bars": 8
+    },
+    {
+      "name": "riffB",
+      "start": 50.909091,
+      "bars": 4
+    },
+    {
+      "name": "verse2",
+      "start": 58.181818,
+      "bars": 8
+    },
+    {
+      "name": "pre2",
+      "start": 72.727273,
+      "bars": 4
+    },
+    {
+      "name": "chorus2",
+      "start": 80,
+      "bars": 8
+    },
+    {
+      "name": "bridge",
+      "start": 94.545455,
+      "bars": 8
+    },
+    {
+      "name": "solo",
+      "start": 109.090909,
+      "bars": 8
+    },
+    {
+      "name": "breakdown",
+      "start": 123.636364,
+      "bars": 4
+    },
+    {
+      "name": "riffA2",
+      "start": 130.909091,
+      "bars": 4
+    },
+    {
+      "name": "pre3",
+      "start": 138.181818,
+      "bars": 4
+    },
+    {
+      "name": "chorus3",
+      "start": 145.454545,
+      "bars": 8
+    },
+    {
+      "name": "chorus4",
+      "start": 160,
+      "bars": 8
+    },
+    {
+      "name": "riffA3",
+      "start": 174.545455,
+      "bars": 4
+    },
+    {
+      "name": "outro",
+      "start": 181.818182,
+      "bars": 8
+    }
+  ],
+  "derivations": [
+    {
+      "choice": "key",
+      "value": "C# minor",
+      "from": "series",
+      "rule": "会場の最低の共鳴モード 17.6 Hz に最も近い音 C#"
+    },
+    {
+      "choice": "bpm",
+      "value": 132,
+      "from": "series",
+      "rule": "16分音符 = 会場の幅 9.728 m を音が2往復する時間 (113 ms)"
+    },
+    {
+      "choice": "tuning",
+      "value": "drop C#",
+      "from": "key",
+      "rule": "最低弦を主音に下げる (ドロップチューニング) と主音のパワーコードが最も重く鳴る"
+    },
+    {
+      "choice": "riff.hits",
+      "value": 10,
+      "from": "bark.rhythm.pulses",
+      "rule": "ギター素材のエッジ密度 (発音数) → リフの音数"
+    },
+    {
+      "choice": "drums.ca_rule",
+      "value": 150,
+      "from": "tower.resonance.amount",
+      "rule": "ドラム素材の反復の強さでセルオートマトンのルールを選ぶ"
+    },
+    {
+      "choice": "drums.ca_seed",
+      "value": "x...x...x...x...",
+      "from": "tower.rhythm",
+      "rule": "ドラム素材のユークリッドリズムを最初の世代にする"
+    },
+    {
+      "choice": "lead.slide",
+      "value": 0.6030936,
+      "from": "sunset.attack",
+      "rule": "ゆっくり立ち上がる素材ほどリードが音をつなげて (スライドで) 弾く"
+    }
+  ],
+  "render": {
+    "ms": 191187,
+    "stems": {
+      "guitarL": {
+        "gainDb": -8.7,
+        "samples": 8858087
+      },
+      "guitarR": {
+        "gainDb": -8.9,
+        "samples": 8858087
+      },
+      "bass": {
+        "gainDb": 7.1,
+        "samples": 8858087
+      },
+      "lead": {
+        "gainDb": 0,
+        "samples": 8858087
+      },
+      "drums": {
+        "gainDb": 0.8,
+        "samples": 8858087
+      }
+    },
+    "master": {
+      "inputPeak": 1.0350584983825684,
+      "inputRms": 0.1442717447979701,
+      "appliedGainDb": 4.316374317761628,
+      "maxReductionDb": -5.61567187866485,
+      "outputPeak": 0.8912509083747864
+    }
+  },
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 200.864,
+    "peakDbfs": -1,
+    "rmsDbfs": -13.104,
+    "clippedSamples": 0,
+    "dcOffset": 0.000003427,
+    "silences": [],
+    "silentRatio": 0,
+    "stereoCorrelation": 0.622
+  },
+  "wav": "output/rock-series/SONOVA-ROCK-SPACE-0001.wav",
+  "rooms": [
+    {
+      "section": "intro",
+      "start": 0,
+      "room": {
+        "L": [
+          9.728,
+          7.461,
+          3.601
+        ],
+        "absorption": 0.303
+      },
+      "rt60": 0.516,
+      "lowestModeHz": 17.63,
+      "heard": {
+        "low": 0.002,
+        "mid": 0.952,
+        "high": 0.045
+      }
+    },
+    {
+      "section": "riffA",
+      "start": 7.272727,
+      "room": {
+        "L": [
+          9.728,
+          7.461,
+          3.601
+        ],
+        "absorption": 0.303
+      },
+      "rt60": 0.516,
+      "lowestModeHz": 17.63,
+      "heard": {
+        "low": 0.082,
+        "mid": 0.788,
+        "high": 0.13
+      }
+    },
+    {
+      "section": "verse1",
+      "start": 14.545455,
+      "room": {
+        "L": [
+          11.354,
+          6.005,
+          4.529
+        ],
+        "absorption": 0.277
+      },
+      "rt60": 0.611,
+      "lowestModeHz": 15.105,
+      "heard": {
+        "low": 0.1,
+        "mid": 0.783,
+        "high": 0.117
+      }
+    },
+    {
+      "section": "pre1",
+      "start": 29.090909,
+      "room": {
+        "L": [
+          12.324,
+          4.672,
+          4.925
+        ],
+        "absorption": 0.266
+      },
+      "rt60": 0.607,
+      "lowestModeHz": 13.916,
+      "heard": {
+        "low": 0.1,
+        "mid": 0.821,
+        "high": 0.079
+      }
+    },
+    {
+      "section": "chorus1",
+      "start": 36.363636,
+      "room": {
+        "L": [
+          13.938,
+          4.659,
+          4.791
+        ],
+        "absorption": 0.273
+      },
+      "rt60": 0.596,
+      "lowestModeHz": 12.304,
+      "heard": {
+        "low": 0.083,
+        "mid": 0.778,
+        "high": 0.139
+      }
+    },
+    {
+      "section": "riffB",
+      "start": 50.909091,
+      "room": {
+        "L": [
+          14.638,
+          4.085,
+          5.823
+        ],
+        "absorption": 0.253
+      },
+      "rt60": 0.656,
+      "lowestModeHz": 11.716,
+      "heard": {
+        "low": 0.077,
+        "mid": 0.801,
+        "high": 0.122
+      }
+    },
+    {
+      "section": "verse2",
+      "start": 58.181818,
+      "room": {
+        "L": [
+          14.943,
+          3.898,
+          6.374
+        ],
+        "absorption": 0.245
+      },
+      "rt60": 0.684,
+      "lowestModeHz": 11.477,
+      "heard": {
+        "low": 0.1,
+        "mid": 0.786,
+        "high": 0.114
+      }
+    },
+    {
+      "section": "pre2",
+      "start": 72.727273,
+      "room": {
+        "L": [
+          15.162,
+          3.435,
+          6.361
+        ],
+        "absorption": 0.241
+      },
+      "rt60": 0.649,
+      "lowestModeHz": 11.311,
+      "heard": {
+        "low": 0.107,
+        "mid": 0.806,
+        "high": 0.087
+      }
+    },
+    {
+      "section": "chorus2",
+      "start": 80,
+      "room": {
+        "L": [
+          16.563,
+          3.46,
+          6.05
+        ],
+        "absorption": 0.249
+      },
+      "rt60": 0.628,
+      "lowestModeHz": 10.354,
+      "heard": {
+        "low": 0.072,
+        "mid": 0.781,
+        "high": 0.147
+      }
+    },
+    {
+      "section": "bridge",
+      "start": 94.545455,
+      "room": {
+        "L": [
+          16.436,
+          3.207,
+          7.168
+        ],
+        "absorption": 0.23
+      },
+      "rt60": 0.683,
+      "lowestModeHz": 10.434,
+      "heard": {
+        "low": 0.077,
+        "mid": 0.843,
+        "high": 0.08
+      }
+    },
+    {
+      "section": "solo",
+      "start": 109.090909,
+      "room": {
+        "L": [
+          15.507,
+          3.292,
+          6.022
+        ],
+        "absorption": 0.242
+      },
+      "rt60": 0.623,
+      "lowestModeHz": 11.06,
+      "heard": {
+        "low": 0.071,
+        "mid": 0.784,
+        "high": 0.145
+      }
+    },
+    {
+      "section": "breakdown",
+      "start": 123.636364,
+      "room": {
+        "L": [
+          15.283,
+          3.057,
+          6.987
+        ],
+        "absorption": 0.225
+      },
+      "rt60": 0.668,
+      "lowestModeHz": 11.222,
+      "heard": {
+        "low": 0.086,
+        "mid": 0.797,
+        "high": 0.117
+      }
+    },
+    {
+      "section": "riffA2",
+      "start": 130.909091,
+      "room": {
+        "L": [
+          14.903,
+          3,
+          6.922
+        ],
+        "absorption": 0.222
+      },
+      "rt60": 0.665,
+      "lowestModeHz": 11.508,
+      "heard": {
+        "low": 0.09,
+        "mid": 0.78,
+        "high": 0.13
+      }
+    },
+    {
+      "section": "pre3",
+      "start": 138.181818,
+      "room": {
+        "L": [
+          15.507,
+          3,
+          7.618
+        ],
+        "absorption": 0.214
+      },
+      "rt60": 0.711,
+      "lowestModeHz": 11.06,
+      "heard": {
+        "low": 0.105,
+        "mid": 0.811,
+        "high": 0.083
+      }
+    },
+    {
+      "section": "chorus3",
+      "start": 145.454545,
+      "room": {
+        "L": [
+          16.91,
+          3.145,
+          7.011
+        ],
+        "absorption": 0.225
+      },
+      "rt60": 0.688,
+      "lowestModeHz": 10.142,
+      "heard": {
+        "low": 0.076,
+        "mid": 0.773,
+        "high": 0.15
+      }
+    },
+    {
+      "section": "chorus4",
+      "start": 160,
+      "room": {
+        "L": [
+          16.92,
+          3,
+          8.251
+        ],
+        "absorption": 0.208
+      },
+      "rt60": 0.753,
+      "lowestModeHz": 10.136,
+      "heard": {
+        "low": 0.071,
+        "mid": 0.778,
+        "high": 0.152
+      }
+    },
+    {
+      "section": "riffA3",
+      "start": 174.545455,
+      "room": {
+        "L": [
+          16.694,
+          3,
+          9.642
+        ],
+        "absorption": 0.193
+      },
+      "rt60": 0.839,
+      "lowestModeHz": 10.273,
+      "heard": {
+        "low": 0.083,
+        "mid": 0.787,
+        "high": 0.13
+      }
+    },
+    {
+      "section": "outro",
+      "start": 181.818182,
+      "room": {
+        "L": [
+          16.959,
+          3,
+          10.353
+        ],
+        "absorption": 0.187
+      },
+      "rt60": 0.881,
+      "lowestModeHz": 10.113,
+      "heard": {
+        "low": 0.083,
+        "mid": 0.794,
+        "high": 0.122
+      }
+    }
+  ],
+  "changes": [
+    {
+      "section": "riffA",
+      "param": "Lx",
+      "from": 9.728,
+      "to": 11.354,
+      "cause": "riffA の 低/中/高 = 8/79/13%、音量 4.4 dB (平均比)"
+    },
+    {
+      "section": "riffA",
+      "param": "Ly",
+      "from": 7.461,
+      "to": 6.005,
+      "cause": "riffA の 低/中/高 = 8/79/13%、音量 4.4 dB (平均比)"
+    },
+    {
+      "section": "riffA",
+      "param": "Lz",
+      "from": 3.601,
+      "to": 4.529,
+      "cause": "riffA の 低/中/高 = 8/79/13%、音量 4.4 dB (平均比)"
+    },
+    {
+      "section": "riffA",
+      "param": "absorption",
+      "from": 0.303,
+      "to": 0.277,
+      "cause": "riffA の 低/中/高 = 8/79/13%、音量 4.4 dB (平均比)"
+    },
+    {
+      "section": "verse1",
+      "param": "Lx",
+      "from": 11.354,
+      "to": 12.324,
+      "cause": "verse1 の 低/中/高 = 10/78/12%、音量 -2.0 dB (平均比)"
+    },
+    {
+      "section": "verse1",
+      "param": "Ly",
+      "from": 6.005,
+      "to": 4.672,
+      "cause": "verse1 の 低/中/高 = 10/78/12%、音量 -2.0 dB (平均比)"
+    },
+    {
+      "section": "verse1",
+      "param": "Lz",
+      "from": 4.529,
+      "to": 4.925,
+      "cause": "verse1 の 低/中/高 = 10/78/12%、音量 -2.0 dB (平均比)"
+    },
+    {
+      "section": "verse1",
+      "param": "absorption",
+      "from": 0.277,
+      "to": 0.266,
+      "cause": "verse1 の 低/中/高 = 10/78/12%、音量 -2.0 dB (平均比)"
+    },
+    {
+      "section": "pre1",
+      "param": "Lx",
+      "from": 12.324,
+      "to": 13.938,
+      "cause": "pre1 の 低/中/高 = 10/82/8%、音量 2.3 dB (平均比)"
+    },
+    {
+      "section": "pre1",
+      "param": "Ly",
+      "from": 4.672,
+      "to": 4.659,
+      "cause": "pre1 の 低/中/高 = 10/82/8%、音量 2.3 dB (平均比)"
+    },
+    {
+      "section": "pre1",
+      "param": "Lz",
+      "from": 4.925,
+      "to": 4.791,
+      "cause": "pre1 の 低/中/高 = 10/82/8%、音量 2.3 dB (平均比)"
+    },
+    {
+      "section": "pre1",
+      "param": "absorption",
+      "from": 0.266,
+      "to": 0.273,
+      "cause": "pre1 の 低/中/高 = 10/82/8%、音量 2.3 dB (平均比)"
+    },
+    {
+      "section": "chorus1",
+      "param": "Lx",
+      "from": 13.938,
+      "to": 14.638,
+      "cause": "chorus1 の 低/中/高 = 8/78/14%、音量 2.9 dB (平均比)"
+    },
+    {
+      "section": "chorus1",
+      "param": "Ly",
+      "from": 4.659,
+      "to": 4.085,
+      "cause": "chorus1 の 低/中/高 = 8/78/14%、音量 2.9 dB (平均比)"
+    },
+    {
+      "section": "chorus1",
+      "param": "Lz",
+      "from": 4.791,
+      "to": 5.823,
+      "cause": "chorus1 の 低/中/高 = 8/78/14%、音量 2.9 dB (平均比)"
+    },
+    {
+      "section": "chorus1",
+      "param": "absorption",
+      "from": 0.273,
+      "to": 0.253,
+      "cause": "chorus1 の 低/中/高 = 8/78/14%、音量 2.9 dB (平均比)"
+    },
+    {
+      "section": "riffB",
+      "param": "Lx",
+      "from": 14.638,
+      "to": 14.943,
+      "cause": "riffB の 低/中/高 = 8/80/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "riffB",
+      "param": "Ly",
+      "from": 4.085,
+      "to": 3.898,
+      "cause": "riffB の 低/中/高 = 8/80/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "riffB",
+      "param": "Lz",
+      "from": 5.823,
+      "to": 6.374,
+      "cause": "riffB の 低/中/高 = 8/80/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "riffB",
+      "param": "absorption",
+      "from": 0.253,
+      "to": 0.245,
+      "cause": "riffB の 低/中/高 = 8/80/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "verse2",
+      "param": "Lx",
+      "from": 14.943,
+      "to": 15.162,
+      "cause": "verse2 の 低/中/高 = 10/79/11%、音量 -2.6 dB (平均比)"
+    },
+    {
+      "section": "verse2",
+      "param": "Ly",
+      "from": 3.898,
+      "to": 3.435,
+      "cause": "verse2 の 低/中/高 = 10/79/11%、音量 -2.6 dB (平均比)"
+    },
+    {
+      "section": "verse2",
+      "param": "Lz",
+      "from": 6.374,
+      "to": 6.361,
+      "cause": "verse2 の 低/中/高 = 10/79/11%、音量 -2.6 dB (平均比)"
+    },
+    {
+      "section": "verse2",
+      "param": "absorption",
+      "from": 0.245,
+      "to": 0.241,
+      "cause": "verse2 の 低/中/高 = 10/79/11%、音量 -2.6 dB (平均比)"
+    },
+    {
+      "section": "pre2",
+      "param": "Lx",
+      "from": 15.162,
+      "to": 16.563,
+      "cause": "pre2 の 低/中/高 = 11/81/9%、音量 1.1 dB (平均比)"
+    },
+    {
+      "section": "pre2",
+      "param": "Ly",
+      "from": 3.435,
+      "to": 3.46,
+      "cause": "pre2 の 低/中/高 = 11/81/9%、音量 1.1 dB (平均比)"
+    },
+    {
+      "section": "pre2",
+      "param": "Lz",
+      "from": 6.361,
+      "to": 6.05,
+      "cause": "pre2 の 低/中/高 = 11/81/9%、音量 1.1 dB (平均比)"
+    },
+    {
+      "section": "pre2",
+      "param": "absorption",
+      "from": 0.241,
+      "to": 0.249,
+      "cause": "pre2 の 低/中/高 = 11/81/9%、音量 1.1 dB (平均比)"
+    },
+    {
+      "section": "chorus2",
+      "param": "Lx",
+      "from": 16.563,
+      "to": 16.436,
+      "cause": "chorus2 の 低/中/高 = 7/78/15%、音量 2.2 dB (平均比)"
+    },
+    {
+      "section": "chorus2",
+      "param": "Ly",
+      "from": 3.46,
+      "to": 3.207,
+      "cause": "chorus2 の 低/中/高 = 7/78/15%、音量 2.2 dB (平均比)"
+    },
+    {
+      "section": "chorus2",
+      "param": "Lz",
+      "from": 6.05,
+      "to": 7.168,
+      "cause": "chorus2 の 低/中/高 = 7/78/15%、音量 2.2 dB (平均比)"
+    },
+    {
+      "section": "chorus2",
+      "param": "absorption",
+      "from": 0.249,
+      "to": 0.23,
+      "cause": "chorus2 の 低/中/高 = 7/78/15%、音量 2.2 dB (平均比)"
+    },
+    {
+      "section": "bridge",
+      "param": "Lx",
+      "from": 16.436,
+      "to": 15.507,
+      "cause": "bridge の 低/中/高 = 8/84/8%、音量 -4.5 dB (平均比)"
+    },
+    {
+      "section": "bridge",
+      "param": "Ly",
+      "from": 3.207,
+      "to": 3.292,
+      "cause": "bridge の 低/中/高 = 8/84/8%、音量 -4.5 dB (平均比)"
+    },
+    {
+      "section": "bridge",
+      "param": "Lz",
+      "from": 7.168,
+      "to": 6.022,
+      "cause": "bridge の 低/中/高 = 8/84/8%、音量 -4.5 dB (平均比)"
+    },
+    {
+      "section": "bridge",
+      "param": "absorption",
+      "from": 0.23,
+      "to": 0.242,
+      "cause": "bridge の 低/中/高 = 8/84/8%、音量 -4.5 dB (平均比)"
+    },
+    {
+      "section": "solo",
+      "param": "Lx",
+      "from": 15.507,
+      "to": 15.283,
+      "cause": "solo の 低/中/高 = 7/78/14%、音量 1.5 dB (平均比)"
+    },
+    {
+      "section": "solo",
+      "param": "Ly",
+      "from": 3.292,
+      "to": 3.057,
+      "cause": "solo の 低/中/高 = 7/78/14%、音量 1.5 dB (平均比)"
+    },
+    {
+      "section": "solo",
+      "param": "Lz",
+      "from": 6.022,
+      "to": 6.987,
+      "cause": "solo の 低/中/高 = 7/78/14%、音量 1.5 dB (平均比)"
+    },
+    {
+      "section": "solo",
+      "param": "absorption",
+      "from": 0.242,
+      "to": 0.225,
+      "cause": "solo の 低/中/高 = 7/78/14%、音量 1.5 dB (平均比)"
+    },
+    {
+      "section": "breakdown",
+      "param": "Lx",
+      "from": 15.283,
+      "to": 14.903,
+      "cause": "breakdown の 低/中/高 = 9/80/12%、音量 -2.5 dB (平均比)"
+    },
+    {
+      "section": "breakdown",
+      "param": "Ly",
+      "from": 3.057,
+      "to": 3,
+      "cause": "breakdown の 低/中/高 = 9/80/12%、音量 -2.5 dB (平均比)"
+    },
+    {
+      "section": "breakdown",
+      "param": "Lz",
+      "from": 6.987,
+      "to": 6.922,
+      "cause": "breakdown の 低/中/高 = 9/80/12%、音量 -2.5 dB (平均比)"
+    },
+    {
+      "section": "breakdown",
+      "param": "absorption",
+      "from": 0.225,
+      "to": 0.222,
+      "cause": "breakdown の 低/中/高 = 9/80/12%、音量 -2.5 dB (平均比)"
+    },
+    {
+      "section": "riffA2",
+      "param": "Lx",
+      "from": 14.903,
+      "to": 15.507,
+      "cause": "riffA2 の 低/中/高 = 9/78/13%、音量 1.9 dB (平均比)"
+    },
+    {
+      "section": "riffA2",
+      "param": "Lz",
+      "from": 6.922,
+      "to": 7.618,
+      "cause": "riffA2 の 低/中/高 = 9/78/13%、音量 1.9 dB (平均比)"
+    },
+    {
+      "section": "riffA2",
+      "param": "absorption",
+      "from": 0.222,
+      "to": 0.214,
+      "cause": "riffA2 の 低/中/高 = 9/78/13%、音量 1.9 dB (平均比)"
+    },
+    {
+      "section": "pre3",
+      "param": "Lx",
+      "from": 15.507,
+      "to": 16.91,
+      "cause": "pre3 の 低/中/高 = 11/81/8%、音量 1.2 dB (平均比)"
+    },
+    {
+      "section": "pre3",
+      "param": "Ly",
+      "from": 3,
+      "to": 3.145,
+      "cause": "pre3 の 低/中/高 = 11/81/8%、音量 1.2 dB (平均比)"
+    },
+    {
+      "section": "pre3",
+      "param": "Lz",
+      "from": 7.618,
+      "to": 7.011,
+      "cause": "pre3 の 低/中/高 = 11/81/8%、音量 1.2 dB (平均比)"
+    },
+    {
+      "section": "pre3",
+      "param": "absorption",
+      "from": 0.214,
+      "to": 0.225,
+      "cause": "pre3 の 低/中/高 = 11/81/8%、音量 1.2 dB (平均比)"
+    },
+    {
+      "section": "chorus3",
+      "param": "Lx",
+      "from": 16.91,
+      "to": 16.92,
+      "cause": "chorus3 の 低/中/高 = 8/77/15%、音量 2.1 dB (平均比)"
+    },
+    {
+      "section": "chorus3",
+      "param": "Ly",
+      "from": 3.145,
+      "to": 3,
+      "cause": "chorus3 の 低/中/高 = 8/77/15%、音量 2.1 dB (平均比)"
+    },
+    {
+      "section": "chorus3",
+      "param": "Lz",
+      "from": 7.011,
+      "to": 8.251,
+      "cause": "chorus3 の 低/中/高 = 8/77/15%、音量 2.1 dB (平均比)"
+    },
+    {
+      "section": "chorus3",
+      "param": "absorption",
+      "from": 0.225,
+      "to": 0.208,
+      "cause": "chorus3 の 低/中/高 = 8/77/15%、音量 2.1 dB (平均比)"
+    },
+    {
+      "section": "chorus4",
+      "param": "Lx",
+      "from": 16.92,
+      "to": 16.694,
+      "cause": "chorus4 の 低/中/高 = 7/78/15%、音量 2.0 dB (平均比)"
+    },
+    {
+      "section": "chorus4",
+      "param": "Lz",
+      "from": 8.251,
+      "to": 9.642,
+      "cause": "chorus4 の 低/中/高 = 7/78/15%、音量 2.0 dB (平均比)"
+    },
+    {
+      "section": "chorus4",
+      "param": "absorption",
+      "from": 0.208,
+      "to": 0.193,
+      "cause": "chorus4 の 低/中/高 = 7/78/15%、音量 2.0 dB (平均比)"
+    },
+    {
+      "section": "riffA3",
+      "param": "Lx",
+      "from": 16.694,
+      "to": 16.959,
+      "cause": "riffA3 の 低/中/高 = 8/79/13%、音量 1.4 dB (平均比)"
+    },
+    {
+      "section": "riffA3",
+      "param": "Lz",
+      "from": 9.642,
+      "to": 10.353,
+      "cause": "riffA3 の 低/中/高 = 8/79/13%、音量 1.4 dB (平均比)"
+    },
+    {
+      "section": "riffA3",
+      "param": "absorption",
+      "from": 0.193,
+      "to": 0.187,
+      "cause": "riffA3 の 低/中/高 = 8/79/13%、音量 1.4 dB (平均比)"
+    },
+    {
+      "section": "outro",
+      "param": "Lx",
+      "from": 16.959,
+      "to": 17.356,
+      "cause": "outro の 低/中/高 = 8/79/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "outro",
+      "param": "Lz",
+      "from": 10.353,
+      "to": 10.825,
+      "cause": "outro の 低/中/高 = 8/79/12%、音量 1.6 dB (平均比)"
+    },
+    {
+      "section": "outro",
+      "param": "absorption",
+      "from": 0.187,
+      "to": 0.185,
+      "cause": "outro の 低/中/高 = 8/79/12%、音量 1.6 dB (平均比)"
+    }
+  ],
+  "microtonalLead": 324,
+  "drummer": [
+    {
+      "section": "riffA",
+      "kickCycle": 5,
+      "kickPulses": 2,
+      "hatTuplet": 11,
+      "rideTuplet": 3,
+      "slip": 0.05,
+      "register": "1101010011100011",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 20.925
+      },
+      "reasons": [
+        "キックは 16分 5 個の周期に 2 打 (天井の高さ 3.60 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 11 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.05 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 21 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "verse1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 10,
+      "rideTuplet": 4,
+      "slip": 0.6,
+      "register": "1101101100110110",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 16.19
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.53 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.6 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 16 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 10,
+      "rideTuplet": 5,
+      "slip": 0.428,
+      "register": "0010100001110000",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 14.249
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.92 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.428 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 14 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus1",
+      "kickCycle": 7,
+      "kickPulses": 3,
+      "hatTuplet": 12,
+      "rideTuplet": 6,
+      "slip": 0.182,
+      "register": "1010010101001101",
+      "displaced": 5,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 12.424
+      },
+      "reasons": [
+        "キックは 16分 7 個の周期に 3 打 (天井の高さ 4.79 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 6 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.182 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 12 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffB",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 7,
+      "slip": 0.449,
+      "register": "0000110100010101",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 9,
+        "stretch": 11.632
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 5.82 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.449 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 9 本を 12 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "verse2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 8,
+      "slip": 0.185,
+      "register": "0110110101110000",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.331
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.37 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.185 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 9,
+      "slip": 0.147,
+      "register": "0000010111100001",
+      "displaced": 1,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.051
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.36 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 10 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.147 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus2",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 11,
+      "rideTuplet": 10,
+      "slip": 0.173,
+      "register": "1100111100100001",
+      "displaced": 6,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 10.06
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 6.05 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 10 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.173 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "solo",
+      "kickCycle": 9,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 9,
+      "slip": 0.279,
+      "register": "0101010100111101",
+      "displaced": 8,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 10.758
+      },
+      "reasons": [
+        "キックは 16分 9 個の周期に 4 打 (天井の高さ 6.02 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 9 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.279 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "breakdown",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 10,
+      "slip": 0.297,
+      "register": "1000111000001010",
+      "displaced": 0,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 10.877
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.99 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.297 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffA2",
+      "kickCycle": 10,
+      "kickPulses": 4,
+      "hatTuplet": 9,
+      "rideTuplet": 10,
+      "slip": 0.062,
+      "register": "1111011000011111",
+      "displaced": 5,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 11.159
+      },
+      "reasons": [
+        "キックは 16分 10 個の周期に 4 打 (天井の高さ 6.92 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 9 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.062 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "pre3",
+      "kickCycle": 11,
+      "kickPulses": 4,
+      "hatTuplet": 8,
+      "rideTuplet": 10,
+      "slip": 0.165,
+      "register": "0110101100011000",
+      "displaced": 2,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 10.698
+      },
+      "reasons": [
+        "キックは 16分 11 個の周期に 4 打 (天井の高さ 7.62 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 8 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.165 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 11 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus3",
+      "kickCycle": 11,
+      "kickPulses": 4,
+      "hatTuplet": 10,
+      "rideTuplet": 11,
+      "slip": 0.251,
+      "register": "0000000110000111",
+      "displaced": 4,
+      "echoFill": {
+        "hits": 8,
+        "stretch": 9.785
+      },
+      "reasons": [
+        "キックは 16分 11 個の周期に 4 打 (天井の高さ 7.01 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 11 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.251 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 8 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "chorus4",
+      "kickCycle": 13,
+      "kickPulses": 5,
+      "hatTuplet": 8,
+      "rideTuplet": 11,
+      "slip": 0.275,
+      "register": "0011011101101111",
+      "displaced": 8,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.754
+      },
+      "reasons": [
+        "キックは 16分 13 個の周期に 5 打 (天井の高さ 8.25 m × 1.5)、小節線をまたいでずれていく",
+        "ライドは 1 小節 11 連 (幅と奥行きのモード比 2·Lx/Ly)",
+        "スネアのずれの確率 0.275 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "riffA3",
+      "kickCycle": 14,
+      "kickPulses": 6,
+      "hatTuplet": 7,
+      "rideTuplet": 11,
+      "slip": 0.227,
+      "register": "0000010110100100",
+      "displaced": 1,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.894
+      },
+      "reasons": [
+        "キックは 16分 14 個の周期に 6 打 (天井の高さ 9.64 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 7 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.227 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    },
+    {
+      "section": "outro",
+      "kickCycle": 17,
+      "kickPulses": 7,
+      "hatTuplet": 7,
+      "rideTuplet": 11,
+      "slip": 0.108,
+      "register": "1110100000101010",
+      "displaced": 3,
+      "echoFill": {
+        "hits": 7,
+        "stretch": 9.73
+      },
+      "reasons": [
+        "キックは 16分 17 個の周期に 7 打 (天井の高さ 10.35 m × 1.5)、小節線をまたいでずれていく",
+        "ハイハットは 1 小節 7 連 (幅と高さのモード比 4·Lx/Lz)",
+        "スネアのずれの確率 0.108 (部屋が直前にどれだけ変形したか)",
+        "フィル = 会場の初期反射 7 本を 10 倍に引き伸ばしたもの"
+      ]
+    }
+  ]
+}

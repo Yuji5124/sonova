@@ -292,3 +292,7 @@ export function structureDoc(arr: Arrangement, gen: GeneratorResult): StructureD
 }
 
 const round = (v: number) => Math.round(v * 1000) / 1000;
+export * from './series/grow.ts';
+export * from './series/heal.ts';
+export * from './series/space.ts';
+export * from './series/rock-series.ts';

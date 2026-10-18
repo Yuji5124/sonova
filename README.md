@@ -19,7 +19,11 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | 2 | 3 楽器の相互作用で 30 秒 × 3 候補 | ✅ |
 | 3 | WAV・JSON 生成、SOUNDVAULT への登録と再生確認 | ✅ ローカルで登録・再生確認済み / ⏸ GitHub 上の SOUNDVAULT への反映は承認待ち |
 | 6 (先行) | ロック寄りの完成曲 **SONOVA-ROCK-0001**（3分03秒）。他の人の GitHub から珍しい手法を調査して独自実装 | ✅ [experiments/rock/REPORT.md](experiments/rock/REPORT.md)、調査 [research/github-survey-rock.md](research/github-survey-rock.md) |
-| 4, 5, 7 | 3D・文章・コード、90 秒、シリーズ化 | 未着手 (設計のみ) |
+| SONOVA 002 | **音が楽器を育てる** — 演奏するほど楽器の共鳴構造が進化する (SONOVA-GROW-0001, 83秒) | ✅ [experiments/s002/REPORT.md](experiments/s002/REPORT.md) |
+| SONOVA 003 | **音楽が自分を修復する** — 欠落・不協和を聴いて検知し、別の楽器が補う (SONOVA-HEAL-0001, 81秒、修復なし版つき) | ✅ [experiments/s003/REPORT.md](experiments/s003/REPORT.md) |
+| SONOVA 004 | **音が空間を作る** — 部屋の共鳴モードが音を決め、音が部屋を変形させる (SONOVA-SPACE-0001, 77秒、glTF アニメーション) | ✅ [experiments/s004/REPORT.md](experiments/s004/REPORT.md) |
+| ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
+| 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 
 結果: [experiments/REPORT.md](experiments/REPORT.md) / 評価: [docs/evaluation-phase0-3.md](docs/evaluation-phase0-3.md)
 
@@ -53,6 +57,34 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 npm run rock          # 約2分で output/rock/SONOVA-ROCK-0001.wav / .mid、experiments/rock/*.json と REPORT.md
 ```
 
+### SONOVA 002–004
+
+| 作品 | 原理 | 何が何を変えるか |
+|---|---|---|
+| SONOVA-GROW-0001 | 音が楽器を育てる | 外壁の画像から作った共鳴板 (24 モード) が、自分の鳴り方を聴いて育つ。よく鳴ったモードは長く響き、弾かれた音程へ調律され、鳴らないモードは死んで「聴こえたのに楽器になかった周波数」で生まれ直す。次の旋律は板の強いモードから選ぶ |
+| SONOVA-HEAL-0001 | 音楽が自分を修復する | 聴き手が毎小節の**実際の音声**を楽譜と照らして聴き (楽譜追従・自分の修復音は差し引く)、欠落なら別の楽器が役を引き受け、半音ずれならベースが根音を変えて「間違った音を和音の音にする」。戻ったのを聴いたら補完をやめる |
+| SONOVA-SPACE-0001 | 音が空間を作る | 部屋の共鳴モードがそのまま (微分音の) 音高に、初期反射の到着時刻がリズムになる。聴こえた低・中・高音と明るさで部屋の形・体積・壁の硬さが変わる。部屋の変形は glTF で書き出し |
+
+```bash
+npm run s002 && npm run s003 && npm run s004   # 合計約2分
+```
+
+聴き手の道具 (帯域エネルギー、楽譜の音高のエネルギー、スペクトルのピーク、Plomp–Levelt/Sethares の粗さ) は `packages/source-analyzer/src/listen.ts`、各作品は `packages/composition-engine/src/series/`。同じシードで 2 回レンダリングしてすべての WAV がバイト単位で一致することを確認済み。
+
+### ロック版 SONOVA 002–004
+
+SONOVA-ROCK-0001 のバンド（ギター ← 木の年輪、ドラム ← 外壁、ベースとリード ← 夕焼け）で、002–004 の原理をそれぞれ 1 曲にした。
+
+| 作品 | 曲 | 原理がロックでどう働くか |
+|---|---|---|
+| [SONOVA-ROCK-GROW-0001](experiments/rock-series/SONOVA-ROCK-GROW-0001.md) | *Grown in the Feedback* — 116 BPM（重く遅く）、C minor | アンプの後ろの共鳴板（外壁の画像から）が区間ごとにギターとベースを聴いて育つ。次の区間のリードは板の強いモードの音程で弾く |
+| [SONOVA-ROCK-HEAL-0001](experiments/rock-series/SONOVA-ROCK-HEAL-0001.md) | *Broken Strings, Living Band* — 162 BPM（ライブの勢い）、C minor | ケーブル抜け・リードの半音ずれ・弦切れ・ベースアンプ落ちを、モニターエンジニアのように各チャンネルの音を聴いて検知し、他のメンバーが補う。修復なし版つき |
+| [SONOVA-ROCK-SPACE-0001](experiments/rock-series/SONOVA-ROCK-SPACE-0001.md) | *The Room Is the Amp* — 132 BPM、C# minor | 会場の最低モードがキー、会場の幅の往復時間がテンポ。リードは会場のモードに吸い寄せられて微分音になり、バンドの音で会場が細長いホールへ変形する。**ドラムも会場が叩く**: 天井の高さで周期が決まるポリメーターのキック、部屋のモード比の連符 (Rhythmicon)、部屋の変形量でずれるスネア (Turing Machine)、初期反射を引き伸ばしたフィル |
+
+```bash
+npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space を引数で 1 曲だけ
+```
+
 ## 使い方
 
 Node.js 22.12 以上（Windows / macOS / Linux）。
@@ -60,7 +92,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 43 テスト
+npm test             # 52 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

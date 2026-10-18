@@ -20,7 +20,11 @@
     "soundvault:register": "tsx scripts/soundvault-register.ts",
     "soundvault:verify": "tsx scripts/soundvault-verify.ts",
     "verify:lab": "tsx scripts/verify-lab-browser.ts",
-    "rock": "tsx scripts/rock.ts"
+    "rock": "tsx scripts/rock.ts",
+    "s002": "tsx scripts/sonova-002.ts",
+    "s003": "tsx scripts/sonova-003.ts",
+    "s004": "tsx scripts/sonova-004.ts",
+    "rock:series": "tsx scripts/rock-series.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

@@ -107,16 +107,23 @@ const NATURAL_MINOR = [0, 2, 3, 5, 7, 8, 10];
 const PENTA = [0, 3, 5, 7, 10];
 const CA_RULES = [30, 45, 73, 90, 105, 110, 150, 54];
 
-export function generateRock(dnas: { guitar: InstrumentDNA; drums: InstrumentDNA; voice: InstrumentDNA }, seed: string, title = 'Everything Is an Amplifier'): RockSong {
+export interface RockOptions {
+  /** Override the derived tempo (recorded as a derivation). */
+  bpm?: { value: number; reason: string };
+  /** Override the key (pitch class), e.g. chosen by a room's lowest mode. */
+  rootPc?: { value: number; reason: string };
+}
+
+export function generateRock(dnas: { guitar: InstrumentDNA; drums: InstrumentDNA; voice: InstrumentDNA }, seed: string, title = 'Everything Is an Amplifier', opts: RockOptions = {}): RockSong {
   const { guitar: g, drums: d, voice: v } = dnas;
   const rng = new Rng(`rock:${seed}:${g.dna_hash}:${d.dna_hash}:${v.dna_hash}`);
   const derivations: Derivation[] = [];
   const derive = (choice: string, value: string | number, from: string, rule: string) => derivations.push({ choice, value, from, rule });
 
-  const rootPc = g.pitch_range.root_pc;
-  derive('key', `${['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'][rootPc]} minor`, `${g.name}.pitch_range.root_pc`, 'ギターになった素材の主音。ロックなので自然短音階');
-  const bpm = Math.round(clamp(118 + 22 * g.interaction_rules.emission + 6 * d.resonance.amount, 110, 168));
-  derive('bpm', bpm, `${g.name}.interaction_rules.emission, ${d.name}.resonance.amount`, '働きかけの強い素材ほど速く、共鳴する素材がドライブ感を足す');
+  const rootPc = opts.rootPc?.value ?? g.pitch_range.root_pc;
+  derive('key', `${['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'][rootPc]} minor`, opts.rootPc ? 'series' : `${g.name}.pitch_range.root_pc`, opts.rootPc?.reason ?? 'ギターになった素材の主音。ロックなので自然短音階');
+  const bpm = opts.bpm?.value ?? Math.round(clamp(118 + 22 * g.interaction_rules.emission + 6 * d.resonance.amount, 110, 168));
+  derive('bpm', bpm, opts.bpm ? 'series' : `${g.name}.interaction_rules.emission, ${d.name}.resonance.amount`, opts.bpm?.reason ?? '働きかけの強い素材ほど速く、共鳴する素材がドライブ感を足す');
   const barSec = (60 / bpm) * 4;
   const slotSec = barSec / 16;
   // Drop tuning: lowest string = the key's root in octave 2 (C2 for C, D2 for D …).

@@ -1,0 +1,4675 @@
+{
+  "workNumber": "SONOVA-HEAL-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "heal": "sonova-heal/1.0.0"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "band": {
+    "bass": "inst-a9dac2de-187482",
+    "pad": "inst-87643426-187482",
+    "melody": "inst-9c884039-187482"
+  },
+  "summary": {
+    "healthAll": {
+      "broken": 0.816,
+      "healed": 0.926
+    },
+    "healthDuringFaults": {
+      "broken": 0.705,
+      "healed": 0.881
+    },
+    "detected": 5,
+    "repairs": 5,
+    "recoveries": 5
+  },
+  "verification": {
+    "healed": {
+      "ok": true,
+      "problems": [],
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "durationSec": 80.8,
+      "peakDbfs": -1,
+      "rmsDbfs": -16.001,
+      "clippedSamples": 0,
+      "dcOffset": -0.000001902,
+      "silences": [
+        [
+          78.25,
+          80.8
+        ]
+      ],
+      "silentRatio": 0.032,
+      "stereoCorrelation": 0.902
+    },
+    "broken": {
+      "ok": true,
+      "problems": [],
+      "sampleRate": 44100,
+      "channels": 2,
+      "bitsPerSample": 16,
+      "durationSec": 80.8,
+      "peakDbfs": -1,
+      "rmsDbfs": -16.003,
+      "clippedSamples": 0,
+      "dcOffset": -0.000001751,
+      "silences": [
+        [
+          78.25,
+          80.8
+        ]
+      ],
+      "silentRatio": 0.032,
+      "stereoCorrelation": 0.897
+    }
+  },
+  "healed": {
+    "engine_version": "sonova-heal/1.0.0",
+    "seed": "sonova-heal-0001",
+    "bpm": 100,
+    "barSec": 2.4,
+    "durationSec": 80.8,
+    "key": {
+      "root_pc": 0,
+      "mode": "aeolian"
+    },
+    "progression": [
+      0,
+      8,
+      3,
+      10
+    ],
+    "faults": [
+      {
+        "kind": "dropout",
+        "part": "melody",
+        "startBar": 6,
+        "bars": 4
+      },
+      {
+        "kind": "wrong",
+        "part": "melody",
+        "startBar": 11,
+        "bars": 3
+      },
+      {
+        "kind": "dropout",
+        "part": "bass",
+        "startBar": 16,
+        "bars": 3
+      },
+      {
+        "kind": "wrong",
+        "part": "pad",
+        "startBar": 21,
+        "bars": 3
+      },
+      {
+        "kind": "dropout",
+        "part": "pad",
+        "startBar": 24,
+        "bars": 3
+      }
+    ],
+    "events": [
+      {
+        "id": 0,
+        "time": 14.4,
+        "bar": 6,
+        "kind": "fault",
+        "part": "melody",
+        "text": "melody が 4 小節消える (故障の注入)"
+      },
+      {
+        "id": 1,
+        "time": 14.4,
+        "bar": 6,
+        "kind": "detect",
+        "part": "melody",
+        "text": "melody の音が楽譜の音高で -14.2 dB 足りない (欠落)",
+        "metrics": {
+          "presenceDb": -25.07,
+          "baselineDb": -10.825
+        }
+      },
+      {
+        "id": 2,
+        "time": 16.8,
+        "bar": 7,
+        "kind": "repair",
+        "part": "melody",
+        "by": "pad",
+        "cause": 1,
+        "text": "pad が melody のパートを1オクターブ下で引き受ける"
+      },
+      {
+        "id": 3,
+        "time": 24,
+        "bar": 10,
+        "kind": "recover",
+        "part": "melody",
+        "by": "pad",
+        "cause": 1,
+        "text": "melody が戻ったのを聴いて pad は補完をやめる",
+        "metrics": {
+          "presenceDb": -13.453
+        }
+      },
+      {
+        "id": 4,
+        "time": 26.4,
+        "bar": 11,
+        "kind": "fault",
+        "part": "melody",
+        "text": "melody が 3 小節、半音ずれた音を弾く (故障の注入)"
+      },
+      {
+        "id": 5,
+        "time": 26.4,
+        "bar": 11,
+        "kind": "detect",
+        "part": "melody",
+        "text": "melody の楽譜の音より半音隣りが 30.0 dB 強い → G# がずれている (不協和)",
+        "metrics": {
+          "wrongnessDb": 29.96,
+          "roughness": 0.104
+        }
+      },
+      {
+        "id": 6,
+        "time": 28.8,
+        "bar": 12,
+        "kind": "repair",
+        "part": "melody",
+        "by": "bass",
+        "cause": 5,
+        "text": "bass が根音を F に変え、ずれた音を和音の音にする (リハーモナイズ)"
+      },
+      {
+        "id": 7,
+        "time": 33.6,
+        "bar": 14,
+        "kind": "recover",
+        "part": "melody",
+        "by": "bass",
+        "cause": 5,
+        "text": "ずれが消えたのを聴いて bass は元の和声に戻る",
+        "metrics": {
+          "wrongnessDb": -20.373
+        }
+      },
+      {
+        "id": 8,
+        "time": 38.4,
+        "bar": 16,
+        "kind": "fault",
+        "part": "bass",
+        "text": "bass が 3 小節消える (故障の注入)"
+      },
+      {
+        "id": 9,
+        "time": 38.4,
+        "bar": 16,
+        "kind": "detect",
+        "part": "bass",
+        "text": "bass の音が楽譜の音高で -25.2 dB 足りない (欠落)",
+        "metrics": {
+          "presenceDb": -27.759,
+          "baselineDb": -2.567
+        }
+      },
+      {
+        "id": 10,
+        "time": 40.8,
+        "bar": 17,
+        "kind": "repair",
+        "part": "bass",
+        "by": "pad",
+        "cause": 9,
+        "text": "pad が bass のパートを1オクターブ上で引き受ける"
+      },
+      {
+        "id": 11,
+        "time": 45.6,
+        "bar": 19,
+        "kind": "recover",
+        "part": "bass",
+        "by": "pad",
+        "cause": 9,
+        "text": "bass が戻ったのを聴いて pad は補完をやめる",
+        "metrics": {
+          "presenceDb": -3.706
+        }
+      },
+      {
+        "id": 12,
+        "time": 50.4,
+        "bar": 21,
+        "kind": "fault",
+        "part": "pad",
+        "text": "pad が 3 小節、半音ずれた音を弾く (故障の注入)"
+      },
+      {
+        "id": 13,
+        "time": 50.4,
+        "bar": 21,
+        "kind": "detect",
+        "part": "pad",
+        "text": "pad の楽譜の音より半音隣りが 16.0 dB 強い → C# がずれている (不協和)",
+        "metrics": {
+          "wrongnessDb": 16.042,
+          "roughness": 0.097
+        }
+      },
+      {
+        "id": 14,
+        "time": 52.8,
+        "bar": 22,
+        "kind": "repair",
+        "part": "pad",
+        "by": "bass",
+        "cause": 13,
+        "text": "bass が根音を D# に変え、ずれた音を和音の音にする (リハーモナイズ)"
+      },
+      {
+        "id": 15,
+        "time": 57.6,
+        "bar": 24,
+        "kind": "fault",
+        "part": "pad",
+        "text": "pad が 3 小節消える (故障の注入)"
+      },
+      {
+        "id": 16,
+        "time": 57.6,
+        "bar": 24,
+        "kind": "recover",
+        "part": "pad",
+        "by": "bass",
+        "cause": 13,
+        "text": "ずれが消えたのを聴いて bass は元の和声に戻る",
+        "metrics": {
+          "wrongnessDb": 14.573
+        }
+      },
+      {
+        "id": 17,
+        "time": 60,
+        "bar": 25,
+        "kind": "detect",
+        "part": "pad",
+        "text": "pad の音が楽譜の音高で -17.0 dB 足りない (欠落)",
+        "metrics": {
+          "presenceDb": -24.71,
+          "baselineDb": -7.704
+        }
+      },
+      {
+        "id": 18,
+        "time": 62.4,
+        "bar": 26,
+        "kind": "repair",
+        "part": "pad",
+        "by": "melody",
+        "cause": 17,
+        "text": "melody が和音をアルペジオで補う"
+      },
+      {
+        "id": 19,
+        "time": 64.8,
+        "bar": 27,
+        "kind": "recover",
+        "part": "pad",
+        "by": "melody",
+        "cause": 17,
+        "text": "pad が戻ったのを聴いて melody は補完をやめる",
+        "metrics": {
+          "presenceDb": -8.211
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "bar": 0,
+        "presenceDb": {
+          "bass": -2.615,
+          "pad": -7.307,
+          "melody": -13.858
+        },
+        "wrongnessDb": {
+          "bass": -8.588,
+          "pad": -3.086,
+          "melody": -18.736
+        },
+        "foreign": 0.026,
+        "roughness": 0.094,
+        "health": 1
+      },
+      {
+        "bar": 1,
+        "presenceDb": {
+          "bass": -1.584,
+          "pad": -7.768,
+          "melody": -10.825
+        },
+        "wrongnessDb": {
+          "bass": -10.639,
+          "pad": -3.32,
+          "melody": -21.636
+        },
+        "foreign": 0.045,
+        "roughness": 0.091,
+        "health": 1
+      },
+      {
+        "bar": 2,
+        "presenceDb": {
+          "bass": -3.197,
+          "pad": -7.715,
+          "melody": -9.548
+        },
+        "wrongnessDb": {
+          "bass": -9.665,
+          "pad": -2.845,
+          "melody": -22.73
+        },
+        "foreign": 0.026,
+        "roughness": 0.09,
+        "health": 1
+      },
+      {
+        "bar": 3,
+        "presenceDb": {
+          "bass": -2.567,
+          "pad": -9.342,
+          "melody": -12.881
+        },
+        "wrongnessDb": {
+          "bass": -7.081,
+          "pad": -11.693,
+          "melody": -5.363
+        },
+        "foreign": 0.026,
+        "roughness": 0.098,
+        "health": 1
+      },
+      {
+        "bar": 4,
+        "presenceDb": {
+          "bass": -2.864,
+          "pad": -8.71,
+          "melody": -14.465
+        },
+        "wrongnessDb": {
+          "bass": -8.626,
+          "pad": -3.079,
+          "melody": -22.26
+        },
+        "foreign": 0.023,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 5,
+        "presenceDb": {
+          "bass": -2.024,
+          "pad": -7.416,
+          "melody": -8.874
+        },
+        "wrongnessDb": {
+          "bass": -10.976,
+          "pad": -3.238,
+          "melody": -18.599
+        },
+        "foreign": 0.026,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 6,
+        "presenceDb": {
+          "bass": -2.016,
+          "pad": -8.105,
+          "melody": -25.07
+        },
+        "wrongnessDb": {
+          "bass": -9.327,
+          "pad": -2.851,
+          "melody": -31.129
+        },
+        "foreign": 0.003,
+        "roughness": 0.087,
+        "health": 0.667
+      },
+      {
+        "bar": 7,
+        "presenceDb": {
+          "bass": -2.375,
+          "pad": -7.583,
+          "melody": -24.463
+        },
+        "wrongnessDb": {
+          "bass": -7.207,
+          "pad": -12.209,
+          "melody": 10.036
+        },
+        "foreign": 0,
+        "roughness": 0.101,
+        "health": 1
+      },
+      {
+        "bar": 8,
+        "presenceDb": {
+          "bass": -2.222,
+          "pad": -9.491,
+          "melody": -25.636
+        },
+        "wrongnessDb": {
+          "bass": -8.606,
+          "pad": -3.091,
+          "melody": 3.161
+        },
+        "foreign": 0.003,
+        "roughness": 0.085,
+        "health": 1
+      },
+      {
+        "bar": 9,
+        "presenceDb": {
+          "bass": -0.855,
+          "pad": -8.031,
+          "melody": -24.814
+        },
+        "wrongnessDb": {
+          "bass": -10.554,
+          "pad": -3.485,
+          "melody": 6.945
+        },
+        "foreign": 0.002,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 10,
+        "presenceDb": {
+          "bass": -2.803,
+          "pad": -8.391,
+          "melody": -13.453
+        },
+        "wrongnessDb": {
+          "bass": -9.473,
+          "pad": -2.936,
+          "melody": -19.539
+        },
+        "foreign": 0.032,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 11,
+        "presenceDb": {
+          "bass": -2.689,
+          "pad": -8.705,
+          "melody": -15.033
+        },
+        "wrongnessDb": {
+          "bass": -7.189,
+          "pad": -11.799,
+          "melody": 29.96
+        },
+        "foreign": 0.062,
+        "roughness": 0.104,
+        "health": 0.6
+      },
+      {
+        "bar": 12,
+        "presenceDb": {
+          "bass": -3.121,
+          "pad": -7.288,
+          "melody": -18.948
+        },
+        "wrongnessDb": {
+          "bass": -10.432,
+          "pad": -3.1,
+          "melody": 31.052
+        },
+        "foreign": 0.086,
+        "roughness": 0.095,
+        "health": 1
+      },
+      {
+        "bar": 13,
+        "presenceDb": {
+          "bass": -1.893,
+          "pad": -7.339,
+          "melody": -22.878
+        },
+        "wrongnessDb": {
+          "bass": -10.645,
+          "pad": -3.363,
+          "melody": 23.579
+        },
+        "foreign": 0.087,
+        "roughness": 0.092,
+        "health": 1
+      },
+      {
+        "bar": 14,
+        "presenceDb": {
+          "bass": -3.735,
+          "pad": -6.849,
+          "melody": -10.504
+        },
+        "wrongnessDb": {
+          "bass": -9.711,
+          "pad": -2.985,
+          "melody": -20.373
+        },
+        "foreign": 0.013,
+        "roughness": 0.093,
+        "health": 1
+      },
+      {
+        "bar": 15,
+        "presenceDb": {
+          "bass": -2.854,
+          "pad": -8.657,
+          "melody": -9.592
+        },
+        "wrongnessDb": {
+          "bass": -7.08,
+          "pad": -11.91,
+          "melody": -20.761
+        },
+        "foreign": 0.009,
+        "roughness": 0.095,
+        "health": 1
+      },
+      {
+        "bar": 16,
+        "presenceDb": {
+          "bass": -27.759,
+          "pad": -2.351,
+          "melody": -6.236
+        },
+        "wrongnessDb": {
+          "bass": 21.525,
+          "pad": -3.049,
+          "melody": -19.959
+        },
+        "foreign": 0.174,
+        "roughness": 0.091,
+        "health": 0.593
+      },
+      {
+        "bar": 17,
+        "presenceDb": {
+          "bass": -70.917,
+          "pad": -2.09,
+          "melody": -6.781
+        },
+        "wrongnessDb": {
+          "bass": 6.712,
+          "pad": -3.363,
+          "melody": -22.738
+        },
+        "foreign": 0.049,
+        "roughness": 0.078,
+        "health": 1
+      },
+      {
+        "bar": 18,
+        "presenceDb": {
+          "bass": -75.934,
+          "pad": -2.651,
+          "melody": -5.161
+        },
+        "wrongnessDb": {
+          "bass": 7.567,
+          "pad": -3.115,
+          "melody": -19.408
+        },
+        "foreign": 0.213,
+        "roughness": 0.072,
+        "health": 0.887
+      },
+      {
+        "bar": 19,
+        "presenceDb": {
+          "bass": -3.706,
+          "pad": -7.082,
+          "melody": -8.791
+        },
+        "wrongnessDb": {
+          "bass": -7.315,
+          "pad": -12.013,
+          "melody": -20.9
+        },
+        "foreign": 0.11,
+        "roughness": 0.111,
+        "health": 0.99
+      },
+      {
+        "bar": 20,
+        "presenceDb": {
+          "bass": -2.728,
+          "pad": -7.704,
+          "melody": -11.374
+        },
+        "wrongnessDb": {
+          "bass": -8.413,
+          "pad": -3.092,
+          "melody": -22.968
+        },
+        "foreign": 0.035,
+        "roughness": 0.085,
+        "health": 1
+      },
+      {
+        "bar": 21,
+        "presenceDb": {
+          "bass": -1.893,
+          "pad": -8.872,
+          "melody": -11.25
+        },
+        "wrongnessDb": {
+          "bass": -10.572,
+          "pad": 16.042,
+          "melody": -5.706
+        },
+        "foreign": 0.113,
+        "roughness": 0.097,
+        "health": 0.587
+      },
+      {
+        "bar": 22,
+        "presenceDb": {
+          "bass": -2.836,
+          "pad": -7.864,
+          "melody": -11.146
+        },
+        "wrongnessDb": {
+          "bass": -9.405,
+          "pad": 3.665,
+          "melody": -14.264
+        },
+        "foreign": 0.141,
+        "roughness": 0.075,
+        "health": 0.959
+      },
+      {
+        "bar": 23,
+        "presenceDb": {
+          "bass": -3.799,
+          "pad": -8.953,
+          "melody": -10.226
+        },
+        "wrongnessDb": {
+          "bass": -7.356,
+          "pad": 14.752,
+          "melody": -16.354
+        },
+        "foreign": 0.092,
+        "roughness": 0.105,
+        "health": 1
+      },
+      {
+        "bar": 24,
+        "presenceDb": {
+          "bass": -2.677,
+          "pad": -32.21,
+          "melody": -10.543
+        },
+        "wrongnessDb": {
+          "bass": -9.509,
+          "pad": 14.573,
+          "melody": -24.788
+        },
+        "foreign": 0.034,
+        "roughness": 0.073,
+        "health": 0.667
+      },
+      {
+        "bar": 25,
+        "presenceDb": {
+          "bass": -1.241,
+          "pad": -24.71,
+          "melody": -10.234
+        },
+        "wrongnessDb": {
+          "bass": -10.885,
+          "pad": 6.916,
+          "melody": -16.415
+        },
+        "foreign": 0.075,
+        "roughness": 0.075,
+        "health": 0.667
+      },
+      {
+        "bar": 26,
+        "presenceDb": {
+          "bass": -1.724,
+          "pad": -29.351,
+          "melody": -10.69
+        },
+        "wrongnessDb": {
+          "bass": -9.426,
+          "pad": 20.612,
+          "melody": -24.727
+        },
+        "foreign": 0.079,
+        "roughness": 0.083,
+        "health": 1
+      },
+      {
+        "bar": 27,
+        "presenceDb": {
+          "bass": -2.661,
+          "pad": -8.211,
+          "melody": -15.195
+        },
+        "wrongnessDb": {
+          "bass": -7.197,
+          "pad": -11.983,
+          "melody": -9.342
+        },
+        "foreign": 0.021,
+        "roughness": 0.101,
+        "health": 1
+      },
+      {
+        "bar": 28,
+        "presenceDb": {
+          "bass": -3.352,
+          "pad": -6.948,
+          "melody": -11.384
+        },
+        "wrongnessDb": {
+          "bass": -8.963,
+          "pad": -3.07,
+          "melody": -16.146
+        },
+        "foreign": 0.057,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 29,
+        "presenceDb": {
+          "bass": -1.699,
+          "pad": -7.445,
+          "melody": -11.077
+        },
+        "wrongnessDb": {
+          "bass": -10.946,
+          "pad": -3.319,
+          "melody": -22.395
+        },
+        "foreign": 0.027,
+        "roughness": 0.089,
+        "health": 1
+      },
+      {
+        "bar": 30,
+        "presenceDb": {
+          "bass": -3.096,
+          "pad": -7.769,
+          "melody": -12.733
+        },
+        "wrongnessDb": {
+          "bass": -9.57,
+          "pad": -2.932,
+          "melody": -21.833
+        },
+        "foreign": 0.036,
+        "roughness": 0.09,
+        "health": 1
+      },
+      {
+        "bar": 31,
+        "presenceDb": {
+          "bass": -2.685,
+          "pad": -9.104,
+          "melody": -10.734
+        },
+        "wrongnessDb": {
+          "bass": -7.183,
+          "pad": -11.93,
+          "melody": -22.39
+        },
+        "foreign": 0.015,
+        "roughness": 0.095,
+        "health": 1
+      }
+    ],
+    "notes": [
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 0,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 1.2,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 0,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 0,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 0,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 0,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 0.3,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 0.8999999999999999,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 1.2,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 1.5,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 2.1,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 2.4,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 3.5999999999999996,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 2.4,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 2.4,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 2.4,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 2.4,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 2.6999999999999997,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 3.3,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 3.5999999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 3.9,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 4.5,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 4.8,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 6,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 4.8,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 4.8,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 4.8,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 4.8,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 5.1,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 5.699999999999999,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 6,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 6.3,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 6.9,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 7.199999999999999,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 8.399999999999999,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 7.199999999999999,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 7.199999999999999,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 7.199999999999999,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 7.199999999999999,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 7.499999999999999,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 8.1,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 8.399999999999999,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 8.7,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 9.299999999999999,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 9.6,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 10.799999999999999,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 9.6,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 9.6,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 9.6,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 9.6,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 9.9,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 10.5,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 10.799999999999999,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 11.1,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 11.7,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 12,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 13.2,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 12,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 12,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 12,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 12,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 12.3,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 12.9,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 13.2,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 13.5,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 14.1,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 14.399999999999999,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 15.599999999999998,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 14.399999999999999,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 14.399999999999999,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 14.399999999999999,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 16.8,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 18,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 16.8,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 16.8,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 16.8,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 16.8,
+        "midi": 58,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 17.1,
+        "midi": 60,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 17.7,
+        "midi": 62,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 18,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 18.3,
+        "midi": 62,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 18.900000000000002,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 19.2,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 20.4,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 19.2,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 19.2,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 19.2,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 19.2,
+        "midi": 63,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 19.5,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 20.099999999999998,
+        "midi": 63,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 20.4,
+        "midi": 55,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 20.7,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 21.3,
+        "midi": 63,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 21.599999999999998,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 22.799999999999997,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 21.599999999999998,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 21.599999999999998,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 21.599999999999998,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 21.599999999999998,
+        "midi": 56,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 21.9,
+        "midi": 58,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 22.499999999999996,
+        "midi": 60,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 22.799999999999997,
+        "midi": 56,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 23.099999999999998,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 23.7,
+        "midi": 55,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 24,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 25.2,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 24,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 24,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 24,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 24,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 24.3,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 24.9,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 25.2,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 25.5,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 26.1,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 24,
+        "midi": 58,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 24.3,
+        "midi": 62,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 24.9,
+        "midi": 63,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 25.2,
+        "midi": 62,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 25.5,
+        "midi": 63,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "melody",
+        "player": "pad",
+        "time": 26.1,
+        "midi": 65,
+        "duration": 0.39,
+        "velocity": 0.62,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 26.4,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 27.599999999999998,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 26.4,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 26.4,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 26.4,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 26.4,
+        "midi": 71,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 26.7,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 27.299999999999997,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 27.599999999999998,
+        "midi": 71,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 27.9,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 28.5,
+        "midi": 73,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 28.799999999999997,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 29.999999999999996,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 28.799999999999997,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 28.799999999999997,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 28.799999999999997,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 28.799999999999997,
+        "midi": 73,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 29.099999999999998,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 29.699999999999996,
+        "midi": 66,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 29.999999999999996,
+        "midi": 69,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 30.299999999999997,
+        "midi": 66,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 30.9,
+        "midi": 78,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "bass",
+        "time": 28.799999999999997,
+        "midi": 41,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 31.2,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 32.4,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 31.2,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 31.2,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 31.2,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 31.2,
+        "midi": 73,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 31.5,
+        "midi": 69,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 32.1,
+        "midi": 73,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 32.4,
+        "midi": 71,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 32.7,
+        "midi": 66,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 33.3,
+        "midi": 69,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "fault"
+      },
+      {
+        "part": "melody",
+        "player": "bass",
+        "time": 31.2,
+        "midi": 41,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 33.6,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 34.800000000000004,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 33.6,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 33.6,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 33.6,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 33.6,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 33.9,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 34.5,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 34.800000000000004,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 35.1,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 35.7,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "bass",
+        "time": 33.6,
+        "midi": 41,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 36,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 37.2,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 36,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 36,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 36,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 36,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 36.3,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 36.9,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 37.2,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 37.5,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 38.1,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 38.4,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 38.4,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 38.4,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 38.4,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 38.699999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 39.3,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 39.6,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 39.9,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 40.5,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 40.8,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 40.8,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 40.8,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 40.8,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 41.099999999999994,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 41.699999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 42,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 42.3,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 42.9,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 40.8,
+        "midi": 56,
+        "duration": 1.152,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 42,
+        "midi": 63,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 43.199999999999996,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 43.199999999999996,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 43.199999999999996,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 43.199999999999996,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 43.49999999999999,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 44.099999999999994,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 44.4,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 44.699999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 45.3,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 43.199999999999996,
+        "midi": 63,
+        "duration": 1.152,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 44.4,
+        "midi": 58,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 45.6,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 46.800000000000004,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 45.6,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 45.6,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 45.6,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 45.6,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 45.9,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 46.5,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 46.800000000000004,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 47.1,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 47.7,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 45.6,
+        "midi": 58,
+        "duration": 1.152,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "pad",
+        "time": 46.800000000000004,
+        "midi": 53,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 48,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 49.2,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 48,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 48,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 48,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 48,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 48.3,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 48.9,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 49.2,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 49.5,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 50.1,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 50.4,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 51.6,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 50.4,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 50.4,
+        "midi": 61,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "fault"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 50.4,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 50.4,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 50.699999999999996,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 51.3,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 51.6,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 51.9,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 52.5,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 52.8,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 54,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 52.8,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 52.8,
+        "midi": 54,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "fault"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 52.8,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 52.8,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 53.099999999999994,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 53.699999999999996,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 54,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 54.3,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 54.9,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "bass",
+        "time": 52.8,
+        "midi": 39,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 55.199999999999996,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 56.4,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 55.199999999999996,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 55.199999999999996,
+        "midi": 61,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "fault"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 55.199999999999996,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 55.199999999999996,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 55.49999999999999,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 56.099999999999994,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 56.4,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 56.699999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 57.3,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "bass",
+        "time": 55.199999999999996,
+        "midi": 39,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 57.599999999999994,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 58.8,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 57.599999999999994,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 57.89999999999999,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 58.49999999999999,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 58.8,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 59.099999999999994,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 59.699999999999996,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "bass",
+        "time": 57.599999999999994,
+        "midi": 39,
+        "duration": 2.16,
+        "velocity": 0.8,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 60,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 61.2,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 60,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 60.3,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 60.9,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 61.2,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 61.5,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 62.1,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 62.4,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 63.6,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 62.4,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 62.699999999999996,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 63.3,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 63.6,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 63.9,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 64.5,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 62.4,
+        "midi": 75,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 62.699999999999996,
+        "midi": 67,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 63,
+        "midi": 70,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 63.3,
+        "midi": 75,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 63.6,
+        "midi": 79,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 63.9,
+        "midi": 82,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 64.2,
+        "midi": 75,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 64.5,
+        "midi": 79,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 64.8,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 66,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 64.8,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 64.8,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 64.8,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 64.8,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 65.1,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 65.7,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 66,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 66.3,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 66.89999999999999,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 64.8,
+        "midi": 70,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 65.1,
+        "midi": 74,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 65.39999999999999,
+        "midi": 77,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 65.7,
+        "midi": 70,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 66,
+        "midi": 74,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 66.3,
+        "midi": 77,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 66.6,
+        "midi": 82,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "pad",
+        "player": "melody",
+        "time": 66.89999999999999,
+        "midi": 74,
+        "duration": 0.33,
+        "velocity": 0.55,
+        "role": "repair"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 67.2,
+        "midi": 36,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 68.4,
+        "midi": 43,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 67.2,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 67.2,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 67.2,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 67.2,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 67.5,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 68.10000000000001,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 68.4,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 68.7,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 69.3,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 69.6,
+        "midi": 44,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 70.8,
+        "midi": 51,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 69.6,
+        "midi": 56,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 69.6,
+        "midi": 60,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 69.6,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 69.6,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 69.89999999999999,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 70.5,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 70.8,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 71.1,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 71.69999999999999,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 72,
+        "midi": 39,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 73.2,
+        "midi": 46,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 72,
+        "midi": 63,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 72,
+        "midi": 55,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 72,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 72,
+        "midi": 67,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 72.3,
+        "midi": 68,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 72.9,
+        "midi": 70,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 73.2,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 73.5,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 74.1,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 74.39999999999999,
+        "midi": 46,
+        "duration": 1.152,
+        "velocity": 0.85,
+        "role": "score"
+      },
+      {
+        "part": "bass",
+        "player": "bass",
+        "time": 75.6,
+        "midi": 41,
+        "duration": 1.08,
+        "velocity": 0.75,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 74.39999999999999,
+        "midi": 58,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 74.39999999999999,
+        "midi": 62,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "pad",
+        "player": "pad",
+        "time": 74.39999999999999,
+        "midi": 65,
+        "duration": 2.28,
+        "velocity": 0.6,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 74.39999999999999,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 74.69999999999999,
+        "midi": 75,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 75.3,
+        "midi": 77,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 75.6,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 75.89999999999999,
+        "midi": 72,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      },
+      {
+        "part": "melody",
+        "player": "melody",
+        "time": 76.49999999999999,
+        "midi": 74,
+        "duration": 0.39,
+        "velocity": 0.7,
+        "role": "score"
+      }
+    ],
+    "master": {
+      "inputPeak": 0.7568344473838806,
+      "inputRms": 0.1306233259885938,
+      "appliedGainDb": 1.679585244679707,
+      "maxReductionDb": -0.2596033086708819,
+      "outputPeak": 0.8912509083747864
+    }
+  },
+  "broken": {
+    "metrics": [
+      {
+        "bar": 0,
+        "presenceDb": {
+          "bass": -2.615,
+          "pad": -7.307,
+          "melody": -13.858
+        },
+        "wrongnessDb": {
+          "bass": -8.588,
+          "pad": -3.086,
+          "melody": -18.736
+        },
+        "foreign": 0.026,
+        "roughness": 0.094,
+        "health": 1
+      },
+      {
+        "bar": 1,
+        "presenceDb": {
+          "bass": -1.584,
+          "pad": -7.768,
+          "melody": -10.825
+        },
+        "wrongnessDb": {
+          "bass": -10.639,
+          "pad": -3.32,
+          "melody": -21.636
+        },
+        "foreign": 0.045,
+        "roughness": 0.091,
+        "health": 1
+      },
+      {
+        "bar": 2,
+        "presenceDb": {
+          "bass": -3.197,
+          "pad": -7.715,
+          "melody": -9.548
+        },
+        "wrongnessDb": {
+          "bass": -9.665,
+          "pad": -2.845,
+          "melody": -22.73
+        },
+        "foreign": 0.026,
+        "roughness": 0.09,
+        "health": 1
+      },
+      {
+        "bar": 3,
+        "presenceDb": {
+          "bass": -2.567,
+          "pad": -9.342,
+          "melody": -12.881
+        },
+        "wrongnessDb": {
+          "bass": -7.081,
+          "pad": -11.693,
+          "melody": -5.363
+        },
+        "foreign": 0.026,
+        "roughness": 0.098,
+        "health": 1
+      },
+      {
+        "bar": 4,
+        "presenceDb": {
+          "bass": -2.864,
+          "pad": -8.71,
+          "melody": -14.465
+        },
+        "wrongnessDb": {
+          "bass": -8.626,
+          "pad": -3.079,
+          "melody": -22.26
+        },
+        "foreign": 0.023,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 5,
+        "presenceDb": {
+          "bass": -2.024,
+          "pad": -7.416,
+          "melody": -8.874
+        },
+        "wrongnessDb": {
+          "bass": -10.976,
+          "pad": -3.238,
+          "melody": -18.599
+        },
+        "foreign": 0.026,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 6,
+        "presenceDb": {
+          "bass": -2.016,
+          "pad": -8.105,
+          "melody": -25.07
+        },
+        "wrongnessDb": {
+          "bass": -9.327,
+          "pad": -2.851,
+          "melody": -31.129
+        },
+        "foreign": 0.003,
+        "roughness": 0.087,
+        "health": 0.667
+      },
+      {
+        "bar": 7,
+        "presenceDb": {
+          "bass": -2.685,
+          "pad": -6.411,
+          "melody": -21.946
+        },
+        "wrongnessDb": {
+          "bass": -7.2,
+          "pad": -11.918,
+          "melody": 7.957
+        },
+        "foreign": 0,
+        "roughness": 0.099,
+        "health": 0.667
+      },
+      {
+        "bar": 8,
+        "presenceDb": {
+          "bass": -2.339,
+          "pad": -8.682,
+          "melody": -25.154
+        },
+        "wrongnessDb": {
+          "bass": -8.608,
+          "pad": -3.077,
+          "melody": 2.715
+        },
+        "foreign": 0.002,
+        "roughness": 0.085,
+        "health": 0.667
+      },
+      {
+        "bar": 9,
+        "presenceDb": {
+          "bass": -1.133,
+          "pad": -6.864,
+          "melody": -23.835
+        },
+        "wrongnessDb": {
+          "bass": -10.442,
+          "pad": -3.262,
+          "melody": 6.193
+        },
+        "foreign": 0.003,
+        "roughness": 0.093,
+        "health": 0.667
+      },
+      {
+        "bar": 10,
+        "presenceDb": {
+          "bass": -3.182,
+          "pad": -7.547,
+          "melody": -10.45
+        },
+        "wrongnessDb": {
+          "bass": -9.464,
+          "pad": -2.91,
+          "melody": -19.705
+        },
+        "foreign": 0.043,
+        "roughness": 0.087,
+        "health": 1
+      },
+      {
+        "bar": 11,
+        "presenceDb": {
+          "bass": -2.742,
+          "pad": -8.39,
+          "melody": -15.085
+        },
+        "wrongnessDb": {
+          "bass": -7.189,
+          "pad": -11.798,
+          "melody": 29.945
+        },
+        "foreign": 0.061,
+        "roughness": 0.105,
+        "health": 0.6
+      },
+      {
+        "bar": 12,
+        "presenceDb": {
+          "bass": -2.821,
+          "pad": -7.654,
+          "melody": -19.336
+        },
+        "wrongnessDb": {
+          "bass": -8.497,
+          "pad": -3.095,
+          "melody": 31.031
+        },
+        "foreign": 0.079,
+        "roughness": 0.096,
+        "health": 0.6
+      },
+      {
+        "bar": 13,
+        "presenceDb": {
+          "bass": -1.882,
+          "pad": -7.397,
+          "melody": -22.971
+        },
+        "wrongnessDb": {
+          "bass": -10.589,
+          "pad": -3.345,
+          "melody": 23.579
+        },
+        "foreign": 0.08,
+        "roughness": 0.093,
+        "health": 0.667
+      },
+      {
+        "bar": 14,
+        "presenceDb": {
+          "bass": -3.298,
+          "pad": -7.318,
+          "melody": -10.979
+        },
+        "wrongnessDb": {
+          "bass": -9.579,
+          "pad": -2.901,
+          "melody": -20.362
+        },
+        "foreign": 0.024,
+        "roughness": 0.097,
+        "health": 1
+      },
+      {
+        "bar": 15,
+        "presenceDb": {
+          "bass": -2.852,
+          "pad": -8.662,
+          "melody": -9.596
+        },
+        "wrongnessDb": {
+          "bass": -7.079,
+          "pad": -11.909,
+          "melody": -20.76
+        },
+        "foreign": 0.009,
+        "roughness": 0.095,
+        "health": 1
+      },
+      {
+        "bar": 16,
+        "presenceDb": {
+          "bass": -27.759,
+          "pad": -2.351,
+          "melody": -6.236
+        },
+        "wrongnessDb": {
+          "bass": 21.525,
+          "pad": -3.049,
+          "melody": -19.959
+        },
+        "foreign": 0.174,
+        "roughness": 0.091,
+        "health": 0.593
+      },
+      {
+        "bar": 17,
+        "presenceDb": {
+          "bass": -67.755,
+          "pad": -2.346,
+          "melody": -5.521
+        },
+        "wrongnessDb": {
+          "bass": 4.478,
+          "pad": -3.353,
+          "melody": -22.294
+        },
+        "foreign": 0.046,
+        "roughness": 0.077,
+        "health": 0.667
+      },
+      {
+        "bar": 18,
+        "presenceDb": {
+          "bass": -73.733,
+          "pad": -2.649,
+          "melody": -5.298
+        },
+        "wrongnessDb": {
+          "bass": 5.953,
+          "pad": -3.096,
+          "melody": -22.802
+        },
+        "foreign": 0.201,
+        "roughness": 0.078,
+        "health": 0.566
+      },
+      {
+        "bar": 19,
+        "presenceDb": {
+          "bass": -3.89,
+          "pad": -6.691,
+          "melody": -8.879
+        },
+        "wrongnessDb": {
+          "bass": -7.322,
+          "pad": -11.977,
+          "melody": -18.392
+        },
+        "foreign": 0.104,
+        "roughness": 0.121,
+        "health": 0.996
+      },
+      {
+        "bar": 20,
+        "presenceDb": {
+          "bass": -2.728,
+          "pad": -7.703,
+          "melody": -11.372
+        },
+        "wrongnessDb": {
+          "bass": -8.413,
+          "pad": -3.089,
+          "melody": -22.966
+        },
+        "foreign": 0.035,
+        "roughness": 0.085,
+        "health": 1
+      },
+      {
+        "bar": 21,
+        "presenceDb": {
+          "bass": -1.893,
+          "pad": -8.872,
+          "melody": -11.25
+        },
+        "wrongnessDb": {
+          "bass": -10.572,
+          "pad": 16.042,
+          "melody": -5.706
+        },
+        "foreign": 0.113,
+        "roughness": 0.097,
+        "health": 0.587
+      },
+      {
+        "bar": 22,
+        "presenceDb": {
+          "bass": -2.817,
+          "pad": -8.093,
+          "melody": -11.462
+        },
+        "wrongnessDb": {
+          "bass": -9.607,
+          "pad": 3.619,
+          "melody": -14.255
+        },
+        "foreign": 0.133,
+        "roughness": 0.084,
+        "health": 0.567
+      },
+      {
+        "bar": 23,
+        "presenceDb": {
+          "bass": -3.396,
+          "pad": -9.63,
+          "melody": -10.972
+        },
+        "wrongnessDb": {
+          "bass": -7.224,
+          "pad": 14.751,
+          "melody": -16.36
+        },
+        "foreign": 0.113,
+        "roughness": 0.103,
+        "health": 0.587
+      },
+      {
+        "bar": 24,
+        "presenceDb": {
+          "bass": -2.455,
+          "pad": -31.967,
+          "melody": -11.034
+        },
+        "wrongnessDb": {
+          "bass": -8.893,
+          "pad": 14.485,
+          "melody": -24.783
+        },
+        "foreign": 0.032,
+        "roughness": 0.074,
+        "health": 0.667
+      },
+      {
+        "bar": 25,
+        "presenceDb": {
+          "bass": -1.242,
+          "pad": -24.712,
+          "melody": -10.238
+        },
+        "wrongnessDb": {
+          "bass": -10.886,
+          "pad": 6.918,
+          "melody": -16.414
+        },
+        "foreign": 0.075,
+        "roughness": 0.076,
+        "health": 0.667
+      },
+      {
+        "bar": 26,
+        "presenceDb": {
+          "bass": -1.866,
+          "pad": -29.418,
+          "melody": -10.007
+        },
+        "wrongnessDb": {
+          "bass": -9.424,
+          "pad": 20.352,
+          "melody": -23.835
+        },
+        "foreign": 0.08,
+        "roughness": 0.084,
+        "health": 0.667
+      },
+      {
+        "bar": 27,
+        "presenceDb": {
+          "bass": -2.783,
+          "pad": -8.329,
+          "melody": -13.955
+        },
+        "wrongnessDb": {
+          "bass": -7.196,
+          "pad": -11.974,
+          "melody": -9.28
+        },
+        "foreign": 0.021,
+        "roughness": 0.102,
+        "health": 1
+      },
+      {
+        "bar": 28,
+        "presenceDb": {
+          "bass": -3.383,
+          "pad": -6.98,
+          "melody": -10.929
+        },
+        "wrongnessDb": {
+          "bass": -8.963,
+          "pad": -3.07,
+          "melody": -16.143
+        },
+        "foreign": 0.064,
+        "roughness": 0.088,
+        "health": 1
+      },
+      {
+        "bar": 29,
+        "presenceDb": {
+          "bass": -1.699,
+          "pad": -7.445,
+          "melody": -11.077
+        },
+        "wrongnessDb": {
+          "bass": -10.946,
+          "pad": -3.319,
+          "melody": -22.395
+        },
+        "foreign": 0.027,
+        "roughness": 0.089,
+        "health": 1
+      },
+      {
+        "bar": 30,
+        "presenceDb": {
+          "bass": -3.096,
+          "pad": -7.769,
+          "melody": -12.733
+        },
+        "wrongnessDb": {
+          "bass": -9.57,
+          "pad": -2.932,
+          "melody": -21.833
+        },
+        "foreign": 0.036,
+        "roughness": 0.09,
+        "health": 1
+      },
+      {
+        "bar": 31,
+        "presenceDb": {
+          "bass": -2.685,
+          "pad": -9.104,
+          "melody": -10.734
+        },
+        "wrongnessDb": {
+          "bass": -7.183,
+          "pad": -11.93,
+          "melody": -22.39
+        },
+        "foreign": 0.015,
+        "roughness": 0.095,
+        "health": 1
+      }
+    ]
+  }
+}

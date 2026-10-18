@@ -163,3 +163,18 @@
 
 - Xenakis の GENDYN（動的確率合成）: Csound / SuperCollider（GPL）に実装があるが、独立した GitHub リポジトリは見つからなかった。今回は不採用
 - Sullivan 方式の「歪み + フィードバック」を実装した GitHub リポジトリ: 見つからず（Stanford CCRMA の授業ページに ChucK 版がある）。論文から実装した
+
+---
+
+## 追加調査: ROCK-SPACE の変則ドラム (2026-10)
+
+ユーザーの依頼「SPACE のドラムが単調、もっと変則的に」に対して調べたもの。
+
+| リポジトリ / 資料 | ライセンス | 中身 | 採用 |
+|---|---|---|---|
+| [pichenettes/eurorack](https://github.com/pichenettes/eurorack) `grids/pattern_generator.cc` (Mutable Instruments Grids) | GPL-3 | 5×5 のドラムパターン地図を双線形補間し、密度のしきい値で発音。隠しモードで**パートごとに長さの違うユークリッドループ** (ポリメーター) | 考え方のみ (GPL のためコードは見ていない部分も含め写さない)。地図は学習済みデータなので使わず、ループ長の違うポリメーターの考え方だけ |
+| [TomWhitwell/TuringMachine](https://github.com/TomWhitwell/TuringMachine) (Music Thing Modular) | CC-BY-SA 3.0 (回路) | 16 ビットのシフトレジスタがループし、確率でビットが反転して「少しずつずれる」 | 考え方のみ。反転確率 = 直前に部屋が変形した量 |
+| Rhythmicon (テルミンとカウエル、1931) / [algomusic.com/rhythmicon](https://algomusic.com/rhythmicon) | — (歴史的楽器) | 倍音列の n 番目の音が n 倍の速さで脈打つ = リズムと周波数が同じもの | 部屋の軸モードの比を連符の数にする (ハイハット 4·Lx/Lz 連、ライド 2·Lx/Ly 連) |
+| Allen & Berkley 1979 "Image method for efficiently simulating small-room acoustics" | 論文 | 鏡像音源法 | 既存の `imageSources()` を使い、初期反射の到着時刻を引き伸ばしてフィルにする |
+
+GitHub 上に Rhythmicon のウェブ実装は見つからなかった (Max 版 Rhythmicana と JSyn 版の紹介ページのみ)。
