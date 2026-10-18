@@ -2,7 +2,7 @@
 
 自動生成: `npm run xrock`。音声 `output/xrock/SONOVA-XROCK-0001.wav` / `.mid`（Git 管理外、同じシードで再生成）。
 
-- 145 BPM · C minor · 3:36 · シード `sonova-xrock-0001` · 検証 OK (peak -1 dBFS, RMS -13.323 dBFS)
+- 145 BPM · C minor · 3:36 · シード `sonova-xrock-0001` · 検証 OK (peak -1 dBFS, RMS -13.288 dBFS)
 - バンドは SONOVA-ROCK-0001 と同じ: ギター ← 木の年輪 / ドラム ← 建物の外壁 / ベースとリード ← 夕焼けの海
 
 ロックの曲を 5 つの方向に押し広げる。どれも他の人の GitHub / 研究の手法を、コードを写さずに独自実装した。
@@ -13,7 +13,28 @@
 | テンポ | **ナンカロウのテンポカノン**（収束点。[nanc-in-a-can/canon-generator](https://github.com/nanc-in-a-can/canon-generator) の考え方、Nemire 2012） | ブリッジ 1:39–2:05 | 同じリフを 3 声が違うテンポで弾き、遅い順に入って、ソロの頭 2:05 で同時に着地する |
 | リズム | **リセット・リズム**（永遠に加速し続けて聴こえるドラム。Stowell 2011、[tmhglnd/risset-rhythm-effect](https://github.com/tmhglnd/risset-rhythm-effect)・MIT の考え方） | カノンの下 1:42– | サビ1 の 1 小節目のドラムを 3 層、テンポが 2 倍ずつ違う層を sin² でつなぐ。1 メガ小節 13.241 秒で 8 倍に加速 (551 打) |
 | 音高 | **シェパード=リセットのグリッサンド**（終わらずに上がり続ける音。Shepard 1964、Risset 1969） | pre3 2:32–2:45 | 6 本の KS 弦（主音と 5 度 × 3 オクターブ）が 6.621 秒で 1 オクターブずつ上がる。音量の鐘形はアンプの**後**にかけるので、歪んでも錯覚が崩れない |
-| 声 | **トークボックス**（母音のフォルマント。Peterson & Barney 1952 の値） | 曲全体のリード | リードの 292 音に、"everything is an instrument" の母音 e-e-i-i-i-a-i-u-e を順に当てる。3 つの時間変化する帯域フィルター |
+| 声 | **トークボックス**（母音のフォルマント。Peterson & Barney 1952 の値）と**声道の物理モデルの歌手**（Kelly & Lochbaum 1962 / Pink Trombone の考え方） | 曲全体のリード、サビでは何語でもない言葉の歌 | リードの 292 音に、"everything is an instrument" の母音 e-e-i-i-i-a-i-u-e を順に当てる。3 つの時間変化する帯域フィルター |
+
+## 何語でもない歌 (0:46〜 すべてのサビ)
+
+サビでは、リードのフック (トークボックスのギター) と同じ旋律を**歌手**が歌う。言葉は実在しない言語で、音は声になった素材 (夕焼け) から決めた。
+
+- 声: 声門のパルス (Rosenberg) → 44 区間の声道 (Kelly–Lochbaum の導波管。Neil Thapen の Pink Trombone と同じ考え方、独自実装) → 唇。子音は声道を狭める・閉じる・乱流の雑音を入れて作る
+- 子音は拍の少し前、母音が拍の上に来る (歌手の発音の仕方)。小さなスライドは母音を伸ばしたまま音程だけ動く (メリスマ)
+- サビ3・4 は 2 人で歌う (ダブル)。最後のサビはギターが 1 オクターブ上、声は元の高さ、歌詞の一部が変わる
+- 歌手が入るとトークボックスのギターは −8 dB 下がって歌を支える
+
+- 母音の重み ← sunset の明るさ 0.06 (暗い素材ほど a・o・u)
+- 子音: やわらかい l m n v h r の割合 0.94 ← 立ち上がりの遅さ 0.67
+- 閉じた音節 (n・l・s で終わる) の確率 0.111 ← 余韻の長さ 1.58 (長く響く素材ほど開いた音節)
+- 語彙 (9 語): *luonu*、*na*、*mi*、*vano*、*unu*、*ahan*、*vomovel*、*hi*、*nol*
+
+| サビ | 開始 | 歌詞 (/ = 長い音で息継ぎ) |
+|---|---|---|
+| chorus1 | 0:46 | vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu / na hi mi va-no a-han vo-mo-vel nol u-nu lu-o / mi nol na a-han va-no / vo-mo-vel hi lu-o / |
+| chorus2 | 1:26 | vo-mo-vel na u-nu nol a-han hi / mi va-no lu-o-nu na hi mi va-no a-han vo-mo-vel nol u / lu-o-nu mi nol na a-han va-no vo- |
+| chorus3 (2人) | 2:45 | vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu na hi mi va-no a-han vo-mo-vel / nol u-nu lu-o-nu / mi nol na a-han va-no vo-mo-vel |
+| chorus4 (2人) | 2:58 | vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu / na hi mi va-no a-han vo-mo-vel / nol u-nu lu-o / mi nol na a-han va-no vo-mo- |
 
 ## テンポカノン
 

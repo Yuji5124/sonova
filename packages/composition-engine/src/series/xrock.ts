@@ -11,8 +11,9 @@
 import { Rng, type InstrumentDNA } from '@sonova/instrument-dna';
 import { generateRock, type RockEvent, type RockSong } from '@sonova/music-generator';
 import { fft } from '@sonova/source-analyzer';
-import { compress, midiToHz, mixInto, renderDrumHit, renderRig, type DrumName, type RigEvent, type SpectroImage, type StereoBuffer } from '@sonova/synthesis-engine';
+import { compress, midiToHz, mixInto, pingPong, renderDrumHit, renderRig, renderSinger, type DrumName, type RigEvent, type SpectroImage, type StereoBuffer } from '@sonova/synthesis-engine';
 import { renderRock, rockPlan, type RockBand, type RockRenderResult } from '../rock.ts';
+import { inventLanguage, romanizeWord, setLyrics, type Language } from './glossolalia.ts';
 
 export const XROCK_VERSION = 'sonova-xrock/1.0.0';
 
@@ -251,6 +252,7 @@ export interface XRockResult {
   risset: { layers: number; megabarSec: number; hits: number; start: number; end: number };
   shepard: { start: number; seconds: number; octaveSec: number; octavesRisen: number };
   talkbox: { text: string; vowels: string[]; notes: number };
+  singer: { language: Omit<Language, 'words'> & { words: string[] }; choruses: Array<{ section: string; start: number; lyrics: string; notes: number; syllables: number; octave: number; doubled: boolean }> };
 }
 
 const DRUM_PAN: Record<DrumName, number> = { kick: 0, snare: 0.04, hat: 0.38, hatOpen: 0.38, crash: -0.42, ride: -0.35, tom1: 0.3, tom2: -0.05, tom3: -0.35 };
@@ -323,6 +325,11 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
   const stretch = { sourceSection: 'chorus1', sourceStart: chorus1.start, sourceSec: barSec, factor: r3((intro.end - intro.start) / barSec), windowSec: r3(16384 / 44100), outSec: r3(intro.end - intro.start) };
   const shepard = { start: pre3.start, seconds: pre3.end - pre3.start, octaveSec: r3((pre3.end - pre3.start) / 2), octavesRisen: 2 };
   let leadNotes = 0;
+  // ---- the singer: an invented language from the voice's picture, singing the hook in every chorus ----
+  const lang = inventLanguage(band.voice, seed);
+  const choruses = song.sections.filter((x) => x.name.startsWith('chorus'));
+  const leadOf = (x: { start: number; end: number }) => song.events.filter((e) => e.part === 'lead' && e.kind === 'note' && e.time >= x.start && e.time < x.end);
+  const singer: XRockResult['singer']['choruses'] = [];
 
   const render = renderRock(song, band, image, 44100, log, {
     leadFx: ({ lead, sampleRate, song: s }) => {
@@ -330,6 +337,16 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
       leadNotes = notes.length;
       log('talkbox');
       talkbox(lead, sampleRate, notes.map((e, i) => ({ time: e.time, vowel: vowels[i % vowels.length] })));
+      // the talkbox guitar steps back to double the singer in the choruses
+      const ramp = Math.round(0.08 * sampleRate);
+      for (const c of choruses) {
+        const a = Math.round(c.start * sampleRate);
+        const z = Math.min(lead.length, Math.round(c.end * sampleRate));
+        for (let i = Math.max(0, a - ramp); i < Math.min(lead.length, z + ramp); i++) {
+          const w = Math.min(1, (i - (a - ramp)) / ramp, (z + ramp - i) / ramp);
+          lead[i] *= 1 - 0.6 * Math.max(0, w);
+        }
+      }
     },
     drumEvents: ({ song: s }) =>
       s.events.filter((e) => e.part === 'drums' && !(e.kind === 'hit' && ((e.time >= intro.start && e.time < intro.end) || (e.time >= bridge.start && e.time < bridge.end)))),
@@ -434,6 +451,43 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
         wet.left[p0 + i] += sh.left[i] * sg * cres * 0.3;
         wet.right[p0 + i] += sh.right[i] * sg * cres * 0.3;
       }
+
+      // ---- 5. voice: the singer ----
+      choruses.forEach((c, ci) => {
+        log(`singer ${c.name}`);
+        const octave = ci === choruses.length - 1 ? -12 : 0; // the last chorus' hook is an octave up for the guitar; the voice stays
+        const notes = leadOf(c).map((e) => ({ time: e.time - c.start + 0.25, duration: e.duration!, midi: e.midi! + octave, velocity: e.velocity!, slide: e.slide }));
+        const { sung, text: lyrics } = setLyrics(notes, lang, seed, ci === choruses.length - 1 ? 1 : 0);
+        const segSec = c.end - c.start + 1.5;
+        const doubled = ci >= 2;
+        const voices = [renderSinger(sung, segSec, sampleRate, `${seed}:${c.name}`)];
+        if (doubled) voices.push(renderSinger(sung.map((n) => ({ ...n, time: n.time + 0.017, midi: n.midi + 0.08 })), segSec, sampleRate, `${seed}:${c.name}:double`, { breathiness: 0.26, vibratoRate: 5.1 }));
+        const vg = voices.map((v) => Math.pow(10, -16 / 20) / (rms(v) || 1));
+        const off = at(c.start - 0.25);
+        const dry = new Float32Array(voices[0].length);
+        voices.forEach((v, k) => {
+          const pan = doubled ? (k === 0 ? -0.18 : 0.18) : 0;
+          const gl = Math.cos(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (doubled ? 0.75 : 1);
+          const gr = Math.sin(((pan + 1) * Math.PI) / 4) * Math.SQRT2 * (doubled ? 0.75 : 1);
+          for (let i = 0; i < v.length && off + i < len; i++) {
+            if (off + i < 0) continue;
+            const y = v[i] * vg[k];
+            mix.left[off + i] += y * gl;
+            mix.right[off + i] += y * gr;
+            dry[i] += y;
+          }
+        });
+        // a quarter-note ping-pong and a generous reverb send, as a rock vocal would have
+        const [pl, pr] = pingPong(dry, new Float32Array(dry.length), sampleRate, 60 / song.bpm, 0.3, 0.3);
+        for (let i = 0; i < dry.length && off + i < len; i++) {
+          if (off + i < 0) continue;
+          mix.left[off + i] += pl[i] * 0.22;
+          mix.right[off + i] += pr[i] * 0.22;
+          wet.left[off + i] += dry[i] * 0.35;
+          wet.right[off + i] += dry[i] * 0.35;
+        }
+        singer.push({ section: c.name, start: r3(c.start), lyrics, notes: sung.length, syllables: sung.filter((n) => n.syllable).length, octave, doubled });
+      });
     },
   });
   return {
@@ -444,6 +498,7 @@ export function renderXRock(band: RockBand, seed: string, image: SpectroImage, l
     risset: { layers: 3, megabarSec: r3(megabar), hits: risset.length, start: r3(rissetStart), end: r3(bridge.end) },
     shepard,
     talkbox: { text, vowels, notes: leadNotes },
+    singer: { language: { vowels: lang.vowels, onsets: lang.onsets, codas: lang.codas, codaProb: lang.codaProb, rules: lang.rules, words: lang.words.map(romanizeWord) }, choruses: singer },
   };
 }
 

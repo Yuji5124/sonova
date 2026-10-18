@@ -257,8 +257,91 @@
     ],
     "notes": 292
   },
+  "singer": {
+    "language": {
+      "vowels": {
+        "a": 1,
+        "e": 0.478,
+        "i": 0.292,
+        "o": 0.922,
+        "u": 0.769
+      },
+      "onsets": {
+        "": 0.18,
+        "l": 0.156,
+        "m": 0.156,
+        "n": 0.156,
+        "v": 0.156,
+        "h": 0.156,
+        "r": 0.156,
+        "k": 0.021,
+        "t": 0.021,
+        "s": 0.021
+      },
+      "codas": {
+        "n": 1,
+        "l": 0.6,
+        "s": 0.037
+      },
+      "codaProb": 0.111,
+      "rules": [
+        "母音の重み ← sunset の明るさ 0.06 (暗い素材ほど a・o・u)",
+        "子音: やわらかい l m n v h r の割合 0.94 ← 立ち上がりの遅さ 0.67",
+        "閉じた音節 (n・l・s で終わる) の確率 0.111 ← 余韻の長さ 1.58 (長く響く素材ほど開いた音節)"
+      ],
+      "words": [
+        "luonu",
+        "na",
+        "mi",
+        "vano",
+        "unu",
+        "ahan",
+        "vomovel",
+        "hi",
+        "nol"
+      ]
+    },
+    "choruses": [
+      {
+        "section": "chorus1",
+        "start": 46.345,
+        "lyrics": "vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu / na hi mi va-no a-han vo-mo-vel nol u-nu lu-o / mi nol na a-han va-no / vo-mo-vel hi lu-o /",
+        "notes": 56,
+        "syllables": 44,
+        "octave": 0,
+        "doubled": false
+      },
+      {
+        "section": "chorus2",
+        "start": 86.069,
+        "lyrics": "vo-mo-vel na u-nu nol a-han hi / mi va-no lu-o-nu na hi mi va-no a-han vo-mo-vel nol u / lu-o-nu mi nol na a-han va-no vo-",
+        "notes": 56,
+        "syllables": 39,
+        "octave": 0,
+        "doubled": false
+      },
+      {
+        "section": "chorus3",
+        "start": 165.517,
+        "lyrics": "vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu na hi mi va-no a-han vo-mo-vel / nol u-nu lu-o-nu / mi nol na a-han va-no vo-mo-vel",
+        "notes": 56,
+        "syllables": 42,
+        "octave": 0,
+        "doubled": true
+      },
+      {
+        "section": "chorus4",
+        "start": 178.759,
+        "lyrics": "vo-mo-vel na u-nu / nol a-han hi mi va-no lu-o-nu / na hi mi va-no a-han vo-mo-vel / nol u-nu lu-o / mi nol na a-han va-no vo-mo-",
+        "notes": 56,
+        "syllables": 40,
+        "octave": -12,
+        "doubled": true
+      }
+    ]
+  },
   "render": {
-    "ms": 197481,
+    "ms": 210802,
     "stems": {
       "guitarL": {
         "gainDb": -8.8,
@@ -283,9 +366,9 @@
     },
     "master": {
       "inputPeak": 1.6797075271606445,
-      "inputRms": 0.16630619463807206,
-      "appliedGainDb": 3.0818314741230104,
-      "maxReductionDb": -8.586504785414036,
+      "inputRms": 0.17107197994124768,
+      "appliedGainDb": 2.836422363589808,
+      "maxReductionDb": -8.341096038839966,
       "outputPeak": 0.8912509083747864
     }
   },
@@ -297,12 +380,12 @@
     "bitsPerSample": 16,
     "durationSec": 216.362,
     "peakDbfs": -1,
-    "rmsDbfs": -13.323,
+    "rmsDbfs": -13.288,
     "clippedSamples": 0,
-    "dcOffset": -0.000006502,
+    "dcOffset": -0.000005527,
     "silences": [],
     "silentRatio": 0,
-    "stereoCorrelation": 0.777
+    "stereoCorrelation": 0.792
   },
   "wav": "output/xrock/SONOVA-XROCK-0001.wav"
 }

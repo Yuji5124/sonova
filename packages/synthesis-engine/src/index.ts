@@ -73,3 +73,4 @@ export function renderInstrumentDemo(dna: InstrumentDNA, seconds = 6, sampleRate
   return { buffer: bus, report, notes };
 }
 export * from './rock/index.ts';
+export * from './singer.ts';

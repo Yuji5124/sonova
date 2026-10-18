@@ -78,3 +78,46 @@ describe('XROCK techniques', () => {
     expect(bandEnergyDb(si, f2i - 100, f2i + 100) - bandEnergyDb(si, f2a - 100, f2a + 100)).toBeGreaterThan(6);
   });
 });
+
+describe('XROCK singer', () => {
+  it('vowels of the vocal tract land in the right formant order', async () => {
+    const { renderSinger } = await import('@sonova/synthesis-engine');
+    const f2 = (v: 'a' | 'e' | 'i' | 'o' | 'u') => {
+      const x = renderSinger([{ time: 0.1, duration: 1.2, midi: 45, velocity: 0.9, syllable: { vowel: v } }], 1.5, SR, 't', { vibratoCents: 0, breathiness: 0 });
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 16384);
+      // the strongest harmonic between 700 and 2600 Hz approximates F2
+      let best = 0;
+      let at = 0;
+      for (let k = 7; k * 110 < 2600; k++) {
+        const e = bandEnergyDb(spec, k * 110 - 30, k * 110 + 30);
+        if (e > best || at === 0) {
+          best = e;
+          at = k * 110;
+        }
+      }
+      return at;
+    };
+    const [i, e, a, u] = [f2('i'), f2('e'), f2('a'), f2('u')];
+    expect(i).toBeGreaterThan(a);
+    expect(e).toBeGreaterThan(a);
+    expect(a).toBeGreaterThan(u);
+  });
+
+  it('the invented language follows its source and the refrain repeats', async () => {
+    const { inventLanguage, setLyrics } = await import('@sonova/composition-engine');
+    const dark = { dna_hash: 'x', name: 'dark', harmonics: { brightness: 0.05 }, attack: 0.7, decay: 1.6 } as never;
+    const bright = { dna_hash: 'y', name: 'bright', harmonics: { brightness: 0.95 }, attack: 0.01, decay: 0.2 } as never;
+    const d = inventLanguage(dark, 's');
+    const b = inventLanguage(bright, 's');
+    expect(d.vowels.u).toBeGreaterThan(b.vowels.u);
+    expect(b.vowels.i).toBeGreaterThan(d.vowels.i);
+    expect(b.onsets.k).toBeGreaterThan(d.onsets.k);
+    expect(b.codaProb).toBeGreaterThan(d.codaProb);
+    expect(inventLanguage(dark, 's')).toEqual(d);
+    const notes = Array.from({ length: 24 }, (_, k) => ({ time: k * 0.25, duration: k % 8 === 7 ? 1 : 0.2, midi: 60 + (k % 5), velocity: 0.8, slide: k % 3 === 2 }));
+    const one = setLyrics(notes, d, 'lyr');
+    expect(setLyrics(notes, d, 'lyr').text).toBe(one.text);
+    expect(one.sung.filter((n) => n.syllable === null).length).toBeGreaterThan(0); // melismas
+    expect(one.text.split(' / ').length).toBeGreaterThan(2); // phrases end on long notes
+  });
+});

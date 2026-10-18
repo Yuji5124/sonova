@@ -195,3 +195,14 @@ GitHub 上に Rhythmicon のウェブ実装は見つからなかった (Max 版 
 | Peterson & Barney (1952) | 論文（母音のフォルマント値） | 成人男性の F1–F3 平均 | トークボックス (`talkbox()`、時間変化する TPT 状態変数フィルター 3 本) |
 
 トークボックスの既存実装 (mda Talkbox) は GPL 系のため参照しなかった。
+
+### 追加: 何語でもない歌 (XROCK のサビ)
+
+| リポジトリ / 資料 | ライセンス | 中身 | 採用 |
+|---|---|---|---|
+| Pink Trombone（Neil Thapen 2017） | MIT と紹介されている（元のページは今回の環境から開けず、二次情報で確認） | 44 区間の声道導波管を 2 倍の速さで回し、狭めた所に乱流の雑音を入れる | 構造の考え方のみ。声道の形・声門の波形・子音の作り方は独自 (`renderSinger()`) |
+| [lostmsu/pink-trombone-mod](https://github.com/lostmsu/pink-trombone-mod) | MIT | Pink Trombone の TypeScript/C# への移植 | 参照のみ |
+| [chdh/klatt-syn](https://github.com/chdh/klatt-syn) | MIT | Klatt のカスケード/パラレル型フォルマント合成器 (TypeScript) | 比較対象として調査。物理モデルの方が子音の移り変わりが自然なので採用せず |
+| Kelly & Lochbaum (1962), Rosenberg (1971) | 論文 | 声道の散乱 (反射係数 = 断面積の差/和)、声門パルス | 独自実装 |
+
+母音の形は、合成した声の第 1・第 2 フォルマントを測って Peterson & Barney の順序 (F2: i > e > a > o > u) になるように調整した。
