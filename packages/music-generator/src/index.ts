@@ -534,3 +534,5 @@ export function findChains(events: GenEvent[], dnas: InstrumentDNA[], limit = 12
   }
   return chains.sort((a, b) => a.time - b.time);
 }
+
+export * from './rock.ts';

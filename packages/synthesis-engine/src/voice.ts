@@ -23,7 +23,7 @@ const SINE = new Float64Array(TABLE_SIZE + 1);
 for (let i = 0; i <= TABLE_SIZE; i++) SINE[i] = Math.sin((2 * Math.PI * i) / TABLE_SIZE);
 
 /** Table sine of a phase measured in cycles. */
-function sinCycles(phase: number): number {
+export function sinCycles(phase: number): number {
   const p = phase - Math.floor(phase);
   const x = p * TABLE_SIZE;
   const i = x | 0;
@@ -34,7 +34,7 @@ function sinCycles(phase: number): number {
 export const midiToHz = (midi: number): number => 440 * Math.pow(2, (midi - 69) / 12);
 
 /** Topology-preserving state-variable filter (stable under fast modulation). */
-class Svf {
+export class Svf {
   private ic1 = 0;
   private ic2 = 0;
   private g = 0;

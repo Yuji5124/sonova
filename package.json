@@ -2,7 +2,7 @@
   "name": "sonova",
   "private": true,
   "version": "1.0.0",
-  "description": "SONOVA — EVERYTHING IS AN INSTRUMENT. Turn non-musical sources into instruments and let them make music together.",
+  "description": "SONOVA \u2014 EVERYTHING IS AN INSTRUMENT. Turn non-musical sources into instruments and let them make music together.",
   "type": "module",
   "workspaces": [
     "packages/*",
@@ -19,7 +19,8 @@
     "verify:wav": "tsx scripts/verify-output.ts",
     "soundvault:register": "tsx scripts/soundvault-register.ts",
     "soundvault:verify": "tsx scripts/soundvault-verify.ts",
-    "verify:lab": "tsx scripts/verify-lab-browser.ts"
+    "verify:lab": "tsx scripts/verify-lab-browser.ts",
+    "rock": "tsx scripts/rock.ts"
   },
   "devDependencies": {
     "@types/node": "^22.20.5",

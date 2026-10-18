@@ -1,0 +1,429 @@
+{
+  "workNumber": "SONOVA-ROCK-0001",
+  "engine_version": "sonova-rock/1.0.0",
+  "seed": "sonova-rock-0001",
+  "title": "Everything Is an Amplifier",
+  "bpm": 145,
+  "barSec": 1.655172,
+  "durationSec": 183.258621,
+  "key": {
+    "root_pc": 0,
+    "mode": "aeolian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ]
+  },
+  "tuning": "drop (lowest string MIDI 36)",
+  "sections": [
+    {
+      "name": "intro",
+      "startBar": 0,
+      "bars": 4,
+      "start": 0,
+      "end": 6.62069,
+      "description": "バイトビート (数式) がリフを先に鳴らし、ギターのフィードバックとタムが立ち上がる"
+    },
+    {
+      "name": "riffA",
+      "startBar": 4,
+      "bars": 4,
+      "start": 6.62069,
+      "end": 13.241379,
+      "description": "バンド全員でリフ。キックはリフのアクセントに揃う"
+    },
+    {
+      "name": "verse1",
+      "startBar": 8,
+      "bars": 8,
+      "start": 13.241379,
+      "end": 26.482759,
+      "description": "ブリッジミュートの8分、セルオートマトンのハイハット"
+    },
+    {
+      "name": "pre1",
+      "startBar": 16,
+      "bars": 4,
+      "start": 26.482759,
+      "end": 33.103448,
+      "description": "bVI–bVII の開放和音、スネアのビルドアップ"
+    },
+    {
+      "name": "chorus1",
+      "startBar": 20,
+      "bars": 8,
+      "start": 33.103448,
+      "end": 46.344828,
+      "description": "i–bVI–bIII–bVII、リードのフック"
+    },
+    {
+      "name": "riffB",
+      "startBar": 28,
+      "bars": 4,
+      "start": 46.344828,
+      "end": 52.965517,
+      "description": "リフの変奏"
+    },
+    {
+      "name": "verse2",
+      "startBar": 32,
+      "bars": 8,
+      "start": 52.965517,
+      "end": 66.206897,
+      "description": "ブリッジミュート、ゴーストノートが増える"
+    },
+    {
+      "name": "pre2",
+      "startBar": 40,
+      "bars": 4,
+      "start": 66.206897,
+      "end": 72.827586,
+      "description": "ビルドアップ"
+    },
+    {
+      "name": "chorus2",
+      "startBar": 44,
+      "bars": 8,
+      "start": 72.827586,
+      "end": 86.068966,
+      "description": "サビ。最後のクラッシュでアンプがハウリングを始める"
+    },
+    {
+      "name": "bridge",
+      "startBar": 52,
+      "bars": 8,
+      "start": 86.068966,
+      "end": 99.310345,
+      "description": "ハーフタイム。ハウリングがドラムの CA ルールを変え、木の年輪の画像がスペクトログラムに描かれる"
+    },
+    {
+      "name": "solo",
+      "startBar": 60,
+      "bars": 8,
+      "start": 99.310345,
+      "end": 112.551724,
+      "description": "リードソロ。リズムはセルオートマトンの世代"
+    },
+    {
+      "name": "breakdown",
+      "startBar": 68,
+      "bars": 4,
+      "start": 112.551724,
+      "end": 119.172414,
+      "description": "ドラムとギターのユニゾン刻み、数式が戻ってくる"
+    },
+    {
+      "name": "riffA2",
+      "startBar": 72,
+      "bars": 4,
+      "start": 119.172414,
+      "end": 125.793103,
+      "description": "リフの再現"
+    },
+    {
+      "name": "pre3",
+      "startBar": 76,
+      "bars": 4,
+      "start": 125.793103,
+      "end": 132.413793,
+      "description": "最後のビルドアップ"
+    },
+    {
+      "name": "chorus3",
+      "startBar": 80,
+      "bars": 8,
+      "start": 132.413793,
+      "end": 145.655172,
+      "description": "サビ"
+    },
+    {
+      "name": "chorus4",
+      "startBar": 88,
+      "bars": 8,
+      "start": 145.655172,
+      "end": 158.896552,
+      "description": "最後のサビ。フックが1オクターブ上がる"
+    },
+    {
+      "name": "riffA3",
+      "startBar": 96,
+      "bars": 4,
+      "start": 158.896552,
+      "end": 165.517241,
+      "description": "リフ"
+    },
+    {
+      "name": "outro",
+      "startBar": 100,
+      "bars": 8,
+      "start": 165.517241,
+      "end": 178.758621,
+      "description": "リフで締め、最後の和音とハウリング、余韻"
+    }
+  ],
+  "riff": [
+    {
+      "kind": "pc",
+      "off": 0
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "single",
+      "off": 0
+    },
+    {
+      "kind": "single",
+      "off": 0
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "pc",
+      "off": 7
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "mute",
+      "off": 0
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "rest",
+      "off": 0
+    },
+    {
+      "kind": "single",
+      "off": 5
+    },
+    {
+      "kind": "single",
+      "off": 0
+    },
+    {
+      "kind": "pc",
+      "off": 0
+    },
+    {
+      "kind": "single",
+      "off": 3
+    },
+    {
+      "kind": "pc",
+      "off": 5
+    }
+  ],
+  "riffText": "R..nn.P.m..nnRnP",
+  "hook": [
+    7,
+    10,
+    12,
+    12,
+    null,
+    null,
+    7,
+    10,
+    12,
+    15,
+    15,
+    12,
+    null,
+    null,
+    10,
+    12
+  ],
+  "progressions": {
+    "verse": [
+      0,
+      0,
+      0,
+      10
+    ],
+    "pre": [
+      8,
+      10,
+      8,
+      10
+    ],
+    "chorus": [
+      0,
+      8,
+      3,
+      10
+    ],
+    "bridge": [
+      5,
+      8,
+      0,
+      10
+    ],
+    "riff": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "caRules": [
+    {
+      "bar": 0,
+      "rule": 150
+    },
+    {
+      "bar": 52,
+      "rule": 45,
+      "cause": 1698
+    }
+  ],
+  "derivations": [
+    {
+      "choice": "key",
+      "value": "C minor",
+      "from": "bark.pitch_range.root_pc",
+      "rule": "ギターになった素材の主音。ロックなので自然短音階"
+    },
+    {
+      "choice": "bpm",
+      "value": 145,
+      "from": "bark.interaction_rules.emission, tower.resonance.amount",
+      "rule": "働きかけの強い素材ほど速く、共鳴する素材がドライブ感を足す"
+    },
+    {
+      "choice": "tuning",
+      "value": "drop C",
+      "from": "key",
+      "rule": "最低弦を主音に下げる (ドロップチューニング) と主音のパワーコードが最も重く鳴る"
+    },
+    {
+      "choice": "riff.hits",
+      "value": 10,
+      "from": "bark.rhythm.pulses",
+      "rule": "ギター素材のエッジ密度 (発音数) → リフの音数"
+    },
+    {
+      "choice": "drums.ca_rule",
+      "value": 150,
+      "from": "tower.resonance.amount",
+      "rule": "ドラム素材の反復の強さでセルオートマトンのルールを選ぶ"
+    },
+    {
+      "choice": "drums.ca_seed",
+      "value": "x...x...x...x...",
+      "from": "tower.rhythm",
+      "rule": "ドラム素材のユークリッドリズムを最初の世代にする"
+    },
+    {
+      "choice": "lead.slide",
+      "value": 0.6030936,
+      "from": "sunset.attack",
+      "rule": "ゆっくり立ち上がる素材ほどリードが音をつなげて (スライドで) 弾く"
+    }
+  ],
+  "stats": {
+    "byPart": {
+      "drums": 1725,
+      "bytebeat": 2,
+      "guitar": 625,
+      "amp": 4,
+      "bass": 798,
+      "lead": 272,
+      "image": 1
+    },
+    "byRule": {
+      "feedback": 4,
+      "entrain": 171,
+      "stop": 11,
+      "rhythm": 66,
+      "attract": 48,
+      "mutate-ca": 1
+    },
+    "maxDepth": 2
+  },
+  "chains": [
+    {
+      "time": 3.310345,
+      "eventIds": [
+        2,
+        3
+      ],
+      "text": "ギターが和音 (root 36) → [ハウリング] アンプがハウリング (gain 1.5)"
+    },
+    {
+      "time": 7.034483,
+      "eventIds": [
+        32,
+        42
+      ],
+      "text": "ギターが和音 (root 36) → [同調] ドラム kick"
+    },
+    {
+      "time": 26.068966,
+      "eventIds": [
+        386,
+        387
+      ],
+      "text": "ドラムがフィル → [停止] ギターが止まる"
+    },
+    {
+      "time": 26.068966,
+      "eventIds": [
+        386,
+        399
+      ],
+      "text": "ドラムがフィル → [リズム] ドラム tom3"
+    },
+    {
+      "time": 26.068966,
+      "eventIds": [
+        386,
+        411
+      ],
+      "text": "ドラムがフィル → [引き寄せ] ベースが MIDI 28"
+    },
+    {
+      "time": 38.068966,
+      "eventIds": [
+        636,
+        671
+      ],
+      "text": "ギターが和音 (root 46) → [引き寄せ] リードが MIDI 70"
+    },
+    {
+      "time": 85.241379,
+      "eventIds": [
+        1679,
+        1680
+      ],
+      "text": "ドラム crash → [ハウリング] アンプがハウリング (gain 1.6)"
+    },
+    {
+      "time": 85.241379,
+      "eventIds": [
+        1679,
+        1680,
+        1698
+      ],
+      "text": "ドラム crash → [ハウリング] アンプがハウリング (gain 1.6) → [CA ルール変化] ドラムのセルオートマトンが rule 150 → 45"
+    }
+  ],
+  "eventCount": 3427
+}

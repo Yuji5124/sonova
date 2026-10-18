@@ -1,6 +1,6 @@
 {
-  "vault": "/home/user/yuji5124/soundvault",
-  "checkedAt": "2026-10-18T09:27:23.983Z",
+  "vault": "/home/user/soundvault",
+  "checkedAt": "2026-10-18T11:13:20.718Z",
   "vaultChanges": [
     "M data/projects.json",
     " M data/sounds.json",
@@ -9,6 +9,7 @@
     "?? public/sounds/bgm/sonova-exp-0001-rings-wake-the-tower.ogg",
     "?? public/sounds/bgm/sonova-exp-0002-facade-tide.ogg",
     "?? public/sounds/bgm/sonova-exp-0003-sunset-cascade.ogg",
+    "?? public/sounds/bgm/sonova-rock-0001-everything-is-an-amplifier.ogg",
     "?? public/sounds/fx/sonova-inst-0001-bark-instrument.ogg",
     "?? public/sounds/fx/sonova-inst-0002-tower-instrument.ogg",
     "?? public/sounds/fx/sonova-inst-0003-sunset-instrument.ogg"
@@ -16,19 +17,19 @@
   "playback": {
     "sonova_exp_0001_ogg": {
       "ok": true,
-      "detail": "UI ▶ 1.68s 再生 · decode 30.00s/2ch/44100Hz · peak 0.923"
+      "detail": "UI ▶ 1.92s 再生 · decode 30.00s/2ch/44100Hz · peak 0.923"
     },
     "sonova_exp_0002_ogg": {
       "ok": true,
-      "detail": "UI ▶ 1.73s 再生 · decode 30.01s/2ch/44100Hz · peak 0.925"
+      "detail": "UI ▶ 1.96s 再生 · decode 30.01s/2ch/44100Hz · peak 0.925"
     },
     "sonova_exp_0003_ogg": {
       "ok": true,
-      "detail": "UI ▶ 1.71s 再生 · decode 30.02s/2ch/44100Hz · peak 0.909"
+      "detail": "UI ▶ 1.79s 再生 · decode 30.02s/2ch/44100Hz · peak 0.909"
     },
     "sonova_inst_0001_ogg": {
       "ok": true,
-      "detail": "UI ▶ 1.56s 再生 · decode 6.02s/2ch/44100Hz · peak 0.918"
+      "detail": "UI ▶ 1.54s 再生 · decode 6.02s/2ch/44100Hz · peak 0.918"
     },
     "sonova_inst_0002_ogg": {
       "ok": true,
@@ -36,7 +37,11 @@
     },
     "sonova_inst_0003_ogg": {
       "ok": true,
-      "detail": "UI ▶ 1.55s 再生 · decode 6.00s/2ch/44100Hz · peak 0.446"
+      "detail": "UI ▶ 1.53s 再生 · decode 6.00s/2ch/44100Hz · peak 0.446"
+    },
+    "sonova_rock_0001_ogg": {
+      "ok": true,
+      "detail": "UI ▶ 3.50s 再生 · decode 183.27s/2ch/44100Hz · peak 0.975"
     }
   },
   "problems": [],

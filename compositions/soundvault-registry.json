@@ -9,7 +9,13 @@
     "wavSha256": "9aa90eb7284a76bd42b21b1bd6a71c784179f07dfa99c65391261b6cb0f86d77",
     "fileSha256": "4cf5cf115173c69a0bcedb754784c8e1e6e1236a360557a89c6909d8c80dd32c",
     "registeredAt": "2026-10-18T09:28:13.206Z",
-    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7"
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 1.92s 再生 · decode 30.00s/2ch/44100Hz · peak 0.923"
+    }
   },
   {
     "workNumber": "SONOVA-EXP-0002",
@@ -23,10 +29,10 @@
     "registeredAt": "2026-10-18T09:27:21.676Z",
     "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
     "playback": {
-      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
       "method": "SOUNDVAULT dist + Chromium (playwright-core)",
       "ok": true,
-      "detail": "UI ▶ 1.73s 再生 · decode 30.01s/2ch/44100Hz · peak 0.925"
+      "detail": "UI ▶ 1.96s 再生 · decode 30.01s/2ch/44100Hz · peak 0.925"
     }
   },
   {
@@ -41,10 +47,10 @@
     "registeredAt": "2026-10-18T09:27:22.828Z",
     "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
     "playback": {
-      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
       "method": "SOUNDVAULT dist + Chromium (playwright-core)",
       "ok": true,
-      "detail": "UI ▶ 1.71s 再生 · decode 30.02s/2ch/44100Hz · peak 0.909"
+      "detail": "UI ▶ 1.79s 再生 · decode 30.02s/2ch/44100Hz · peak 0.909"
     }
   },
   {
@@ -59,10 +65,10 @@
     "registeredAt": "2026-10-18T09:27:18.125Z",
     "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
     "playback": {
-      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
       "method": "SOUNDVAULT dist + Chromium (playwright-core)",
       "ok": true,
-      "detail": "UI ▶ 1.56s 再生 · decode 6.02s/2ch/44100Hz · peak 0.918"
+      "detail": "UI ▶ 1.54s 再生 · decode 6.02s/2ch/44100Hz · peak 0.918"
     }
   },
   {
@@ -77,7 +83,7 @@
     "registeredAt": "2026-10-18T09:27:18.636Z",
     "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
     "playback": {
-      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
       "method": "SOUNDVAULT dist + Chromium (playwright-core)",
       "ok": true,
       "detail": "UI ▶ 1.56s 再生 · decode 6.02s/2ch/44100Hz · peak 0.695"
@@ -95,10 +101,28 @@
     "registeredAt": "2026-10-18T09:27:19.083Z",
     "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
     "playback": {
-      "verifiedAt": "2026-10-18T09:27:39.198Z",
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
       "method": "SOUNDVAULT dist + Chromium (playwright-core)",
       "ok": true,
-      "detail": "UI ▶ 1.55s 再生 · decode 6.00s/2ch/44100Hz · peak 0.446"
+      "detail": "UI ▶ 1.53s 再生 · decode 6.00s/2ch/44100Hz · peak 0.446"
+    }
+  },
+  {
+    "workNumber": "SONOVA-ROCK-0001",
+    "title": "Everything Is an Amplifier",
+    "type": "COMPOSITION",
+    "soundvaultId": "sonova_rock_0001_ogg",
+    "file": "/sounds/bgm/sonova-rock-0001-everything-is-an-amplifier.ogg",
+    "format": "ogg",
+    "wavSha256": "e5f515b460244235b535d88a8d4eb2882ef735c886310b5aa91565329e1cb156",
+    "fileSha256": "dfe5b936b613209bb89301de581eeb8b0d33d70c236e05b0c28970e39cbe661e",
+    "registeredAt": "2026-10-18T11:13:13.903Z",
+    "vaultGitHead": "747100e5bb71c7e3869961c13ba2e689703380c7",
+    "playback": {
+      "verifiedAt": "2026-10-18T11:13:48.122Z",
+      "method": "SOUNDVAULT dist + Chromium (playwright-core)",
+      "ok": true,
+      "detail": "UI ▶ 3.50s 再生 · decode 183.27s/2ch/44100Hz · peak 0.975"
     }
   }
 ]

@@ -1,0 +1,19 @@
+{
+  "workNumber": "SONOVA-ROCK-0001",
+  "wav": "output/rock/SONOVA-ROCK-0001.wav",
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 183.259,
+    "peakDbfs": -1,
+    "rmsDbfs": -13.435,
+    "clippedSamples": 0,
+    "dcOffset": -0.000006335,
+    "silences": [],
+    "silentRatio": 0,
+    "stereoCorrelation": 0.77
+  }
+}
