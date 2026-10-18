@@ -22,6 +22,7 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | SONOVA 002 | **音が楽器を育てる** — 演奏するほど楽器の共鳴構造が進化する (SONOVA-GROW-0001, 83秒) | ✅ [experiments/s002/REPORT.md](experiments/s002/REPORT.md) |
 | SONOVA 003 | **音楽が自分を修復する** — 欠落・不協和を聴いて検知し、別の楽器が補う (SONOVA-HEAL-0001, 81秒、修復なし版つき) | ✅ [experiments/s003/REPORT.md](experiments/s003/REPORT.md) |
 | SONOVA 004 | **音が空間を作る** — 部屋の共鳴モードが音を決め、音が部屋を変形させる (SONOVA-SPACE-0001, 77秒、glTF アニメーション) | ✅ [experiments/s004/REPORT.md](experiments/s004/REPORT.md) |
+| ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
 | 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 
 結果: [experiments/REPORT.md](experiments/REPORT.md) / 評価: [docs/evaluation-phase0-3.md](docs/evaluation-phase0-3.md)
@@ -70,6 +71,20 @@ npm run s002 && npm run s003 && npm run s004   # 合計約2分
 
 聴き手の道具 (帯域エネルギー、楽譜の音高のエネルギー、スペクトルのピーク、Plomp–Levelt/Sethares の粗さ) は `packages/source-analyzer/src/listen.ts`、各作品は `packages/composition-engine/src/series/`。同じシードで 2 回レンダリングしてすべての WAV がバイト単位で一致することを確認済み。
 
+### ロック版 SONOVA 002–004
+
+SONOVA-ROCK-0001 のバンド（ギター ← 木の年輪、ドラム ← 外壁、ベースとリード ← 夕焼け）で、002–004 の原理をそれぞれ 1 曲にした。
+
+| 作品 | 曲 | 原理がロックでどう働くか |
+|---|---|---|
+| [SONOVA-ROCK-GROW-0001](experiments/rock-series/SONOVA-ROCK-GROW-0001.md) | *Grown in the Feedback* — 116 BPM（重く遅く）、C minor | アンプの後ろの共鳴板（外壁の画像から）が区間ごとにギターとベースを聴いて育つ。次の区間のリードは板の強いモードの音程で弾く |
+| [SONOVA-ROCK-HEAL-0001](experiments/rock-series/SONOVA-ROCK-HEAL-0001.md) | *Broken Strings, Living Band* — 162 BPM（ライブの勢い）、C minor | ケーブル抜け・リードの半音ずれ・弦切れ・ベースアンプ落ちを、モニターエンジニアのように各チャンネルの音を聴いて検知し、他のメンバーが補う。修復なし版つき |
+| [SONOVA-ROCK-SPACE-0001](experiments/rock-series/SONOVA-ROCK-SPACE-0001.md) | *The Room Is the Amp* — 132 BPM、C# minor | 会場の最低モードがキー、会場の幅の往復時間がテンポ。リードは会場のモードに吸い寄せられて微分音になり、バンドの音で会場が細長いホールへ変形する |
+
+```bash
+npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space を引数で 1 曲だけ
+```
+
 ## 使い方
 
 Node.js 22.12 以上（Windows / macOS / Linux）。
@@ -77,7 +92,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 50 テスト
+npm test             # 51 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

@@ -87,3 +87,28 @@ describe('SONOVA 004 space', () => {
     expect(gltf.animations[0].channels[0].target.path).toBe('scale');
   });
 });
+
+describe('rock versions of 002–004', () => {
+  it('ROCK-HEAL injects exactly the planned faults into a copy of the score', async () => {
+    const { rockHealSong } = await import('@sonova/composition-engine');
+    const band = { guitar: bark, drums: tower, voice: sunset };
+    const a = rockHealSong(band, 't');
+    const b = rockHealSong(band, 't');
+    expect(b.faulty.events).toEqual(a.faulty.events);
+    expect(a.faults).toHaveLength(5);
+    const barOf = (t: number) => Math.floor(t / a.song.barSec + 1e-9);
+    for (const f of a.faults) {
+      const inFault = (e: { part: string; time: number }) => e.part === f.part && barOf(e.time) >= f.startBar && barOf(e.time) < f.startBar + f.bars;
+      const orig = a.song.events.filter((e) => inFault(e) && (e.kind === 'note' || e.kind === 'chord'));
+      const now = a.faulty.events.filter((e) => inFault(e) && (e.kind === 'note' || e.kind === 'chord'));
+      expect(orig.length).toBeGreaterThan(0);
+      if (f.kind === 'dropout') expect(now).toHaveLength(0);
+      else now.forEach((e, i) => expect(Math.abs(e.midi! - orig[i].midi!)).toBe(1));
+    }
+    // outside the faults the score is untouched
+    expect(a.faulty.events.filter((e) => !a.faults.some((f) => e.part === f.part && barOf(e.time) >= f.startBar && barOf(e.time) < f.startBar + f.bars))).toEqual(
+      a.song.events.filter((e) => !a.faults.some((f) => e.part === f.part && barOf(e.time) >= f.startBar && barOf(e.time) < f.startBar + f.bars)),
+    );
+    expect(a.song.derivations.some((d) => d.choice === 'bpm' && d.from === 'series')).toBe(true);
+  });
+});

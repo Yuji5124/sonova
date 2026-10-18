@@ -218,53 +218,10 @@ export function renderGrow(band: { player: InstrumentDNA; drone: InstrumentDNA; 
     });
 
     // ---- Evolve.
-    const order = energy.map((e, i) => ({ i, e })).sort((a, b) => b.e - a.e);
-    const q = Math.max(1, Math.floor(modes.length / 4));
-    const top = new Set(order.slice(0, q).map((x) => x.i));
-    const bottom = new Set(order.slice(-q).map((x) => x.i));
-    const median = order[Math.floor(order.length / 2)].e;
     const played = [...melody.map((n) => n.midi), droneMidi].flatMap((m) => [1, 2, 3, 4].map((h2) => midiToHz(m) * h2));
-    const heard = spectralPeaks(spec, 16, 60, 4000);
-    const rel = (e: number) => (median > 0 ? (e / median).toFixed(2) : '∞');
-    modes = modes.map((m, i) => {
-      let { hz, decay, gain } = m;
-      const before = `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`;
-      if (top.has(i)) {
-        decay = Math.min(6, decay * 1.25);
-        gain = Math.min(2, gain * 1.08);
-        changes.push({ gen: g, mode: m.id, kind: 'grow', from: before, to: `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`, cause: `エネルギー中央値の ${rel(energy[i])} 倍` });
-      }
-      if (energy[i] >= median) {
-        let best = 0;
-        let bestCents = Infinity;
-        for (const f of played) {
-          const c = 1200 * Math.log2(f / hz);
-          if (Math.abs(c) < Math.abs(bestCents)) {
-            bestCents = c;
-            best = f;
-          }
-        }
-        if (Math.abs(bestCents) < 150 && Math.abs(bestCents) > 2) {
-          const nhz = hz * Math.pow(2, (0.35 * bestCents) / 1200);
-          changes.push({ gen: g, mode: m.id, kind: 'tune', from: `${hz.toFixed(1)}Hz`, to: `${nhz.toFixed(1)}Hz`, cause: `弾かれた音 ${best.toFixed(1)}Hz に ${bestCents.toFixed(0)} セント引き寄せ` });
-          hz = nhz;
-        }
-      }
-      if (bottom.has(i)) {
-        decay *= 0.78;
-        gain *= 0.9;
-        if (decay < 0.12) {
-          const free = heard.find((p) => modes.every((o) => Math.abs(1200 * Math.log2(p.hz / o.hz)) > 60));
-          if (free) {
-            const id = nextId++;
-            changes.push({ gen: g, mode: id, kind: 'reborn', from: `#${m.id} ${hz.toFixed(1)}Hz (死)`, to: `#${id} ${free.hz.toFixed(1)}Hz`, cause: `聴こえたスペクトルのピーク ${free.hz.toFixed(1)}Hz に楽器のモードがなかった` });
-            return { id, hz: r4(free.hz), decay: 0.4, gain: 0.6, born: g + 1 };
-          }
-          decay = 0.12;
-        } else changes.push({ gen: g, mode: m.id, kind: 'starve', from: before, to: `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`, cause: `エネルギー中央値の ${rel(energy[i])} 倍` });
-      }
-      return { ...m, hz: r4(hz), decay: r4(decay), gain: r4(gain) };
-    });
+    const ev = evolveBody(modes, energy, played, spectralPeaks(spec, 16, 60, 4000), g, nextId, changes);
+    modes = ev.modes;
+    nextId = ev.nextId;
   }
 
   const [rl, rr] = reverb(wet.left, wet.right, { roomSize: 0.7, damping: 0.5, sampleRate });
@@ -275,6 +232,60 @@ export function renderGrow(band: { player: InstrumentDNA; drone: InstrumentDNA; 
   fadeEdges(bus.left, bus.right, sampleRate, 0.01, 3);
   const rep = master(bus.left, bus.right, { sampleRate, targetRmsDb: -16, ceilingDb: -1, maxGainDb: 18 });
   return { engine_version: GROW_VERSION, seed, bpm, phraseSec: r4(phraseSec), durationSec: r4(total), generations, changes, buffer: bus, master: rep, derivations };
+}
+
+/**
+ * One generation of the body's evolution (shared by SONOVA 002 and its rock version):
+ * grow the most excited quarter, tune the excited half toward played pitches, starve the least
+ * excited quarter, and re-birth dead modes at heard spectral peaks the body lacks.
+ */
+export function evolveBody(modes: GrowMode[], energy: number[], played: number[], heard: Array<{ hz: number }>, g: number, nextId: number, changes: GrowChange[]): { modes: GrowMode[]; nextId: number } {
+  const order = energy.map((e, i) => ({ i, e })).sort((a, b) => b.e - a.e);
+  const q = Math.max(1, Math.floor(modes.length / 4));
+  const top = new Set(order.slice(0, q).map((x) => x.i));
+  const bottom = new Set(order.slice(-q).map((x) => x.i));
+  const median = order[Math.floor(order.length / 2)].e;
+  const rel = (e: number) => (median > 0 ? (e / median).toFixed(2) : '∞');
+  const next = modes.map((m, i) => {
+    let { hz, decay, gain } = m;
+    const before = `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`;
+    if (top.has(i)) {
+      decay = Math.min(6, decay * 1.25);
+      gain = Math.min(2, gain * 1.08);
+      changes.push({ gen: g, mode: m.id, kind: 'grow', from: before, to: `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`, cause: `エネルギー中央値の ${rel(energy[i])} 倍` });
+    }
+    if (energy[i] >= median) {
+      let best = 0;
+      let bestCents = Infinity;
+      for (const f of played) {
+        const c = 1200 * Math.log2(f / hz);
+        if (Math.abs(c) < Math.abs(bestCents)) {
+          bestCents = c;
+          best = f;
+        }
+      }
+      if (Math.abs(bestCents) < 150 && Math.abs(bestCents) > 2) {
+        const nhz = hz * Math.pow(2, (0.35 * bestCents) / 1200);
+        changes.push({ gen: g, mode: m.id, kind: 'tune', from: `${hz.toFixed(1)}Hz`, to: `${nhz.toFixed(1)}Hz`, cause: `弾かれた音 ${best.toFixed(1)}Hz に ${bestCents.toFixed(0)} セント引き寄せ` });
+        hz = nhz;
+      }
+    }
+    if (bottom.has(i)) {
+      decay *= 0.78;
+      gain *= 0.9;
+      if (decay < 0.12) {
+        const free = heard.find((p) => modes.every((o) => Math.abs(1200 * Math.log2(p.hz / o.hz)) > 60));
+        if (free) {
+          const id = nextId++;
+          changes.push({ gen: g, mode: id, kind: 'reborn', from: `#${m.id} ${hz.toFixed(1)}Hz (死)`, to: `#${id} ${free.hz.toFixed(1)}Hz`, cause: `聴こえたスペクトルのピーク ${free.hz.toFixed(1)}Hz に楽器のモードがなかった` });
+          return { id, hz: r4(free.hz), decay: 0.4, gain: 0.6, born: g + 1 };
+        }
+        decay = 0.12;
+      } else changes.push({ gen: g, mode: m.id, kind: 'starve', from: before, to: `${hz.toFixed(1)}Hz/${decay.toFixed(2)}s`, cause: `エネルギー中央値の ${rel(energy[i])} 倍` });
+    }
+    return { ...m, hz: r4(hz), decay: r4(decay), gain: r4(gain) };
+  });
+  return { modes: next, nextId };
 }
 
 /** One strike of the body as it is at a generation (for before/after comparison). */

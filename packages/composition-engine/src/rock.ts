@@ -180,7 +180,15 @@ export interface RockRenderResult {
   stems: Record<string, { gainDb: number; samples: number }>;
 }
 
-export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, sampleRate = 44100, log: (m: string) => void = () => undefined): RockRenderResult {
+/** Extension points for the SONOVA series (002–004 rock versions). Without hooks the render is unchanged. */
+export interface RockHooks {
+  /** Called after guitars and bass are rendered; returns the lead events to use instead of the song's. */
+  leadEvents?: (ctx: { guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => RockEvent[];
+  /** Called with every stem in place, before the shared reverb and the master. */
+  beforeReverb?: (ctx: { mix: StereoBuffer; wet: StereoBuffer; guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; lead: Float32Array; drums: StereoBuffer; drumGain: number; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => void;
+}
+
+export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, sampleRate = 44100, log: (m: string) => void = () => undefined, hooks: RockHooks = {}): RockRenderResult {
   const t0 = Date.now();
   const plan = rockPlan(song, band);
   const secs = song.durationSec;
@@ -201,15 +209,21 @@ export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, 
     return x;
   };
   log('guitar L');
-  place('guitarL', withLevel(renderRig(guitarRigEvents(song.events, plan, 0, -3), secs, sampleRate, plan.guitarAmp, `${song.seed}:gL`)), -0.82, 0.08, -19);
+  const guitarL = withLevel(renderRig(guitarRigEvents(song.events, plan, 0, -3), secs, sampleRate, plan.guitarAmp, `${song.seed}:gL`));
+  place('guitarL', guitarL, -0.82, 0.08, -19);
   log('guitar R');
-  place('guitarR', withLevel(renderRig(guitarRigEvents(song.events, plan, 0.009, 4), secs, sampleRate, plan.guitarAmp, `${song.seed}:gR`)), 0.82, 0.08, -19);
+  const guitarR = withLevel(renderRig(guitarRigEvents(song.events, plan, 0.009, 4), secs, sampleRate, plan.guitarAmp, `${song.seed}:gR`));
+  place('guitarR', guitarR, 0.82, 0.08, -19);
   log('bass');
   const bass = renderRig(monoRigEvents(song.events, 'bass', plan.bassPluck), secs, sampleRate, plan.bassAmp, `${song.seed}:bass`, 1);
   const bassL = bass.slice();
   compress(bassL, bass, sampleRate, { thresholdDb: -20, ratio: 4, attack: 0.005, release: 0.12 });
   place('bass', withLevel(bassL), 0, 0, -18);
   log('lead');
+  if (hooks.leadEvents) {
+    const replaced = hooks.leadEvents({ guitarL, guitarR, bass: bassL, plan, sampleRate, song });
+    song = { ...song, events: [...song.events.filter((e) => e.part !== 'lead'), ...replaced].sort((a, b) => a.time - b.time || a.id - b.id) };
+  }
   const lead = renderRig(monoRigEvents(song.events, 'lead', { t60: 3.5, damping: 0.2, pickPosition: 0.15, brightness: 0.85 }), secs, sampleRate, plan.leadAmp, `${song.seed}:lead`, 1);
   normTo(lead, sampleRate, -20);
   stems.lead = { gainDb: 0, samples: lead.length };
@@ -260,6 +274,7 @@ export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, 
     }
   }
 
+  hooks.beforeReverb?.({ mix, wet, guitarL, guitarR, bass: bassL, lead, drums, drumGain: dG, plan, sampleRate, song });
   log('reverb + master');
   const [rl, rr] = reverb(wet.left, wet.right, { roomSize: 0.55, damping: 0.55, sampleRate });
   for (let i = 0; i < mix.left.length; i++) {
