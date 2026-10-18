@@ -1,0 +1,503 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "sonova-space/1.0.0"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "name": "room (animated)",
+   "mesh": 0,
+   "scale": [
+    9.728,
+    3.601,
+    7.461
+   ],
+   "extras": {
+    "note": "scale = [Lx, Lz, Ly] metres; animation = generations"
+   }
+  },
+  {
+   "name": "room gen 0",
+   "mesh": 1,
+   "scale": [
+    9.728,
+    3.601,
+    7.461
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.516,
+    "absorption": 0.303,
+    "drone_hz": 70.52,
+    "heard": {
+     "lowShare": 0.613,
+     "midShare": 0.321,
+     "highShare": 0.066,
+     "centroidHz": 506.752
+    }
+   }
+  },
+  {
+   "name": "room gen 1",
+   "mesh": 1,
+   "scale": [
+    9.728,
+    3.601,
+    7.461
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.516,
+    "absorption": 0.303,
+    "drone_hz": 70.52,
+    "heard": {
+     "lowShare": 0.743,
+     "midShare": 0.2,
+     "highShare": 0.058,
+     "centroidHz": 425.354
+    }
+   }
+  },
+  {
+   "name": "room gen 2",
+   "mesh": 1,
+   "scale": [
+    12.497,
+    3.582,
+    6.134
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.464,
+    "absorption": 0.332,
+    "drone_hz": 109.784,
+    "heard": {
+     "lowShare": 0.764,
+     "midShare": 0.186,
+     "highShare": 0.049,
+     "centroidHz": 395.197
+    }
+   }
+  },
+  {
+   "name": "room gen 3",
+   "mesh": 1,
+   "scale": [
+    15.502,
+    3.594,
+    5.283
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.418,
+    "absorption": 0.362,
+    "drone_hz": 88.504,
+    "heard": {
+     "lowShare": 0.774,
+     "midShare": 0.148,
+     "highShare": 0.078,
+     "centroidHz": 527.94
+    }
+   }
+  },
+  {
+   "name": "room gen 4",
+   "mesh": 1,
+   "scale": [
+    18.007,
+    3.978,
+    4.327
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.468,
+    "absorption": 0.32,
+    "drone_hz": 76.192,
+    "heard": {
+     "lowShare": 0.889,
+     "midShare": 0.078,
+     "highShare": 0.033,
+     "centroidHz": 280.902
+    }
+   }
+  },
+  {
+   "name": "room gen 5",
+   "mesh": 1,
+   "scale": [
+    24.367,
+    3.794,
+    3.747
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.356,
+    "absorption": 0.396,
+    "drone_hz": 112.608,
+    "heard": {
+     "lowShare": 0.766,
+     "midShare": 0.177,
+     "highShare": 0.058,
+     "centroidHz": 488.96
+    }
+   }
+  },
+  {
+   "name": "room gen 6",
+   "mesh": 1,
+   "scale": [
+    24.536,
+    3.768,
+    3.614
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.382,
+    "absorption": 0.362,
+    "drone_hz": 111.84,
+    "heard": {
+     "lowShare": 0.847,
+     "midShare": 0.104,
+     "highShare": 0.049,
+     "centroidHz": 416.565
+    }
+   }
+  },
+  {
+   "name": "room gen 7",
+   "mesh": 1,
+   "scale": [
+    29.703,
+    3.749,
+    2.972
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.34,
+    "absorption": 0.372,
+    "drone_hz": 92.384,
+    "heard": {
+     "lowShare": 0.676,
+     "midShare": 0.229,
+     "highShare": 0.095,
+     "centroidHz": 665.274
+    }
+   }
+  },
+  {
+   "name": "room gen 8",
+   "mesh": 1,
+   "scale": [
+    21.741,
+    3.917,
+    3.058
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.506,
+    "absorption": 0.253,
+    "drone_hz": 63.104,
+    "heard": {
+     "lowShare": 0.894,
+     "midShare": 0.078,
+     "highShare": 0.028,
+     "centroidHz": 243.947
+    }
+   }
+  },
+  {
+   "name": "room gen 9",
+   "mesh": 1,
+   "scale": [
+    29.952,
+    3.752,
+    2.696
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.369,
+    "absorption": 0.325,
+    "drone_hz": 91.616,
+    "heard": {
+     "lowShare": 0.677,
+     "midShare": 0.238,
+     "highShare": 0.085,
+     "centroidHz": 595.762
+    }
+   }
+  },
+  {
+   "name": "room gen 10",
+   "mesh": 1,
+   "scale": [
+    22.691,
+    3.92,
+    2.971
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.497,
+    "absorption": 0.255,
+    "drone_hz": 120.928,
+    "heard": {
+     "lowShare": 0.812,
+     "midShare": 0.145,
+     "highShare": 0.043,
+     "centroidHz": 400.904
+    }
+   }
+  },
+  {
+   "name": "room gen 11",
+   "mesh": 1,
+   "scale": [
+    25.958,
+    3.817,
+    2.863
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "extras": {
+    "rt60": 0.454,
+    "absorption": 0.273,
+    "drone_hz": 105.712,
+    "heard": {
+     "lowShare": 0.827,
+     "midShare": 0.095,
+     "highShare": 0.078,
+     "centroidHz": 570.303
+    }
+   }
+  }
+ ],
+ "meshes": [
+  {
+   "name": "room",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  },
+  {
+   "name": "room outline",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0
+     },
+     "indices": 1,
+     "mode": 1,
+     "material": 1
+    }
+   ]
+  }
+ ],
+ "materials": [
+  {
+   "name": "air",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.95,
+     0.65,
+     0.35,
+     0.25
+    ],
+    "metallicFactor": 0,
+    "roughnessFactor": 1
+   },
+   "alphaMode": "BLEND",
+   "doubleSided": true
+  },
+  {
+   "name": "trace",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.55,
+     0.72,
+     0.87,
+     1
+    ],
+    "metallicFactor": 0,
+    "roughnessFactor": 1
+   }
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 8,
+   "type": "VEC3",
+   "min": [
+    0,
+    0,
+    0
+   ],
+   "max": [
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5123,
+   "count": 24,
+   "type": "SCALAR"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5123,
+   "count": 36,
+   "type": "SCALAR"
+  },
+  {
+   "bufferView": 3,
+   "componentType": 5126,
+   "count": 12,
+   "type": "SCALAR",
+   "min": [
+    0
+   ],
+   "max": [
+    66
+   ]
+  },
+  {
+   "bufferView": 4,
+   "componentType": 5126,
+   "count": 12,
+   "type": "VEC3"
+  }
+ ],
+ "animations": [
+  {
+   "name": "sound builds the room",
+   "channels": [
+    {
+     "sampler": 0,
+     "target": {
+      "node": 0,
+      "path": "scale"
+     }
+    }
+   ],
+   "samplers": [
+    {
+     "input": 3,
+     "output": 4,
+     "interpolation": "LINEAR"
+    }
+   ]
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 96,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 96,
+   "byteLength": 48,
+   "target": 34963
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 144,
+   "byteLength": 72,
+   "target": 34963
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 216,
+   "byteLength": 48
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 264,
+   "byteLength": 144
+  }
+ ],
+ "buffers": [
+  {
+   "byteLength": 408,
+   "uri": "data:application/octet-stream;base64,AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAIA/AAABAAEAAgACAAMAAwAAAAQABQAFAAYABgAHAAcABAAAAAQAAQAFAAIABgADAAcAAAACAAEAAAADAAIABAAFAAYABAAGAAcAAAABAAUAAAAFAAQAAwAHAAYAAwAGAAIAAAAEAAcAAAAHAAMAAQACAAYAAQAGAAUAAAAAAAAAwEAAAEBBAACQQQAAwEEAAPBBAAAQQgAAKEIAAEBCAABYQgAAcEIAAIRC46UbQcl2ZkCDwO5A46UbQcl2ZkCDwO5AtvNHQX0/ZUC6ScRAMQh4QRkEZkBWDqlAVg6QQY2XfkDJdopAnu/CQeXQckDZzm9AuknEQekmcUDHS2dAvp/tQZ7vb0A/NT5Ake2tQSGwekBGtkNAsp3vQcUgcEBEiyxAK4e1QUjhekDdJD5A/KnPQbpJdEBkOzdA"
+  }
+ ]
+}

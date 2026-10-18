@@ -1,0 +1,5366 @@
+{
+  "workNumber": "SONOVA-GROW-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "grow": "sonova-grow/1.0.0"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "band": {
+    "player": "inst-9c884039-187482",
+    "drone": "inst-a9dac2de-187482",
+    "body": "inst-87643426-187482"
+  },
+  "master": {
+    "inputPeak": 0.8407444953918457,
+    "inputRms": 0.19193179627817603,
+    "appliedGainDb": -1.6629385572109392,
+    "maxReductionDb": 0,
+    "outputPeak": 0.6942519545555115
+  },
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 83.367,
+    "peakDbfs": -3.17,
+    "rmsDbfs": -16,
+    "clippedSamples": 0,
+    "dcOffset": -0.000001825,
+    "silences": [
+      [
+        82.3,
+        83.367
+      ]
+    ],
+    "silentRatio": 0.013,
+    "stereoCorrelation": 0.635
+  },
+  "engine_version": "sonova-grow/1.0.0",
+  "seed": "sonova-grow-0001",
+  "bpm": 98,
+  "phraseSec": 4.898,
+  "durationSec": 83.3673,
+  "generations": [
+    {
+      "gen": 0,
+      "start": 0,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 184.9972,
+          "decay": 0.862,
+          "gain": 0.4293,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 397.5977,
+          "decay": 0.5348,
+          "gain": 0.8181,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 527.3883,
+          "decay": 0.4647,
+          "gain": 0.5364,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 739.9888,
+          "decay": 0.403,
+          "gain": 0.4108,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 751.9319,
+          "decay": 0.4006,
+          "gain": 0.4111,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.3535,
+          "gain": 0.5321,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.3531,
+          "gain": 0.5957,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1247.9998,
+          "decay": 0.3407,
+          "gain": 0.3804,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1310.6407,
+          "decay": 0.3364,
+          "gain": 0.4286,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1590.3909,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1664.9749,
+          "decay": 0.318,
+          "gain": 0.3132,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.31,
+          "gain": 0.338,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.3097,
+          "gain": 0.3935,
+          "born": 0
+        },
+        {
+          "id": 13,
+          "hz": 2109.5533,
+          "decay": 0.3037,
+          "gain": 0.2691,
+          "born": 0
+        },
+        {
+          "id": 14,
+          "hz": 2161.0428,
+          "decay": 0.3024,
+          "gain": 0.4848,
+          "born": 0
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.3008,
+          "gain": 0.2789,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.296,
+          "gain": 0.2768,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 0,
+          "midi": 55,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 0.4592,
+          "midi": 63,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 0.7653,
+          "midi": 58,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 1.2245,
+          "midi": 60,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 1.6837,
+          "midi": 65,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 1.9898,
+          "midi": 63,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 2.449,
+          "midi": 60,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 2.9082,
+          "midi": 58,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 3.2143,
+          "midi": 58,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 3.6735,
+          "midi": 60,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 4.1327,
+          "midi": 58,
+          "from_mode": null,
+          "curiosity": false
+        },
+        {
+          "time": 4.4388,
+          "midi": 67,
+          "from_mode": null,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 48,
+        "from_mode": null
+      },
+      "energy": [
+        0.0446,
+        0.1142,
+        0.6304,
+        0.0012,
+        0.0011,
+        0.0005,
+        0.0004,
+        0.0064,
+        0.0027,
+        0.0011,
+        0.0006,
+        0.0002,
+        0.0002,
+        0.0002,
+        0.0002,
+        0.0006,
+        0.0005
+      ],
+      "metrics": {
+        "harmonicity": 0.6844,
+        "meanDecay": 0.383,
+        "centroidHz": 497.0484,
+        "lowestStrongHz": 184.9972,
+        "distinctPitchClasses": 5
+      }
+    },
+    {
+      "gen": 1,
+      "start": 4.898,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 188.7753,
+          "decay": 1.0775,
+          "gain": 0.4636,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 395.7843,
+          "decay": 0.6685,
+          "gain": 0.8835,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 525.9366,
+          "decay": 0.5809,
+          "gain": 0.5793,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 725.4655,
+          "decay": 0.403,
+          "gain": 0.4108,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 763.0006,
+          "decay": 0.4006,
+          "gain": 0.4111,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.3535,
+          "gain": 0.5321,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.3531,
+          "gain": 0.5957,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1246.7765,
+          "decay": 0.4259,
+          "gain": 0.4108,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.3364,
+          "gain": 0.4286,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1582.5115,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1630.3631,
+          "decay": 0.318,
+          "gain": 0.3132,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.2418,
+          "gain": 0.3042,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 13,
+          "hz": 2109.5533,
+          "decay": 0.2369,
+          "gain": 0.2422,
+          "born": 0
+        },
+        {
+          "id": 14,
+          "hz": 2161.0428,
+          "decay": 0.2359,
+          "gain": 0.4363,
+          "born": 0
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.3008,
+          "gain": 0.2789,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.296,
+          "gain": 0.2768,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 4.898,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 5.3571,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 5.6633,
+          "midi": 64,
+          "from_mode": 8,
+          "curiosity": false
+        },
+        {
+          "time": 6.1224,
+          "midi": 66,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 6.5816,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 6.8878,
+          "midi": 66,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 7.3469,
+          "midi": 64,
+          "from_mode": 8,
+          "curiosity": false
+        },
+        {
+          "time": 7.8061,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 8.1122,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 8.5714,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 9.0306,
+          "midi": 64,
+          "from_mode": 8,
+          "curiosity": false
+        },
+        {
+          "time": 9.3367,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 48,
+        "from_mode": 2
+      },
+      "energy": [
+        0.0072,
+        0.2879,
+        1.1048,
+        0.0041,
+        0.0045,
+        0.0005,
+        0.0006,
+        0.0043,
+        0.0007,
+        0.0011,
+        0.0014,
+        0.0003,
+        0.001,
+        0.0002,
+        0.0001,
+        0.0002,
+        0.0006
+      ],
+      "metrics": {
+        "harmonicity": 0.5282,
+        "meanDecay": 0.3995,
+        "centroidHz": 493.3717,
+        "lowestStrongHz": 188.7753,
+        "distinctPitchClasses": 5
+      }
+    },
+    {
+      "gen": 2,
+      "start": 9.7959,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 188.7753,
+          "decay": 1.3469,
+          "gain": 0.5007,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 394.61,
+          "decay": 0.8356,
+          "gain": 0.9542,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 524.9951,
+          "decay": 0.7261,
+          "gain": 0.6256,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 730.516,
+          "decay": 0.403,
+          "gain": 0.4108,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 770.2825,
+          "decay": 0.5008,
+          "gain": 0.444,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.3535,
+          "gain": 0.5321,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.3531,
+          "gain": 0.5957,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.982,
+          "decay": 0.4259,
+          "gain": 0.4108,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.3364,
+          "gain": 0.4286,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1577.4108,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1608.2523,
+          "decay": 0.318,
+          "gain": 0.3132,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.1886,
+          "gain": 0.2738,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 13,
+          "hz": 2109.5533,
+          "decay": 0.1848,
+          "gain": 0.218,
+          "born": 0
+        },
+        {
+          "id": 14,
+          "hz": 2161.0428,
+          "decay": 0.184,
+          "gain": 0.3927,
+          "born": 0
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.2346,
+          "gain": 0.251,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.296,
+          "gain": 0.2768,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 9.7959,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 10.2551,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 10.5612,
+          "midi": 66,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 11.0204,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 11.4796,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 11.7857,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 12.2449,
+          "midi": 66,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 12.7041,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 13.0102,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 13.4694,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 13.9286,
+          "midi": 61,
+          "from_mode": 0,
+          "curiosity": true
+        },
+        {
+          "time": 14.2347,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 48,
+        "from_mode": 2
+      },
+      "energy": [
+        0.0045,
+        0.8388,
+        0.8859,
+        0.0109,
+        0.0052,
+        0.0008,
+        0.001,
+        0.0094,
+        0.0002,
+        0.0016,
+        0.0034,
+        0.0006,
+        0.0016,
+        0.0002,
+        0.0002,
+        0.0004,
+        0.0007
+      ],
+      "metrics": {
+        "harmonicity": 0.4982,
+        "meanDecay": 0.4265,
+        "centroidHz": 454.5263,
+        "lowestStrongHz": 188.7753,
+        "distinctPitchClasses": 4
+      }
+    },
+    {
+      "gen": 3,
+      "start": 14.6939,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 188.7753,
+          "decay": 1.3469,
+          "gain": 0.5007,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 393.8486,
+          "decay": 1.0445,
+          "gain": 1.0305,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 524.3841,
+          "decay": 0.9076,
+          "gain": 0.6756,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 733.8176,
+          "decay": 0.5038,
+          "gain": 0.4437,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 775.0529,
+          "decay": 0.5008,
+          "gain": 0.444,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.3535,
+          "gain": 0.5321,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.3531,
+          "gain": 0.5957,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5324,
+          "gain": 0.4437,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.2624,
+          "gain": 0.3857,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1574.1042,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1594.0413,
+          "decay": 0.318,
+          "gain": 0.3132,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.1886,
+          "gain": 0.2738,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 13,
+          "hz": 2109.5533,
+          "decay": 0.1441,
+          "gain": 0.1962,
+          "born": 0
+        },
+        {
+          "id": 14,
+          "hz": 2161.0428,
+          "decay": 0.1435,
+          "gain": 0.3534,
+          "born": 0
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.183,
+          "gain": 0.2259,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.296,
+          "gain": 0.2768,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 14.6939,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 15.1531,
+          "midi": 67,
+          "from_mode": 9,
+          "curiosity": false
+        },
+        {
+          "time": 15.4592,
+          "midi": 62,
+          "from_mode": 1,
+          "curiosity": true
+        },
+        {
+          "time": 15.9184,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 16.3776,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 16.6837,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 17.1429,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 17.602,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 17.9082,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 18.3673,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 18.8265,
+          "midi": 66,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 19.1327,
+          "midi": 58,
+          "from_mode": 2,
+          "curiosity": true
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 1
+      },
+      "energy": [
+        0.002,
+        1.0549,
+        0.3159,
+        0.0106,
+        0.0071,
+        0.0006,
+        0.0007,
+        0.0103,
+        0.0005,
+        0.0023,
+        0.013,
+        0.0005,
+        0.0013,
+        0.0003,
+        0.0006,
+        0.0006,
+        0.0006
+      ],
+      "metrics": {
+        "harmonicity": 0.5109,
+        "meanDecay": 0.4495,
+        "centroidHz": 426.3545,
+        "lowestStrongHz": 188.7753,
+        "distinctPitchClasses": 4
+      }
+    },
+    {
+      "gen": 4,
+      "start": 19.5918,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 191.2724,
+          "decay": 1.3469,
+          "gain": 0.5007,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 393.199,
+          "decay": 1.3056,
+          "gain": 1.1129,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.9873,
+          "decay": 1.1345,
+          "gain": 0.7296,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 735.9717,
+          "decay": 0.6298,
+          "gain": 0.4792,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 778.1695,
+          "decay": 0.5008,
+          "gain": 0.444,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.3535,
+          "gain": 0.5321,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.3531,
+          "gain": 0.5957,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5324,
+          "gain": 0.4437,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.2047,
+          "gain": 0.3471,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1571.9586,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1584.8716,
+          "decay": 0.3975,
+          "gain": 0.3383,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.1471,
+          "gain": 0.2464,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 17,
+          "hz": 97.7621,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 4
+        },
+        {
+          "id": 14,
+          "hz": 2161.0428,
+          "decay": 0.1435,
+          "gain": 0.3534,
+          "born": 0
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.183,
+          "gain": 0.2259,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 19.5918,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 20.051,
+          "midi": 67,
+          "from_mode": 10,
+          "curiosity": false
+        },
+        {
+          "time": 20.3571,
+          "midi": 67,
+          "from_mode": 9,
+          "curiosity": false
+        },
+        {
+          "time": 20.8163,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 21.2755,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 21.5816,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 22.0408,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 22.5,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 22.8061,
+          "midi": 63,
+          "from_mode": 7,
+          "curiosity": false
+        },
+        {
+          "time": 23.2653,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 23.7245,
+          "midi": 67,
+          "from_mode": 10,
+          "curiosity": false
+        },
+        {
+          "time": 24.0306,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 1
+      },
+      "energy": [
+        0.0023,
+        2.897,
+        0.1491,
+        0.0089,
+        0.0183,
+        0.0005,
+        0.0005,
+        0.0421,
+        0.0013,
+        0.0094,
+        0.0015,
+        0.0006,
+        0.0009,
+        1327.7824,
+        0.0002,
+        0.0005,
+        0.0011
+      ],
+      "metrics": {
+        "harmonicity": 0.6352,
+        "meanDecay": 0.4957,
+        "centroidHz": 99.0593,
+        "lowestStrongHz": 97.7621,
+        "distinctPitchClasses": 4
+      }
+    },
+    {
+      "gen": 5,
+      "start": 24.4898,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 192.9132,
+          "decay": 1.3469,
+          "gain": 0.5007,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.7773,
+          "decay": 1.632,
+          "gain": 1.2019,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.4181,
+          "gain": 0.788,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 737.3752,
+          "decay": 0.6298,
+          "gain": 0.4792,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 780.202,
+          "decay": 0.5008,
+          "gain": 0.444,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.2757,
+          "gain": 0.4789,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.2754,
+          "gain": 0.5361,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.6655,
+          "gain": 0.4792,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.2047,
+          "gain": 0.3471,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1570.5656,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.3975,
+          "gain": 0.3383,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.1471,
+          "gain": 0.2464,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 17,
+          "hz": 97.8449,
+          "decay": 0.5,
+          "gain": 0.648,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 311.8502,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.1427,
+          "gain": 0.2033,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 24.4898,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 24.949,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 25.2551,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 25.7143,
+          "midi": 58,
+          "from_mode": 7,
+          "curiosity": true
+        },
+        {
+          "time": 26.1735,
+          "midi": 62,
+          "from_mode": 0,
+          "curiosity": true
+        },
+        {
+          "time": 26.4796,
+          "midi": 67,
+          "from_mode": 9,
+          "curiosity": false
+        },
+        {
+          "time": 26.9388,
+          "midi": 67,
+          "from_mode": 9,
+          "curiosity": false
+        },
+        {
+          "time": 27.398,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 27.7041,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 28.1633,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 28.6224,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 28.9286,
+          "midi": 58,
+          "from_mode": 17,
+          "curiosity": true
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        0.3393,
+        4.4901,
+        0.0199,
+        0.0081,
+        0.0531,
+        0.0006,
+        0.0006,
+        0.0002,
+        0.0004,
+        0.029,
+        0.0009,
+        0.0008,
+        0.0009,
+        578.2959,
+        0.0145,
+        0.0008,
+        0.0018
+      ],
+      "metrics": {
+        "harmonicity": 0.6788,
+        "meanDecay": 0.5488,
+        "centroidHz": 102.1963,
+        "lowestStrongHz": 97.8449,
+        "distinctPitchClasses": 4
+      }
+    },
+    {
+      "gen": 6,
+      "start": 29.3878,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 193.9872,
+          "decay": 1.6836,
+          "gain": 0.5408,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.5035,
+          "decay": 2.04,
+          "gain": 1.2981,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.4181,
+          "gain": 0.788,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.2889,
+          "decay": 0.6298,
+          "gain": 0.4792,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 781.526,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.2148,
+          "gain": 0.4825,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5191,
+          "gain": 0.4313,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.1597,
+          "gain": 0.3124,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.3975,
+          "gain": 0.3383,
+          "born": 0
+        },
+        {
+          "id": 11,
+          "hz": 1885.8014,
+          "decay": 0.1471,
+          "gain": 0.2464,
+          "born": 0
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.2416,
+          "gain": 0.3542,
+          "born": 0
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 0.625,
+          "gain": 0.6998,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 305.4814,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 15,
+          "hz": 2228.1925,
+          "decay": 0.1427,
+          "gain": 0.2033,
+          "born": 0
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 29.3878,
+          "midi": 65,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 29.8469,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 30.1531,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 30.6122,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 31.0714,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 31.3776,
+          "midi": 66,
+          "from_mode": 3,
+          "curiosity": false
+        },
+        {
+          "time": 31.8367,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 32.2959,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 32.602,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 33.0612,
+          "midi": 63,
+          "from_mode": 18,
+          "curiosity": false
+        },
+        {
+          "time": 33.5204,
+          "midi": 67,
+          "from_mode": 9,
+          "curiosity": false
+        },
+        {
+          "time": 33.8265,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        1.5447,
+        3.4255,
+        0.147,
+        0.0075,
+        0.0806,
+        0.0011,
+        0.0011,
+        0.0104,
+        0.0012,
+        0.0219,
+        0.0007,
+        0.001,
+        0.0008,
+        1056.7263,
+        0.1234,
+        0.0007,
+        0.0017
+      ],
+      "metrics": {
+        "harmonicity": 0.7639,
+        "meanDecay": 0.5889,
+        "centroidHz": 99.9194,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 7,
+      "start": 34.2857,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 194.6885,
+          "decay": 2.1045,
+          "gain": 0.5841,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 2.55,
+          "gain": 1.4019,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.6298,
+          "gain": 0.4792,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 782.3878,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.2148,
+          "gain": 0.4825,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5191,
+          "gain": 0.4313,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.1597,
+          "gain": 0.3124,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.3101,
+          "gain": 0.3045,
+          "born": 0
+        },
+        {
+          "id": 19,
+          "hz": 262.1792,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 7
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.1884,
+          "gain": 0.3188,
+          "born": 0
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 0.7813,
+          "gain": 0.7558,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 307.4456,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 262.1792,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 34.2857,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 34.7449,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 35.051,
+          "midi": 61,
+          "from_mode": 7,
+          "curiosity": true
+        },
+        {
+          "time": 35.5102,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 35.9694,
+          "midi": 65,
+          "from_mode": 2,
+          "curiosity": true
+        },
+        {
+          "time": 36.2755,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 36.7347,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 37.1939,
+          "midi": 63,
+          "from_mode": 18,
+          "curiosity": false
+        },
+        {
+          "time": 37.5,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 37.9592,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 38.4184,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 38.7245,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        1.0551,
+        2.2671,
+        0.0433,
+        0.0007,
+        0.1415,
+        0.0013,
+        0.0013,
+        0.0101,
+        0.0012,
+        0.0171,
+        0.001,
+        16.3984,
+        0.0005,
+        1344.0528,
+        0.2455,
+        16.3984,
+        0.0017
+      ],
+      "metrics": {
+        "harmonicity": 0.6683,
+        "meanDecay": 0.6955,
+        "centroidHz": 102.0731,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 8,
+      "start": 39.1837,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.1457,
+          "decay": 2.1045,
+          "gain": 0.5841,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.1875,
+          "gain": 1.5141,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.4912,
+          "gain": 0.4313,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 782.9485,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.2148,
+          "gain": 0.4825,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5191,
+          "gain": 0.4313,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.1246,
+          "gain": 0.2812,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.2419,
+          "gain": 0.2741,
+          "born": 0
+        },
+        {
+          "id": 19,
+          "hz": 261.9853,
+          "decay": 0.5,
+          "gain": 0.648,
+          "born": 7
+        },
+        {
+          "id": 12,
+          "hz": 1896.9528,
+          "decay": 0.147,
+          "gain": 0.2869,
+          "born": 0
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 0.9766,
+          "gain": 0.8163,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 308.7291,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.9853,
+          "decay": 0.5,
+          "gain": 0.648,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 39.1837,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 39.6429,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 39.949,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 40.4082,
+          "midi": 63,
+          "from_mode": 18,
+          "curiosity": false
+        },
+        {
+          "time": 40.8673,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 41.1735,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 41.6327,
+          "midi": 55,
+          "from_mode": 19,
+          "curiosity": true
+        },
+        {
+          "time": 42.0918,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 42.398,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 42.8571,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 43.3163,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 43.6224,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        8.0643,
+        0.4271,
+        0.1619,
+        0.0007,
+        0.1161,
+        0.0015,
+        0.0012,
+        0.0084,
+        0.0022,
+        0.0034,
+        0.0006,
+        40.5011,
+        0.0014,
+        854.6715,
+        0.7533,
+        40.5011,
+        0.0017
+      ],
+      "metrics": {
+        "harmonicity": 0.6664,
+        "meanDecay": 0.7396,
+        "centroidHz": 110.414,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 9,
+      "start": 44.0816,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.4435,
+          "decay": 2.6306,
+          "gain": 0.6308,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.1875,
+          "gain": 1.5141,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.3831,
+          "gain": 0.3882,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.1675,
+          "gain": 0.4343,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.5191,
+          "gain": 0.4313,
+          "born": 0
+        },
+        {
+          "id": 8,
+          "hz": 1287.1038,
+          "decay": 0.1246,
+          "gain": 0.2812,
+          "born": 0
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.1887,
+          "gain": 0.2467,
+          "born": 0
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 0.625,
+          "gain": 0.6998,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 594.1992,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 1.2208,
+          "gain": 0.8816,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 309.5662,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 0.625,
+          "gain": 0.6998,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.2309,
+          "gain": 0.2491,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 44.0816,
+          "midi": 58,
+          "from_mode": 19,
+          "curiosity": true
+        },
+        {
+          "time": 44.5408,
+          "midi": 58,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 44.8469,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 45.3061,
+          "midi": 62,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 45.7653,
+          "midi": 58,
+          "from_mode": 20,
+          "curiosity": true
+        },
+        {
+          "time": 46.0714,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 46.5306,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 46.9898,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 47.2959,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 47.7551,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 48.2143,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 48.5204,
+          "midi": 58,
+          "from_mode": 20,
+          "curiosity": true
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        2.7366,
+        0.7221,
+        0.0767,
+        0.0012,
+        0.13,
+        0.0012,
+        0.0016,
+        0.0002,
+        0.001,
+        0.007,
+        0.0008,
+        24.0969,
+        0.6551,
+        554.9633,
+        0.0354,
+        24.0969,
+        0.001
+      ],
+      "metrics": {
+        "harmonicity": 0.6909,
+        "meanDecay": 0.8022,
+        "centroidHz": 109.8622,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 10,
+      "start": 48.9796,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.6373,
+          "decay": 3.2883,
+          "gain": 0.6813,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.1875,
+          "gain": 1.5141,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.3831,
+          "gain": 0.3882,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.1675,
+          "gain": 0.4343,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.4049,
+          "gain": 0.3882,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.3212,
+          "gain": 0.3878,
+          "born": 0
+        },
+        {
+          "id": 10,
+          "hz": 1578.9396,
+          "decay": 0.1472,
+          "gain": 0.222,
+          "born": 0
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 0.7813,
+          "gain": 0.7558,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 592.0197,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 1.526,
+          "gain": 0.9521,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 304.0252,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 0.7813,
+          "gain": 0.7558,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.1801,
+          "gain": 0.2242,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 48.9796,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 49.4388,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 49.7449,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 50.2041,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 50.6633,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 50.9694,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 51.4286,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 51.8878,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 52.1939,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 52.6531,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 53.1122,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 53.4184,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        2.158,
+        0.3633,
+        0.1329,
+        0.0007,
+        0.1016,
+        0.0017,
+        0.0021,
+        0.0006,
+        0.0966,
+        0.0005,
+        0.0006,
+        73.3833,
+        0.2065,
+        672.103,
+        0.0233,
+        73.3833,
+        0.002
+      ],
+      "metrics": {
+        "harmonicity": 0.5899,
+        "meanDecay": 0.8813,
+        "centroidHz": 122.6597,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 4
+      }
+    },
+    {
+      "gen": 11,
+      "start": 53.8776,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.7634,
+          "decay": 4.1104,
+          "gain": 0.7358,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.1875,
+          "gain": 1.5141,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.2988,
+          "gain": 0.3494,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.215,
+          "gain": 0.431,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.1675,
+          "gain": 0.4343,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.3158,
+          "gain": 0.3494,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.2505,
+          "gain": 0.349,
+          "born": 0
+        },
+        {
+          "id": 23,
+          "hz": 1934.4625,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 11
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 0.9766,
+          "gain": 0.8163,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 590.6073,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 1.9075,
+          "gain": 1.0283,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 304.0252,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 0.9766,
+          "gain": 0.8163,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.1801,
+          "gain": 0.2242,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 53.8776,
+          "midi": 60,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 54.3367,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 54.6429,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 55.102,
+          "midi": 65,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 55.5612,
+          "midi": 65,
+          "from_mode": 20,
+          "curiosity": true
+        },
+        {
+          "time": 55.8673,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 56.3265,
+          "midi": 65,
+          "from_mode": 19,
+          "curiosity": true
+        },
+        {
+          "time": 56.7857,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 57.0918,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 57.551,
+          "midi": 65,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 58.0102,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 58.3163,
+          "midi": 67,
+          "from_mode": 19,
+          "curiosity": true
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        0.5698,
+        0.795,
+        0.0787,
+        0.0025,
+        0.1023,
+        0.002,
+        0.0025,
+        0.0003,
+        0.0536,
+        0.0097,
+        0.0187,
+        30.5455,
+        0.019,
+        711.8167,
+        0.022,
+        30.5455,
+        0.0013
+      ],
+      "metrics": {
+        "harmonicity": 0.6034,
+        "meanDecay": 0.9756,
+        "centroidHz": 108.9697,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 12,
+      "start": 58.7755,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.8454,
+          "decay": 4.1104,
+          "gain": 0.7358,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.9844,
+          "gain": 1.6352,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.2988,
+          "gain": 0.3494,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.1677,
+          "gain": 0.3879,
+          "born": 0
+        },
+        {
+          "id": 6,
+          "hz": 1098.0402,
+          "decay": 0.1307,
+          "gain": 0.3909,
+          "born": 0
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.2463,
+          "gain": 0.3145,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.2505,
+          "gain": 0.349,
+          "born": 0
+        },
+        {
+          "id": 23,
+          "hz": 1934.4625,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 11
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 1.2208,
+          "gain": 0.8816,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 590.6073,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 2.3844,
+          "gain": 1.1106,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 300.4769,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 1.2208,
+          "gain": 0.8816,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.1405,
+          "gain": 0.2018,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 58.7755,
+          "midi": 60,
+          "from_mode": 1,
+          "curiosity": true
+        },
+        {
+          "time": 59.2347,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 59.5408,
+          "midi": 58,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 60,
+          "midi": 67,
+          "from_mode": 2,
+          "curiosity": true
+        },
+        {
+          "time": 60.4592,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 60.7653,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 61.2245,
+          "midi": 58,
+          "from_mode": 20,
+          "curiosity": true
+        },
+        {
+          "time": 61.6837,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 61.9898,
+          "midi": 67,
+          "from_mode": 4,
+          "curiosity": false
+        },
+        {
+          "time": 62.449,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 62.9082,
+          "midi": 55,
+          "from_mode": 19,
+          "curiosity": true
+        },
+        {
+          "time": 63.2143,
+          "midi": 55,
+          "from_mode": 20,
+          "curiosity": true
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        2.3717,
+        0.7256,
+        0.0752,
+        0.0019,
+        0.163,
+        0.0016,
+        0.0022,
+        0.0011,
+        13.9433,
+        0.0229,
+        0.017,
+        17.7579,
+        0.0821,
+        251.2408,
+        0.0151,
+        17.7579,
+        0.0037
+      ],
+      "metrics": {
+        "harmonicity": 0.6033,
+        "meanDecay": 1.0679,
+        "centroidHz": 119.4143,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 13,
+      "start": 63.6735,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.8454,
+          "decay": 4.1104,
+          "gain": 0.7358,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.9844,
+          "gain": 1.6352,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.2331,
+          "gain": 0.3145,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 5,
+          "hz": 1094.3231,
+          "decay": 0.1308,
+          "gain": 0.3491,
+          "born": 0
+        },
+        {
+          "id": 24,
+          "hz": 1685.9344,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 13
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.1921,
+          "gain": 0.2831,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.5,
+          "gain": 0.648,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.2505,
+          "gain": 0.349,
+          "born": 0
+        },
+        {
+          "id": 23,
+          "hz": 1934.4625,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 11
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 1.526,
+          "gain": 0.9521,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 589.691,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 2.9805,
+          "gain": 1.1994,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 300.4769,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 1.526,
+          "gain": 0.9521,
+          "born": 7
+        },
+        {
+          "id": 16,
+          "hz": 2463.8875,
+          "decay": 0.1405,
+          "gain": 0.2018,
+          "born": 0
+        }
+      ],
+      "melody": [
+        {
+          "time": 63.6735,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 64.1327,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 64.4388,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 64.898,
+          "midi": 58,
+          "from_mode": 0,
+          "curiosity": true
+        },
+        {
+          "time": 65.3571,
+          "midi": 58,
+          "from_mode": 22,
+          "curiosity": false
+        },
+        {
+          "time": 65.6633,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 66.1224,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 66.5816,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 66.8878,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        },
+        {
+          "time": 67.3469,
+          "midi": 65,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 67.8061,
+          "midi": 58,
+          "from_mode": 22,
+          "curiosity": false
+        },
+        {
+          "time": 68.1122,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        3.7323,
+        1.1933,
+        0.1302,
+        0.0031,
+        0.1591,
+        0.0027,
+        0.105,
+        0.0014,
+        10.4466,
+        0.011,
+        0.0247,
+        6.5878,
+        0.0318,
+        175.164,
+        0.0124,
+        6.5878,
+        0.0026
+      ],
+      "metrics": {
+        "harmonicity": 0.6033,
+        "meanDecay": 1.1513,
+        "centroidHz": 115.2227,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 14,
+      "start": 68.5714,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.8454,
+          "decay": 4.1104,
+          "gain": 0.7358,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.9844,
+          "gain": 1.6352,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.1818,
+          "gain": 0.2831,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 25,
+          "hz": 468.3334,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 14
+        },
+        {
+          "id": 24,
+          "hz": 1643.6744,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 13
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.1498,
+          "gain": 0.2548,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.625,
+          "gain": 0.6998,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.2505,
+          "gain": 0.349,
+          "born": 0
+        },
+        {
+          "id": 23,
+          "hz": 1934.4625,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 11
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 1.9075,
+          "gain": 1.0283,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 589.691,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 3.7256,
+          "gain": 1.2954,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 300.4769,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 1.9075,
+          "gain": 1.0283,
+          "born": 7
+        },
+        {
+          "id": 26,
+          "hz": 468.3334,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 14
+        }
+      ],
+      "melody": [
+        {
+          "time": 68.5714,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 69.0306,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 69.3367,
+          "midi": 55,
+          "from_mode": 19,
+          "curiosity": true
+        },
+        {
+          "time": 69.7959,
+          "midi": 58,
+          "from_mode": 22,
+          "curiosity": false
+        },
+        {
+          "time": 70.2551,
+          "midi": 60,
+          "from_mode": 2,
+          "curiosity": false
+        },
+        {
+          "time": 70.5612,
+          "midi": 63,
+          "from_mode": 20,
+          "curiosity": true
+        },
+        {
+          "time": 71.0204,
+          "midi": 60,
+          "from_mode": 20,
+          "curiosity": false
+        },
+        {
+          "time": 71.4796,
+          "midi": 62,
+          "from_mode": 17,
+          "curiosity": true
+        },
+        {
+          "time": 71.7857,
+          "midi": 58,
+          "from_mode": 22,
+          "curiosity": false
+        },
+        {
+          "time": 72.2449,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 72.7041,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 73.0102,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        7.9973,
+        0.3908,
+        0.1966,
+        0.0037,
+        0.0941,
+        1.8582,
+        0.0025,
+        0.0265,
+        12.7307,
+        0.0096,
+        0.0201,
+        10.6704,
+        0.5163,
+        132.0505,
+        0.167,
+        10.6704,
+        1.8582
+      ],
+      "metrics": {
+        "harmonicity": 0.5801,
+        "meanDecay": 1.273,
+        "centroidHz": 129.6243,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    },
+    {
+      "gen": 15,
+      "start": 73.4694,
+      "modes": [
+        {
+          "id": 0,
+          "hz": 195.8454,
+          "decay": 4.1104,
+          "gain": 0.7358,
+          "born": 0
+        },
+        {
+          "id": 1,
+          "hz": 392.3256,
+          "decay": 3.9844,
+          "gain": 1.6352,
+          "born": 0
+        },
+        {
+          "id": 2,
+          "hz": 523.7295,
+          "decay": 1.7726,
+          "gain": 0.851,
+          "born": 0
+        },
+        {
+          "id": 3,
+          "hz": 738.8834,
+          "decay": 0.1418,
+          "gain": 0.2548,
+          "born": 0
+        },
+        {
+          "id": 4,
+          "hz": 783.3132,
+          "decay": 0.626,
+          "gain": 0.4795,
+          "born": 0
+        },
+        {
+          "id": 25,
+          "hz": 467.5729,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 14
+        },
+        {
+          "id": 24,
+          "hz": 1643.6744,
+          "decay": 0.312,
+          "gain": 0.54,
+          "born": 13
+        },
+        {
+          "id": 7,
+          "hz": 1245.4659,
+          "decay": 0.1498,
+          "gain": 0.2548,
+          "born": 0
+        },
+        {
+          "id": 22,
+          "hz": 232.905,
+          "decay": 0.7813,
+          "gain": 0.7558,
+          "born": 10
+        },
+        {
+          "id": 9,
+          "hz": 1569.6608,
+          "decay": 0.1954,
+          "gain": 0.3141,
+          "born": 0
+        },
+        {
+          "id": 23,
+          "hz": 1934.4625,
+          "decay": 0.312,
+          "gain": 0.54,
+          "born": 11
+        },
+        {
+          "id": 19,
+          "hz": 261.8593,
+          "decay": 2.3844,
+          "gain": 1.1106,
+          "born": 7
+        },
+        {
+          "id": 21,
+          "hz": 589.0962,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 9
+        },
+        {
+          "id": 17,
+          "hz": 97.8988,
+          "decay": 4.657,
+          "gain": 1.399,
+          "born": 4
+        },
+        {
+          "id": 18,
+          "hz": 300.4769,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 5
+        },
+        {
+          "id": 20,
+          "hz": 261.8593,
+          "decay": 2.3844,
+          "gain": 1.1106,
+          "born": 7
+        },
+        {
+          "id": 26,
+          "hz": 467.5729,
+          "decay": 0.4,
+          "gain": 0.6,
+          "born": 14
+        }
+      ],
+      "melody": [
+        {
+          "time": 73.4694,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 73.9286,
+          "midi": 65,
+          "from_mode": 22,
+          "curiosity": true
+        },
+        {
+          "time": 74.2347,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 74.6939,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 75.1531,
+          "midi": 67,
+          "from_mode": 1,
+          "curiosity": false
+        },
+        {
+          "time": 75.4592,
+          "midi": 63,
+          "from_mode": 20,
+          "curiosity": true
+        },
+        {
+          "time": 75.9184,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 76.3776,
+          "midi": 55,
+          "from_mode": 17,
+          "curiosity": false
+        },
+        {
+          "time": 76.6837,
+          "midi": 58,
+          "from_mode": 22,
+          "curiosity": false
+        },
+        {
+          "time": 77.1429,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 77.602,
+          "midi": 60,
+          "from_mode": 19,
+          "curiosity": false
+        },
+        {
+          "time": 77.9082,
+          "midi": 55,
+          "from_mode": 0,
+          "curiosity": false
+        }
+      ],
+      "drone": {
+        "midi": 43,
+        "from_mode": 17
+      },
+      "energy": [
+        2.6057,
+        0.5098,
+        0.251,
+        0.0066,
+        0.1235,
+        0.9675,
+        0.003,
+        0.0314,
+        7.8506,
+        0.0067,
+        0.0334,
+        2.8973,
+        0.042,
+        139.2686,
+        0.0478,
+        2.8973,
+        0.9675
+      ],
+      "metrics": {
+        "harmonicity": 0.5756,
+        "meanDecay": 1.3771,
+        "centroidHz": 111.6941,
+        "lowestStrongHz": 97.8988,
+        "distinctPitchClasses": 3
+      }
+    }
+  ],
+  "changes": [
+    {
+      "gen": 0,
+      "mode": 0,
+      "kind": "grow",
+      "from": "185.0Hz/0.86s",
+      "to": "185.0Hz/1.08s",
+      "cause": "エネルギー中央値の 74.33 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 0,
+      "kind": "tune",
+      "from": "185.0Hz",
+      "to": "188.8Hz",
+      "cause": "弾かれた音 196.0Hz に 100 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 1,
+      "kind": "grow",
+      "from": "397.6Hz/0.53s",
+      "to": "397.6Hz/0.67s",
+      "cause": "エネルギー中央値の 190.33 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 1,
+      "kind": "tune",
+      "from": "397.6Hz",
+      "to": "395.8Hz",
+      "cause": "弾かれた音 392.4Hz に -23 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 2,
+      "kind": "grow",
+      "from": "527.4Hz/0.46s",
+      "to": "527.4Hz/0.58s",
+      "cause": "エネルギー中央値の 1050.67 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 2,
+      "kind": "tune",
+      "from": "527.4Hz",
+      "to": "525.9Hz",
+      "cause": "弾かれた音 523.3Hz に -14 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 3,
+      "kind": "tune",
+      "from": "740.0Hz",
+      "to": "725.5Hz",
+      "cause": "弾かれた音 699.2Hz に -98 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 4,
+      "kind": "tune",
+      "from": "751.9Hz",
+      "to": "763.0Hz",
+      "cause": "弾かれた音 784.0Hz に 72 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 7,
+      "kind": "grow",
+      "from": "1248.0Hz/0.34s",
+      "to": "1248.0Hz/0.43s",
+      "cause": "エネルギー中央値の 10.67 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 7,
+      "kind": "tune",
+      "from": "1248.0Hz",
+      "to": "1246.8Hz",
+      "cause": "弾かれた音 1244.5Hz に -5 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 8,
+      "kind": "tune",
+      "from": "1310.6Hz",
+      "to": "1287.1Hz",
+      "cause": "弾かれた音 1244.5Hz に -90 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1590.4Hz",
+      "to": "1582.5Hz",
+      "cause": "弾かれた音 1568.0Hz に -25 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 10,
+      "kind": "tune",
+      "from": "1665.0Hz",
+      "to": "1630.4Hz",
+      "cause": "弾かれた音 1568.0Hz に -104 セント引き寄せ"
+    },
+    {
+      "gen": 0,
+      "mode": 11,
+      "kind": "starve",
+      "from": "1885.8Hz/0.31s",
+      "to": "1885.8Hz/0.24s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 12,
+      "kind": "starve",
+      "from": "1897.0Hz/0.31s",
+      "to": "1897.0Hz/0.24s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 13,
+      "kind": "starve",
+      "from": "2109.6Hz/0.30s",
+      "to": "2109.6Hz/0.24s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 0,
+      "mode": 14,
+      "kind": "starve",
+      "from": "2161.0Hz/0.30s",
+      "to": "2161.0Hz/0.24s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 0,
+      "kind": "grow",
+      "from": "188.8Hz/1.08s",
+      "to": "188.8Hz/1.35s",
+      "cause": "エネルギー中央値の 7.20 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 1,
+      "kind": "grow",
+      "from": "395.8Hz/0.67s",
+      "to": "395.8Hz/0.84s",
+      "cause": "エネルギー中央値の 287.90 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 1,
+      "kind": "tune",
+      "from": "395.8Hz",
+      "to": "394.6Hz",
+      "cause": "弾かれた音 392.4Hz に -15 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 2,
+      "kind": "grow",
+      "from": "525.9Hz/0.58s",
+      "to": "525.9Hz/0.73s",
+      "cause": "エネルギー中央値の 1104.80 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 2,
+      "kind": "tune",
+      "from": "525.9Hz",
+      "to": "525.0Hz",
+      "cause": "弾かれた音 523.3Hz に -9 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 3,
+      "kind": "tune",
+      "from": "725.5Hz",
+      "to": "730.5Hz",
+      "cause": "弾かれた音 740.0Hz に 34 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 4,
+      "kind": "grow",
+      "from": "763.0Hz/0.40s",
+      "to": "763.0Hz/0.50s",
+      "cause": "エネルギー中央値の 4.50 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 4,
+      "kind": "tune",
+      "from": "763.0Hz",
+      "to": "770.3Hz",
+      "cause": "弾かれた音 784.0Hz に 47 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 7,
+      "kind": "tune",
+      "from": "1246.8Hz",
+      "to": "1246.0Hz",
+      "cause": "弾かれた音 1244.5Hz に -3 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1582.5Hz",
+      "to": "1577.4Hz",
+      "cause": "弾かれた音 1568.0Hz に -16 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 10,
+      "kind": "tune",
+      "from": "1630.4Hz",
+      "to": "1608.3Hz",
+      "cause": "弾かれた音 1568.0Hz に -68 セント引き寄せ"
+    },
+    {
+      "gen": 1,
+      "mode": 11,
+      "kind": "starve",
+      "from": "1885.8Hz/0.24s",
+      "to": "1885.8Hz/0.19s",
+      "cause": "エネルギー中央値の 0.30 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 13,
+      "kind": "starve",
+      "from": "2109.6Hz/0.24s",
+      "to": "2109.6Hz/0.18s",
+      "cause": "エネルギー中央値の 0.20 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 14,
+      "kind": "starve",
+      "from": "2161.0Hz/0.24s",
+      "to": "2161.0Hz/0.18s",
+      "cause": "エネルギー中央値の 0.10 倍"
+    },
+    {
+      "gen": 1,
+      "mode": 15,
+      "kind": "starve",
+      "from": "2228.2Hz/0.30s",
+      "to": "2228.2Hz/0.23s",
+      "cause": "エネルギー中央値の 0.20 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 1,
+      "kind": "grow",
+      "from": "394.6Hz/0.84s",
+      "to": "394.6Hz/1.04s",
+      "cause": "エネルギー中央値の 524.25 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 1,
+      "kind": "tune",
+      "from": "394.6Hz",
+      "to": "393.8Hz",
+      "cause": "弾かれた音 392.4Hz に -10 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 2,
+      "kind": "grow",
+      "from": "525.0Hz/0.73s",
+      "to": "525.0Hz/0.91s",
+      "cause": "エネルギー中央値の 553.69 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 2,
+      "kind": "tune",
+      "from": "525.0Hz",
+      "to": "524.4Hz",
+      "cause": "弾かれた音 523.3Hz に -6 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 3,
+      "kind": "grow",
+      "from": "730.5Hz/0.40s",
+      "to": "730.5Hz/0.50s",
+      "cause": "エネルギー中央値の 6.81 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 3,
+      "kind": "tune",
+      "from": "730.5Hz",
+      "to": "733.8Hz",
+      "cause": "弾かれた音 740.0Hz に 22 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 4,
+      "kind": "tune",
+      "from": "770.3Hz",
+      "to": "775.1Hz",
+      "cause": "弾かれた音 784.0Hz に 31 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 7,
+      "kind": "grow",
+      "from": "1246.0Hz/0.43s",
+      "to": "1246.0Hz/0.53s",
+      "cause": "エネルギー中央値の 5.88 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 7,
+      "kind": "tune",
+      "from": "1246.0Hz",
+      "to": "1245.5Hz",
+      "cause": "弾かれた音 1244.5Hz に -2 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 8,
+      "kind": "starve",
+      "from": "1287.1Hz/0.34s",
+      "to": "1287.1Hz/0.26s",
+      "cause": "エネルギー中央値の 0.13 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1577.4Hz",
+      "to": "1574.1Hz",
+      "cause": "弾かれた音 1568.0Hz に -10 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 10,
+      "kind": "tune",
+      "from": "1608.3Hz",
+      "to": "1594.0Hz",
+      "cause": "弾かれた音 1568.0Hz に -44 セント引き寄せ"
+    },
+    {
+      "gen": 2,
+      "mode": 13,
+      "kind": "starve",
+      "from": "2109.6Hz/0.18s",
+      "to": "2109.6Hz/0.14s",
+      "cause": "エネルギー中央値の 0.13 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 14,
+      "kind": "starve",
+      "from": "2161.0Hz/0.18s",
+      "to": "2161.0Hz/0.14s",
+      "cause": "エネルギー中央値の 0.13 倍"
+    },
+    {
+      "gen": 2,
+      "mode": 15,
+      "kind": "starve",
+      "from": "2228.2Hz/0.23s",
+      "to": "2228.2Hz/0.18s",
+      "cause": "エネルギー中央値の 0.25 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 0,
+      "kind": "tune",
+      "from": "188.8Hz",
+      "to": "191.3Hz",
+      "cause": "弾かれた音 196.0Hz に 65 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 1,
+      "kind": "grow",
+      "from": "393.8Hz/1.04s",
+      "to": "393.8Hz/1.31s",
+      "cause": "エネルギー中央値の 811.46 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 1,
+      "kind": "tune",
+      "from": "393.8Hz",
+      "to": "393.2Hz",
+      "cause": "弾かれた音 392.0Hz に -8 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 2,
+      "kind": "grow",
+      "from": "524.4Hz/0.91s",
+      "to": "524.4Hz/1.13s",
+      "cause": "エネルギー中央値の 243.00 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 2,
+      "kind": "tune",
+      "from": "524.4Hz",
+      "to": "524.0Hz",
+      "cause": "弾かれた音 523.3Hz に -4 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 3,
+      "kind": "grow",
+      "from": "733.8Hz/0.50s",
+      "to": "733.8Hz/0.63s",
+      "cause": "エネルギー中央値の 8.15 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 3,
+      "kind": "tune",
+      "from": "733.8Hz",
+      "to": "736.0Hz",
+      "cause": "弾かれた音 740.0Hz に 14 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 4,
+      "kind": "tune",
+      "from": "775.1Hz",
+      "to": "778.2Hz",
+      "cause": "弾かれた音 784.0Hz に 20 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 8,
+      "kind": "starve",
+      "from": "1287.1Hz/0.26s",
+      "to": "1287.1Hz/0.20s",
+      "cause": "エネルギー中央値の 0.38 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1574.1Hz",
+      "to": "1572.0Hz",
+      "cause": "弾かれた音 1568.0Hz に -7 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 10,
+      "kind": "grow",
+      "from": "1594.0Hz/0.32s",
+      "to": "1594.0Hz/0.40s",
+      "cause": "エネルギー中央値の 10.00 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 10,
+      "kind": "tune",
+      "from": "1594.0Hz",
+      "to": "1584.9Hz",
+      "cause": "弾かれた音 1568.0Hz に -29 セント引き寄せ"
+    },
+    {
+      "gen": 3,
+      "mode": 11,
+      "kind": "starve",
+      "from": "1885.8Hz/0.19s",
+      "to": "1885.8Hz/0.15s",
+      "cause": "エネルギー中央値の 0.38 倍"
+    },
+    {
+      "gen": 3,
+      "mode": 17,
+      "kind": "reborn",
+      "from": "#13 2109.6Hz (死)",
+      "to": "#17 97.8Hz",
+      "cause": "聴こえたスペクトルのピーク 97.8Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 3,
+      "mode": 16,
+      "kind": "starve",
+      "from": "2463.9Hz/0.30s",
+      "to": "2463.9Hz/0.23s",
+      "cause": "エネルギー中央値の 0.46 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 0,
+      "kind": "tune",
+      "from": "191.3Hz",
+      "to": "192.9Hz",
+      "cause": "弾かれた音 196.0Hz に 42 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 1,
+      "kind": "grow",
+      "from": "393.2Hz/1.31s",
+      "to": "393.2Hz/1.63s",
+      "cause": "エネルギー中央値の 1931.33 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 1,
+      "kind": "tune",
+      "from": "393.2Hz",
+      "to": "392.8Hz",
+      "cause": "弾かれた音 392.0Hz に -5 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 2,
+      "kind": "grow",
+      "from": "524.0Hz/1.13s",
+      "to": "524.0Hz/1.42s",
+      "cause": "エネルギー中央値の 99.40 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 2,
+      "kind": "tune",
+      "from": "524.0Hz",
+      "to": "523.7Hz",
+      "cause": "弾かれた音 523.3Hz に -2 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 3,
+      "kind": "tune",
+      "from": "736.0Hz",
+      "to": "737.4Hz",
+      "cause": "弾かれた音 740.0Hz に 9 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 4,
+      "kind": "tune",
+      "from": "778.2Hz",
+      "to": "780.2Hz",
+      "cause": "弾かれた音 784.0Hz に 13 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 5,
+      "kind": "starve",
+      "from": "1094.3Hz/0.35s",
+      "to": "1094.3Hz/0.28s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 6,
+      "kind": "starve",
+      "from": "1098.0Hz/0.35s",
+      "to": "1098.0Hz/0.28s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 7,
+      "kind": "grow",
+      "from": "1245.5Hz/0.53s",
+      "to": "1245.5Hz/0.67s",
+      "cause": "エネルギー中央値の 28.07 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1572.0Hz",
+      "to": "1570.6Hz",
+      "cause": "弾かれた音 1568.0Hz に -4 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 10,
+      "kind": "tune",
+      "from": "1584.9Hz",
+      "to": "1578.9Hz",
+      "cause": "弾かれた音 1568.0Hz に -19 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.8Hz/0.40s",
+      "to": "97.8Hz/0.50s",
+      "cause": "エネルギー中央値の 885188.27 倍"
+    },
+    {
+      "gen": 4,
+      "mode": 17,
+      "kind": "tune",
+      "from": "97.8Hz",
+      "to": "97.8Hz",
+      "cause": "弾かれた音 98.0Hz に 4 セント引き寄せ"
+    },
+    {
+      "gen": 4,
+      "mode": 18,
+      "kind": "reborn",
+      "from": "#14 2161.0Hz (死)",
+      "to": "#18 311.9Hz",
+      "cause": "聴こえたスペクトルのピーク 311.9Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 4,
+      "mode": 15,
+      "kind": "starve",
+      "from": "2228.2Hz/0.18s",
+      "to": "2228.2Hz/0.14s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 0,
+      "kind": "grow",
+      "from": "192.9Hz/1.35s",
+      "to": "192.9Hz/1.68s",
+      "cause": "エネルギー中央値の 188.50 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 0,
+      "kind": "tune",
+      "from": "192.9Hz",
+      "to": "194.0Hz",
+      "cause": "弾かれた音 196.0Hz に 27 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 1,
+      "kind": "grow",
+      "from": "392.8Hz/1.63s",
+      "to": "392.8Hz/2.04s",
+      "cause": "エネルギー中央値の 2494.50 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 1,
+      "kind": "tune",
+      "from": "392.8Hz",
+      "to": "392.5Hz",
+      "cause": "弾かれた音 392.0Hz に -3 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 3,
+      "kind": "tune",
+      "from": "737.4Hz",
+      "to": "738.3Hz",
+      "cause": "弾かれた音 740.0Hz に 6 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 4,
+      "kind": "grow",
+      "from": "780.2Hz/0.50s",
+      "to": "780.2Hz/0.63s",
+      "cause": "エネルギー中央値の 29.50 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 4,
+      "kind": "tune",
+      "from": "780.2Hz",
+      "to": "781.5Hz",
+      "cause": "弾かれた音 784.0Hz に 8 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 5,
+      "kind": "starve",
+      "from": "1094.3Hz/0.28s",
+      "to": "1094.3Hz/0.22s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 6,
+      "kind": "starve",
+      "from": "1098.0Hz/0.28s",
+      "to": "1098.0Hz/0.21s",
+      "cause": "エネルギー中央値の 0.33 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.67s",
+      "to": "1245.5Hz/0.52s",
+      "cause": "エネルギー中央値の 0.11 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 8,
+      "kind": "starve",
+      "from": "1287.1Hz/0.20s",
+      "to": "1287.1Hz/0.16s",
+      "cause": "エネルギー中央値の 0.22 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 9,
+      "kind": "tune",
+      "from": "1570.6Hz",
+      "to": "1569.7Hz",
+      "cause": "弾かれた音 1568.0Hz に -3 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.8Hz/0.50s",
+      "to": "97.8Hz/0.63s",
+      "cause": "エネルギー中央値の 321275.50 倍"
+    },
+    {
+      "gen": 5,
+      "mode": 17,
+      "kind": "tune",
+      "from": "97.8Hz",
+      "to": "97.9Hz",
+      "cause": "弾かれた音 98.0Hz に 3 セント引き寄せ"
+    },
+    {
+      "gen": 5,
+      "mode": 18,
+      "kind": "tune",
+      "from": "311.9Hz",
+      "to": "305.5Hz",
+      "cause": "弾かれた音 294.0Hz に -102 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 0,
+      "kind": "grow",
+      "from": "194.0Hz/1.68s",
+      "to": "194.0Hz/2.10s",
+      "cause": "エネルギー中央値の 205.96 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 0,
+      "kind": "tune",
+      "from": "194.0Hz",
+      "to": "194.7Hz",
+      "cause": "弾かれた音 196.0Hz に 18 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 1,
+      "kind": "grow",
+      "from": "392.5Hz/2.04s",
+      "to": "392.5Hz/2.55s",
+      "cause": "エネルギー中央値の 456.73 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 1,
+      "kind": "tune",
+      "from": "392.5Hz",
+      "to": "392.3Hz",
+      "cause": "弾かれた音 392.0Hz に -2 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 2,
+      "kind": "grow",
+      "from": "523.7Hz/1.42s",
+      "to": "523.7Hz/1.77s",
+      "cause": "エネルギー中央値の 19.60 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 3,
+      "kind": "tune",
+      "from": "738.3Hz",
+      "to": "738.9Hz",
+      "cause": "弾かれた音 740.0Hz に 4 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 4,
+      "kind": "tune",
+      "from": "781.5Hz",
+      "to": "782.4Hz",
+      "cause": "弾かれた音 784.0Hz に 5 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 10,
+      "kind": "starve",
+      "from": "1578.9Hz/0.40s",
+      "to": "1578.9Hz/0.31s",
+      "cause": "エネルギー中央値の 0.09 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 19,
+      "kind": "reborn",
+      "from": "#11 1885.8Hz (死)",
+      "to": "#19 262.2Hz",
+      "cause": "聴こえたスペクトルのピーク 262.2Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 6,
+      "mode": 12,
+      "kind": "starve",
+      "from": "1897.0Hz/0.24s",
+      "to": "1897.0Hz/0.19s",
+      "cause": "エネルギー中央値の 0.11 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/0.63s",
+      "to": "97.9Hz/0.78s",
+      "cause": "エネルギー中央値の 140896.84 倍"
+    },
+    {
+      "gen": 6,
+      "mode": 18,
+      "kind": "tune",
+      "from": "305.5Hz",
+      "to": "307.4Hz",
+      "cause": "弾かれた音 311.1Hz に 32 セント引き寄せ"
+    },
+    {
+      "gen": 6,
+      "mode": 20,
+      "kind": "reborn",
+      "from": "#15 2228.2Hz (死)",
+      "to": "#20 262.2Hz",
+      "cause": "聴こえたスペクトルのピーク 262.2Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 7,
+      "mode": 0,
+      "kind": "tune",
+      "from": "194.7Hz",
+      "to": "195.1Hz",
+      "cause": "弾かれた音 196.0Hz に 12 セント引き寄せ"
+    },
+    {
+      "gen": 7,
+      "mode": 1,
+      "kind": "grow",
+      "from": "392.3Hz/2.55s",
+      "to": "392.3Hz/3.19s",
+      "cause": "エネルギー中央値の 132.58 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.63s",
+      "to": "738.9Hz/0.49s",
+      "cause": "エネルギー中央値の 0.04 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 4,
+      "kind": "tune",
+      "from": "782.4Hz",
+      "to": "782.9Hz",
+      "cause": "弾かれた音 784.0Hz に 4 セント引き寄せ"
+    },
+    {
+      "gen": 7,
+      "mode": 8,
+      "kind": "starve",
+      "from": "1287.1Hz/0.16s",
+      "to": "1287.1Hz/0.12s",
+      "cause": "エネルギー中央値の 0.07 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 10,
+      "kind": "starve",
+      "from": "1578.9Hz/0.31s",
+      "to": "1578.9Hz/0.24s",
+      "cause": "エネルギー中央値の 0.06 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 19,
+      "kind": "grow",
+      "from": "262.2Hz/0.40s",
+      "to": "262.2Hz/0.50s",
+      "cause": "エネルギー中央値の 958.97 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 19,
+      "kind": "tune",
+      "from": "262.2Hz",
+      "to": "262.0Hz",
+      "cause": "弾かれた音 261.6Hz に -4 セント引き寄せ"
+    },
+    {
+      "gen": 7,
+      "mode": 12,
+      "kind": "starve",
+      "from": "1897.0Hz/0.19s",
+      "to": "1897.0Hz/0.15s",
+      "cause": "エネルギー中央値の 0.03 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/0.78s",
+      "to": "97.9Hz/0.98s",
+      "cause": "エネルギー中央値の 78599.58 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 18,
+      "kind": "tune",
+      "from": "307.4Hz",
+      "to": "308.7Hz",
+      "cause": "弾かれた音 311.1Hz に 21 セント引き寄せ"
+    },
+    {
+      "gen": 7,
+      "mode": 20,
+      "kind": "grow",
+      "from": "262.2Hz/0.40s",
+      "to": "262.2Hz/0.50s",
+      "cause": "エネルギー中央値の 958.97 倍"
+    },
+    {
+      "gen": 7,
+      "mode": 20,
+      "kind": "tune",
+      "from": "262.2Hz",
+      "to": "262.0Hz",
+      "cause": "弾かれた音 261.6Hz に -4 セント引き寄せ"
+    },
+    {
+      "gen": 8,
+      "mode": 0,
+      "kind": "grow",
+      "from": "195.1Hz/2.10s",
+      "to": "195.1Hz/2.63s",
+      "cause": "エネルギー中央値の 960.04 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 0,
+      "kind": "tune",
+      "from": "195.1Hz",
+      "to": "195.4Hz",
+      "cause": "弾かれた音 196.0Hz に 8 セント引き寄せ"
+    },
+    {
+      "gen": 8,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.49s",
+      "to": "738.9Hz/0.38s",
+      "cause": "エネルギー中央値の 0.08 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 4,
+      "kind": "tune",
+      "from": "782.9Hz",
+      "to": "783.3Hz",
+      "cause": "弾かれた音 784.0Hz に 2 セント引き寄せ"
+    },
+    {
+      "gen": 8,
+      "mode": 6,
+      "kind": "starve",
+      "from": "1098.0Hz/0.21s",
+      "to": "1098.0Hz/0.17s",
+      "cause": "エネルギー中央値の 0.14 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 10,
+      "kind": "starve",
+      "from": "1578.9Hz/0.24s",
+      "to": "1578.9Hz/0.19s",
+      "cause": "エネルギー中央値の 0.07 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 19,
+      "kind": "grow",
+      "from": "262.0Hz/0.50s",
+      "to": "262.0Hz/0.63s",
+      "cause": "エネルギー中央値の 4821.56 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 19,
+      "kind": "tune",
+      "from": "262.0Hz",
+      "to": "261.9Hz",
+      "cause": "弾かれた音 261.6Hz に -2 セント引き寄せ"
+    },
+    {
+      "gen": 8,
+      "mode": 21,
+      "kind": "reborn",
+      "from": "#12 1897.0Hz (死)",
+      "to": "#21 594.2Hz",
+      "cause": "聴こえたスペクトルのピーク 594.2Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 8,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/0.98s",
+      "to": "97.9Hz/1.22s",
+      "cause": "エネルギー中央値の 101746.61 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 18,
+      "kind": "tune",
+      "from": "308.7Hz",
+      "to": "309.6Hz",
+      "cause": "弾かれた音 311.1Hz に 13 セント引き寄せ"
+    },
+    {
+      "gen": 8,
+      "mode": 20,
+      "kind": "grow",
+      "from": "262.0Hz/0.50s",
+      "to": "262.0Hz/0.63s",
+      "cause": "エネルギー中央値の 4821.56 倍"
+    },
+    {
+      "gen": 8,
+      "mode": 20,
+      "kind": "tune",
+      "from": "262.0Hz",
+      "to": "261.9Hz",
+      "cause": "弾かれた音 261.6Hz に -2 セント引き寄せ"
+    },
+    {
+      "gen": 9,
+      "mode": 0,
+      "kind": "grow",
+      "from": "195.4Hz/2.63s",
+      "to": "195.4Hz/3.29s",
+      "cause": "エネルギー中央値の 77.31 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 0,
+      "kind": "tune",
+      "from": "195.4Hz",
+      "to": "195.6Hz",
+      "cause": "弾かれた音 196.0Hz に 5 セント引き寄せ"
+    },
+    {
+      "gen": 9,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.52s",
+      "to": "1245.5Hz/0.40s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 22,
+      "kind": "reborn",
+      "from": "#8 1287.1Hz (死)",
+      "to": "#22 232.9Hz",
+      "cause": "聴こえたスペクトルのピーク 232.9Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 9,
+      "mode": 10,
+      "kind": "starve",
+      "from": "1578.9Hz/0.19s",
+      "to": "1578.9Hz/0.15s",
+      "cause": "エネルギー中央値の 0.02 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/0.63s",
+      "to": "261.9Hz/0.78s",
+      "cause": "エネルギー中央値の 680.70 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 21,
+      "kind": "tune",
+      "from": "594.2Hz",
+      "to": "592.0Hz",
+      "cause": "弾かれた音 588.0Hz に -18 セント引き寄せ"
+    },
+    {
+      "gen": 9,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/1.22s",
+      "to": "97.9Hz/1.53s",
+      "cause": "エネルギー中央値の 15676.93 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 18,
+      "kind": "tune",
+      "from": "309.6Hz",
+      "to": "304.0Hz",
+      "cause": "弾かれた音 294.0Hz に -89 セント引き寄せ"
+    },
+    {
+      "gen": 9,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/0.63s",
+      "to": "261.9Hz/0.78s",
+      "cause": "エネルギー中央値の 680.70 倍"
+    },
+    {
+      "gen": 9,
+      "mode": 16,
+      "kind": "starve",
+      "from": "2463.9Hz/0.23s",
+      "to": "2463.9Hz/0.18s",
+      "cause": "エネルギー中央値の 0.03 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 0,
+      "kind": "grow",
+      "from": "195.6Hz/3.29s",
+      "to": "195.6Hz/4.11s",
+      "cause": "エネルギー中央値の 22.34 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 0,
+      "kind": "tune",
+      "from": "195.6Hz",
+      "to": "195.8Hz",
+      "cause": "弾かれた音 196.0Hz に 3 セント引き寄せ"
+    },
+    {
+      "gen": 10,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.38s",
+      "to": "738.9Hz/0.30s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.40s",
+      "to": "1245.5Hz/0.32s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 9,
+      "kind": "starve",
+      "from": "1569.7Hz/0.32s",
+      "to": "1569.7Hz/0.25s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 23,
+      "kind": "reborn",
+      "from": "#10 1578.9Hz (死)",
+      "to": "#23 1934.5Hz",
+      "cause": "聴こえたスペクトルのピーク 1934.5Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 10,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/0.78s",
+      "to": "261.9Hz/0.98s",
+      "cause": "エネルギー中央値の 759.66 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 21,
+      "kind": "tune",
+      "from": "592.0Hz",
+      "to": "590.6Hz",
+      "cause": "弾かれた音 588.0Hz に -12 セント引き寄せ"
+    },
+    {
+      "gen": 10,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/1.53s",
+      "to": "97.9Hz/1.91s",
+      "cause": "エネルギー中央値の 6957.59 倍"
+    },
+    {
+      "gen": 10,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/0.78s",
+      "to": "261.9Hz/0.98s",
+      "cause": "エネルギー中央値の 759.66 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 0,
+      "kind": "tune",
+      "from": "195.8Hz",
+      "to": "195.8Hz",
+      "cause": "弾かれた音 196.0Hz に 2 セント引き寄せ"
+    },
+    {
+      "gen": 11,
+      "mode": 1,
+      "kind": "grow",
+      "from": "392.3Hz/3.19s",
+      "to": "392.3Hz/3.98s",
+      "cause": "エネルギー中央値の 36.14 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 5,
+      "kind": "starve",
+      "from": "1094.3Hz/0.21s",
+      "to": "1094.3Hz/0.17s",
+      "cause": "エネルギー中央値の 0.09 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 6,
+      "kind": "starve",
+      "from": "1098.0Hz/0.17s",
+      "to": "1098.0Hz/0.13s",
+      "cause": "エネルギー中央値の 0.11 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.32s",
+      "to": "1245.5Hz/0.25s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/0.98s",
+      "to": "261.9Hz/1.22s",
+      "cause": "エネルギー中央値の 1388.43 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/1.91s",
+      "to": "97.9Hz/2.38s",
+      "cause": "エネルギー中央値の 32355.30 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 18,
+      "kind": "tune",
+      "from": "304.0Hz",
+      "to": "300.5Hz",
+      "cause": "弾かれた音 294.0Hz に -58 セント引き寄せ"
+    },
+    {
+      "gen": 11,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/0.98s",
+      "to": "261.9Hz/1.22s",
+      "cause": "エネルギー中央値の 1388.43 倍"
+    },
+    {
+      "gen": 11,
+      "mode": 16,
+      "kind": "starve",
+      "from": "2463.9Hz/0.18s",
+      "to": "2463.9Hz/0.14s",
+      "cause": "エネルギー中央値の 0.06 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.30s",
+      "to": "738.9Hz/0.23s",
+      "cause": "エネルギー中央値の 0.03 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 5,
+      "kind": "starve",
+      "from": "1094.3Hz/0.17s",
+      "to": "1094.3Hz/0.13s",
+      "cause": "エネルギー中央値の 0.02 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 24,
+      "kind": "reborn",
+      "from": "#6 1098.0Hz (死)",
+      "to": "#24 1685.9Hz",
+      "cause": "聴こえたスペクトルのピーク 1685.9Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 12,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.25s",
+      "to": "1245.5Hz/0.19s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 22,
+      "kind": "grow",
+      "from": "232.9Hz/0.40s",
+      "to": "232.9Hz/0.50s",
+      "cause": "エネルギー中央値の 185.42 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/1.22s",
+      "to": "261.9Hz/1.53s",
+      "cause": "エネルギー中央値の 236.14 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 21,
+      "kind": "tune",
+      "from": "590.6Hz",
+      "to": "589.7Hz",
+      "cause": "弾かれた音 588.0Hz に -8 セント引き寄せ"
+    },
+    {
+      "gen": 12,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/2.38s",
+      "to": "97.9Hz/2.98s",
+      "cause": "エネルギー中央値の 3340.97 倍"
+    },
+    {
+      "gen": 12,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/1.22s",
+      "to": "261.9Hz/1.53s",
+      "cause": "エネルギー中央値の 236.14 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.23s",
+      "to": "738.9Hz/0.18s",
+      "cause": "エネルギー中央値の 0.03 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 25,
+      "kind": "reborn",
+      "from": "#5 1094.3Hz (死)",
+      "to": "#25 468.3Hz",
+      "cause": "聴こえたスペクトルのピーク 468.3Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 13,
+      "mode": 24,
+      "kind": "tune",
+      "from": "1685.9Hz",
+      "to": "1643.7Hz",
+      "cause": "弾かれた音 1568.0Hz に -126 セント引き寄せ"
+    },
+    {
+      "gen": 13,
+      "mode": 7,
+      "kind": "starve",
+      "from": "1245.5Hz/0.19s",
+      "to": "1245.5Hz/0.15s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 22,
+      "kind": "grow",
+      "from": "232.9Hz/0.50s",
+      "to": "232.9Hz/0.63s",
+      "cause": "エネルギー中央値の 99.49 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/1.53s",
+      "to": "261.9Hz/1.91s",
+      "cause": "エネルギー中央値の 62.74 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/2.98s",
+      "to": "97.9Hz/3.73s",
+      "cause": "エネルギー中央値の 1668.23 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/1.53s",
+      "to": "261.9Hz/1.91s",
+      "cause": "エネルギー中央値の 62.74 倍"
+    },
+    {
+      "gen": 13,
+      "mode": 26,
+      "kind": "reborn",
+      "from": "#16 2463.9Hz (死)",
+      "to": "#26 468.3Hz",
+      "cause": "聴こえたスペクトルのピーク 468.3Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 14,
+      "mode": 3,
+      "kind": "starve",
+      "from": "738.9Hz/0.18s",
+      "to": "738.9Hz/0.14s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 25,
+      "kind": "tune",
+      "from": "468.3Hz",
+      "to": "467.6Hz",
+      "cause": "弾かれた音 466.2Hz に -8 セント引き寄せ"
+    },
+    {
+      "gen": 14,
+      "mode": 24,
+      "kind": "starve",
+      "from": "1643.7Hz/0.40s",
+      "to": "1643.7Hz/0.31s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 22,
+      "kind": "grow",
+      "from": "232.9Hz/0.63s",
+      "to": "232.9Hz/0.78s",
+      "cause": "エネルギー中央値の 32.58 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 9,
+      "kind": "starve",
+      "from": "1569.7Hz/0.25s",
+      "to": "1569.7Hz/0.20s",
+      "cause": "エネルギー中央値の 0.02 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 23,
+      "kind": "starve",
+      "from": "1934.5Hz/0.40s",
+      "to": "1934.5Hz/0.31s",
+      "cause": "エネルギー中央値の 0.05 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/1.91s",
+      "to": "261.9Hz/2.38s",
+      "cause": "エネルギー中央値の 27.30 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 21,
+      "kind": "tune",
+      "from": "589.7Hz",
+      "to": "589.1Hz",
+      "cause": "弾かれた音 588.0Hz に -5 セント引き寄せ"
+    },
+    {
+      "gen": 14,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/3.73s",
+      "to": "97.9Hz/4.66s",
+      "cause": "エネルギー中央値の 337.90 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/1.91s",
+      "to": "261.9Hz/2.38s",
+      "cause": "エネルギー中央値の 27.30 倍"
+    },
+    {
+      "gen": 14,
+      "mode": 26,
+      "kind": "tune",
+      "from": "468.3Hz",
+      "to": "467.6Hz",
+      "cause": "弾かれた音 466.2Hz に -8 セント引き寄せ"
+    },
+    {
+      "gen": 15,
+      "mode": 27,
+      "kind": "reborn",
+      "from": "#3 738.9Hz (死)",
+      "to": "#27 1065.8Hz",
+      "cause": "聴こえたスペクトルのピーク 1065.8Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 15,
+      "mode": 25,
+      "kind": "tune",
+      "from": "467.6Hz",
+      "to": "467.1Hz",
+      "cause": "弾かれた音 466.2Hz に -5 セント引き寄せ"
+    },
+    {
+      "gen": 15,
+      "mode": 24,
+      "kind": "starve",
+      "from": "1643.7Hz/0.31s",
+      "to": "1643.7Hz/0.24s",
+      "cause": "エネルギー中央値の 0.01 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 28,
+      "kind": "reborn",
+      "from": "#7 1245.5Hz (死)",
+      "to": "#28 1065.8Hz",
+      "cause": "聴こえたスペクトルのピーク 1065.8Hz に楽器のモードがなかった"
+    },
+    {
+      "gen": 15,
+      "mode": 22,
+      "kind": "grow",
+      "from": "232.9Hz/0.78s",
+      "to": "232.9Hz/0.98s",
+      "cause": "エネルギー中央値の 31.28 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 9,
+      "kind": "starve",
+      "from": "1569.7Hz/0.20s",
+      "to": "1569.7Hz/0.15s",
+      "cause": "エネルギー中央値の 0.03 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 19,
+      "kind": "grow",
+      "from": "261.9Hz/2.38s",
+      "to": "261.9Hz/2.98s",
+      "cause": "エネルギー中央値の 11.54 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 17,
+      "kind": "grow",
+      "from": "97.9Hz/4.66s",
+      "to": "97.9Hz/5.82s",
+      "cause": "エネルギー中央値の 554.85 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 20,
+      "kind": "grow",
+      "from": "261.9Hz/2.38s",
+      "to": "261.9Hz/2.98s",
+      "cause": "エネルギー中央値の 11.54 倍"
+    },
+    {
+      "gen": 15,
+      "mode": 26,
+      "kind": "tune",
+      "from": "467.6Hz",
+      "to": "467.1Hz",
+      "cause": "弾かれた音 466.2Hz に -5 セント引き寄せ"
+    }
+  ],
+  "derivations": [
+    {
+      "choice": "bpm",
+      "value": 98,
+      "from": "bark.interaction_rules.emission",
+      "rule": "奏者の働きかけの強さ → テンポ"
+    },
+    {
+      "choice": "body.plate_aspect",
+      "value": 0.788,
+      "from": "tower.resonance.q",
+      "rule": "外壁の格子の規則性 → 板の縦横比 → 最初のモードの並び"
+    },
+    {
+      "choice": "body.base_hz",
+      "value": 184.9972,
+      "from": "tower.pitch_range.center",
+      "rule": "素材の音域の中心 → 板の最低モード"
+    }
+  ]
+}

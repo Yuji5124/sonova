@@ -24,6 +24,7 @@ npm run build
 npm run phase1 && npm run phase2 && npx tsx scripts/report.ts
 npm run verify:lab       # Chromium で SONOVA LAB を通しで確認
 npm run rock             # SONOVA-ROCK-0001 (約2分のレンダリング)
+npm run s002 / s003 / s004  # SONOVA 002 育つ楽器 / 003 自己修復 / 004 空間
 npm run soundvault:register -- --vault <dir> [--dry-run]
 npm run soundvault:verify   -- --vault <dir>
 ```
