@@ -1,0 +1,308 @@
+{
+  "workNumber": "SONOVA-XROCK-0001",
+  "title": "Five Ways Out of the Song",
+  "seed": "sonova-xrock-0001",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0",
+    "rock": "sonova-rock/1.0.0",
+    "rock_render": "sonova-rock-render/1.0.0",
+    "xrock": "sonova-xrock/1.0.0"
+  },
+  "band": {
+    "guitar": "inst-9c884039-187482",
+    "drums": "inst-87643426-187482",
+    "voice": "inst-a9dac2de-187482"
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "bpm": 145,
+  "key": {
+    "root_pc": 0,
+    "mode": "aeolian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ]
+  },
+  "durationSec": 216.362069,
+  "sections": [
+    {
+      "name": "intro",
+      "start": 0,
+      "bars": 12
+    },
+    {
+      "name": "riffA",
+      "start": 19.862069,
+      "bars": 4
+    },
+    {
+      "name": "verse1",
+      "start": 26.482759,
+      "bars": 8
+    },
+    {
+      "name": "pre1",
+      "start": 39.724138,
+      "bars": 4
+    },
+    {
+      "name": "chorus1",
+      "start": 46.344828,
+      "bars": 8
+    },
+    {
+      "name": "riffB",
+      "start": 59.586207,
+      "bars": 4
+    },
+    {
+      "name": "verse2",
+      "start": 66.206897,
+      "bars": 8
+    },
+    {
+      "name": "pre2",
+      "start": 79.448276,
+      "bars": 4
+    },
+    {
+      "name": "chorus2",
+      "start": 86.068966,
+      "bars": 8
+    },
+    {
+      "name": "bridge",
+      "start": 99.310345,
+      "bars": 16
+    },
+    {
+      "name": "solo",
+      "start": 125.793103,
+      "bars": 8
+    },
+    {
+      "name": "breakdown",
+      "start": 139.034483,
+      "bars": 4
+    },
+    {
+      "name": "riffA2",
+      "start": 145.655172,
+      "bars": 4
+    },
+    {
+      "name": "pre3",
+      "start": 152.275862,
+      "bars": 8
+    },
+    {
+      "name": "chorus3",
+      "start": 165.517241,
+      "bars": 8
+    },
+    {
+      "name": "chorus4",
+      "start": 178.758621,
+      "bars": 8
+    },
+    {
+      "name": "riffA3",
+      "start": 192,
+      "bars": 4
+    },
+    {
+      "name": "outro",
+      "start": 198.62069,
+      "bars": 8
+    }
+  ],
+  "derivations": [
+    {
+      "choice": "key",
+      "value": "C minor",
+      "from": "bark.pitch_range.root_pc",
+      "rule": "ギターになった素材の主音。ロックなので自然短音階"
+    },
+    {
+      "choice": "bpm",
+      "value": 145,
+      "from": "bark.interaction_rules.emission, tower.resonance.amount",
+      "rule": "働きかけの強い素材ほど速く、共鳴する素材がドライブ感を足す"
+    },
+    {
+      "choice": "tuning",
+      "value": "drop C",
+      "from": "key",
+      "rule": "最低弦を主音に下げる (ドロップチューニング) と主音のパワーコードが最も重く鳴る"
+    },
+    {
+      "choice": "riff.hits",
+      "value": 10,
+      "from": "bark.rhythm.pulses",
+      "rule": "ギター素材のエッジ密度 (発音数) → リフの音数"
+    },
+    {
+      "choice": "drums.ca_rule",
+      "value": 150,
+      "from": "tower.resonance.amount",
+      "rule": "ドラム素材の反復の強さでセルオートマトンのルールを選ぶ"
+    },
+    {
+      "choice": "drums.ca_seed",
+      "value": "x...x...x...x...",
+      "from": "tower.rhythm",
+      "rule": "ドラム素材のユークリッドリズムを最初の世代にする"
+    },
+    {
+      "choice": "lead.slide",
+      "value": 0.6030936,
+      "from": "sunset.attack",
+      "rule": "ゆっくり立ち上がる素材ほどリードが音をつなげて (スライドで) 弾く"
+    },
+    {
+      "choice": "form.bars",
+      "value": "intro=12, bridge=16, pre3=8",
+      "from": "series",
+      "rule": "引き伸ばし (イントロ)・テンポカノン (ブリッジ)・終わらない上昇 (pre3) が聴き取れる長さにする"
+    }
+  ],
+  "stretch": {
+    "sourceSection": "chorus1",
+    "sourceStart": 46.344828,
+    "sourceSec": 1.655172,
+    "factor": 12,
+    "windowSec": 0.372,
+    "outSec": 19.862
+  },
+  "canon": {
+    "voices": [
+      {
+        "name": "bass (sunset)",
+        "ratio": 1,
+        "ratioText": "3/3",
+        "transpose": -12,
+        "entry": 99.31,
+        "cycles": 16,
+        "reason": "sunset のリズムの密度 2/12 = 0.17 が 3 つの中で 最も低い → 3:4:5 の 3"
+      },
+      {
+        "name": "guitar R (tower)",
+        "ratio": 1.3333333333333333,
+        "ratioText": "4/3",
+        "transpose": 7,
+        "entry": 105.931,
+        "cycles": 16,
+        "reason": "tower のリズムの密度 4/16 = 0.25 が 3 つの中で 2番目 → 3:4:5 の 4"
+      },
+      {
+        "name": "guitar L (bark)",
+        "ratio": 1.6666666666666667,
+        "ratioText": "5/3",
+        "transpose": 0,
+        "entry": 112.883,
+        "cycles": 13,
+        "reason": "bark のリズムの密度 5/16 = 0.31 が 3 つの中で 最も高い → 3:4:5 の 5"
+      }
+    ],
+    "convergence": 125.793,
+    "notes": 450
+  },
+  "risset": {
+    "layers": 3,
+    "megabarSec": 13.241,
+    "hits": 551,
+    "start": 102.621,
+    "end": 125.793
+  },
+  "shepard": {
+    "start": 152.275862,
+    "seconds": 13.241379000000023,
+    "octaveSec": 6.621,
+    "octavesRisen": 2
+  },
+  "talkbox": {
+    "text": "everything is an instrument",
+    "vowels": [
+      "e",
+      "e",
+      "i",
+      "i",
+      "i",
+      "a",
+      "i",
+      "u",
+      "e"
+    ],
+    "notes": 292
+  },
+  "render": {
+    "ms": 197481,
+    "stems": {
+      "guitarL": {
+        "gainDb": -8.8,
+        "samples": 9541568
+      },
+      "guitarR": {
+        "gainDb": -8.8,
+        "samples": 9541568
+      },
+      "bass": {
+        "gainDb": 7.3,
+        "samples": 9541568
+      },
+      "lead": {
+        "gainDb": 0,
+        "samples": 9541568
+      },
+      "drums": {
+        "gainDb": 1.6,
+        "samples": 9541568
+      }
+    },
+    "master": {
+      "inputPeak": 1.6797075271606445,
+      "inputRms": 0.16630619463807206,
+      "appliedGainDb": 3.0818314741230104,
+      "maxReductionDb": -8.586504785414036,
+      "outputPeak": 0.8912509083747864
+    }
+  },
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 216.362,
+    "peakDbfs": -1,
+    "rmsDbfs": -13.323,
+    "clippedSamples": 0,
+    "dcOffset": -0.000006502,
+    "silences": [],
+    "silentRatio": 0,
+    "stereoCorrelation": 0.777
+  },
+  "wav": "output/xrock/SONOVA-XROCK-0001.wav"
+}

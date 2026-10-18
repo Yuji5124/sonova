@@ -23,6 +23,7 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | SONOVA 003 | **音楽が自分を修復する** — 欠落・不協和を聴いて検知し、別の楽器が補う (SONOVA-HEAL-0001, 81秒、修復なし版つき) | ✅ [experiments/s003/REPORT.md](experiments/s003/REPORT.md) |
 | SONOVA 004 | **音が空間を作る** — 部屋の共鳴モードが音を決め、音が部屋を変形させる (SONOVA-SPACE-0001, 77秒、glTF アニメーション) | ✅ [experiments/s004/REPORT.md](experiments/s004/REPORT.md) |
 | ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
+| 拡張ロック | **SONOVA-XROCK-0001** *Five Ways Out of the Song* (3分36秒) — ロックを 時間・テンポ・リズム・音高・声 の 5 方向に押し広げる | ✅ [experiments/xrock/REPORT.md](experiments/xrock/REPORT.md) |
 | 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 
 結果: [experiments/REPORT.md](experiments/REPORT.md) / 評価: [docs/evaluation-phase0-3.md](docs/evaluation-phase0-3.md)
@@ -85,6 +86,22 @@ SONOVA-ROCK-0001 のバンド（ギター ← 木の年輪、ドラム ← 外�
 npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space を引数で 1 曲だけ
 ```
 
+### SONOVA-XROCK-0001 *Five Ways Out of the Song*
+
+同じバンドのロック曲を、他の人の GitHub / 研究の手法で 5 方向に広げた（すべて独自実装）。
+
+| 方向 | 手法 | 曲での役割 |
+|---|---|---|
+| 時間 | Paulstretch（paulnasca/paulstretch_python、パブリックドメイン） | イントロ = サビ1 の 1 小節を 12 倍に引き伸ばした雲。リフの頭で突然止まる |
+| テンポ | ナンカロウのテンポカノン（nanc-in-a-can/canon-generator の考え方） | ブリッジでリフを 3:4:5 の 3 つのテンポで重ね、ソロの 1 拍目で同時に着地 |
+| リズム | リセット・リズム（tmhglnd/risset-rhythm-effect・MIT の考え方） | カノンの下で永遠に加速し続けて聴こえるドラム |
+| 音高 | シェパード=リセットのグリッサンド | 最後のサビの前、終わらずに上がり続ける 6 本の弦 |
+| 声 | トークボックス（Peterson & Barney の母音フォルマント） | リードが "everything is an instrument" の母音でしゃべる |
+
+```bash
+npm run xrock        # 約4分
+```
+
 ## 使い方
 
 Node.js 22.12 以上（Windows / macOS / Linux）。
@@ -92,7 +109,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 52 テスト
+npm test             # 56 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

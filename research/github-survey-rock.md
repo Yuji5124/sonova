@@ -178,3 +178,20 @@
 | Allen & Berkley 1979 "Image method for efficiently simulating small-room acoustics" | 論文 | 鏡像音源法 | 既存の `imageSources()` を使い、初期反射の到着時刻を引き伸ばしてフィルにする |
 
 GitHub 上に Rhythmicon のウェブ実装は見つからなかった (Max 版 Rhythmicana と JSyn 版の紹介ページのみ)。
+
+---
+
+## 追加調査: 拡張ロック SONOVA-XROCK-0001 (2026-10)
+
+「ロックを拡張した音楽」のために、まだ使っていない手法を調べた。
+
+| リポジトリ / 資料 | ライセンス | 中身 | 採用 |
+|---|---|---|---|
+| [paulnasca/paulstretch_python](https://github.com/paulnasca/paulstretch_python) | README に「Paulstretch のアルゴリズムはパブリックドメイン」（デスクトップ版は GPL-2） | 窓 → FFT → 振幅はそのまま位相を乱数に → 逆 FFT → 重ね合わせ。極端な時間伸長 | アルゴリズムを独自実装 (`paulstretch()`)。イントロ |
+| [nanc-in-a-can/canon-generator](https://github.com/nanc-in-a-can/canon-generator)（SuperCollider） | リポジトリにライセンス表示なし → 考え方のみ | ナンカロウ式のテンポカノン。声部ごとのテンポ比と移調、収束点 (cp) | 収束点の計算を独自実装 (`tempoCanon()`)。比はナンカロウの 3:4:5 |
+| Nemire, "Convergence Points in Conlon Nancarrow's Tempo Canons" (Music Theory Online 2012) | 論文 | 収束点の定義 | 上の設計の根拠 |
+| [tmhglnd/risset-rhythm-effect](https://github.com/tmhglnd/risset-rhythm-effect)（Max） | MIT | 同じループを 5 声で再生、各声の終わりの速さ = 次の声の始めの速さ、cos 形の音量で受け渡し | 考え方を参考に、Stowell (2011) の式で独自実装 (`rissetRhythm()`)。サンプル再生ではなく打撃の発音時刻を計算するので、音高は変わらない |
+| Shepard (1964), Risset (1969) | 論文 | オクターブ間隔の成分に鐘形の音量をかけ、終わりなく上がって聴こえる | KS 弦 6 本で独自実装 (`shepardStrings()`)。鐘形はアンプの後でかける |
+| Peterson & Barney (1952) | 論文（母音のフォルマント値） | 成人男性の F1–F3 平均 | トークボックス (`talkbox()`、時間変化する TPT 状態変数フィルター 3 本) |
+
+トークボックスの既存実装 (mda Talkbox) は GPL 系のため参照しなかった。

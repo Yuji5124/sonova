@@ -112,6 +112,8 @@ export interface RockOptions {
   bpm?: { value: number; reason: string };
   /** Override the key (pitch class), e.g. chosen by a room's lowest mode. */
   rootPc?: { value: number; reason: string };
+  /** Change section lengths (bars) of the standard form; names must be the form's own. */
+  bars?: { value: Record<string, number>; reason: string };
 }
 
 export function generateRock(dnas: { guitar: InstrumentDNA; drums: InstrumentDNA; voice: InstrumentDNA }, seed: string, title = 'Everything Is an Amplifier', opts: RockOptions = {}): RockSong {
@@ -162,7 +164,9 @@ export function generateRock(dnas: { guitar: InstrumentDNA; drums: InstrumentDNA
 
   const sections: RockSection[] = [];
   let bar = 0;
-  for (const [name, bars, description] of FORM) {
+  if (opts.bars) derive('form.bars', Object.entries(opts.bars.value).map(([k, v]) => `${k}=${v}`).join(', '), 'series', opts.bars.reason);
+  for (const [name, formBars, description] of FORM) {
+    const bars = opts.bars?.value[name] ?? formBars;
     sections.push({ name, startBar: bar, bars, start: round6(bar * barSec), end: round6((bar + bars) * barSec), description });
     bar += bars;
   }

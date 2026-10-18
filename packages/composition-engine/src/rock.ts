@@ -185,6 +185,8 @@ export interface RockHooks {
   /** Called after guitars and bass are rendered; returns the lead events to use instead of the song's. */
   leadEvents?: (ctx: { guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => RockEvent[];
   /** Called with every stem in place, before the shared reverb and the master. */
+  /** Processes the rendered lead (before it is levelled and mixed), e.g. a talkbox. */
+  leadFx?: (ctx: { lead: Float32Array; sampleRate: number; song: RockSong }) => void;
   /** Called before the drums are rendered; returns the drum events to use instead of the song's. */
   drumEvents?: (ctx: { plan: RockRenderPlan; sampleRate: number; song: RockSong }) => RockEvent[];
   beforeReverb?: (ctx: { mix: StereoBuffer; wet: StereoBuffer; guitarL: Float32Array; guitarR: Float32Array; bass: Float32Array; lead: Float32Array; drums: StereoBuffer; drumGain: number; plan: RockRenderPlan; sampleRate: number; song: RockSong }) => void;
@@ -227,6 +229,7 @@ export function renderRock(song: RockSong, band: RockBand, image: SpectroImage, 
     song = { ...song, events: [...song.events.filter((e) => e.part !== 'lead'), ...replaced].sort((a, b) => a.time - b.time || a.id - b.id) };
   }
   const lead = renderRig(monoRigEvents(song.events, 'lead', { t60: 3.5, damping: 0.2, pickPosition: 0.15, brightness: 0.85 }), secs, sampleRate, plan.leadAmp, `${song.seed}:lead`, 1);
+  hooks.leadFx?.({ lead, sampleRate, song });
   normTo(lead, sampleRate, -20);
   stems.lead = { gainDb: 0, samples: lead.length };
   mixInto(mix, lead, 0, 0.12, 1);
