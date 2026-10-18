@@ -1,0 +1,81 @@
+{
+  "workNumber": "SONOVA-EXP-0001",
+  "sonova_version": "1.0.0",
+  "title": "Rings Wake the Tower",
+  "created_at": "2026-10-18T00:00:00.000Z",
+  "engines": {
+    "analyzer": "sonova-analyzer/1.0.0",
+    "dna": "sonova-dna/1.0.0",
+    "synth": "sonova-synth/1.0.0",
+    "generator": "sonova-generator/1.0.0",
+    "composition": "sonova-composition/1.0.0"
+  },
+  "algorithms": [
+    "image analysis: colour/hue histogram, luminance statistics, Sobel edges, Laplacian roughness, 2D FFT radial spectrum, profile autocorrelation",
+    "instrument DNA: deterministic feature→parameter mapping (see each DNA `mapping`)",
+    "synthesis: additive partials (image spectrum) + FM layer + filtered noise burst, TPT state-variable low-pass, ADSR",
+    "generator: step-based agent simulation (energy, timbre, resonance, Euclidean rhythm, motif memory) with bidirectional interaction rules",
+    "safety: energy cap, refractory periods, max chain depth, per-step response cap, look-ahead peak limiter (−1 dBFS)",
+    "reverb: Freeverb-style comb/allpass network (own implementation)"
+  ],
+  "seed": "sonova-exp-0001",
+  "generator_config": {
+    "seed": "sonova-exp-0001",
+    "durationSec": 30,
+    "arc": "bloom",
+    "ruleGain": {
+      "resonate": 1,
+      "timbre": 1,
+      "rhythm": 1,
+      "entrain": 1,
+      "attract": 1
+    },
+    "maxDepth": 3,
+    "maxResponsesPerStep": 6,
+    "tailSec": 3,
+    "bpm": 87
+  },
+  "sources": [
+    {
+      "name": "bark.png",
+      "type": "image",
+      "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
+    },
+    {
+      "name": "tower.png",
+      "type": "image",
+      "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
+    },
+    {
+      "name": "sunset.png",
+      "type": "image",
+      "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
+    }
+  ],
+  "instruments": [
+    {
+      "instrument_id": "inst-9c884039-187482",
+      "dna_hash": "07ba6016a573f9",
+      "seed": "sonova-001"
+    },
+    {
+      "instrument_id": "inst-87643426-187482",
+      "dna_hash": "1191843fa7154d",
+      "seed": "sonova-001"
+    },
+    {
+      "instrument_id": "inst-a9dac2de-187482",
+      "dna_hash": "0b97a5fc7f8689",
+      "seed": "sonova-001"
+    }
+  ],
+  "reproducibility": "同じ素材 (sha256)・同じシード・同じエンジンバージョンで、同じ DNA・イベント列・音声が再生成されます。",
+  "third_party": [
+    {
+      "name": "@tonejs/midi",
+      "version": "2.x",
+      "license": "MIT",
+      "use": "MIDI file writing"
+    }
+  ]
+}

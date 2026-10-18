@@ -1,0 +1,180 @@
+{
+  "title": "Rings Wake the Tower",
+  "durationSec": 30,
+  "bpm": 87,
+  "key": {
+    "root_pc": 0,
+    "mode": "dorian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      9,
+      10
+    ],
+    "reason": "主音は最も働きかけの強い楽器「bark」の主音、旋法は3楽器の明るさ平均 0.497 から選択"
+  },
+  "sections": [
+    {
+      "name": "emergence",
+      "start": 0,
+      "end": 8.5,
+      "description": "最初の楽器だけが鳴り、他の楽器が共鳴によって目覚めていく"
+    },
+    {
+      "name": "interaction",
+      "start": 8.5,
+      "end": 12,
+      "description": "相互作用が増え、音色とリズムが互いを変え始める"
+    },
+    {
+      "name": "bloom",
+      "start": 12,
+      "end": 27,
+      "description": "密度と結合が最大。連鎖反応が最も長くなる"
+    },
+    {
+      "name": "afterglow",
+      "start": 27,
+      "end": 30,
+      "description": "新しい音は止み、共鳴とリバーブの余韻だけが残る"
+    }
+  ],
+  "tracks": [
+    {
+      "instrument_id": "inst-9c884039-187482",
+      "name": "bark",
+      "pan": -0.399,
+      "notes": 35,
+      "resonances": 7,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-87643426-187482",
+      "name": "tower",
+      "pan": -0.013,
+      "notes": 24,
+      "resonances": 9,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-a9dac2de-187482",
+      "name": "sunset",
+      "pan": 0.351,
+      "notes": 7,
+      "resonances": 0,
+      "mute": false,
+      "gain": 1
+    }
+  ],
+  "interaction": {
+    "notes": 66,
+    "resonances": 16,
+    "mutations": 27,
+    "byRule": {
+      "resonate": 16,
+      "timbre": 16,
+      "rhythm": 6,
+      "entrain": 5,
+      "attract": 0
+    },
+    "byPair": {
+      "0->1": 8,
+      "1->2": 13,
+      "2->0": 4,
+      "1->0": 6,
+      "0->2": 8,
+      "2->1": 4
+    },
+    "maxDepthReached": 2,
+    "suppressedResponses": 0,
+    "maxResponsesInStep": 3,
+    "peakTotalEnergy": 2.2
+  },
+  "chains": [
+    {
+      "time": 9.482759,
+      "depth": 2,
+      "eventIds": [
+        16,
+        17,
+        18
+      ],
+      "text": "barkが発音 (MIDI 57) → [共鳴] towerが共鳴 (MIDI 57) → [音色変化] sunsetの音色が明るく変化 (0.295→0.615)"
+    },
+    {
+      "time": 15.517241,
+      "depth": 2,
+      "eventIds": [
+        45,
+        46,
+        48
+      ],
+      "text": "barkが発音 (MIDI 58) → [音色変化] sunsetの音色が明るく変化 (0.695→1) → [リズム生成] barkのリズムが E(5,16)+3 → E(5,16)+4 に変化"
+    },
+    {
+      "time": 15.517241,
+      "depth": 2,
+      "eventIds": [
+        45,
+        46,
+        49
+      ],
+      "text": "barkが発音 (MIDI 58) → [音色変化] sunsetの音色が明るく変化 (0.695→1) → [リズム生成] towerのリズムが E(4,16)+0 → E(4,16)+1 に変化"
+    },
+    {
+      "time": 19.310345,
+      "depth": 2,
+      "eventIds": [
+        69,
+        71,
+        72
+      ],
+      "text": "barkが発音 (MIDI 65) → [音色変化] sunsetの音色が明るく変化 (0.83→1) → [リズム生成] barkのリズムが E(5,16)+4 → E(5,16)+5 に変化"
+    },
+    {
+      "time": 19.310345,
+      "depth": 2,
+      "eventIds": [
+        69,
+        71,
+        73
+      ],
+      "text": "barkが発音 (MIDI 65) → [音色変化] sunsetの音色が明るく変化 (0.83→1) → [リズム生成] towerのリズムが E(4,16)+1 → E(4,16)+2 に変化"
+    },
+    {
+      "time": 20.172414,
+      "depth": 2,
+      "eventIds": [
+        74,
+        76,
+        77
+      ],
+      "text": "barkが発音 (MIDI 63) → [共鳴] towerが共鳴 (MIDI 63) → [音色変化] sunsetの音色が明るく変化 (0.941→1)"
+    },
+    {
+      "time": 22.413793,
+      "depth": 2,
+      "eventIds": [
+        90,
+        91,
+        92
+      ],
+      "text": "towerが発音 (MIDI 51) → [音色変化] sunsetの音色が暗く変化 (0.615→0.295) → [リズム生成] barkのリズムが E(5,16)+5 → E(4,16)+5 に変化"
+    },
+    {
+      "time": 22.413793,
+      "depth": 2,
+      "eventIds": [
+        90,
+        91,
+        93
+      ],
+      "text": "towerが発音 (MIDI 51) → [音色変化] sunsetの音色が暗く変化 (0.615→0.295) → [リズム生成] towerのリズムが E(4,16)+2 → E(3,16)+2 に変化"
+    }
+  ]
+}

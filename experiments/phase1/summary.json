@@ -1,0 +1,145 @@
+{
+  "seed": "sonova-001",
+  "instruments": [
+    {
+      "instrument": "bark",
+      "instrument_id": "inst-9c884039-187482",
+      "dna_hash": "07ba6016a573f9",
+      "wav": "output/phase1/bark.instrument.wav",
+      "render_ms": 689,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 6,
+        "peakDbfs": -1.14,
+        "rmsDbfs": -18,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001228,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.915
+      },
+      "character": {
+        "pitch_range": {
+          "low": 55,
+          "high": 68,
+          "center": 61,
+          "root_pc": 0
+        },
+        "attack": 0.008092,
+        "decay": 0.770911,
+        "brightness": 0.931104,
+        "noise": 0.472773,
+        "resonance": 0.685609,
+        "rhythm": {
+          "steps": 16,
+          "pulses": 5,
+          "rotation": 3,
+          "rate": 1
+        },
+        "responses": [
+          "rhythm:1",
+          "resonate:0.591929"
+        ]
+      }
+    },
+    {
+      "instrument": "tower",
+      "instrument_id": "inst-87643426-187482",
+      "dna_hash": "1191843fa7154d",
+      "wav": "output/phase1/tower.instrument.wav",
+      "render_ms": 593,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 6,
+        "peakDbfs": -3.147,
+        "rmsDbfs": -18,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001383,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.901
+      },
+      "character": {
+        "pitch_range": {
+          "low": 45,
+          "high": 64,
+          "center": 54,
+          "root_pc": 2
+        },
+        "attack": 0.004951,
+        "decay": 1.251058,
+        "brightness": 0.55475,
+        "noise": 0.456312,
+        "resonance": 0.865322,
+        "rhythm": {
+          "steps": 16,
+          "pulses": 4,
+          "rotation": 0,
+          "rate": 1
+        },
+        "responses": [
+          "resonate:1",
+          "rhythm:0.671817"
+        ]
+      }
+    },
+    {
+      "instrument": "sunset",
+      "instrument_id": "inst-a9dac2de-187482",
+      "dna_hash": "0b97a5fc7f8689",
+      "wav": "output/phase1/sunset.instrument.wav",
+      "render_ms": 505,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 6,
+        "peakDbfs": -7.028,
+        "rmsDbfs": -18,
+        "clippedSamples": 0,
+        "dcOffset": -0.00000139,
+        "silences": [
+          [
+            5.45,
+            6
+          ]
+        ],
+        "silentRatio": 0.092,
+        "stereoCorrelation": 0.956
+      },
+      "character": {
+        "pitch_range": {
+          "low": 35,
+          "high": 54,
+          "center": 44,
+          "root_pc": 0
+        },
+        "attack": 0.670104,
+        "decay": 1.581627,
+        "brightness": 0.055643,
+        "noise": 0.141415,
+        "resonance": 0,
+        "rhythm": {
+          "steps": 12,
+          "pulses": 2,
+          "rotation": 9,
+          "rate": 0.25
+        },
+        "responses": [
+          "timbre:1",
+          "entrain:0.432948"
+        ]
+      }
+    }
+  ]
+}

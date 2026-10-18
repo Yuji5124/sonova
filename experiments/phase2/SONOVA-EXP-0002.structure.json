@@ -1,0 +1,198 @@
+{
+  "title": "Facade Tide",
+  "durationSec": 30,
+  "bpm": 88,
+  "key": {
+    "root_pc": 0,
+    "mode": "aeolian",
+    "scale": [
+      0,
+      2,
+      3,
+      5,
+      7,
+      8,
+      10
+    ],
+    "reason": "主音は最も働きかけの強い楽器「bark」の主音、旋法は3楽器の明るさ平均 0.497 から選択"
+  },
+  "sections": [
+    {
+      "name": "emergence",
+      "start": 0,
+      "end": 2,
+      "description": "最初の楽器だけが鳴り、他の楽器が共鳴によって目覚めていく"
+    },
+    {
+      "name": "interaction",
+      "start": 2,
+      "end": 7,
+      "description": "相互作用が増え、音色とリズムが互いを変え始める"
+    },
+    {
+      "name": "bloom",
+      "start": 7,
+      "end": 12.5,
+      "description": "密度と結合が最大。連鎖反応が最も長くなる"
+    },
+    {
+      "name": "ebb",
+      "start": 12.5,
+      "end": 22,
+      "description": "密度が引き、残った共鳴が次の波を準備する"
+    },
+    {
+      "name": "bloom",
+      "start": 22,
+      "end": 27,
+      "description": "密度と結合が最大。連鎖反応が最も長くなる"
+    },
+    {
+      "name": "afterglow",
+      "start": 27,
+      "end": 30,
+      "description": "新しい音は止み、共鳴とリバーブの余韻だけが残る"
+    }
+  ],
+  "tracks": [
+    {
+      "instrument_id": "inst-9c884039-187482",
+      "name": "bark",
+      "pan": -0.399,
+      "notes": 38,
+      "resonances": 9,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-87643426-187482",
+      "name": "tower",
+      "pan": -0.013,
+      "notes": 24,
+      "resonances": 11,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-a9dac2de-187482",
+      "name": "sunset",
+      "pan": 0.351,
+      "notes": 4,
+      "resonances": 0,
+      "mute": false,
+      "gain": 1
+    }
+  ],
+  "interaction": {
+    "notes": 66,
+    "resonances": 20,
+    "mutations": 37,
+    "byRule": {
+      "resonate": 20,
+      "timbre": 19,
+      "rhythm": 14,
+      "entrain": 4,
+      "attract": 0
+    },
+    "byPair": {
+      "0->1": 12,
+      "0->2": 17,
+      "1->2": 6,
+      "2->1": 6,
+      "1->0": 14,
+      "2->0": 2
+    },
+    "maxDepthReached": 3,
+    "suppressedResponses": 0,
+    "maxResponsesInStep": 3,
+    "peakTotalEnergy": 2.2
+  },
+  "chains": [
+    {
+      "time": 3.409091,
+      "depth": 3,
+      "eventIds": [
+        7,
+        9,
+        10,
+        13
+      ],
+      "text": "towerが発音 (MIDI 50) → [同調] sunsetがタイミングを同調 (回転 9→0) → [リズム生成] towerのリズムが E(4,16)+0 → E(4,16)+1 に変化 → [リズム生成] barkのリズムが E(5,16)+3 → E(4,16)+3 に変化"
+    },
+    {
+      "time": 8.352273,
+      "depth": 3,
+      "eventIds": [
+        29,
+        30,
+        32,
+        33
+      ],
+      "text": "barkが発音 (MIDI 68) → [音色変化] sunsetの音色が明るく変化 (0.16→0.48) → [リズム生成] towerのリズムが E(4,16)+1 → E(4,16)+2 に変化 → [リズム生成] barkのリズムが E(4,16)+3 → E(5,16)+3 に変化"
+    },
+    {
+      "time": 11.079545,
+      "depth": 2,
+      "eventIds": [
+        43,
+        46,
+        49
+      ],
+      "text": "barkが発音 (MIDI 62) → [同調] sunsetがタイミングを同調 (回転 0→1) → [リズム生成] towerのリズムが E(4,16)+2 → E(5,16)+2 に変化"
+    },
+    {
+      "time": 11.25,
+      "depth": 2,
+      "eventIds": [
+        44,
+        48,
+        52
+      ],
+      "text": "towerが発音 (MIDI 51) → [音色変化] sunsetの音色が明るく変化 (0.118→0.438) → [リズム生成] barkのリズムが E(5,16)+3 → E(6,16)+3 に変化"
+    },
+    {
+      "time": 14.147727,
+      "depth": 3,
+      "eventIds": [
+        63,
+        64,
+        66,
+        67
+      ],
+      "text": "barkが発音 (MIDI 65) → [音色変化] sunsetの音色が明るく変化 (0.665→0.985) → [リズム生成] towerのリズムが E(5,16)+2 → E(4,16)+2 に変化 → [リズム生成] barkのリズムが E(6,16)+3 → E(7,16)+3 に変化"
+    },
+    {
+      "time": 17.897727,
+      "depth": 3,
+      "eventIds": [
+        78,
+        79,
+        80,
+        81
+      ],
+      "text": "barkが発音 (MIDI 62) → [音色変化] sunsetの音色が暗く変化 (0.224→-0.096) → [リズム生成] barkのリズムが E(7,16)+3 → E(6,16)+3 に変化 → [リズム生成] towerのリズムが E(4,16)+2 → E(3,16)+2 に変化"
+    },
+    {
+      "time": 21.818182,
+      "depth": 3,
+      "eventIds": [
+        92,
+        94,
+        95,
+        96
+      ],
+      "text": "barkが発音 (MIDI 58) → [同調] sunsetがタイミングを同調 (回転 5→9) → [リズム生成] towerのリズムが E(3,16)+2 → E(4,16)+2 に変化 → [リズム生成] barkのリズムが E(6,16)+3 → E(7,16)+3 に変化"
+    },
+    {
+      "time": 26.761364,
+      "depth": 3,
+      "eventIds": [
+        121,
+        122,
+        123,
+        124
+      ],
+      "text": "barkが発音 (MIDI 63) → [音色変化] sunsetの音色が明るく変化 (-0.348→-0.028) → [リズム生成] towerのリズムが E(4,16)+2 → E(3,16)+2 に変化 → [リズム生成] barkのリズムが E(7,16)+3 → E(7,16)+4 に変化"
+    }
+  ]
+}

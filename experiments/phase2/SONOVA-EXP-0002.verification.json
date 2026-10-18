@@ -1,0 +1,26 @@
+{
+  "workNumber": "SONOVA-EXP-0002",
+  "wav": "output/phase2/SONOVA-EXP-0002.wav",
+  "master": {
+    "inputPeak": 0.5909175276756287,
+    "inputRms": 0.09197122557249059,
+    "appliedGainDb": 3.726960524677871,
+    "maxReductionDb": -0.15749774046250845,
+    "outputPeak": 0.8912509083747864
+  },
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "sampleRate": 44100,
+    "channels": 2,
+    "bitsPerSample": 16,
+    "durationSec": 30,
+    "peakDbfs": -1,
+    "rmsDbfs": -17.003,
+    "clippedSamples": 0,
+    "dcOffset": -0.000001698,
+    "silences": [],
+    "silentRatio": 0,
+    "stereoCorrelation": 0.809
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@sonova/composition-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sonova/source-analyzer": "*",
+    "@sonova/instrument-dna": "*",
+    "@sonova/synthesis-engine": "*",
+    "@sonova/music-generator": "*",
+    "@tonejs/midi": "^2.0.28"
+  }
+}

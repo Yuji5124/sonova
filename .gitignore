@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# Rendered audio and large generated files stay local (see output/README.md)
+output/*
+!output/README.md
+*.wav
+*.ogg
+*.m4a
+*.mp3
+*.flac
+# model weights / secrets
+*.ckpt
+*.pt
+*.onnx
+*.safetensors
+.env
+.env.*
+sonova.config.local.json
+scripts/.scratch/

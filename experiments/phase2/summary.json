@@ -1,0 +1,161 @@
+{
+  "instruments": [
+    "inst-9c884039-187482",
+    "inst-87643426-187482",
+    "inst-a9dac2de-187482"
+  ],
+  "candidates": [
+    {
+      "title": "Rings Wake the Tower",
+      "seed": "sonova-exp-0001",
+      "arc": "bloom",
+      "workNumber": "SONOVA-EXP-0001",
+      "bpm": 87,
+      "key": "0/dorian",
+      "stats": {
+        "notes": 66,
+        "resonances": 16,
+        "mutations": 27,
+        "byRule": {
+          "resonate": 16,
+          "timbre": 16,
+          "rhythm": 6,
+          "entrain": 5,
+          "attract": 0
+        },
+        "byPair": {
+          "0->1": 8,
+          "1->2": 13,
+          "2->0": 4,
+          "1->0": 6,
+          "0->2": 8,
+          "2->1": 4
+        },
+        "maxDepthReached": 2,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 3,
+        "peakTotalEnergy": 2.2
+      },
+      "renderMs": 6523,
+      "totalMs": 6829,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.055,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001251,
+        "silences": [
+          [
+            3.75,
+            4.45
+          ]
+        ],
+        "silentRatio": 0.023,
+        "stereoCorrelation": 0.793
+      }
+    },
+    {
+      "title": "Facade Tide",
+      "seed": "sonova-exp-0002",
+      "arc": "tide",
+      "workNumber": "SONOVA-EXP-0002",
+      "bpm": 88,
+      "key": "0/aeolian",
+      "stats": {
+        "notes": 66,
+        "resonances": 20,
+        "mutations": 37,
+        "byRule": {
+          "resonate": 20,
+          "timbre": 19,
+          "rhythm": 14,
+          "entrain": 4,
+          "attract": 0
+        },
+        "byPair": {
+          "0->1": 12,
+          "0->2": 17,
+          "1->2": 6,
+          "2->1": 6,
+          "1->0": 14,
+          "2->0": 2
+        },
+        "maxDepthReached": 3,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 3,
+        "peakTotalEnergy": 2.2
+      },
+      "renderMs": 6952,
+      "totalMs": 7202,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.003,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001698,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.809
+      }
+    },
+    {
+      "title": "Sunset Cascade",
+      "seed": "sonova-exp-0003",
+      "arc": "cascade",
+      "workNumber": "SONOVA-EXP-0003",
+      "bpm": 86,
+      "key": "0/dorian",
+      "stats": {
+        "notes": 72,
+        "resonances": 11,
+        "mutations": 27,
+        "byRule": {
+          "resonate": 11,
+          "timbre": 16,
+          "rhythm": 7,
+          "entrain": 4,
+          "attract": 0
+        },
+        "byPair": {
+          "0->2": 10,
+          "2->1": 4,
+          "1->0": 5,
+          "0->1": 7,
+          "1->2": 10,
+          "2->0": 2
+        },
+        "maxDepthReached": 3,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 2,
+        "peakTotalEnergy": 1.6774523451984802
+      },
+      "renderMs": 5502,
+      "totalMs": 5797,
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.011,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001318,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.803
+      }
+    }
+  ]
+}

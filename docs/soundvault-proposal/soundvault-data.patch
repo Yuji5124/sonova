@@ -1,0 +1,612 @@
+diff --git a/data/projects.json b/data/projects.json
+index 868bb07..24c7204 100644
+--- a/data/projects.json
++++ b/data/projects.json
+@@ -4,5 +4,11 @@
+     "name": "モンスタークエスト0",
+     "type": "ゲーム",
+     "archived": false
++  },
++  {
++    "id": "sonova",
++    "name": "SONOVA",
++    "type": "音楽研究",
++    "archived": false
+   }
+ ]
+diff --git a/data/sounds.json b/data/sounds.json
+index 159a309..c442e8d 100644
+--- a/data/sounds.json
++++ b/data/sounds.json
+@@ -119,6 +119,591 @@
+     "notes": "",
+     "createdAt": "2026-10-06T13:11:09.047Z"
+   },
++  {
++    "id": "sonova_exp_0001_ogg",
++    "name": "SONOVA-EXP-0001 Rings Wake the Tower",
++    "file": "/sounds/bgm/sonova-exp-0001-rings-wake-the-tower.ogg",
++    "category": "BGM",
++    "tags": [
++      "bgm",
++      "sonova",
++      "experiment",
++      "generative",
++      "bloom",
++      "dorian",
++      "bark",
++      "tower",
++      "sunset"
++    ],
++    "duration": 30,
++    "format": "ogg",
++    "size": 596721,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): bark.png, tower.png, sunset.png から生成。seed sonova-exp-0001",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "音楽実験。bark・tower・sunset の3楽器が相互作用する 30 秒の実験。dorian、66 音、共鳴 16、変化 27。87 BPM。",
++    "collections": [
++      "SONOVA EXPERIMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:20.304Z",
++    "sonova": {
++      "workNumber": "SONOVA-EXP-0001",
++      "title": "Rings Wake the Tower",
++      "assetType": "EXPERIMENT",
++      "bpm": 87,
++      "materialIds": [
++        "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd",
++        "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9",
++        "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++      ],
++      "sources": [
++        {
++          "name": "bark.png",
++          "type": "image",
++          "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
++        },
++        {
++          "name": "tower.png",
++          "type": "image",
++          "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
++        },
++        {
++          "name": "sunset.png",
++          "type": "image",
++          "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-9c884039-187482",
++          "dna_hash": "07ba6016a573f9",
++          "name": "bark"
++        },
++        {
++          "instrument_id": "inst-87643426-187482",
++          "dna_hash": "1191843fa7154d",
++          "name": "tower"
++        },
++        {
++          "instrument_id": "inst-a9dac2de-187482",
++          "dna_hash": "0b97a5fc7f8689",
++          "name": "sunset"
++        }
++      ],
++      "seed": "sonova-exp-0001",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis",
++        "interaction generator (bloom)",
++        "look-ahead limiter"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase2/SONOVA-EXP-0001.structure.json",
++        "experiments/phase2/SONOVA-EXP-0001.generation.json",
++        "experiments/phase2/SONOVA-EXP-0001.events.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "9aa90eb7284a76bd42b21b1bd6a71c784179f07dfa99c65391261b6cb0f86d77",
++      "verification": {
++        "ok": true,
++        "durationSec": 30,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -1,
++        "rmsDbfs": -17.055,
++        "silentRatio": 0.023
++      }
++    }
++  },
++  {
++    "id": "sonova_exp_0002_ogg",
++    "name": "SONOVA-EXP-0002 Facade Tide",
++    "file": "/sounds/bgm/sonova-exp-0002-facade-tide.ogg",
++    "category": "BGM",
++    "tags": [
++      "bgm",
++      "sonova",
++      "experiment",
++      "generative",
++      "tide",
++      "aeolian",
++      "bark",
++      "tower",
++      "sunset"
++    ],
++    "duration": 30,
++    "format": "ogg",
++    "size": 597983,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): bark.png, tower.png, sunset.png から生成。seed sonova-exp-0002",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "音楽実験。bark・tower・sunset の3楽器が相互作用する 30 秒の実験。aeolian、66 音、共鳴 20、変化 37。88 BPM。",
++    "collections": [
++      "SONOVA EXPERIMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:21.676Z",
++    "sonova": {
++      "workNumber": "SONOVA-EXP-0002",
++      "title": "Facade Tide",
++      "assetType": "EXPERIMENT",
++      "bpm": 88,
++      "materialIds": [
++        "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd",
++        "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9",
++        "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++      ],
++      "sources": [
++        {
++          "name": "bark.png",
++          "type": "image",
++          "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
++        },
++        {
++          "name": "tower.png",
++          "type": "image",
++          "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
++        },
++        {
++          "name": "sunset.png",
++          "type": "image",
++          "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-9c884039-187482",
++          "dna_hash": "07ba6016a573f9",
++          "name": "bark"
++        },
++        {
++          "instrument_id": "inst-87643426-187482",
++          "dna_hash": "1191843fa7154d",
++          "name": "tower"
++        },
++        {
++          "instrument_id": "inst-a9dac2de-187482",
++          "dna_hash": "0b97a5fc7f8689",
++          "name": "sunset"
++        }
++      ],
++      "seed": "sonova-exp-0002",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis",
++        "interaction generator (tide)",
++        "look-ahead limiter"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase2/SONOVA-EXP-0002.structure.json",
++        "experiments/phase2/SONOVA-EXP-0002.generation.json",
++        "experiments/phase2/SONOVA-EXP-0002.events.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "5b1ad3463c397bf11f8102ca6b271ef25144e7d21a5c6d28bb320fdc35002b12",
++      "verification": {
++        "ok": true,
++        "durationSec": 30,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -1,
++        "rmsDbfs": -17.003,
++        "silentRatio": 0
++      }
++    }
++  },
++  {
++    "id": "sonova_exp_0003_ogg",
++    "name": "SONOVA-EXP-0003 Sunset Cascade",
++    "file": "/sounds/bgm/sonova-exp-0003-sunset-cascade.ogg",
++    "category": "BGM",
++    "tags": [
++      "bgm",
++      "sonova",
++      "experiment",
++      "generative",
++      "cascade",
++      "dorian",
++      "bark",
++      "tower",
++      "sunset"
++    ],
++    "duration": 30,
++    "format": "ogg",
++    "size": 598614,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): bark.png, tower.png, sunset.png から生成。seed sonova-exp-0003",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "音楽実験。bark・tower・sunset の3楽器が相互作用する 30 秒の実験。dorian、72 音、共鳴 11、変化 27。86 BPM。",
++    "collections": [
++      "SONOVA EXPERIMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:22.828Z",
++    "sonova": {
++      "workNumber": "SONOVA-EXP-0003",
++      "title": "Sunset Cascade",
++      "assetType": "EXPERIMENT",
++      "bpm": 86,
++      "materialIds": [
++        "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd",
++        "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9",
++        "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++      ],
++      "sources": [
++        {
++          "name": "bark.png",
++          "type": "image",
++          "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
++        },
++        {
++          "name": "tower.png",
++          "type": "image",
++          "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
++        },
++        {
++          "name": "sunset.png",
++          "type": "image",
++          "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-9c884039-187482",
++          "dna_hash": "07ba6016a573f9",
++          "name": "bark"
++        },
++        {
++          "instrument_id": "inst-87643426-187482",
++          "dna_hash": "1191843fa7154d",
++          "name": "tower"
++        },
++        {
++          "instrument_id": "inst-a9dac2de-187482",
++          "dna_hash": "0b97a5fc7f8689",
++          "name": "sunset"
++        }
++      ],
++      "seed": "sonova-exp-0003",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis",
++        "interaction generator (cascade)",
++        "look-ahead limiter"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase2/SONOVA-EXP-0003.structure.json",
++        "experiments/phase2/SONOVA-EXP-0003.generation.json",
++        "experiments/phase2/SONOVA-EXP-0003.events.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "d6fc74ffdfcc1d732df36feff7235d7b1180ce6bfafac58653b5e49e940940b0",
++      "verification": {
++        "ok": true,
++        "durationSec": 30,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -1,
++        "rmsDbfs": -17.011,
++        "silentRatio": 0
++      }
++    }
++  },
++  {
++    "id": "sonova_inst_0001_ogg",
++    "name": "SONOVA-INST-0001 bark instrument",
++    "file": "/sounds/fx/sonova-inst-0001-bark-instrument.ogg",
++    "category": "FX",
++    "tags": [
++      "fx",
++      "sonova",
++      "instrument",
++      "generative",
++      "bark",
++      "rhythm",
++      "resonate"
++    ],
++    "duration": 6,
++    "format": "ogg",
++    "size": 130232,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): bark.png から生成。seed sonova-001",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "独自楽器の単体音源。bark.png から生成した独自楽器の試聴フレーズ。",
++    "collections": [
++      "SONOVA INSTRUMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:18.125Z",
++    "sonova": {
++      "workNumber": "SONOVA-INST-0001",
++      "title": "bark instrument",
++      "assetType": "INSTRUMENT",
++      "bpm": null,
++      "materialIds": [
++        "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
++      ],
++      "sources": [
++        {
++          "name": "bark.png",
++          "type": "image",
++          "sha256": "9c88403909ba97785d83c03dc52aee7825b027bf99bdba451179449bd847e7bd"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-9c884039-187482",
++          "dna_hash": "07ba6016a573f9",
++          "name": "bark"
++        }
++      ],
++      "seed": "sonova-001",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase1/dna/bark.dna.json",
++        "experiments/phase1/features/bark.features.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "2f9b41710467d622e79bb04525b36551bae42986239036e9d0b5c2bd97532ff3",
++      "verification": {
++        "ok": true,
++        "durationSec": 6,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -1.14,
++        "rmsDbfs": -18,
++        "silentRatio": 0
++      }
++    }
++  },
++  {
++    "id": "sonova_inst_0002_ogg",
++    "name": "SONOVA-INST-0002 tower instrument",
++    "file": "/sounds/fx/sonova-inst-0002-tower-instrument.ogg",
++    "category": "FX",
++    "tags": [
++      "fx",
++      "sonova",
++      "instrument",
++      "generative",
++      "tower",
++      "resonate",
++      "rhythm"
++    ],
++    "duration": 6,
++    "format": "ogg",
++    "size": 114061,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): tower.png から生成。seed sonova-001",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "独自楽器の単体音源。tower.png から生成した独自楽器の試聴フレーズ。",
++    "collections": [
++      "SONOVA INSTRUMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:18.636Z",
++    "sonova": {
++      "workNumber": "SONOVA-INST-0002",
++      "title": "tower instrument",
++      "assetType": "INSTRUMENT",
++      "bpm": null,
++      "materialIds": [
++        "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
++      ],
++      "sources": [
++        {
++          "name": "tower.png",
++          "type": "image",
++          "sha256": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-87643426-187482",
++          "dna_hash": "1191843fa7154d",
++          "name": "tower"
++        }
++      ],
++      "seed": "sonova-001",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase1/dna/tower.dna.json",
++        "experiments/phase1/features/tower.features.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "7a81fb57f21563c3c66beb8ab111560bfda070c9d7ca63579237526a6d3190c3",
++      "verification": {
++        "ok": true,
++        "durationSec": 6,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -3.147,
++        "rmsDbfs": -18,
++        "silentRatio": 0
++      }
++    }
++  },
++  {
++    "id": "sonova_inst_0003_ogg",
++    "name": "SONOVA-INST-0003 sunset instrument",
++    "file": "/sounds/fx/sonova-inst-0003-sunset-instrument.ogg",
++    "category": "FX",
++    "tags": [
++      "fx",
++      "sonova",
++      "instrument",
++      "generative",
++      "sunset",
++      "timbre",
++      "entrain"
++    ],
++    "duration": 6,
++    "format": "ogg",
++    "size": 70594,
++    "loop": false,
++    "volume": 0.8,
++    "sampleRate": 44100,
++    "license": "Original",
++    "source": "SONOVA (https://github.com/Yuji5124/sonova): sunset.png から生成。seed sonova-001",
++    "author": "SONOVA (Claude Code) for Yuji5124",
++    "favorite": false,
++    "notes": "独自楽器の単体音源。sunset.png から生成した独自楽器の試聴フレーズ。",
++    "collections": [
++      "SONOVA INSTRUMENTS"
++    ],
++    "projectIds": [
++      "sonova"
++    ],
++    "createdAt": "2026-10-18T09:27:19.083Z",
++    "sonova": {
++      "workNumber": "SONOVA-INST-0003",
++      "title": "sunset instrument",
++      "assetType": "INSTRUMENT",
++      "bpm": null,
++      "materialIds": [
++        "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++      ],
++      "sources": [
++        {
++          "name": "sunset.png",
++          "type": "image",
++          "sha256": "a9dac2de5055bd91177b63738740d939ba0a8170f67c14948acb2147728de077"
++        }
++      ],
++      "instrumentDna": [
++        {
++          "instrument_id": "inst-a9dac2de-187482",
++          "dna_hash": "0b97a5fc7f8689",
++          "name": "sunset"
++        }
++      ],
++      "seed": "sonova-001",
++      "algorithms": [
++        "image→Instrument DNA",
++        "additive+FM+noise synthesis"
++      ],
++      "engines": {
++        "analyzer": "sonova-analyzer/1.0.0",
++        "dna": "sonova-dna/1.0.0",
++        "synth": "sonova-synth/1.0.0",
++        "generator": "sonova-generator/1.0.0",
++        "composition": "sonova-composition/1.0.0"
++      },
++      "sonovaFiles": [
++        "experiments/phase1/dna/sunset.dna.json",
++        "experiments/phase1/features/sunset.features.json"
++      ],
++      "createdAt": "2026-10-18T09:27:17.722Z",
++      "wavSha256": "09b8d9a3d0d7d40f2d3e922269d0bb761d2c717fd16632daea495afdcc108033",
++      "verification": {
++        "ok": true,
++        "durationSec": 6,
++        "sampleRate": 44100,
++        "channels": 2,
++        "bitsPerSample": 16,
++        "peakDbfs": -7.028,
++        "rmsDbfs": -18,
++        "silentRatio": 0.092
++      }
++    }
++  },
+   {
+     "id": "spark_001",
+     "name": "Spark 001",
