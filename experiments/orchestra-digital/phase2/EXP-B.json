@@ -1,0 +1,664 @@
+{
+ "id": "EXP-B",
+ "title": "CONTOUR",
+ "question": "2. 同じ旋律でなくても同じ音楽に聞こえるか",
+ "bridge": "MOTIF BRIDGE (輪郭とリズム比だけを共有、音高の世界は別)",
+ "seconds": 32,
+ "notes": [
+  "motif O = D F E B♭ A (D minor), motif E = C E♭ C♯ G F♯ (C octatonic) — 上下の形と音程の大小の順位、リズム比 1.5:0.5:0.5:1:2 が同じ",
+  "9–18 秒: 電子が E を 0.6 倍の時間で、チェロが O を 1.4 倍に引き伸ばして同時に (呼びかけと応答)",
+  "18–26 秒: 交換 — 電子は音高を捨ててリズムだけ、弦のピチカートが電子側の音高 (八音音階) を弾く"
+ ],
+ "metrics": {
+  "lufs": -18,
+  "lra": 4.79,
+  "peakDbfs": -1.46,
+  "envelopeCorrelation": 0.37,
+  "onsetCoincidence": 0.58,
+  "pitchClassSimilarity": 0.19,
+  "registerOverlap": 0,
+  "compositeDensityRatio": 1.36
+ },
+ "mix": {
+  "peakDbfs": -1.5,
+  "lufs": -18,
+  "lra": 4.8,
+  "crestDb": 20,
+  "masterGainDb": 2
+ },
+ "tracks": [
+  {
+   "id": "vn",
+   "name": "Violins",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.4,
+    "depth": 0.3,
+    "width": 1
+   }
+  },
+  {
+   "id": "vc",
+   "name": "Celli",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.35,
+    "depth": 0.4,
+    "width": 1
+   }
+  },
+  {
+   "id": "pz",
+   "name": "Pizz",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.15,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "hn",
+   "name": "Horn",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.2,
+    "depth": 0.55,
+    "width": 1
+   }
+  },
+  {
+   "id": "fm",
+   "name": "FM glass",
+   "kind": "electronic",
+   "place": {
+    "pan": 0.1,
+    "depth": 0.2,
+    "width": 0.8
+   }
+  },
+  {
+   "id": "gr",
+   "name": "Granular",
+   "kind": "electronic",
+   "place": {
+    "pan": 0,
+    "depth": 0.45,
+    "width": 1
+   }
+  },
+  {
+   "id": "gl",
+   "name": "Glitch",
+   "kind": "electronic",
+   "place": {
+    "pan": 0.25,
+    "depth": 0.15,
+    "width": 1
+   }
+  }
+ ],
+ "score": {
+  "title": "SONOVA — ORCHESTRA × DIGITAL · EXP-B CONTOUR",
+  "bpm": 90,
+  "parts": [
+   {
+    "id": "vn",
+    "name": "Violins",
+    "kind": "orchestra",
+    "instrument": "violins",
+    "notes": [
+     {
+      "t": 0.3,
+      "dur": 1.275,
+      "midi": 74,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 1.55,
+      "dur": 0.42500000000000004,
+      "midi": 77,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 1.9666666666666668,
+      "dur": 0.42500000000000004,
+      "midi": 76,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 2.3833333333333333,
+      "dur": 0.8500000000000001,
+      "midi": 82,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 3.216666666666667,
+      "dur": 1.7000000000000002,
+      "midi": 81,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 4.883333333333334,
+      "dur": 1.275,
+      "midi": 74,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 6.133333333333334,
+      "dur": 0.42500000000000004,
+      "midi": 77,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 6.550000000000001,
+      "dur": 0.42500000000000004,
+      "midi": 76,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 6.966666666666668,
+      "dur": 0.8500000000000001,
+      "midi": 82,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     },
+     {
+      "t": 7.800000000000001,
+      "dur": 1.7000000000000002,
+      "midi": 81,
+      "vel": 0.7,
+      "why": "motif O (D minor)",
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "vc",
+    "name": "Celli",
+    "kind": "orchestra",
+    "instrument": "celli",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 9,
+      "midi": 38,
+      "vel": 0.45,
+      "art": "sus"
+     },
+     {
+      "t": 9.5,
+      "dur": 1.75,
+      "midi": 38,
+      "vel": 0.6,
+      "why": "O in augmentation",
+      "art": "sus"
+     },
+     {
+      "t": 11.25,
+      "dur": 0.5833333333333334,
+      "midi": 41,
+      "vel": 0.6,
+      "why": "O in augmentation",
+      "art": "sus"
+     },
+     {
+      "t": 11.833333333333334,
+      "dur": 0.5833333333333334,
+      "midi": 40,
+      "vel": 0.6,
+      "why": "O in augmentation",
+      "art": "sus"
+     },
+     {
+      "t": 12.416666666666668,
+      "dur": 1.1666666666666667,
+      "midi": 46,
+      "vel": 0.6,
+      "why": "O in augmentation",
+      "art": "sus"
+     },
+     {
+      "t": 13.583333333333334,
+      "dur": 2.3333333333333335,
+      "midi": 45,
+      "vel": 0.6,
+      "why": "O in augmentation",
+      "art": "sus"
+     },
+     {
+      "t": 26,
+      "dur": 6,
+      "midi": 38,
+      "vel": 0.5,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "pz",
+    "name": "Strings pizz",
+    "kind": "orchestra",
+    "instrument": "violas",
+    "notes": [
+     {
+      "t": 18,
+      "dur": 0.625,
+      "midi": 60,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 18.625,
+      "dur": 0.20833333333333334,
+      "midi": 63,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 18.833333333333332,
+      "dur": 0.20833333333333334,
+      "midi": 61,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 19.041666666666664,
+      "dur": 0.4166666666666667,
+      "midi": 67,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 19.458333333333332,
+      "dur": 0.8333333333333334,
+      "midi": 66,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 20.291666666666664,
+      "dur": 0.625,
+      "midi": 60,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 20.916666666666664,
+      "dur": 0.20833333333333334,
+      "midi": 63,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 21.124999999999996,
+      "dur": 0.20833333333333334,
+      "midi": 61,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 21.33333333333333,
+      "dur": 0.4166666666666667,
+      "midi": 67,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 21.749999999999996,
+      "dur": 0.8333333333333334,
+      "midi": 66,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 22.58333333333333,
+      "dur": 0.625,
+      "midi": 60,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 23.20833333333333,
+      "dur": 0.20833333333333334,
+      "midi": 63,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 23.41666666666666,
+      "dur": 0.20833333333333334,
+      "midi": 61,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 23.624999999999993,
+      "dur": 0.4166666666666667,
+      "midi": 67,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     },
+     {
+      "t": 24.04166666666666,
+      "dur": 0.8333333333333334,
+      "midi": 66,
+      "vel": 0.75,
+      "art": "pizz",
+      "why": "the electronics' pitches, plucked"
+     }
+    ]
+   },
+   {
+    "id": "hn",
+    "name": "Horn",
+    "kind": "orchestra",
+    "instrument": "horn",
+    "notes": [
+     {
+      "t": 26,
+      "dur": 1,
+      "midi": 50,
+      "vel": 0.65,
+      "art": "sus"
+     },
+     {
+      "t": 27,
+      "dur": 0.33333333333333337,
+      "midi": 53,
+      "vel": 0.65,
+      "art": "sus"
+     },
+     {
+      "t": 27.333333333333332,
+      "dur": 0.33333333333333337,
+      "midi": 52,
+      "vel": 0.65,
+      "art": "sus"
+     },
+     {
+      "t": 27.666666666666664,
+      "dur": 0.6666666666666667,
+      "midi": 58,
+      "vel": 0.65,
+      "art": "sus"
+     },
+     {
+      "t": 28.333333333333332,
+      "dur": 4.5,
+      "midi": 57,
+      "vel": 0.65,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "fm",
+    "name": "FM glass",
+    "kind": "electronic",
+    "instrument": "fm-glass",
+    "notes": [
+     {
+      "t": 9,
+      "dur": 0.75,
+      "midi": 72,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 9.75,
+      "dur": 0.25,
+      "midi": 75,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 10,
+      "dur": 0.25,
+      "midi": 73,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 10.25,
+      "dur": 0.5,
+      "midi": 79,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 10.75,
+      "dur": 1,
+      "midi": 78,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 11.75,
+      "dur": 0.75,
+      "midi": 72,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 12.5,
+      "dur": 0.25,
+      "midi": 75,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 12.75,
+      "dur": 0.25,
+      "midi": 73,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 13,
+      "dur": 0.5,
+      "midi": 79,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 13.5,
+      "dur": 1,
+      "midi": 78,
+      "vel": 0.7,
+      "why": "motif E (octatonic, same contour)"
+     },
+     {
+      "t": 26.333333333333332,
+      "dur": 1,
+      "midi": 72,
+      "vel": 0.65
+     },
+     {
+      "t": 27.333333333333332,
+      "dur": 0.33333333333333337,
+      "midi": 75,
+      "vel": 0.65
+     },
+     {
+      "t": 27.666666666666664,
+      "dur": 0.33333333333333337,
+      "midi": 73,
+      "vel": 0.65
+     },
+     {
+      "t": 27.999999999999996,
+      "dur": 0.6666666666666667,
+      "midi": 79,
+      "vel": 0.65
+     },
+     {
+      "t": 28.666666666666664,
+      "dur": 4.166666666666667,
+      "midi": 78,
+      "vel": 0.65
+     }
+    ]
+   },
+   {
+    "id": "gr",
+    "name": "Granular violins",
+    "kind": "electronic",
+    "instrument": "granular",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 32,
+      "midi": 81,
+      "vel": 0.4,
+      "why": "grains of the violins' own recorded A5"
+     }
+    ]
+   },
+   {
+    "id": "gl",
+    "name": "Glitch rhythm",
+    "kind": "electronic",
+    "instrument": "clicks",
+    "notes": [
+     {
+      "t": 18,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 18.625,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 18.833333333333332,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 19.041666666666664,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 19.458333333333332,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 20.291666666666664,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 20.916666666666664,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 21.124999999999996,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 21.33333333333333,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 21.749999999999996,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 22.58333333333333,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 23.20833333333333,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 23.41666666666666,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 23.624999999999993,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     },
+     {
+      "t": 24.04166666666666,
+      "dur": 0.03,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "the orchestra's rhythm without pitch"
+     }
+    ]
+   }
+  ]
+ }
+}

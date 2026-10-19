@@ -1,0 +1,2255 @@
+{
+ "id": "EXP-A",
+ "title": "SHARED CYCLE",
+ "question": "1. 異なるコード進行でも統一感が生まれるか",
+ "bridge": "RHYTHM BRIDGE (共通周期 2 秒・アクセント共有) + 音域の分離",
+ "seconds": 30,
+ "notes": [
+  "オーケストラ: D minor (Dm–B♭–Gm–A), 3/4・90 BPM / 電子: F♯ lydian (F♯maj9–Emaj9–C♯sus–G♯m9), 4/4・120 BPM",
+  "1 小節 = 2.0 秒が両方に共通。小節頭 (ティンパニとキック) だけが一致し、拍の中は 3 対 4 のポリリズム",
+  "不協和の制御: 電子は C5 より上 (ベル) と 40 Hz 台のキックだけ、オーケストラは中低域。低音の F♯ は置かない"
+ ],
+ "metrics": {
+  "lufs": -17.98,
+  "lra": 13.76,
+  "peakDbfs": -4.08,
+  "envelopeCorrelation": 0.74,
+  "onsetCoincidence": 0.23,
+  "pitchClassSimilarity": 0.18,
+  "registerOverlap": 0.5,
+  "compositeDensityRatio": 1.55
+ },
+ "mix": {
+  "peakDbfs": -4.1,
+  "lufs": -18,
+  "lra": 14.7,
+  "crestDb": 18.2,
+  "masterGainDb": -3.1
+ },
+ "tracks": [
+  {
+   "id": "vc",
+   "name": "Celli",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.35,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "cb",
+   "name": "Contrabass",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.5,
+    "depth": 0.45,
+    "width": 1
+   }
+  },
+  {
+   "id": "va",
+   "name": "Violas",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.15,
+    "depth": 0.4,
+    "width": 1
+   }
+  },
+  {
+   "id": "vn",
+   "name": "Violins spic",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.45,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "vm",
+   "name": "Violins motif",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.25,
+    "depth": 0.3,
+    "width": 1
+   }
+  },
+  {
+   "id": "tp",
+   "name": "Timpani",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.1,
+    "depth": 0.6,
+    "width": 1
+   }
+  },
+  {
+   "id": "bell",
+   "name": "FM bells",
+   "kind": "electronic",
+   "place": {
+    "pan": -0.1,
+    "depth": 0.25,
+    "width": 0.9
+   }
+  },
+  {
+   "id": "kick",
+   "name": "Kick",
+   "kind": "electronic",
+   "place": {
+    "pan": 0,
+    "depth": 0.15,
+    "width": 1
+   }
+  },
+  {
+   "id": "hat",
+   "name": "Glitch hats",
+   "kind": "electronic",
+   "place": {
+    "pan": 0.3,
+    "depth": 0.2,
+    "width": 1
+   }
+  },
+  {
+   "id": "dust",
+   "name": "Dust",
+   "kind": "electronic",
+   "place": {
+    "pan": 0,
+    "depth": 0.5,
+    "width": 1
+   }
+  }
+ ],
+ "score": {
+  "title": "SONOVA — ORCHESTRA × DIGITAL · EXP-A SHARED CYCLE",
+  "bpm": 90,
+  "parts": [
+   {
+    "id": "vc",
+    "name": "Celli",
+    "kind": "orchestra",
+    "instrument": "celli",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.315,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 2,
+      "dur": 2,
+      "midi": 46,
+      "vel": 0.33240234375,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 4,
+      "dur": 2,
+      "midi": 43,
+      "vel": 0.37828125,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 6,
+      "dur": 2,
+      "midi": 45,
+      "vel": 0.44314453125,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 8,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.5175,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 10,
+      "dur": 2,
+      "midi": 46,
+      "vel": 0.59185546875,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 12,
+      "dur": 2,
+      "midi": 43,
+      "vel": 0.65671875,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 14,
+      "dur": 2,
+      "midi": 45,
+      "vel": 0.70259765625,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 16,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.7200000000000001,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 18,
+      "dur": 2,
+      "midi": 46,
+      "vel": 0.748125,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 20,
+      "dur": 2,
+      "midi": 43,
+      "vel": 0.81,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 22,
+      "dur": 2,
+      "midi": 45,
+      "vel": 0.8718750000000001,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 24,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.9,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 26,
+      "dur": 2,
+      "midi": 46,
+      "vel": 0.7424999999999999,
+      "why": "root, 3/4 bar",
+      "art": "sus"
+     },
+     {
+      "t": 28,
+      "dur": 2.5,
+      "midi": 38,
+      "vel": 0.9,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "cb",
+    "name": "Contrabass",
+    "kind": "orchestra",
+    "instrument": "contrabass",
+    "notes": [
+     {
+      "t": 4,
+      "dur": 2,
+      "midi": 31,
+      "vel": 0.33625,
+      "art": "sus"
+     },
+     {
+      "t": 6,
+      "dur": 2,
+      "midi": 33,
+      "vel": 0.39390625,
+      "art": "sus"
+     },
+     {
+      "t": 8,
+      "dur": 2,
+      "midi": 38,
+      "vel": 0.45999999999999996,
+      "art": "sus"
+     },
+     {
+      "t": 10,
+      "dur": 2,
+      "midi": 34,
+      "vel": 0.52609375,
+      "art": "sus"
+     },
+     {
+      "t": 12,
+      "dur": 2,
+      "midi": 31,
+      "vel": 0.5837500000000001,
+      "art": "sus"
+     },
+     {
+      "t": 14,
+      "dur": 2,
+      "midi": 33,
+      "vel": 0.62453125,
+      "art": "sus"
+     },
+     {
+      "t": 16,
+      "dur": 2,
+      "midi": 38,
+      "vel": 0.6400000000000001,
+      "art": "sus"
+     },
+     {
+      "t": 18,
+      "dur": 2,
+      "midi": 34,
+      "vel": 0.665,
+      "art": "sus"
+     },
+     {
+      "t": 20,
+      "dur": 2,
+      "midi": 31,
+      "vel": 0.7200000000000001,
+      "art": "sus"
+     },
+     {
+      "t": 22,
+      "dur": 2,
+      "midi": 33,
+      "vel": 0.775,
+      "art": "sus"
+     },
+     {
+      "t": 24,
+      "dur": 2,
+      "midi": 38,
+      "vel": 0.8,
+      "art": "sus"
+     },
+     {
+      "t": 26,
+      "dur": 2,
+      "midi": 34,
+      "vel": 0.66,
+      "art": "sus"
+     },
+     {
+      "t": 28,
+      "dur": 2.5,
+      "midi": 26,
+      "vel": 0.9,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "va",
+    "name": "Violas",
+    "kind": "orchestra",
+    "instrument": "violas",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.24499999999999997,
+      "art": "sus"
+     },
+     {
+      "t": 2,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.25853515624999995,
+      "art": "sus"
+     },
+     {
+      "t": 4,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.29421875,
+      "art": "sus"
+     },
+     {
+      "t": 6,
+      "dur": 2,
+      "midi": 49,
+      "vel": 0.34466796875,
+      "art": "sus"
+     },
+     {
+      "t": 8,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.40249999999999997,
+      "art": "sus"
+     },
+     {
+      "t": 10,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.46033203124999994,
+      "art": "sus"
+     },
+     {
+      "t": 12,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.51078125,
+      "art": "sus"
+     },
+     {
+      "t": 14,
+      "dur": 2,
+      "midi": 49,
+      "vel": 0.5464648437499999,
+      "art": "sus"
+     },
+     {
+      "t": 16,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.5599999999999999,
+      "art": "sus"
+     },
+     {
+      "t": 18,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.581875,
+      "art": "sus"
+     },
+     {
+      "t": 20,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.63,
+      "art": "sus"
+     },
+     {
+      "t": 22,
+      "dur": 2,
+      "midi": 49,
+      "vel": 0.678125,
+      "art": "sus"
+     },
+     {
+      "t": 24,
+      "dur": 2,
+      "midi": 53,
+      "vel": 0.7,
+      "art": "sus"
+     },
+     {
+      "t": 26,
+      "dur": 2,
+      "midi": 50,
+      "vel": 0.5774999999999999,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "vn",
+    "name": "Violins (spiccato)",
+    "kind": "orchestra",
+    "instrument": "violins",
+    "notes": [
+     {
+      "t": 2,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.42473632812499995,
+      "art": "spic"
+     },
+     {
+      "t": 2.3333333333333335,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.25853515624999995,
+      "art": "spic"
+     },
+     {
+      "t": 2.6666666666666665,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.31393554687499997,
+      "art": "spic"
+     },
+     {
+      "t": 3,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.25853515624999995,
+      "art": "spic"
+     },
+     {
+      "t": 3.333333333333333,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.31393554687499997,
+      "art": "spic"
+     },
+     {
+      "t": 3.6666666666666665,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.25853515624999995,
+      "art": "spic"
+     },
+     {
+      "t": 4,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.4833593749999999,
+      "art": "spic"
+     },
+     {
+      "t": 4.333333333333333,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.29421875,
+      "art": "spic"
+     },
+     {
+      "t": 4.666666666666667,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.357265625,
+      "art": "spic"
+     },
+     {
+      "t": 5,
+      "dur": 0.3333333333333333,
+      "midi": 91,
+      "vel": 0.29421875,
+      "art": "spic"
+     },
+     {
+      "t": 5.333333333333333,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.357265625,
+      "art": "spic"
+     },
+     {
+      "t": 5.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.29421875,
+      "art": "spic"
+     },
+     {
+      "t": 6,
+      "dur": 0.3333333333333333,
+      "midi": 73,
+      "vel": 0.5662402343749999,
+      "art": "spic"
+     },
+     {
+      "t": 6.333333333333333,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.34466796875,
+      "art": "spic"
+     },
+     {
+      "t": 6.666666666666667,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.418525390625,
+      "art": "spic"
+     },
+     {
+      "t": 7,
+      "dur": 0.3333333333333333,
+      "midi": 88,
+      "vel": 0.34466796875,
+      "art": "spic"
+     },
+     {
+      "t": 7.333333333333333,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.418525390625,
+      "art": "spic"
+     },
+     {
+      "t": 7.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.34466796875,
+      "art": "spic"
+     },
+     {
+      "t": 8,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.6612499999999999,
+      "art": "spic"
+     },
+     {
+      "t": 8.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.40249999999999997,
+      "art": "spic"
+     },
+     {
+      "t": 8.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.48874999999999996,
+      "art": "spic"
+     },
+     {
+      "t": 9,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.40249999999999997,
+      "art": "spic"
+     },
+     {
+      "t": 9.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.48874999999999996,
+      "art": "spic"
+     },
+     {
+      "t": 9.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.40249999999999997,
+      "art": "spic"
+     },
+     {
+      "t": 10,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.756259765625,
+      "art": "spic"
+     },
+     {
+      "t": 10.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.46033203124999994,
+      "art": "spic"
+     },
+     {
+      "t": 10.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.558974609375,
+      "art": "spic"
+     },
+     {
+      "t": 11,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.46033203124999994,
+      "art": "spic"
+     },
+     {
+      "t": 11.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.558974609375,
+      "art": "spic"
+     },
+     {
+      "t": 11.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.46033203124999994,
+      "art": "spic"
+     },
+     {
+      "t": 12,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.839140625,
+      "art": "spic"
+     },
+     {
+      "t": 12.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.51078125,
+      "art": "spic"
+     },
+     {
+      "t": 12.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.620234375,
+      "art": "spic"
+     },
+     {
+      "t": 13,
+      "dur": 0.3333333333333333,
+      "midi": 91,
+      "vel": 0.51078125,
+      "art": "spic"
+     },
+     {
+      "t": 13.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.620234375,
+      "art": "spic"
+     },
+     {
+      "t": 13.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.51078125,
+      "art": "spic"
+     },
+     {
+      "t": 14,
+      "dur": 0.3333333333333333,
+      "midi": 73,
+      "vel": 0.897763671875,
+      "art": "spic"
+     },
+     {
+      "t": 14.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.5464648437499999,
+      "art": "spic"
+     },
+     {
+      "t": 14.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.663564453125,
+      "art": "spic"
+     },
+     {
+      "t": 15,
+      "dur": 0.3333333333333333,
+      "midi": 88,
+      "vel": 0.5464648437499999,
+      "art": "spic"
+     },
+     {
+      "t": 15.333333333333334,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.663564453125,
+      "art": "spic"
+     },
+     {
+      "t": 15.666666666666666,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.5464648437499999,
+      "art": "spic"
+     },
+     {
+      "t": 16,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.9199999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 16.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.5599999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 16.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.68,
+      "art": "spic"
+     },
+     {
+      "t": 17,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.5599999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 17.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.68,
+      "art": "spic"
+     },
+     {
+      "t": 17.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.5599999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 18,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.9559375,
+      "art": "spic"
+     },
+     {
+      "t": 18.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.581875,
+      "art": "spic"
+     },
+     {
+      "t": 18.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.7065625,
+      "art": "spic"
+     },
+     {
+      "t": 19,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.581875,
+      "art": "spic"
+     },
+     {
+      "t": 19.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.7065625,
+      "art": "spic"
+     },
+     {
+      "t": 19.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.581875,
+      "art": "spic"
+     },
+     {
+      "t": 20,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 1,
+      "art": "spic"
+     },
+     {
+      "t": 20.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.63,
+      "art": "spic"
+     },
+     {
+      "t": 20.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.765,
+      "art": "spic"
+     },
+     {
+      "t": 21,
+      "dur": 0.3333333333333333,
+      "midi": 91,
+      "vel": 0.63,
+      "art": "spic"
+     },
+     {
+      "t": 21.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.765,
+      "art": "spic"
+     },
+     {
+      "t": 21.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 79,
+      "vel": 0.63,
+      "art": "spic"
+     },
+     {
+      "t": 22,
+      "dur": 0.3333333333333333,
+      "midi": 73,
+      "vel": 1,
+      "art": "spic"
+     },
+     {
+      "t": 22.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.678125,
+      "art": "spic"
+     },
+     {
+      "t": 22.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.8234374999999999,
+      "art": "spic"
+     },
+     {
+      "t": 23,
+      "dur": 0.3333333333333333,
+      "midi": 88,
+      "vel": 0.678125,
+      "art": "spic"
+     },
+     {
+      "t": 23.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.8234374999999999,
+      "art": "spic"
+     },
+     {
+      "t": 23.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 76,
+      "vel": 0.678125,
+      "art": "spic"
+     },
+     {
+      "t": 24,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 1,
+      "art": "spic"
+     },
+     {
+      "t": 24.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.7,
+      "art": "spic"
+     },
+     {
+      "t": 24.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.85,
+      "art": "spic"
+     },
+     {
+      "t": 25,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.7,
+      "art": "spic"
+     },
+     {
+      "t": 25.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 81,
+      "vel": 0.85,
+      "art": "spic"
+     },
+     {
+      "t": 25.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.7,
+      "art": "spic"
+     },
+     {
+      "t": 26,
+      "dur": 0.3333333333333333,
+      "midi": 74,
+      "vel": 0.9487499999999999,
+      "art": "spic"
+     },
+     {
+      "t": 26.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.5774999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 26.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.7012499999999999,
+      "art": "spic"
+     },
+     {
+      "t": 27,
+      "dur": 0.3333333333333333,
+      "midi": 89,
+      "vel": 0.5774999999999999,
+      "art": "spic"
+     },
+     {
+      "t": 27.333333333333332,
+      "dur": 0.3333333333333333,
+      "midi": 82,
+      "vel": 0.7012499999999999,
+      "art": "spic"
+     },
+     {
+      "t": 27.666666666666668,
+      "dur": 0.3333333333333333,
+      "midi": 77,
+      "vel": 0.5774999999999999,
+      "art": "spic"
+     }
+    ]
+   },
+   {
+    "id": "vm",
+    "name": "Violins (motif)",
+    "kind": "orchestra",
+    "instrument": "violins",
+    "notes": [
+     {
+      "t": 12,
+      "dur": 2,
+      "midi": 74,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 14,
+      "dur": 0.6666666666666666,
+      "midi": 77,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 14.666666666666666,
+      "dur": 0.6666666666666666,
+      "midi": 76,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 15.333333333333332,
+      "dur": 1.3333333333333333,
+      "midi": 82,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 16.666666666666664,
+      "dur": 2.6666666666666665,
+      "midi": 81,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 19.333333333333332,
+      "dur": 2,
+      "midi": 74,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 21.333333333333332,
+      "dur": 0.6666666666666666,
+      "midi": 77,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 22,
+      "dur": 0.6666666666666666,
+      "midi": 76,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 22.666666666666668,
+      "dur": 1.3333333333333333,
+      "midi": 82,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     },
+     {
+      "t": 24,
+      "dur": 2.6666666666666665,
+      "midi": 81,
+      "vel": 0.75,
+      "why": "ORIGIN motif",
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "tp",
+    "name": "Timpani",
+    "kind": "orchestra",
+    "instrument": "timpani",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 1.5,
+      "midi": 38,
+      "vel": 0.95,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 4,
+      "dur": 1.5,
+      "midi": 43,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 8,
+      "dur": 1.5,
+      "midi": 38,
+      "vel": 0.95,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 12,
+      "dur": 1.5,
+      "midi": 43,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 16,
+      "dur": 1.5,
+      "midi": 38,
+      "vel": 0.95,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 18,
+      "dur": 1.5,
+      "midi": 34,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 20,
+      "dur": 1.5,
+      "midi": 43,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 22,
+      "dur": 1.5,
+      "midi": 33,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 24,
+      "dur": 1.5,
+      "midi": 38,
+      "vel": 0.95,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 26,
+      "dur": 1.5,
+      "midi": 34,
+      "vel": 0.6,
+      "why": "shared cycle accent",
+      "art": "hit"
+     },
+     {
+      "t": 28,
+      "dur": 3,
+      "midi": 38,
+      "vel": 1,
+      "art": "hit"
+     }
+    ]
+   },
+   {
+    "id": "bell",
+    "name": "FM bells",
+    "kind": "electronic",
+    "instrument": "fm-bell",
+    "notes": [
+     {
+      "t": 8.125,
+      "dur": 0.1875,
+      "midi": 66,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 8.375,
+      "dur": 0.1875,
+      "midi": 70,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 8.625,
+      "dur": 0.1875,
+      "midi": 73,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 9,
+      "dur": 0.1875,
+      "midi": 89,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 9.25,
+      "dur": 0.1875,
+      "midi": 92,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 9.5,
+      "dur": 0.1875,
+      "midi": 78,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 9.75,
+      "dur": 0.1875,
+      "midi": 82,
+      "vel": 0.6725,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 10.125,
+      "dur": 0.1875,
+      "midi": 64,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 10.375,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 10.625,
+      "dur": 0.1875,
+      "midi": 71,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 11,
+      "dur": 0.1875,
+      "midi": 87,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 11.25,
+      "dur": 0.1875,
+      "midi": 90,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 11.5,
+      "dur": 0.1875,
+      "midi": 76,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 11.75,
+      "dur": 0.1875,
+      "midi": 80,
+      "vel": 0.69728515625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 12.125,
+      "dur": 0.1875,
+      "midi": 61,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 12.375,
+      "dur": 0.1875,
+      "midi": 66,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 12.625,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 13,
+      "dur": 0.1875,
+      "midi": 85,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 13.25,
+      "dur": 0.1875,
+      "midi": 87,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 13.5,
+      "dur": 0.1875,
+      "midi": 73,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 13.75,
+      "dur": 0.1875,
+      "midi": 78,
+      "vel": 0.71890625,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 14.125,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 14.375,
+      "dur": 0.1875,
+      "midi": 71,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 14.625,
+      "dur": 0.1875,
+      "midi": 75,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 15,
+      "dur": 0.1875,
+      "midi": 90,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 15.25,
+      "dur": 0.1875,
+      "midi": 94,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 15.5,
+      "dur": 0.1875,
+      "midi": 80,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 15.75,
+      "dur": 0.1875,
+      "midi": 83,
+      "vel": 0.7341992187499999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 16.125,
+      "dur": 0.1875,
+      "midi": 66,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 16.375,
+      "dur": 0.1875,
+      "midi": 70,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 16.625,
+      "dur": 0.1875,
+      "midi": 73,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 17,
+      "dur": 0.1875,
+      "midi": 89,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 17.25,
+      "dur": 0.1875,
+      "midi": 92,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 17.5,
+      "dur": 0.1875,
+      "midi": 78,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 17.75,
+      "dur": 0.1875,
+      "midi": 82,
+      "vel": 0.74,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 18.125,
+      "dur": 0.1875,
+      "midi": 64,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 18.375,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 18.625,
+      "dur": 0.1875,
+      "midi": 71,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 19,
+      "dur": 0.1875,
+      "midi": 87,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 19.25,
+      "dur": 0.1875,
+      "midi": 90,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 19.5,
+      "dur": 0.1875,
+      "midi": 76,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 19.75,
+      "dur": 0.1875,
+      "midi": 80,
+      "vel": 0.749375,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 20.125,
+      "dur": 0.1875,
+      "midi": 61,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 20.375,
+      "dur": 0.1875,
+      "midi": 66,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 20.625,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 21,
+      "dur": 0.1875,
+      "midi": 85,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 21.25,
+      "dur": 0.1875,
+      "midi": 87,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 21.5,
+      "dur": 0.1875,
+      "midi": 73,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 21.75,
+      "dur": 0.1875,
+      "midi": 78,
+      "vel": 0.77,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 22.125,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 22.375,
+      "dur": 0.1875,
+      "midi": 71,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 22.625,
+      "dur": 0.1875,
+      "midi": 75,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 23,
+      "dur": 0.1875,
+      "midi": 90,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 23.25,
+      "dur": 0.1875,
+      "midi": 94,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 23.5,
+      "dur": 0.1875,
+      "midi": 80,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 23.75,
+      "dur": 0.1875,
+      "midi": 83,
+      "vel": 0.7906249999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 24.125,
+      "dur": 0.1875,
+      "midi": 66,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 24.375,
+      "dur": 0.1875,
+      "midi": 70,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 24.625,
+      "dur": 0.1875,
+      "midi": 73,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 25,
+      "dur": 0.1875,
+      "midi": 89,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 25.25,
+      "dur": 0.1875,
+      "midi": 92,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 25.5,
+      "dur": 0.1875,
+      "midi": 78,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 25.75,
+      "dur": 0.1875,
+      "midi": 82,
+      "vel": 0.8,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 26.125,
+      "dur": 0.1875,
+      "midi": 64,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 26.375,
+      "dur": 0.1875,
+      "midi": 68,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 26.625,
+      "dur": 0.1875,
+      "midi": 71,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 27,
+      "dur": 0.1875,
+      "midi": 87,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 27.25,
+      "dur": 0.1875,
+      "midi": 90,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 27.5,
+      "dur": 0.1875,
+      "midi": 76,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     },
+     {
+      "t": 27.75,
+      "dur": 0.1875,
+      "midi": 80,
+      "vel": 0.7474999999999999,
+      "why": "euclid 7/16 over the cycle"
+     }
+    ]
+   },
+   {
+    "id": "kick",
+    "name": "Kick",
+    "kind": "electronic",
+    "instrument": "kick",
+    "notes": [
+     {
+      "t": 12,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 13,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 14,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 15,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 16,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 17,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 18,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 19,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 20,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 21,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 22,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 23,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 24,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 25,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     },
+     {
+      "t": 26,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 1,
+      "why": "shared accent with the timpani"
+     },
+     {
+      "t": 27,
+      "dur": 0.3,
+      "midi": 36,
+      "vel": 0.8,
+      "why": "4/4 beat 3 — against the 3/4"
+     }
+    ]
+   },
+   {
+    "id": "hat",
+    "name": "Glitch hats",
+    "kind": "electronic",
+    "instrument": "noise",
+    "notes": [
+     {
+      "t": 14,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 14.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 14.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 14.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 14.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 15.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 15.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 15.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 16.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 17.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 17.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 17.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 17.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 17.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 18,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 18.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 18.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 18.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 19.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 19.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 19.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 20.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 21.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 21.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 21.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 21.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 22.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 23,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 23.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 23.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 23.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 24,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 24.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 24.5,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 24.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 24.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 25.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 25.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 25.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 25.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 26.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 26.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 26.375,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 26.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 26.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 27.125,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 27.25,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 27.625,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 27.75,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     },
+     {
+      "t": 27.875,
+      "dur": 0.05,
+      "midi": 42,
+      "vel": 0.5
+     }
+    ]
+   },
+   {
+    "id": "dust",
+    "name": "Dust",
+    "kind": "electronic",
+    "instrument": "dust",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 30,
+      "midi": 0,
+      "vel": 0.3,
+      "why": "micro noise from the start"
+     }
+    ]
+   }
+  ]
+ }
+}
