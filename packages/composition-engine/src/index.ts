@@ -298,3 +298,4 @@ export * from './series/space.ts';
 export * from './series/rock-series.ts';
 export * from './series/xrock.ts';
 export * from './series/glossolalia.ts';
+export * from './series/toyriot.ts';

@@ -152,3 +152,19 @@ describe('XROCK voice journey', () => {
     expect(ringing.every((v) => Number.isFinite(v))).toBe(true);
   });
 });
+
+describe('TOYRIOT', () => {
+  it('turns romaji lyrics into singer syllables (moraic n as coda, voiced consonants approximated)', async () => {
+    const { romajiToSyllables, romanizeSyl } = await import('@sonova/composition-engine');
+    const r = romajiToSyllables('to-n-de-ke / ze-n-bu');
+    expect(r.syllables.map(romanizeSyl)).toEqual(['ton', 'te', 'ke', 'sen', 'vu']);
+    expect(r.breaks).toEqual([3, 5]);
+  });
+  it('the megaphone keeps the voice band and removes the low end', async () => {
+    const { megaphone } = await import('@sonova/composition-engine');
+    const x = new Float32Array(SR).map((_, i) => Math.sin((2 * Math.PI * 100 * i) / SR) + 0.3 * Math.sin((2 * Math.PI * 1500 * i) / SR));
+    const y = megaphone(x, SR, 1);
+    const spec = averageSpectrum(y, SR, SR / 4, SR);
+    expect(bandEnergyDb(spec, 1400, 1600) - bandEnergyDb(spec, 90, 110)).toBeGreaterThan(15);
+  });
+});

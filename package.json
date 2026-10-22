@@ -26,6 +26,7 @@
     "s004": "tsx scripts/sonova-004.ts",
     "rock:series": "tsx scripts/rock-series.ts",
     "xrock": "tsx scripts/xrock.ts",
+    "toyriot": "tsx scripts/toyriot.ts",
     "od:fetch": "tsx scripts/od-fetch-samples.ts",
     "od:phase2": "tsx scripts/od-phase2.ts"
   },
