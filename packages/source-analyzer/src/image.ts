@@ -91,7 +91,7 @@ function resample(img: RGBAImage, size: number): Float64Array {
   return out;
 }
 
-function entropy(hist: ArrayLike<number>): number {
+export function entropy(hist: ArrayLike<number>): number {
   let total = 0;
   for (let i = 0; i < hist.length; i++) total += hist[i];
   if (total <= 0) return 0;

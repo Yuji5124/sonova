@@ -1,4 +1,5 @@
 export * from './image.ts';
+export * from './image-v11.ts';
 export { fft, powerSpectrum2D } from './fft.ts';
 
 export const ANALYZER_VERSION = 'sonova-analyzer/1.0.0';

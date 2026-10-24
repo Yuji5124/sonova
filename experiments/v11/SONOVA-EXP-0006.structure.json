@@ -1,0 +1,230 @@
+{
+  "title": "Sunset Resolves",
+  "durationSec": 30,
+  "bpm": 78,
+  "key": {
+    "root_pc": 9,
+    "mode": "minor_pentatonic",
+    "scale": [
+      0,
+      3,
+      5,
+      7,
+      10
+    ],
+    "reason": "主音は最も働きかけの強い楽器「tower」の主音、旋法は3楽器の明るさ平均 0.428 から選択"
+  },
+  "sections": [
+    {
+      "name": "emergence",
+      "start": 0,
+      "end": 3,
+      "description": "最初の楽器だけが鳴り、他の楽器が共鳴によって目覚めていく"
+    },
+    {
+      "name": "interaction",
+      "start": 3,
+      "end": 19.5,
+      "description": "相互作用が増え、音色とリズムが互いを変え始める"
+    },
+    {
+      "name": "bloom",
+      "start": 19.5,
+      "end": 27,
+      "description": "密度と結合が最大。連鎖反応が最も長くなる"
+    },
+    {
+      "name": "afterglow",
+      "start": 27,
+      "end": 30,
+      "description": "新しい音は止み、共鳴とリバーブの余韻だけが残る"
+    }
+  ],
+  "tracks": [
+    {
+      "instrument_id": "inst-9c884039-047d02",
+      "name": "bark",
+      "pan": -0.358,
+      "notes": 29,
+      "resonances": 5,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-87643426-047d02",
+      "name": "tower",
+      "pan": -0.009,
+      "notes": 22,
+      "resonances": 10,
+      "mute": false,
+      "gain": 1
+    },
+    {
+      "instrument_id": "inst-a9dac2de-047d02",
+      "name": "sunset",
+      "pan": 0.36,
+      "notes": 2,
+      "resonances": 0,
+      "mute": false,
+      "gain": 1
+    }
+  ],
+  "interaction": {
+    "notes": 53,
+    "resonances": 15,
+    "mutations": 69,
+    "byRule": {
+      "resonate": 15,
+      "timbre": 16,
+      "rhythm": 12,
+      "entrain": 4,
+      "attract": 31
+    },
+    "byPair": {
+      "1->2": 15,
+      "2->0": 3,
+      "0->1": 25,
+      "1->0": 23,
+      "0->2": 16,
+      "2->1": 2
+    },
+    "maxDepthReached": 3,
+    "suppressedResponses": 0,
+    "maxResponsesInStep": 3,
+    "peakTotalEnergy": 2.1789394380170575
+  },
+  "chains": [
+    {
+      "time": 0,
+      "depth": 3,
+      "eventIds": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "text": "towerが発音 (MIDI 55) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (43→43) → [リズム生成] barkのリズムが E(5,16)+5 → E(5,16)+6 に変化 → [リズム生成] towerのリズムが E(4,16)+14 → E(5,16)+14 に変化"
+    },
+    {
+      "time": 3.269231,
+      "depth": 3,
+      "eventIds": [
+        10,
+        11,
+        14,
+        17
+      ],
+      "text": "barkが発音 (MIDI 62) → [共鳴] towerが共鳴 (MIDI 62) → [音色変化] sunsetの音色が明るく変化 (0.301→0.621) → [リズム生成] towerのリズムが E(5,16)+14 → E(6,16)+14 に変化"
+    },
+    {
+      "time": 10.384615,
+      "depth": 3,
+      "eventIds": [
+        44,
+        47,
+        49,
+        52
+      ],
+      "text": "towerが発音 (MIDI 52) → [共鳴] barkが共鳴 (MIDI 64) → [協和への引き寄せ] towerが協和音へ引き寄せられる (52→52) → [リズム生成] barkのリズムが E(6,16)+7 → E(6,16)+8 に変化"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        56,
+        65,
+        69,
+        72
+      ],
+      "text": "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 52) → [共鳴] barkが共鳴 (MIDI 64)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        56,
+        65,
+        69,
+        73
+      ],
+      "text": "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 52) → [音色変化] barkの音色が暗く変化 (0.317→0.136)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        57,
+        66,
+        70,
+        74
+      ],
+      "text": "towerが発音 (MIDI 57) → [模倣] barkがフレーズをまねて答える (64 69 64) → [模倣] barkが発音 (MIDI 64) → [共鳴] towerが共鳴 (MIDI 64)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        56,
+        65,
+        69,
+        75
+      ],
+      "text": "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 52) → [協和への引き寄せ] barkが協和音へ引き寄せられる (64→64)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        57,
+        66,
+        70,
+        76
+      ],
+      "text": "towerが発音 (MIDI 57) → [模倣] barkがフレーズをまねて答える (64 69 64) → [模倣] barkが発音 (MIDI 64) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (52→52)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        56,
+        65,
+        78,
+        79
+      ],
+      "text": "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 48) → [共鳴] barkが共鳴 (MIDI 60)"
+    },
+    {
+      "time": 12.307692,
+      "depth": 3,
+      "eventIds": [
+        57,
+        66,
+        82,
+        86
+      ],
+      "text": "towerが発音 (MIDI 57) → [模倣] barkがフレーズをまねて答える (64 69 64) → [模倣] barkが発音 (MIDI 64) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (52→52)"
+    },
+    {
+      "time": 17.5,
+      "depth": 3,
+      "eventIds": [
+        91,
+        101,
+        107,
+        109
+      ],
+      "text": "barkが発音 (MIDI 57) → [模倣] towerがフレーズをまねて答える (57 60 64) → [模倣] towerが発音 (MIDI 57) → [共鳴] barkが共鳴 (MIDI 57)"
+    },
+    {
+      "time": 17.5,
+      "depth": 3,
+      "eventIds": [
+        91,
+        101,
+        107,
+        110
+      ],
+      "text": "barkが発音 (MIDI 57) → [模倣] towerがフレーズをまねて答える (57 60 64) → [模倣] towerが発音 (MIDI 57) → [音色変化] barkの音色が明るく変化 (0.102→0.284)"
+    }
+  ]
+}

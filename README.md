@@ -18,6 +18,7 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | 1 | PNG 3 枚 → Instrument DNA → 3 つの音色、ブラウザで試聴 | ✅ |
 | 2 | 3 楽器の相互作用で 30 秒 × 3 候補 | ✅ |
 | 3 | WAV・JSON 生成、SOUNDVAULT への登録と再生確認 | ✅ ローカルで登録・再生確認済み / ⏸ GitHub 上の SOUNDVAULT への反映は承認待ち |
+| v1.1 | **本体の強化** — 写真→楽器の精度 (ノイズを見分ける画像解析 v1.1、DNA v1.1: 画像と音の対応 0.68→0.88、加工に強く)、相互作用 v1.1 (フレーズと終止、鳴っている音を聴いて選ぶ音程、模倣・譲るの新ルール)、30秒の候補曲を各アーク16曲から選ぶ (SONOVA-EXP-0004〜0006)。v1.0 は変更なし (DNA ハッシュと音をテストで確認) | ✅ [experiments/v11/REPORT.md](experiments/v11/REPORT.md) · `npm run v11:eval` · `npm run v11:phase2` · `npm run v11:report` |
 | 6 (先行) | ロック寄りの完成曲 **SONOVA-ROCK-0001**（3分03秒）。他の人の GitHub から珍しい手法を調査して独自実装 | ✅ [experiments/rock/REPORT.md](experiments/rock/REPORT.md)、調査 [research/github-survey-rock.md](research/github-survey-rock.md) |
 | SONOVA 002 | **音が楽器を育てる** — 演奏するほど楽器の共鳴構造が進化する (SONOVA-GROW-0001, 83秒) | ✅ [experiments/s002/REPORT.md](experiments/s002/REPORT.md) |
 | SONOVA 003 | **音楽が自分を修復する** — 欠落・不協和を聴いて検知し、別の楽器が補う (SONOVA-HEAL-0001, 81秒、修復なし版つき) | ✅ [experiments/s003/REPORT.md](experiments/s003/REPORT.md) |

@@ -1,0 +1,3593 @@
+{
+  "workNumber": "SONOVA-EXP-0006",
+  "bpm": 78,
+  "stepSec": 0.19230769230769232,
+  "events": [
+    {
+      "id": 0,
+      "time": 0,
+      "step": 0,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "environment",
+      "midi": 55,
+      "velocity": 0.6976,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 1,
+      "time": 0.384615,
+      "step": 2,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 43,
+      "cause": {
+        "event": 0,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 2,
+      "time": 0.961538,
+      "step": 5,
+      "instrument": 0,
+      "kind": "wake",
+      "depth": 2,
+      "origin": "response",
+      "cause": {
+        "event": 1,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 3,
+      "time": 0.961538,
+      "step": 5,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+5",
+      "to": "E(5,16)+6",
+      "cause": {
+        "event": 1,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 4,
+      "time": 1.346154,
+      "step": 7,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(4,16)+14",
+      "to": "E(5,16)+14",
+      "cause": {
+        "event": 3,
+        "rule": "rhythm",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 5,
+      "time": 1.923077,
+      "step": 10,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 62,
+      "velocity": 0.5292,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 6,
+      "time": 2.307692,
+      "step": 12,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 55,
+      "velocity": 0.6902,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 7,
+      "time": 2.884615,
+      "step": 15,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 62,
+      "to": 62,
+      "cause": {
+        "event": 6,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 8,
+      "time": 2.884615,
+      "step": 15,
+      "instrument": 2,
+      "kind": "wake",
+      "depth": 1,
+      "origin": "response",
+      "cause": {
+        "event": 6,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 9,
+      "time": 2.884615,
+      "step": 15,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0,
+      "to": 0.32,
+      "cause": {
+        "event": 6,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 10,
+      "time": 3.269231,
+      "step": 17,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 62,
+      "velocity": 0.5588,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 11,
+      "time": 3.461538,
+      "step": 18,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 62,
+      "velocity": 0.5653,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 10,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 12,
+      "time": 3.653846,
+      "step": 19,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 50,
+      "cause": {
+        "event": 10,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 13,
+      "time": 3.846154,
+      "step": 20,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "phase",
+      "from": 3,
+      "to": 10,
+      "cause": {
+        "event": 10,
+        "rule": "entrain",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 14,
+      "time": 4.038462,
+      "step": 21,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.301,
+      "to": 0.621,
+      "cause": {
+        "event": 11,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 15,
+      "time": 4.230769,
+      "step": 22,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.6823,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 16,
+      "time": 4.423077,
+      "step": 23,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+6",
+      "to": "E(5,16)+7",
+      "cause": {
+        "event": 13,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 17,
+      "time": 4.423077,
+      "step": 23,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+14",
+      "to": "E(6,16)+14",
+      "cause": {
+        "event": 14,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 18,
+      "time": 4.615385,
+      "step": 24,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 43,
+      "cause": {
+        "event": 15,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 19,
+      "time": 4.807692,
+      "step": 25,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 64,
+      "velocity": 0.6087,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 20,
+      "time": 4.807692,
+      "step": 25,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.597,
+      "to": 0.277,
+      "cause": {
+        "event": 15,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 21,
+      "time": 5,
+      "step": 26,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.5653,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 19,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 22,
+      "time": 5,
+      "step": 26,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 19,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 23,
+      "time": 5.192308,
+      "step": 27,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 52,
+      "cause": {
+        "event": 19,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 24,
+      "time": 5.576923,
+      "step": 29,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.7051,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 25,
+      "time": 6.153846,
+      "step": 32,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 67,
+      "velocity": 0.5786,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 26,
+      "time": 6.153846,
+      "step": 32,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 55,
+      "velocity": 0.6249,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 27,
+      "time": 6.153846,
+      "step": 32,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 67,
+      "to": 64,
+      "cause": {
+        "event": 24,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 28,
+      "time": 6.153846,
+      "step": 32,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.258,
+      "to": -0.062,
+      "cause": {
+        "event": 24,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 29,
+      "time": 6.730769,
+      "step": 35,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 64,
+      "velocity": 0.4808,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 30,
+      "time": 6.730769,
+      "step": 35,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 64,
+      "to": 57,
+      "cause": {
+        "event": 26,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 31,
+      "time": 6.923077,
+      "step": 36,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.5653,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 29,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 32,
+      "time": 7.115385,
+      "step": 37,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 50,
+      "velocity": 0.5826,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 33,
+      "time": 7.5,
+      "step": 39,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 52,
+      "cause": {
+        "event": 32,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 34,
+      "time": 7.692308,
+      "step": 40,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.057,
+      "to": -0.377,
+      "cause": {
+        "event": 32,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 35,
+      "time": 7.692308,
+      "step": 40,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "phase",
+      "from": 10,
+      "to": 13,
+      "cause": {
+        "event": 32,
+        "rule": "entrain",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 36,
+      "time": 7.884615,
+      "step": 41,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(6,16)+14",
+      "to": "E(5,16)+14",
+      "cause": {
+        "event": 33,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 37,
+      "time": 8.269231,
+      "step": 43,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+7",
+      "to": "E(6,16)+7",
+      "cause": {
+        "event": 35,
+        "rule": "rhythm",
+        "from_instrument": 2
+      }
+    },
+    {
+      "id": 38,
+      "time": 8.461538,
+      "step": 44,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 45,
+      "velocity": 0.6453,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 39,
+      "time": 8.846154,
+      "step": 46,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 52,
+      "cause": {
+        "event": 38,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 40,
+      "time": 9.038462,
+      "step": 47,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 64,
+      "to": 57,
+      "cause": {
+        "event": 38,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 41,
+      "time": 9.038462,
+      "step": 47,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.352,
+      "to": -0.672,
+      "cause": {
+        "event": 38,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 42,
+      "time": 10,
+      "step": 52,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.6346,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 43,
+      "time": 10.192308,
+      "step": 53,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.5645,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 42,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 44,
+      "time": 10.384615,
+      "step": 54,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.6681,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 45,
+      "time": 10.384615,
+      "step": 54,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 43,
+      "to": 52,
+      "cause": {
+        "event": 42,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 46,
+      "time": 10.576923,
+      "step": 55,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "phase",
+      "from": 13,
+      "to": 2,
+      "cause": {
+        "event": 42,
+        "rule": "entrain",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 47,
+      "time": 10.576923,
+      "step": 55,
+      "instrument": 0,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.51,
+      "duration": 2.0454,
+      "timbre": 0,
+      "cause": {
+        "event": 44,
+        "rule": "resonate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 48,
+      "time": 10.769231,
+      "step": 56,
+      "instrument": 2,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.6766,
+      "duration": 4.5,
+      "timbre": -0.6135
+    },
+    {
+      "id": 49,
+      "time": 10.769231,
+      "step": 56,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 47,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 50,
+      "time": 10.961538,
+      "step": 57,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.6146,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 51,
+      "time": 11.153846,
+      "step": 58,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0,
+      "to": 0.181,
+      "cause": {
+        "event": 50,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 52,
+      "time": 11.346154,
+      "step": 59,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(6,16)+7",
+      "to": "E(6,16)+8",
+      "cause": {
+        "event": 49,
+        "rule": "rhythm",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 53,
+      "time": 11.538462,
+      "step": 60,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+14",
+      "to": "E(6,16)+14",
+      "cause": {
+        "event": 51,
+        "rule": "rhythm",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 54,
+      "time": 11.730769,
+      "step": 61,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.6283,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 55,
+      "time": 12.115385,
+      "step": 63,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 40,
+      "cause": {
+        "event": 54,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 56,
+      "time": 12.307692,
+      "step": 64,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 64,
+      "velocity": 0.6897,
+      "duration": 0.2692,
+      "timbre": 0.1707
+    },
+    {
+      "id": 57,
+      "time": 12.307692,
+      "step": 64,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.5736,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 58,
+      "time": 12.307692,
+      "step": 64,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.566,
+      "to": -0.246,
+      "cause": {
+        "event": 54,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 59,
+      "time": 12.5,
+      "step": 65,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.5493,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 56,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 60,
+      "time": 12.5,
+      "step": 65,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.169,
+      "to": 0.35,
+      "cause": {
+        "event": 57,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 61,
+      "time": 12.884615,
+      "step": 67,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 67,
+      "velocity": 0.6245,
+      "duration": 0.2692,
+      "timbre": 0.3434
+    },
+    {
+      "id": 62,
+      "time": 13.269231,
+      "step": 69,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 52,
+      "velocity": 0.5377,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 63,
+      "time": 13.461538,
+      "step": 70,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.232,
+      "to": 0.088,
+      "cause": {
+        "event": 61,
+        "rule": "timbre",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 64,
+      "time": 13.846154,
+      "step": 72,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6172,
+      "duration": 0.2692,
+      "timbre": 0.3266
+    },
+    {
+      "id": 65,
+      "time": 13.846154,
+      "step": 72,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "imitate",
+      "from": "64 67 60",
+      "to": "52 55 48",
+      "cause": {
+        "event": 56,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 66,
+      "time": 13.846154,
+      "step": 72,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "imitate",
+      "from": "52 57 52",
+      "to": "64 69 64",
+      "cause": {
+        "event": 57,
+        "rule": "imitate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 67,
+      "time": 13.846154,
+      "step": 72,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 64,
+      "cause": {
+        "event": 62,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 68,
+      "time": 14.038462,
+      "step": 73,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 64,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 69,
+      "time": 14.230769,
+      "step": 74,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 52,
+      "velocity": 0.6242,
+      "duration": 0.2692,
+      "timbre": 0,
+      "cause": {
+        "event": 65,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 70,
+      "time": 14.423077,
+      "step": 75,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.657,
+      "duration": 0.2692,
+      "timbre": 0.3169,
+      "cause": {
+        "event": 66,
+        "rule": "imitate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 71,
+      "time": 14.423077,
+      "step": 75,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(6,16)+8",
+      "to": "E(7,16)+8",
+      "cause": {
+        "event": 65,
+        "rule": "rhythm",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 72,
+      "time": 14.423077,
+      "step": 75,
+      "instrument": 0,
+      "kind": "resonance",
+      "depth": 3,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.4779,
+      "duration": 2.0454,
+      "timbre": 0.3169,
+      "cause": {
+        "event": 69,
+        "rule": "resonate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 73,
+      "time": 14.423077,
+      "step": 75,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.317,
+      "to": 0.136,
+      "cause": {
+        "event": 69,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 74,
+      "time": 14.615385,
+      "step": 76,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 3,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.5225,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 70,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 75,
+      "time": 14.807692,
+      "step": 77,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "pitch",
+      "from": 64,
+      "to": 64,
+      "cause": {
+        "event": 69,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 76,
+      "time": 14.807692,
+      "step": 77,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 70,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 77,
+      "time": 15.384615,
+      "step": 80,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 55,
+      "velocity": 0.7764,
+      "duration": 0.2692,
+      "timbre": 0,
+      "cause": {
+        "event": 65,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 78,
+      "time": 15.769231,
+      "step": 82,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 48,
+      "velocity": 0.6248,
+      "duration": 0.2692,
+      "timbre": 0,
+      "cause": {
+        "event": 65,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 79,
+      "time": 15.961538,
+      "step": 83,
+      "instrument": 0,
+      "kind": "resonance",
+      "depth": 3,
+      "origin": "response",
+      "midi": 60,
+      "velocity": 0.4577,
+      "duration": 2.0454,
+      "timbre": 0.1251,
+      "cause": {
+        "event": 78,
+        "rule": "resonate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 80,
+      "time": 16.153846,
+      "step": 84,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.7914,
+      "duration": 0.2692,
+      "timbre": 0.1238,
+      "cause": {
+        "event": 66,
+        "rule": "imitate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 81,
+      "time": 16.346154,
+      "step": 85,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 45,
+      "velocity": 0.5928,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 82,
+      "time": 16.538462,
+      "step": 86,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.7318,
+      "duration": 0.2692,
+      "timbre": 0.1213,
+      "cause": {
+        "event": 66,
+        "rule": "imitate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 83,
+      "time": 16.923077,
+      "step": 88,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 67,
+      "velocity": 0.6825,
+      "duration": 0.2692,
+      "timbre": 0.1189
+    },
+    {
+      "id": 84,
+      "time": 16.923077,
+      "step": 88,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 67,
+      "to": 57,
+      "cause": {
+        "event": 81,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 85,
+      "time": 16.923077,
+      "step": 88,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.074,
+      "to": -0.246,
+      "cause": {
+        "event": 81,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 86,
+      "time": 16.923077,
+      "step": 88,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 82,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 87,
+      "time": 17.115385,
+      "step": 89,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 55,
+      "velocity": 0.4818,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 83,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 88,
+      "time": 17.115385,
+      "step": 89,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 45,
+      "to": 60,
+      "cause": {
+        "event": 83,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 89,
+      "time": 17.307692,
+      "step": 90,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6499,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 90,
+      "time": 17.307692,
+      "step": 90,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(6,16)+14",
+      "to": "E(5,16)+14",
+      "cause": {
+        "event": 84,
+        "rule": "rhythm",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 91,
+      "time": 17.5,
+      "step": 91,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.6538,
+      "duration": 0.2692,
+      "timbre": 0.1154
+    },
+    {
+      "id": 92,
+      "time": 17.692308,
+      "step": 92,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.6641,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 93,
+      "time": 17.692308,
+      "step": 92,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "yield",
+      "from": "9 notes/bar",
+      "to": "rests 1 bar",
+      "cause": {
+        "event": 92,
+        "rule": "yield",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 94,
+      "time": 17.884615,
+      "step": 93,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 48,
+      "cause": {
+        "event": 91,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 95,
+      "time": 18.076923,
+      "step": 94,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.232,
+      "to": -0.552,
+      "cause": {
+        "event": 91,
+        "rule": "timbre",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 96,
+      "time": 18.269231,
+      "step": 95,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6497,
+      "duration": 0.2692,
+      "timbre": 0.1108
+    },
+    {
+      "id": 97,
+      "time": 18.269231,
+      "step": 95,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 64,
+      "cause": {
+        "event": 92,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 98,
+      "time": 18.461538,
+      "step": 96,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 57,
+      "to": 55,
+      "cause": {
+        "event": 96,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 99,
+      "time": 18.846154,
+      "step": 98,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 64,
+      "velocity": 0.5485,
+      "duration": 0.2692,
+      "timbre": 0.1076
+    },
+    {
+      "id": 100,
+      "time": 18.846154,
+      "step": 98,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 55,
+      "velocity": 0.5932,
+      "duration": 0.2692,
+      "timbre": 0
+    },
+    {
+      "id": 101,
+      "time": 19.038462,
+      "step": 99,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "imitate",
+      "from": "57 60 64",
+      "to": "57 60 64",
+      "cause": {
+        "event": 91,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 102,
+      "time": 19.230769,
+      "step": 100,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 64,
+      "velocity": 0.5451,
+      "duration": 0.2692,
+      "timbre": 0.1054
+    },
+    {
+      "id": 103,
+      "time": 19.423077,
+      "step": 101,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.514,
+      "to": -0.194,
+      "cause": {
+        "event": 99,
+        "rule": "timbre",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 104,
+      "time": 19.423077,
+      "step": 101,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 64,
+      "to": 62,
+      "cause": {
+        "event": 100,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 105,
+      "time": 19.423077,
+      "step": 101,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 64,
+      "velocity": 0.4421,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 102,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 106,
+      "time": 19.615385,
+      "step": 102,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 62,
+      "velocity": 0.5439,
+      "duration": 0.2692,
+      "timbre": 0.1033
+    },
+    {
+      "id": 107,
+      "time": 19.615385,
+      "step": 102,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.7306,
+      "duration": 0.2692,
+      "timbre": 0,
+      "cause": {
+        "event": 101,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 108,
+      "time": 19.615385,
+      "step": 102,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 52,
+      "cause": {
+        "event": 102,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 109,
+      "time": 19.807692,
+      "step": 103,
+      "instrument": 0,
+      "kind": "resonance",
+      "depth": 3,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.4023,
+      "duration": 2.0454,
+      "timbre": 0.1023,
+      "cause": {
+        "event": 107,
+        "rule": "resonate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 110,
+      "time": 19.807692,
+      "step": 103,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "timbre",
+      "from": 0.102,
+      "to": 0.284,
+      "cause": {
+        "event": 107,
+        "rule": "timbre",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 111,
+      "time": 20,
+      "step": 104,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6389,
+      "duration": 0.2692,
+      "timbre": 0.2808
+    },
+    {
+      "id": 112,
+      "time": 20.576923,
+      "step": 107,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.6523,
+      "duration": 0.2692,
+      "timbre": 0.2724
+    },
+    {
+      "id": 113,
+      "time": 20.961538,
+      "step": 109,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6395,
+      "duration": 0.2692,
+      "timbre": 0.267
+    },
+    {
+      "id": 114,
+      "time": 21.153846,
+      "step": 110,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 60,
+      "velocity": 0.415,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 113,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 115,
+      "time": 21.346154,
+      "step": 111,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 57,
+      "velocity": 0.6268,
+      "duration": 0.2692,
+      "timbre": 0.2617
+    },
+    {
+      "id": 116,
+      "time": 21.346154,
+      "step": 111,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 2,
+      "origin": "response",
+      "midi": 60,
+      "velocity": 0.8628,
+      "duration": 0.2692,
+      "timbre": 0,
+      "cause": {
+        "event": 101,
+        "rule": "imitate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 117,
+      "time": 21.346154,
+      "step": 111,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 52,
+      "to": 48,
+      "cause": {
+        "event": 113,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 118,
+      "time": 21.346154,
+      "step": 111,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "yield",
+      "from": "7 notes/bar",
+      "to": "rests 1 bar",
+      "cause": {
+        "event": 115,
+        "rule": "yield",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 119,
+      "time": 21.538462,
+      "step": 112,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "timbre",
+      "from": -0.174,
+      "to": 0.146,
+      "cause": {
+        "event": 113,
+        "rule": "timbre",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 120,
+      "time": 21.538462,
+      "step": 112,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 45,
+      "cause": {
+        "event": 115,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 121,
+      "time": 21.538462,
+      "step": 112,
+      "instrument": 0,
+      "kind": "resonance",
+      "depth": 3,
+      "origin": "response",
+      "midi": 60,
+      "velocity": 0.3802,
+      "duration": 2.0454,
+      "timbre": 0.2591,
+      "cause": {
+        "event": 116,
+        "rule": "resonate",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 122,
+      "time": 21.923077,
+      "step": 114,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 60,
+      "velocity": 0.6743,
+      "duration": 0.2692,
+      "timbre": 0.2539
+    },
+    {
+      "id": 123,
+      "time": 21.923077,
+      "step": 114,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 67,
+      "cause": {
+        "event": 116,
+        "rule": "attract",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 124,
+      "time": 21.923077,
+      "step": 114,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "yield",
+      "from": "9 notes/bar",
+      "to": "rests 1 bar",
+      "cause": {
+        "event": 122,
+        "rule": "yield",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 125,
+      "time": 22.115385,
+      "step": 115,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 48,
+      "cause": {
+        "event": 122,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 126,
+      "time": 22.307692,
+      "step": 116,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "pulse",
+      "midi": 67,
+      "velocity": 0.6418,
+      "duration": 0.2692,
+      "timbre": 0.2489
+    },
+    {
+      "id": 127,
+      "time": 22.692308,
+      "step": 118,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "motif",
+      "midi": 62,
+      "velocity": 0.6216,
+      "duration": 0.2692,
+      "timbre": 0.2439
+    },
+    {
+      "id": 128,
+      "time": 22.692308,
+      "step": 118,
+      "instrument": 0,
+      "kind": "mutation",
+      "depth": 2,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(7,16)+8",
+      "to": "E(7,16)+9",
+      "cause": {
+        "event": 125,
+        "rule": "rhythm",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 129,
+      "time": 22.884615,
+      "step": 119,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "motif",
+      "midi": 62,
+      "velocity": 0.6317,
+      "duration": 0.2692,
+      "timbre": 0.2415
+    },
+    {
+      "id": 130,
+      "time": 22.884615,
+      "step": 119,
+      "instrument": 1,
+      "kind": "resonance",
+      "depth": 1,
+      "origin": "response",
+      "midi": 62,
+      "velocity": 0.3931,
+      "duration": 2.3364,
+      "timbre": 0,
+      "cause": {
+        "event": 127,
+        "rule": "resonate",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 131,
+      "time": 23.076923,
+      "step": 120,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 3,
+      "origin": "response",
+      "param": "rhythm",
+      "from": "E(5,16)+14",
+      "to": "E(4,16)+14",
+      "cause": {
+        "event": 128,
+        "rule": "rhythm",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 132,
+      "time": 23.076923,
+      "step": 120,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "pitch",
+      "from": 60,
+      "to": 64,
+      "cause": {
+        "event": 129,
+        "rule": "attract",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 133,
+      "time": 23.461538,
+      "step": 122,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "motif",
+      "midi": 64,
+      "velocity": 0.6312,
+      "duration": 0.2692,
+      "timbre": 0.2343
+    },
+    {
+      "id": 134,
+      "time": 23.461538,
+      "step": 122,
+      "instrument": 2,
+      "kind": "mutation",
+      "depth": 1,
+      "origin": "response",
+      "param": "phase",
+      "from": 2,
+      "to": 9,
+      "cause": {
+        "event": 129,
+        "rule": "entrain",
+        "from_instrument": 0
+      }
+    },
+    {
+      "id": 135,
+      "time": 23.846154,
+      "step": 124,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 0,
+      "origin": "motif",
+      "midi": 67,
+      "velocity": 0.6046,
+      "duration": 0.2692,
+      "timbre": 0.2297
+    },
+    {
+      "id": 136,
+      "time": 24.615385,
+      "step": 128,
+      "instrument": 1,
+      "kind": "mutation",
+      "depth": 0,
+      "origin": "environment",
+      "param": "pitch",
+      "from": "phrase",
+      "to": "final chord"
+    },
+    {
+      "id": 137,
+      "time": 24.615385,
+      "step": 128,
+      "instrument": 0,
+      "kind": "note",
+      "depth": 1,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.62,
+      "duration": 5.0846,
+      "timbre": 0.2206,
+      "cause": {
+        "event": 136,
+        "rule": "cadence",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 138,
+      "time": 24.615385,
+      "step": 128,
+      "instrument": 1,
+      "kind": "note",
+      "depth": 1,
+      "origin": "response",
+      "midi": 57,
+      "velocity": 0.62,
+      "duration": 5.0846,
+      "timbre": 0,
+      "cause": {
+        "event": 136,
+        "rule": "cadence",
+        "from_instrument": 1
+      }
+    },
+    {
+      "id": 139,
+      "time": 24.615385,
+      "step": 128,
+      "instrument": 2,
+      "kind": "note",
+      "depth": 1,
+      "origin": "response",
+      "midi": 45,
+      "velocity": 0.62,
+      "duration": 5.0846,
+      "timbre": 0.1243,
+      "cause": {
+        "event": 136,
+        "rule": "cadence",
+        "from_instrument": 1
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "step": 0,
+      "time": 0,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.093,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 5,
+          "awake": false
+        },
+        {
+          "energy": 0.47,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.093,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 3,
+          "awake": false
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "time": 0.7692,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.07,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 5,
+          "awake": false
+        },
+        {
+          "energy": 0.468,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.07,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 3,
+          "awake": false
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "time": 1.5385,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.221,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 6,
+          "awake": true
+        },
+        {
+          "energy": 0.559,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.052,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 3,
+          "awake": false
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "time": 2.3077,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.175,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 6,
+          "awake": true
+        },
+        {
+          "energy": 0.415,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.039,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 3,
+          "awake": false
+        }
+      ]
+    },
+    {
+      "step": 16,
+      "time": 3.0769,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.245,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 6,
+          "awake": true
+        },
+        {
+          "energy": 0.426,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.166,
+          "timbre": 0.317,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 3,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 20,
+      "time": 3.8462,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.2,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 6,
+          "awake": true
+        },
+        {
+          "energy": 0.504,
+          "timbre": 0,
+          "resonance": 0.329,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.213,
+          "timbre": 0.304,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 10,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 24,
+      "time": 4.6154,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.356,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.483,
+          "timbre": 0,
+          "resonance": 0.292,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.346,
+          "timbre": 0.603,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 10,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 28,
+      "time": 5.3846,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.284,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.547,
+          "timbre": 0,
+          "resonance": 0.587,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.445,
+          "timbre": 0.269,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 10,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 32,
+      "time": 6.1538,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.206,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.309,
+          "timbre": 0,
+          "resonance": 0.52,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.542,
+          "timbre": -0.062,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 10,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 36,
+      "time": 6.9231,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.156,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.427,
+          "timbre": 0,
+          "resonance": 0.81,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.495,
+          "timbre": -0.06,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 10,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 40,
+      "time": 7.6923,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.23,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 5,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.339,
+          "timbre": 0,
+          "resonance": 0.717,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.58,
+          "timbre": -0.377,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 13,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 44,
+      "time": 8.4615,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.379,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 6,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.33,
+          "timbre": 0,
+          "resonance": 0.635,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.523,
+          "timbre": -0.362,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 13,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 48,
+      "time": 9.2308,
+      "arc": {
+        "density": 0.25,
+        "coupling": 1
+      },
+      "instruments": [
+        {
+          "energy": 0.397,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 6,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.363,
+          "timbre": 0,
+          "resonance": 0.562,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.593,
+          "timbre": -0.665,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 13,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 52,
+      "time": 10,
+      "arc": {
+        "density": 0.25,
+        "coupling": 0.999
+      },
+      "instruments": [
+        {
+          "energy": 0.291,
+          "timbre": 0,
+          "resonance": 0,
+          "pulses": 6,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.388,
+          "timbre": 0,
+          "resonance": 0.498,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.533,
+          "timbre": -0.639,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 13,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 56,
+      "time": 10.7692,
+      "arc": {
+        "density": 0.25,
+        "coupling": 0.992
+      },
+      "instruments": [
+        {
+          "energy": 0.405,
+          "timbre": 0,
+          "resonance": 0.339,
+          "pulses": 6,
+          "rotation": 7,
+          "awake": true
+        },
+        {
+          "energy": 0.367,
+          "timbre": 0,
+          "resonance": 0.76,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.368,
+          "timbre": -0.614,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 60,
+      "time": 11.5385,
+      "arc": {
+        "density": 0.25,
+        "coupling": 0.978
+      },
+      "instruments": [
+        {
+          "energy": 0.614,
+          "timbre": 0.178,
+          "resonance": 0.301,
+          "pulses": 6,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.394,
+          "timbre": 0,
+          "resonance": 0.673,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.365,
+          "timbre": -0.589,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 64,
+      "time": 12.3077,
+      "arc": {
+        "density": 0.25,
+        "coupling": 0.959
+      },
+      "instruments": [
+        {
+          "energy": 0.453,
+          "timbre": 0.171,
+          "resonance": 0.266,
+          "pulses": 6,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.195,
+          "timbre": 0,
+          "resonance": 0.596,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.483,
+          "timbre": -0.246,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 68,
+      "time": 13.0769,
+      "arc": {
+        "density": 0.264,
+        "coupling": 0.935
+      },
+      "instruments": [
+        {
+          "energy": 0.438,
+          "timbre": 0.34,
+          "resonance": 0.236,
+          "pulses": 6,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.327,
+          "timbre": 0,
+          "resonance": 0.847,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.451,
+          "timbre": -0.236,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 72,
+      "time": 13.8462,
+      "arc": {
+        "density": 0.304,
+        "coupling": 0.908
+      },
+      "instruments": [
+        {
+          "energy": 0.478,
+          "timbre": 0.327,
+          "resonance": 0.209,
+          "pulses": 6,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.421,
+          "timbre": 0,
+          "resonance": 0.75,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.536,
+          "timbre": 0.087,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 76,
+      "time": 14.6154,
+      "arc": {
+        "density": 0.364,
+        "coupling": 0.876
+      },
+      "instruments": [
+        {
+          "energy": 0.654,
+          "timbre": 0.134,
+          "resonance": 0.524,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.423,
+          "timbre": 0,
+          "resonance": 1,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.503,
+          "timbre": 0.083,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 80,
+      "time": 15.3846,
+      "arc": {
+        "density": 0.439,
+        "coupling": 0.842
+      },
+      "instruments": [
+        {
+          "energy": 0.63,
+          "timbre": 0.129,
+          "resonance": 0.464,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.34,
+          "timbre": 0,
+          "resonance": 0.885,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.487,
+          "timbre": 0.08,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 84,
+      "time": 16.1538,
+      "arc": {
+        "density": 0.523,
+        "coupling": 0.806
+      },
+      "instruments": [
+        {
+          "energy": 0.58,
+          "timbre": 0.124,
+          "resonance": 0.75,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.309,
+          "timbre": 0,
+          "resonance": 0.784,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.486,
+          "timbre": 0.077,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 88,
+      "time": 16.9231,
+      "arc": {
+        "density": 0.612,
+        "coupling": 0.768
+      },
+      "instruments": [
+        {
+          "energy": 0.379,
+          "timbre": 0.119,
+          "resonance": 0.664,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.307,
+          "timbre": 0,
+          "resonance": 0.694,
+          "pulses": 6,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.617,
+          "timbre": -0.246,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 92,
+      "time": 17.6923,
+      "arc": {
+        "density": 0.7,
+        "coupling": 0.729
+      },
+      "instruments": [
+        {
+          "energy": 0.356,
+          "timbre": 0.114,
+          "resonance": 0.588,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.345,
+          "timbre": 0,
+          "resonance": 0.913,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.606,
+          "timbre": -0.237,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 96,
+      "time": 18.4615,
+      "arc": {
+        "density": 0.782,
+        "coupling": 0.691
+      },
+      "instruments": [
+        {
+          "energy": 0.353,
+          "timbre": 0.11,
+          "resonance": 0.521,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.461,
+          "timbre": 0,
+          "resonance": 0.808,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.713,
+          "timbre": -0.541,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 100,
+      "time": 19.2308,
+      "arc": {
+        "density": 0.854,
+        "coupling": 0.653
+      },
+      "instruments": [
+        {
+          "energy": 0.251,
+          "timbre": 0.105,
+          "resonance": 0.461,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.596,
+          "timbre": 0,
+          "resonance": 0.715,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.7,
+          "timbre": -0.52,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 104,
+      "time": 20,
+      "arc": {
+        "density": 0.909,
+        "coupling": 0.616
+      },
+      "instruments": [
+        {
+          "energy": 0.371,
+          "timbre": 0.281,
+          "resonance": 0.747,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.632,
+          "timbre": 0,
+          "resonance": 0.913,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.794,
+          "timbre": -0.189,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 108,
+      "time": 20.7692,
+      "arc": {
+        "density": 0.942,
+        "coupling": 0.581
+      },
+      "instruments": [
+        {
+          "energy": 0.394,
+          "timbre": 0.27,
+          "resonance": 0.662,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.706,
+          "timbre": 0,
+          "resonance": 0.808,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.773,
+          "timbre": -0.181,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 112,
+      "time": 21.5385,
+      "arc": {
+        "density": 0.95,
+        "coupling": 0.549
+      },
+      "instruments": [
+        {
+          "energy": 0.397,
+          "timbre": 0.259,
+          "resonance": 0.936,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.722,
+          "timbre": 0,
+          "resonance": 0.941,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.88,
+          "timbre": 0.146,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 116,
+      "time": 22.3077,
+      "arc": {
+        "density": 0.95,
+        "coupling": 0.52
+      },
+      "instruments": [
+        {
+          "energy": 0.304,
+          "timbre": 0.249,
+          "resonance": 0.828,
+          "pulses": 7,
+          "rotation": 8,
+          "awake": true
+        },
+        {
+          "energy": 0.776,
+          "timbre": 0,
+          "resonance": 0.833,
+          "pulses": 5,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.841,
+          "timbre": 0.14,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 120,
+      "time": 23.0769,
+      "arc": {
+        "density": 0.947,
+        "coupling": 0.496
+      },
+      "instruments": [
+        {
+          "energy": 0.329,
+          "timbre": 0.239,
+          "resonance": 0.733,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.991,
+          "timbre": 0,
+          "resonance": 0.97,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.811,
+          "timbre": 0.135,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 2,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 124,
+      "time": 23.8462,
+      "arc": {
+        "density": 0.757,
+        "coupling": 0.476
+      },
+      "instruments": [
+        {
+          "energy": 0.235,
+          "timbre": 0.23,
+          "resonance": 0.649,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.959,
+          "timbre": 0,
+          "resonance": 0.859,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.774,
+          "timbre": 0.129,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 128,
+      "time": 24.6154,
+      "arc": {
+        "density": 0.41,
+        "coupling": 0.461
+      },
+      "instruments": [
+        {
+          "energy": 0.338,
+          "timbre": 0.221,
+          "resonance": 0.575,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.883,
+          "timbre": 0,
+          "resonance": 0.76,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.706,
+          "timbre": 0.124,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 132,
+      "time": 25.3846,
+      "arc": {
+        "density": 0.098,
+        "coupling": 0.452
+      },
+      "instruments": [
+        {
+          "energy": 0.358,
+          "timbre": 0.212,
+          "resonance": 0.509,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.768,
+          "timbre": 0,
+          "resonance": 0.673,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.611,
+          "timbre": 0.119,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 136,
+      "time": 26.1538,
+      "arc": {
+        "density": 0,
+        "coupling": 0.45
+      },
+      "instruments": [
+        {
+          "energy": 0.342,
+          "timbre": 0.204,
+          "resonance": 0.451,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.65,
+          "timbre": 0,
+          "resonance": 0.596,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.516,
+          "timbre": 0.115,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 140,
+      "time": 26.9231,
+      "arc": {
+        "density": 0,
+        "coupling": 0.45
+      },
+      "instruments": [
+        {
+          "energy": 0.327,
+          "timbre": 0.196,
+          "resonance": 0.399,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.56,
+          "timbre": 0,
+          "resonance": 0.527,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.442,
+          "timbre": 0.11,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 144,
+      "time": 27.6923,
+      "arc": {
+        "density": 0,
+        "coupling": 0.45
+      },
+      "instruments": [
+        {
+          "energy": 0.317,
+          "timbre": 0.188,
+          "resonance": 0.353,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.492,
+          "timbre": 0,
+          "resonance": 0.467,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.387,
+          "timbre": 0.106,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 148,
+      "time": 28.4615,
+      "arc": {
+        "density": 0,
+        "coupling": 0.45
+      },
+      "instruments": [
+        {
+          "energy": 0.309,
+          "timbre": 0.18,
+          "resonance": 0.313,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.442,
+          "timbre": 0,
+          "resonance": 0.413,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.346,
+          "timbre": 0.102,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    },
+    {
+      "step": 152,
+      "time": 29.2308,
+      "arc": {
+        "density": 0,
+        "coupling": 0.45
+      },
+      "instruments": [
+        {
+          "energy": 0.303,
+          "timbre": 0.173,
+          "resonance": 0.277,
+          "pulses": 7,
+          "rotation": 9,
+          "awake": true
+        },
+        {
+          "energy": 0.404,
+          "timbre": 0,
+          "resonance": 0.366,
+          "pulses": 4,
+          "rotation": 14,
+          "awake": true
+        },
+        {
+          "energy": 0.316,
+          "timbre": 0.098,
+          "resonance": 0,
+          "pulses": 2,
+          "rotation": 9,
+          "awake": true
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "start": 0,
+      "end": 32,
+      "time": 0
+    },
+    {
+      "start": 32,
+      "end": 64,
+      "time": 6.1538
+    },
+    {
+      "start": 64,
+      "end": 96,
+      "time": 12.3077
+    },
+    {
+      "start": 96,
+      "end": 128,
+      "time": 18.4615
+    }
+  ],
+  "finalChord": {
+    "step": 128,
+    "time": 24.6154,
+    "midis": [
+      57,
+      57,
+      45
+    ]
+  }
+}

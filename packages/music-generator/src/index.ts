@@ -1,4 +1,4 @@
-import type { InstrumentDNA, InteractionEffect, InteractionRule, InteractionTrigger } from '@sonova/instrument-dna';
+import type { InstrumentDNA, InteractionEffect, InteractionEffectV11, InteractionRule, InteractionTrigger } from '@sonova/instrument-dna';
 import { Rng, clamp, euclid } from '@sonova/instrument-dna';
 
 export const GENERATOR_VERSION = 'sonova-generator/1.0.0';
@@ -28,7 +28,8 @@ export interface GeneratorConfig {
 
 export interface EventCause {
   event: number;
-  rule: InteractionEffect;
+  /** v1.0 rules; the v1.1 generator also records 'imitate' / 'yield' and the 'cadence' of a phrase */
+  rule: InteractionEffect | InteractionEffectV11 | 'cadence';
   from_instrument: number;
 }
 
@@ -46,7 +47,7 @@ export interface GenEvent {
   velocity?: number;
   duration?: number;
   timbre?: number;
-  param?: 'timbre' | 'rhythm' | 'phase' | 'pitch';
+  param?: 'timbre' | 'rhythm' | 'phase' | 'pitch' | 'imitate' | 'yield';
   from?: string | number;
   to?: string | number;
   cause?: EventCause;
@@ -102,7 +103,7 @@ export const MODES: Record<string, number[]> = {
   phrygian: [0, 1, 3, 5, 7, 8, 10],
   in_sen: [0, 1, 5, 7, 10],
 };
-const MODE_ORDER = Object.keys(MODES);
+export const MODE_ORDER = Object.keys(MODES);
 
 const smoothstep = (a: number, b: number, x: number): number => {
   const t = clamp((x - a) / (b - a), 0, 1);
@@ -158,8 +159,8 @@ interface Scheduled {
   cause: GenEvent;
 }
 
-const REFRACTORY: Record<InteractionEffect, number> = { resonate: 2, timbre: 4, rhythm: 16, entrain: 8, attract: 2 };
-const TRIGGER_EMISSION: Record<InteractionTrigger, number> = { note: 1, resonance: 0.7, mutation: 1.4 };
+export const REFRACTORY: Record<InteractionEffect, number> = { resonate: 2, timbre: 4, rhythm: 16, entrain: 8, attract: 2 };
+export const TRIGGER_EMISSION: Record<InteractionTrigger, number> = { note: 1, resonance: 0.7, mutation: 1.4 };
 
 export function degreeToMidi(rootPc: number, scale: number[], degree: number): number {
   const len = scale.length;
@@ -182,7 +183,7 @@ export function midiToDegree(rootPc: number, scale: number[], midi: number): num
   return best;
 }
 
-const rhythmLabel = (r: { steps: number; pulses: number; rotation: number }) => `E(${r.pulses},${r.steps})+${r.rotation}`;
+export const rhythmLabel = (r: { steps: number; pulses: number; rotation: number }) => `E(${r.pulses},${r.steps})+${r.rotation}`;
 
 export function generate(dnas: InstrumentDNA[], cfg: GeneratorConfig): GeneratorResult {
   if (dnas.length === 0) throw new Error('At least one instrument is required');
@@ -484,12 +485,15 @@ export function generate(dnas: InstrumentDNA[], cfg: GeneratorConfig): Generator
 
 const round3 = (v: number) => Math.round(v * 1000) / 1000;
 
-const EFFECT_TEXT: Record<InteractionEffect, string> = {
+const EFFECT_TEXT: Record<EventCause['rule'], string> = {
   resonate: '共鳴',
   timbre: '音色変化',
   rhythm: 'リズム生成',
   entrain: '同調',
   attract: '協和への引き寄せ',
+  imitate: '模倣',
+  yield: '譲る',
+  cadence: '終止',
 };
 
 /** Describe an event in Japanese for the explanation log. */
@@ -506,6 +510,8 @@ export function describeEvent(e: GenEvent, names: string[]): string {
       if (e.param === 'timbre') return `${who}の音色が${Number(e.to) > Number(e.from) ? '明るく' : '暗く'}変化 (${e.from}→${e.to})`;
       if (e.param === 'rhythm') return `${who}のリズムが ${e.from} → ${e.to} に変化`;
       if (e.param === 'phase') return `${who}がタイミングを同調 (回転 ${e.from}→${e.to})`;
+      if (e.param === 'imitate') return `${who}がフレーズをまねて答える (${e.to})`;
+      if (e.param === 'yield') return `${who}が場所を空ける (${e.to})`;
       return `${who}が協和音へ引き寄せられる (${e.from}→${e.to})`;
   }
 }
@@ -536,3 +542,4 @@ export function findChains(events: GenEvent[], dnas: InstrumentDNA[], limit = 12
 }
 
 export * from './rock.ts';
+export * from './generate-v11.ts';

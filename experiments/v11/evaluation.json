@@ -1,0 +1,372 @@
+{
+  "corpus": {
+    "materials": [
+      {
+        "name": "wood",
+        "description": "木の年輪"
+      },
+      {
+        "name": "brick",
+        "description": "レンガの壁"
+      },
+      {
+        "name": "water",
+        "description": "水面のさざ波"
+      },
+      {
+        "name": "clouds",
+        "description": "空と雲"
+      },
+      {
+        "name": "foliage",
+        "description": "茂った葉"
+      },
+      {
+        "name": "metal",
+        "description": "ヘアライン加工の金属"
+      },
+      {
+        "name": "fabric",
+        "description": "織物 (ツイル)"
+      },
+      {
+        "name": "gravel",
+        "description": "砂利"
+      },
+      {
+        "name": "sunset",
+        "description": "夕焼けのグラデーション"
+      },
+      {
+        "name": "marble",
+        "description": "大理石"
+      },
+      {
+        "name": "stripes",
+        "description": "太い縦縞の布"
+      },
+      {
+        "name": "dunes",
+        "description": "砂丘"
+      },
+      {
+        "name": "citylights",
+        "description": "夜の街の灯り (ボケ)"
+      },
+      {
+        "name": "rust",
+        "description": "錆びた鉄板"
+      },
+      {
+        "name": "ice",
+        "description": "ひびの入った氷"
+      },
+      {
+        "name": "mosaic",
+        "description": "色タイルのモザイク"
+      }
+    ],
+    "instances": 2,
+    "transforms": [
+      {
+        "name": "half",
+        "description": "縮小 (1/2)"
+      },
+      {
+        "name": "upscale",
+        "description": "拡大 (×1.6、ぼける)"
+      },
+      {
+        "name": "noise",
+        "description": "センサーノイズ (σ = 4/255)"
+      },
+      {
+        "name": "crop",
+        "description": "中央 90% にトリミング"
+      },
+      {
+        "name": "exposure",
+        "description": "露出 +8% (少し明るく撮れた)"
+      },
+      {
+        "name": "compress",
+        "description": "圧縮 (階調 6bit + 2×2 の色ぼかし)"
+      }
+    ]
+  },
+  "results": {
+    "v1.0": {
+      "dna": {
+        "nuisance": {
+          "half": 0.0183,
+          "upscale": 0.0703,
+          "noise": 0.1462,
+          "crop": 0.1684,
+          "exposure": 0.0704,
+          "compress": 0.0625
+        },
+        "nuisanceMean": 0.0893,
+        "between": 1.2477,
+        "sameMaterial": 0.3041,
+        "robustnessRatio": 0.0716,
+        "identification": 0.8906,
+        "category": 0.875,
+        "flips": {
+          "root_pc": 0.0677,
+          "rhythm.steps": 0,
+          "rhythm.pulses": 0.125,
+          "rhythm.rate": 0.0052,
+          "fm.ratio": 0.0208,
+          "responses": 0.0938
+        },
+        "flipRate": 0.0521,
+        "variety": {
+          "root_pc": 9,
+          "rhythm.steps": 2,
+          "rhythm.pulses": 7,
+          "rhythm.rate": 3,
+          "fm.ratio": 7,
+          "responses": 13
+        },
+        "unstable": [
+          {
+            "key": "vibrato.depth",
+            "meanShift": 0.0901
+          },
+          {
+            "key": "noise.amount",
+            "meanShift": 0.0839
+          },
+          {
+            "key": "pitch.root_pc",
+            "meanShift": 0.0792
+          },
+          {
+            "key": "rhythm.pulses",
+            "meanShift": 0.0611
+          },
+          {
+            "key": "vibrato.rate",
+            "meanShift": 0.0541
+          },
+          {
+            "key": "release",
+            "meanShift": 0.0531
+          }
+        ]
+      },
+      "fidelity": {
+        "pairs": [
+          {
+            "name": "細かい模様 → 明るい音色",
+            "rho": 0.813
+          },
+          {
+            "name": "鋭いエッジ → 速い立ち上がり",
+            "rho": 0.993
+          },
+          {
+            "name": "滑らかな画像 → 長い余韻",
+            "rho": 0.797
+          },
+          {
+            "name": "粗い質感 → ノイズの多い発音",
+            "rho": 0.622
+          },
+          {
+            "name": "色の豊かさ → 揺らぐ倍音",
+            "rho": -0.09
+          },
+          {
+            "name": "反復構造 → 長い共鳴",
+            "rho": 0.944
+          }
+        ],
+        "mean": 0.68
+      },
+      "ms": 11528
+    },
+    "analyzer v1.1 + DNA v1.0": {
+      "dna": {
+        "nuisance": {
+          "half": 0.0341,
+          "upscale": 0.0833,
+          "noise": 0.1185,
+          "crop": 0.1922,
+          "exposure": 0.1049,
+          "compress": 0.0609
+        },
+        "nuisanceMean": 0.099,
+        "between": 1.2485,
+        "sameMaterial": 0.3022,
+        "robustnessRatio": 0.0793,
+        "identification": 0.8958,
+        "category": 0.9375,
+        "flips": {
+          "root_pc": 0.0625,
+          "rhythm.steps": 0.0052,
+          "rhythm.pulses": 0.1146,
+          "rhythm.rate": 0.026,
+          "fm.ratio": 0.0104,
+          "responses": 0.0781
+        },
+        "flipRate": 0.0495,
+        "variety": {
+          "root_pc": 11,
+          "rhythm.steps": 2,
+          "rhythm.pulses": 6,
+          "rhythm.rate": 3,
+          "fm.ratio": 7,
+          "responses": 16
+        },
+        "unstable": [
+          {
+            "key": "vibrato.depth",
+            "meanShift": 0.1338
+          },
+          {
+            "key": "noise.amount",
+            "meanShift": 0.0828
+          },
+          {
+            "key": "release",
+            "meanShift": 0.0783
+          },
+          {
+            "key": "rhythm.pulses",
+            "meanShift": 0.0684
+          },
+          {
+            "key": "decay",
+            "meanShift": 0.0566
+          },
+          {
+            "key": "harmonics.inharmonicity",
+            "meanShift": 0.0554
+          }
+        ]
+      },
+      "fidelity": {
+        "pairs": [
+          {
+            "name": "細かい模様 → 明るい音色",
+            "rho": 0.814
+          },
+          {
+            "name": "鋭いエッジ → 速い立ち上がり",
+            "rho": 0.986
+          },
+          {
+            "name": "滑らかな画像 → 長い余韻",
+            "rho": 0.799
+          },
+          {
+            "name": "粗い質感 → ノイズの多い発音",
+            "rho": 0.644
+          },
+          {
+            "name": "色の豊かさ → 揺らぐ倍音",
+            "rho": -0.165
+          },
+          {
+            "name": "反復構造 → 長い共鳴",
+            "rho": 0.968
+          }
+        ],
+        "mean": 0.674
+      },
+      "ms": 14846
+    },
+    "v1.1": {
+      "dna": {
+        "nuisance": {
+          "half": 0.0053,
+          "upscale": 0.0949,
+          "noise": 0.1161,
+          "crop": 0.1498,
+          "exposure": 0.0589,
+          "compress": 0.0323
+        },
+        "nuisanceMean": 0.0762,
+        "between": 1.232,
+        "sameMaterial": 0.2568,
+        "robustnessRatio": 0.0619,
+        "identification": 0.9375,
+        "category": 0.9375,
+        "flips": {
+          "root_pc": 0.0313,
+          "rhythm.steps": 0,
+          "rhythm.pulses": 0.1146,
+          "rhythm.rate": 0.0521,
+          "fm.ratio": 0.0104,
+          "responses": 0.0885
+        },
+        "flipRate": 0.0495,
+        "variety": {
+          "root_pc": 10,
+          "rhythm.steps": 2,
+          "rhythm.pulses": 6,
+          "rhythm.rate": 3,
+          "fm.ratio": 5,
+          "responses": 13
+        },
+        "unstable": [
+          {
+            "key": "rhythm.pulses",
+            "meanShift": 0.0684
+          },
+          {
+            "key": "noise.amount",
+            "meanShift": 0.0639
+          },
+          {
+            "key": "rhythm.rate",
+            "meanShift": 0.0573
+          },
+          {
+            "key": "decay",
+            "meanShift": 0.053
+          },
+          {
+            "key": "harmonics.inharmonicity",
+            "meanShift": 0.0497
+          },
+          {
+            "key": "release",
+            "meanShift": 0.0486
+          }
+        ]
+      },
+      "fidelity": {
+        "pairs": [
+          {
+            "name": "細かい模様 → 明るい音色",
+            "rho": 0.742
+          },
+          {
+            "name": "鋭いエッジ → 速い立ち上がり",
+            "rho": 0.971
+          },
+          {
+            "name": "滑らかな画像 → 長い余韻",
+            "rho": 0.97
+          },
+          {
+            "name": "粗い質感 → ノイズの多い発音",
+            "rho": 0.734
+          },
+          {
+            "name": "色の豊かさ → 揺らぐ倍音",
+            "rho": 0.896
+          },
+          {
+            "name": "反復構造 → 長い共鳴",
+            "rho": 0.948
+          }
+        ],
+        "mean": 0.877
+      },
+      "ms": 17096
+    }
+  }
+}

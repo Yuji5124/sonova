@@ -18,6 +18,16 @@ export interface InteractionRule {
   reason: string;
 }
 
+/** rules that only the v1.1 generator knows (kept apart so v1.0 instruments and their hashes do not change) */
+export type InteractionEffectV11 = 'imitate' | 'yield';
+export interface InteractionRuleV11 {
+  effect: InteractionEffectV11;
+  triggers: InteractionTrigger[];
+  strength: number;
+  delay_steps: number;
+  reason: string;
+}
+
 export interface MappingEntry {
   parameter: string;
   value: number | string;
@@ -51,7 +61,11 @@ export interface InstrumentDNA {
     sensitivity: number;
     memory_length: number;
     responses: InteractionRule[];
+    /** v1.1 only: listening rules of the v1.1 generator (imitate a phrase, make room) */
+    responses_v11?: InteractionRuleV11[];
   };
+  /** v1.1 only: a detuned second partial layer that beats against the first (colour → shimmer) */
+  shimmer?: { cents: number; mix: number };
   mapping: MappingEntry[];
   dna_hash: string;
 }

@@ -1,0 +1,462 @@
+{
+  "instrument_id": "inst-87643426-047d02",
+  "name": "tower",
+  "source_type": "image",
+  "source_name": "tower.png",
+  "source_hash": "87643426093b15547d3e5395355bf0f9b91e427e3149ec58ddb1080e859706e9",
+  "seed": "sonova-001",
+  "engine_version": "sonova-dna/1.1.0",
+  "pitch_range": {
+    "low": 45,
+    "high": 64,
+    "center": 54,
+    "root_pc": 9
+  },
+  "harmonics": {
+    "amplitudes": [
+      1,
+      0.361009,
+      0.198449,
+      0.118198,
+      0.077127,
+      0.059448,
+      0.031,
+      0.025564,
+      0.015695,
+      0.013955,
+      0.011465,
+      0.010777,
+      0.008707,
+      0.00893,
+      0.006716,
+      0.006483
+    ],
+    "inharmonicity": 0.002007,
+    "damping": 0.485704,
+    "brightness": 0.540587
+  },
+  "attack": 0.010166,
+  "decay": 0.853628,
+  "sustain": 0.204255,
+  "release": 0.458474,
+  "resonance": {
+    "amount": 0.865322,
+    "q": 7.879904,
+    "ring": 4.080879
+  },
+  "noise": {
+    "amount": 0.48206,
+    "color": 0.582024,
+    "length": 0.135515
+  },
+  "modulation": {
+    "fm_ratio": 2,
+    "fm_index": 0.34072,
+    "vibrato_rate": 3.090995,
+    "vibrato_depth": 0.035648
+  },
+  "filter": {
+    "cutoff_ratio": 10.649389,
+    "envelope": 0.556054
+  },
+  "rhythm": {
+    "steps": 16,
+    "pulses": 4,
+    "rotation": 14,
+    "rate": 1
+  },
+  "pan": -0.018656,
+  "interaction_rules": {
+    "emission": 0.928179,
+    "sensitivity": 0.76723,
+    "memory_length": 11,
+    "responses": [
+      {
+        "effect": "resonate",
+        "triggers": [
+          "note"
+        ],
+        "strength": 1,
+        "delay_steps": 1,
+        "reason": "規則的な反復構造 → 他の楽器の音に共鳴する"
+      },
+      {
+        "effect": "rhythm",
+        "triggers": [
+          "mutation"
+        ],
+        "strength": 0.871586,
+        "delay_steps": 2,
+        "reason": "方向のばらばらなエッジと粗さ → 他の楽器の変化から新しいリズムを生む"
+      },
+      {
+        "effect": "attract",
+        "triggers": [
+          "note",
+          "resonance"
+        ],
+        "strength": 0.232863,
+        "delay_steps": 1,
+        "reason": "色相の集中 → 他の楽器の音程に協和しようとする"
+      }
+    ],
+    "responses_v11": [
+      {
+        "effect": "imitate",
+        "triggers": [
+          "note"
+        ],
+        "strength": 0.685387,
+        "delay_steps": 8,
+        "reason": "模様が繰り返し・方向がそろう素材ほど、他の楽器のフレーズをまねて答える (2拍遅れのカノン)"
+      },
+      {
+        "effect": "yield",
+        "triggers": [
+          "note",
+          "resonance"
+        ],
+        "strength": 0.405282,
+        "delay_steps": 0,
+        "reason": "滑らかで控えめな素材ほど、周りが混んでいると音数を減らして場所を空ける"
+      }
+    ]
+  },
+  "shimmer": {
+    "cents": 5.240706,
+    "mix": 0.175075
+  },
+  "mapping": [
+    {
+      "parameter": "pitch_range.root_pc",
+      "value": 9,
+      "features": [
+        "meanLuminance"
+      ],
+      "rule": "無彩色: 明るさを6段階にして五度圏に配置"
+    },
+    {
+      "parameter": "pitch_range.center",
+      "value": 54,
+      "features": [
+        "meanLuminance",
+        "spectralCentroid"
+      ],
+      "rule": "明るく細かい模様の画像ほど高い音域"
+    },
+    {
+      "parameter": "pitch_range.width",
+      "value": 19,
+      "features": [
+        "contrast"
+      ],
+      "rule": "コントラストが大きいほど広い音域"
+    },
+    {
+      "parameter": "harmonics.rolloff",
+      "value": 1.646267,
+      "features": [
+        "highFreqRatio",
+        "spectralCentroid"
+      ],
+      "rule": "細かい模様が多いほど高次倍音が残る"
+    },
+    {
+      "parameter": "harmonics.odd_bias",
+      "value": -0.079269,
+      "features": [
+        "verticalness"
+      ],
+      "rule": "縦エッジが多いと奇数倍音、横エッジが多いと偶数倍音"
+    },
+    {
+      "parameter": "harmonics.amplitudes",
+      "value": "16 partials",
+      "features": [
+        "radialSpectrum"
+      ],
+      "rule": "空間周波数の16帯域を16倍音の強さに写像 (ノイズの床を引いたスペクトル)"
+    },
+    {
+      "parameter": "harmonics.inharmonicity",
+      "value": 0.002007,
+      "features": [
+        "edgeDensity",
+        "orientationStrength",
+        "textureRoughness"
+      ],
+      "rule": "鋭く方向のばらばらなエッジ → 硬い素材の非調和な倍音"
+    },
+    {
+      "parameter": "harmonics.damping",
+      "value": 0.485704,
+      "features": [
+        "highFreqRatio",
+        "edgeMean"
+      ],
+      "rule": "滑らかな画像ほど高次倍音が早く減衰"
+    },
+    {
+      "parameter": "harmonics.brightness",
+      "value": 0.540587,
+      "features": [
+        "spectralCentroid",
+        "edgeMean"
+      ],
+      "rule": "空間周波数の重心 → 音の明るさ"
+    },
+    {
+      "parameter": "smoothness",
+      "value": 0.138713,
+      "features": [
+        "edgeMean"
+      ],
+      "rule": "滑らかさ = exp(−エッジ強度/0.06) (飽和しない)"
+    },
+    {
+      "parameter": "attack",
+      "value": 0.010166,
+      "features": [
+        "edgeMean"
+      ],
+      "rule": "エッジが鋭いほど立ち上がりが速い"
+    },
+    {
+      "parameter": "decay",
+      "value": 0.853628,
+      "features": [
+        "edgeMean",
+        "luminanceStd",
+        "strengthX",
+        "strengthY"
+      ],
+      "rule": "滑らかさ・明暗の幅・格子構造 → 減衰時間"
+    },
+    {
+      "parameter": "sustain",
+      "value": 0.204255,
+      "features": [
+        "edgeMean",
+        "contrast"
+      ],
+      "rule": "滑らかで低コントラスト → 持続する音"
+    },
+    {
+      "parameter": "resonance.amount",
+      "value": 0.865322,
+      "features": [
+        "repetitionStrength"
+      ],
+      "rule": "反復構造が強い素材ほど共鳴しやすい"
+    },
+    {
+      "parameter": "resonance.q",
+      "value": 7.879904,
+      "features": [
+        "repetitionStrength"
+      ],
+      "rule": "反復の規則性 → フィルターの鋭さ"
+    },
+    {
+      "parameter": "resonance.ring",
+      "value": 4.080879,
+      "features": [
+        "repetitionStrength",
+        "textureRoughness"
+      ],
+      "rule": "共鳴の残響時間"
+    },
+    {
+      "parameter": "release",
+      "value": 0.458474,
+      "features": [
+        "edgeMean",
+        "repetitionStrength"
+      ],
+      "rule": "滑らかな素材ほど余韻が長い (共鳴の強さは少しだけ)"
+    },
+    {
+      "parameter": "noise.amount",
+      "value": 0.48206,
+      "features": [
+        "textureRoughness",
+        "edgeDensity"
+      ],
+      "rule": "細かな粗さ (ノイズの床を引いた値) → 打撃ノイズ"
+    },
+    {
+      "parameter": "noise.color",
+      "value": 0.582024,
+      "features": [
+        "highFreqRatio",
+        "warmth"
+      ],
+      "rule": "暖色ほど低いノイズ、細かい模様ほど高いノイズ"
+    },
+    {
+      "parameter": "modulation.fm_ratio",
+      "value": 2,
+      "features": [
+        "colorfulness"
+      ],
+      "rule": "色の豊かさで FM の周波数比を選択 (整数比・1/2 だけ)"
+    },
+    {
+      "parameter": "modulation.fm_index",
+      "value": 0.34072,
+      "features": [
+        "meanSaturation",
+        "colorfulness"
+      ],
+      "rule": "彩度 → FM の深さ"
+    },
+    {
+      "parameter": "modulation.vibrato_rate",
+      "value": 3.090995,
+      "features": [
+        "spectralCentroid",
+        "hueSpread"
+      ],
+      "rule": "模様の細かさと色相の広がり → ビブラートの速さ (v1.0 の反復周期はトリミングで動くので使わない)"
+    },
+    {
+      "parameter": "modulation.vibrato_depth",
+      "value": 0.035648,
+      "features": [
+        "hueSpread",
+        "luminanceEntropy"
+      ],
+      "rule": "色相が円周上に散らばるほど音程が揺らぐ"
+    },
+    {
+      "parameter": "shimmer",
+      "value": "5.240706 cents × 0.175075",
+      "features": [
+        "colorfulness",
+        "hueSpread"
+      ],
+      "rule": "色が豊かなほど、少しずらした2層目の倍音がうなって揺らぐ"
+    },
+    {
+      "parameter": "filter.cutoff_ratio",
+      "value": 10.649389,
+      "features": [
+        "spectralCentroid",
+        "edgeMean"
+      ],
+      "rule": "明るさ → カットオフ"
+    },
+    {
+      "parameter": "rhythm.steps",
+      "value": 16,
+      "features": [
+        "orientationStrength",
+        "repetitionStrength"
+      ],
+      "rule": "方向のそろわない曲線的な画像 → 12分割、それ以外 → 16分割"
+    },
+    {
+      "parameter": "rhythm.pulses",
+      "value": 4,
+      "features": [
+        "edgeDensity",
+        "textureRoughness",
+        "repetitionStrength"
+      ],
+      "rule": "エッジと粗さ → 発音数が増え、規則的な反復 → 間引かれる"
+    },
+    {
+      "parameter": "rhythm.rotation",
+      "value": 14,
+      "features": [
+        "seed"
+      ],
+      "rule": "シードでリズムの開始位置をずらす"
+    },
+    {
+      "parameter": "rhythm.rate",
+      "value": 1,
+      "features": [
+        "edgeMean"
+      ],
+      "rule": "ゆっくり立ち上がる楽器は長い周期で発音"
+    },
+    {
+      "parameter": "pan",
+      "value": -0.018656,
+      "features": [
+        "brightCenterX",
+        "seed"
+      ],
+      "rule": "画像の明るい部分の左右位置 → 定位"
+    },
+    {
+      "parameter": "interaction.emission",
+      "value": 0.928179,
+      "features": [
+        "edgeDensity",
+        "contrast",
+        "textureRoughness"
+      ],
+      "rule": "鋭く明暗のある素材ほど他の楽器へ強く働きかける"
+    },
+    {
+      "parameter": "interaction.sensitivity",
+      "value": 0.76723,
+      "features": [
+        "contrast",
+        "repetitionStrength"
+      ],
+      "rule": "柔らかい・規則的な素材ほど他の楽器に反応しやすい"
+    },
+    {
+      "parameter": "interaction.memory_length",
+      "value": 11,
+      "features": [
+        "repetitionStrength"
+      ],
+      "rule": "反復構造 → 主題を覚えている長さ"
+    },
+    {
+      "parameter": "interaction.resonate",
+      "value": 1,
+      "features": [
+        "(複合)"
+      ],
+      "rule": "規則的な反復構造 → 他の楽器の音に共鳴する"
+    },
+    {
+      "parameter": "interaction.rhythm",
+      "value": 0.871586,
+      "features": [
+        "(複合)"
+      ],
+      "rule": "方向のばらばらなエッジと粗さ → 他の楽器の変化から新しいリズムを生む"
+    },
+    {
+      "parameter": "interaction.attract",
+      "value": 0.232863,
+      "features": [
+        "(複合)"
+      ],
+      "rule": "色相の集中 → 他の楽器の音程に協和しようとする"
+    },
+    {
+      "parameter": "interaction.imitate",
+      "value": 0.685387,
+      "features": [
+        "(複合)"
+      ],
+      "rule": "模様が繰り返し・方向がそろう素材ほど、他の楽器のフレーズをまねて答える (2拍遅れのカノン)"
+    },
+    {
+      "parameter": "interaction.yield",
+      "value": 0.405282,
+      "features": [
+        "(複合)"
+      ],
+      "rule": "滑らかで控えめな素材ほど、周りが混んでいると音数を減らして場所を空ける"
+    }
+  ],
+  "dna_hash": "1d2c1597a0f456"
+}

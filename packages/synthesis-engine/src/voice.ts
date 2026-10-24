@@ -114,6 +114,10 @@ export function renderVoice(dna: InstrumentDNA, note: NoteSpec, sampleRate: numb
     partials.push({ ratio, amp, decay: lambda, phase: rng.next() });
   });
   const ampNorm = 1 / Math.max(0.2, Math.sqrt(partials.reduce((s, p) => s + p.amp * p.amp, 0)));
+  // v1.1 shimmer: a second partial layer detuned by `cents` beats against the first (absent for v1.0 DNA)
+  const shimmerMix = dna.shimmer ? clamp(dna.shimmer.mix, 0, 0.6) : 0;
+  const shimmerRatio = dna.shimmer ? Math.pow(2, dna.shimmer.cents / 1200) : 1;
+  const shimmerPhase = shimmerMix > 0 ? partials.map(() => rng.next()) : [];
 
   // FM layer
   const fmMix = clamp(dna.modulation.fm_index / 8 + Math.max(0, timbre) * 0.25, 0, 0.55);
@@ -164,6 +168,14 @@ export function renderVoice(dna: InstrumentDNA, note: NoteSpec, sampleRate: numb
     for (let p = 0; p < partials.length; p++) {
       const pr = partials[p];
       add += pr.amp * Math.exp(-pr.decay * t) * sinCycles(pr.phase + phase * pr.ratio);
+    }
+    if (shimmerMix > 0) {
+      let add2 = 0;
+      for (let p = 0; p < partials.length; p++) {
+        const pr = partials[p];
+        add2 += pr.amp * Math.exp(-pr.decay * t) * sinCycles(shimmerPhase[p] + phase * pr.ratio * shimmerRatio);
+      }
+      add = add * (1 - shimmerMix * 0.5) + add2 * shimmerMix;
     }
     add *= ampNorm;
     const fmEnv = 0.35 + 0.65 * Math.exp(-t / (decTau + 0.05));

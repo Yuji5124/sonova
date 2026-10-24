@@ -1,0 +1,395 @@
+{
+  "engines": {
+    "analyzer": "sonova-analyzer/1.1.0",
+    "dna": "sonova-dna/1.1.0",
+    "generator": "sonova-generator/1.1.0",
+    "evaluation": "sonova-eval/1.1.0"
+  },
+  "seedsPerArc": 16,
+  "instruments": [
+    {
+      "name": "bark",
+      "instrument_id": "inst-9c884039-047d02",
+      "dna_hash": "0d436e0d739203"
+    },
+    {
+      "name": "tower",
+      "instrument_id": "inst-87643426-047d02",
+      "dna_hash": "1d2c1597a0f456"
+    },
+    {
+      "name": "sunset",
+      "instrument_id": "inst-a9dac2de-047d02",
+      "dna_hash": "1fb8ac61097cda"
+    }
+  ],
+  "baseline": [
+    {
+      "workNumber": "SONOVA-EXP-0001",
+      "title": "Rings Wake the Tower",
+      "seed": "sonova-exp-0001",
+      "arc": "bloom",
+      "notes": 66,
+      "metrics": {
+        "score": 0.567,
+        "parts": {
+          "continuity": 0.621,
+          "arc": 0.88,
+          "consonance": 0.491,
+          "motif": 1,
+          "interplay": 0.542,
+          "balance": 0.837,
+          "ending": 0.105,
+          "dynamics": 0.057
+        },
+        "maxGapSec": 2.759,
+        "arcCorrelation": 0.88,
+        "roughness": 0.127,
+        "motifRecurrence": 0.4,
+        "interplay": 0.394,
+        "dialogue": 0.017,
+        "deepChains": 8,
+        "balance": 0.837,
+        "endsOnChord": false,
+        "thinningEnd": 0.264,
+        "loudnessRangeDb": 18.717
+      }
+    },
+    {
+      "workNumber": "SONOVA-EXP-0002",
+      "title": "Facade Tide",
+      "seed": "sonova-exp-0002",
+      "arc": "tide",
+      "notes": 66,
+      "metrics": {
+        "score": 0.715,
+        "parts": {
+          "continuity": 1,
+          "arc": 0.861,
+          "consonance": 0.497,
+          "motif": 1,
+          "interplay": 0.597,
+          "balance": 0.763,
+          "ending": 0,
+          "dynamics": 1
+        },
+        "maxGapSec": 1.705,
+        "arcCorrelation": 0.861,
+        "roughness": 0.126,
+        "motifRecurrence": 0.3,
+        "interplay": 0.463,
+        "dialogue": 0.017,
+        "deepChains": 8,
+        "balance": 0.763,
+        "endsOnChord": false,
+        "thinningEnd": -0.527,
+        "loudnessRangeDb": 8.904
+      }
+    },
+    {
+      "workNumber": "SONOVA-EXP-0003",
+      "title": "Sunset Cascade",
+      "seed": "sonova-exp-0003",
+      "arc": "cascade",
+      "notes": 72,
+      "metrics": {
+        "score": 0.638,
+        "parts": {
+          "continuity": 0.953,
+          "arc": 0.783,
+          "consonance": 0.514,
+          "motif": 1,
+          "interplay": 0.457,
+          "balance": 0.798,
+          "ending": 0,
+          "dynamics": 0.602
+        },
+        "maxGapSec": 2.093,
+        "arcCorrelation": 0.783,
+        "roughness": 0.122,
+        "motifRecurrence": 0.545,
+        "interplay": 0.345,
+        "dialogue": 0.015,
+        "deepChains": 6,
+        "balance": 0.798,
+        "endsOnChord": false,
+        "thinningEnd": -0.234,
+        "loudnessRangeDb": 15.992
+      }
+    }
+  ],
+  "distribution": {
+    "v1.0": {
+      "mean": 0.671,
+      "p10": 0.605,
+      "p90": 0.734
+    },
+    "v1.1": {
+      "mean": 0.73,
+      "p10": 0.618,
+      "p90": 0.825
+    }
+  },
+  "candidates": [
+    {
+      "workNumber": "SONOVA-EXP-0004",
+      "title": "Rings Answer the Tower",
+      "seed": "sonova-v11-bloom-05",
+      "arc": "bloom",
+      "bpm": 84,
+      "key": "9/aeolian",
+      "notes": 71,
+      "stats": {
+        "notes": 71,
+        "resonances": 19,
+        "mutations": 77,
+        "byRule": {
+          "resonate": 19,
+          "timbre": 26,
+          "rhythm": 10,
+          "entrain": 3,
+          "attract": 29
+        },
+        "byPair": {
+          "1->0": 34,
+          "1->2": 21,
+          "0->2": 16,
+          "0->1": 20,
+          "2->0": 5
+        },
+        "maxDepthReached": 4,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 3,
+        "peakTotalEnergy": 2.2
+      },
+      "statsV11": {
+        "imitations": 5,
+        "yields": 4,
+        "cadenceNotes": 3,
+        "meanRoughness": 0.11
+      },
+      "chains": [
+        "towerが発音 (MIDI 62) → [模倣] barkがフレーズをまねて答える (57 60 62) → [模倣] barkが発音 (MIDI 62) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (43→50)",
+        "towerが発音 (MIDI 62) → [模倣] barkがフレーズをまねて答える (57 60 62) → [模倣] barkが発音 (MIDI 62) → [音色変化] sunsetの音色が暗く変化 (0.264→-0.056)",
+        "barkが発音 (MIDI 62) → [共鳴] towerが共鳴 (MIDI 62) → [音色変化] sunsetの音色が明るく変化 (-0.053→0.267) → [リズム生成] barkのリズムが E(5,16)+5 → E(6,16)+5 に変化",
+        "barkが発音 (MIDI 59) → [模倣] towerがフレーズをまねて答える (50 47 45) → [模倣] towerが発音 (MIDI 50) → [音色変化] sunsetの音色が暗く変化 (0.237→-0.083)",
+        "barkが発音 (MIDI 59) → [模倣] towerがフレーズをまねて答える (50 47 45) → [模倣] towerが発音 (MIDI 47) → [音色変化] barkの音色が暗く変化 (0.298→0.117)",
+        "barkが発音 (MIDI 59) → [模倣] towerがフレーズをまねて答える (50 47 45) → [模倣] towerが発音 (MIDI 45) → [共鳴] barkが共鳴 (MIDI 57)"
+      ],
+      "metrics": {
+        "score": 0.843,
+        "parts": {
+          "continuity": 0.929,
+          "arc": 0.765,
+          "consonance": 0.671,
+          "motif": 1,
+          "interplay": 0.908,
+          "balance": 0.706,
+          "ending": 0.766,
+          "dynamics": 1
+        },
+        "maxGapSec": 2.143,
+        "arcCorrelation": 0.765,
+        "roughness": 0.082,
+        "motifRecurrence": 0.354,
+        "interplay": 0.661,
+        "dialogue": 0.077,
+        "deepChains": 12,
+        "balance": 0.706,
+        "endsOnChord": true,
+        "thinningEnd": 0.414,
+        "loudnessRangeDb": 12.545
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.293,
+        "clippedSamples": 0,
+        "dcOffset": -0.000002463,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.773
+      },
+      "wav": "output/v11/SONOVA-EXP-0004.wav"
+    },
+    {
+      "workNumber": "SONOVA-EXP-0005",
+      "title": "Facade Dialogue",
+      "seed": "sonova-v11-tide-01",
+      "arc": "tide",
+      "bpm": 83,
+      "key": "9/aeolian",
+      "notes": 46,
+      "stats": {
+        "notes": 46,
+        "resonances": 15,
+        "mutations": 60,
+        "byRule": {
+          "resonate": 15,
+          "timbre": 17,
+          "rhythm": 12,
+          "entrain": 3,
+          "attract": 25
+        },
+        "byPair": {
+          "1->0": 19,
+          "0->1": 23,
+          "1->2": 13,
+          "0->2": 12,
+          "2->0": 5,
+          "2->1": 3
+        },
+        "maxDepthReached": 3,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 4,
+        "peakTotalEnergy": 2.2
+      },
+      "statsV11": {
+        "imitations": 2,
+        "yields": 1,
+        "cadenceNotes": 3,
+        "meanRoughness": 0.099
+      },
+      "chains": [
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 50) → [共鳴] barkが共鳴 (MIDI 62)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 50) → [協和への引き寄せ] barkが協和音へ引き寄せられる (59→62)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 50) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (40→38)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 50) → [協和への引き寄せ] barkが協和音へ引き寄せられる (60→62)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 50) → [音色変化] sunsetの音色が暗く変化 (0.224→-0.096)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (50 50 52) → [模倣] towerが発音 (MIDI 52) → [音色変化] barkの音色が明るく変化 (0.11→0.291)"
+      ],
+      "metrics": {
+        "score": 0.873,
+        "parts": {
+          "continuity": 1,
+          "arc": 0.841,
+          "consonance": 0.825,
+          "motif": 1,
+          "interplay": 0.9,
+          "balance": 0.818,
+          "ending": 0.6,
+          "dynamics": 1
+        },
+        "maxGapSec": 1.627,
+        "arcCorrelation": 0.841,
+        "roughness": 0.044,
+        "motifRecurrence": 0.3,
+        "interplay": 0.648,
+        "dialogue": 0.075,
+        "deepChains": 12,
+        "balance": 0.818,
+        "endsOnChord": true,
+        "thinningEnd": -0.705,
+        "loudnessRangeDb": 10.772
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.049,
+        "clippedSamples": 0,
+        "dcOffset": -5.415e-7,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.811
+      },
+      "wav": "output/v11/SONOVA-EXP-0005.wav"
+    },
+    {
+      "workNumber": "SONOVA-EXP-0006",
+      "title": "Sunset Resolves",
+      "seed": "sonova-v11-cascade-15",
+      "arc": "cascade",
+      "bpm": 78,
+      "key": "9/minor_pentatonic",
+      "notes": 53,
+      "stats": {
+        "notes": 53,
+        "resonances": 15,
+        "mutations": 69,
+        "byRule": {
+          "resonate": 15,
+          "timbre": 16,
+          "rhythm": 12,
+          "entrain": 4,
+          "attract": 31
+        },
+        "byPair": {
+          "1->2": 15,
+          "2->0": 3,
+          "0->1": 25,
+          "1->0": 23,
+          "0->2": 16,
+          "2->1": 2
+        },
+        "maxDepthReached": 3,
+        "suppressedResponses": 0,
+        "maxResponsesInStep": 3,
+        "peakTotalEnergy": 2.1789394380170575
+      },
+      "statsV11": {
+        "imitations": 3,
+        "yields": 3,
+        "cadenceNotes": 3,
+        "meanRoughness": 0.088
+      },
+      "chains": [
+        "towerが発音 (MIDI 55) → [協和への引き寄せ] sunsetが協和音へ引き寄せられる (43→43) → [リズム生成] barkのリズムが E(5,16)+5 → E(5,16)+6 に変化 → [リズム生成] towerのリズムが E(4,16)+14 → E(5,16)+14 に変化",
+        "barkが発音 (MIDI 62) → [共鳴] towerが共鳴 (MIDI 62) → [音色変化] sunsetの音色が明るく変化 (0.301→0.621) → [リズム生成] towerのリズムが E(5,16)+14 → E(6,16)+14 に変化",
+        "towerが発音 (MIDI 52) → [共鳴] barkが共鳴 (MIDI 64) → [協和への引き寄せ] towerが協和音へ引き寄せられる (52→52) → [リズム生成] barkのリズムが E(6,16)+7 → E(6,16)+8 に変化",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 52) → [共鳴] barkが共鳴 (MIDI 64)",
+        "barkが発音 (MIDI 64) → [模倣] towerがフレーズをまねて答える (52 55 48) → [模倣] towerが発音 (MIDI 52) → [音色変化] barkの音色が暗く変化 (0.317→0.136)",
+        "towerが発音 (MIDI 57) → [模倣] barkがフレーズをまねて答える (64 69 64) → [模倣] barkが発音 (MIDI 64) → [共鳴] towerが共鳴 (MIDI 64)"
+      ],
+      "metrics": {
+        "score": 0.847,
+        "parts": {
+          "continuity": 1,
+          "arc": 0.595,
+          "consonance": 0.793,
+          "motif": 1,
+          "interplay": 0.77,
+          "balance": 0.733,
+          "ending": 0.886,
+          "dynamics": 1
+        },
+        "maxGapSec": 1.923,
+        "arcCorrelation": 0.595,
+        "roughness": 0.052,
+        "motifRecurrence": 0.34,
+        "interplay": 0.667,
+        "dialogue": 0.043,
+        "deepChains": 12,
+        "balance": 0.733,
+        "endsOnChord": true,
+        "thinningEnd": 0.716,
+        "loudnessRangeDb": 12.486
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.097,
+        "clippedSamples": 0,
+        "dcOffset": -0.000001603,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.77
+      },
+      "wav": "output/v11/SONOVA-EXP-0006.wav"
+    }
+  ]
+}
