@@ -332,7 +332,7 @@ export interface ToyRiotOptions {
   /** another song on the same production (PSYLO): its arrangement and vocal plan */
   song?: RockSong;
   plan?: VocalLine[];
-  /** the intro announcement: words, and optionally an external take that starts at 1.6 s */
+  /** the intro announcement: words, and optionally an external take (any language, e.g. English TTS) that starts at 1.6 s */
   intro?: { text: string; take?: Float32Array };
   /** level of the lead guitar inside the choruses (default 0.45: steps back for the voice) */
   chorusLead?: number;
@@ -413,7 +413,7 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
       const annNotes: SungNote[] = ann.syllables.map((s, k) => ({ time: 0.2 + k * step + (k >= ann.breaks[0] ? step * 2 : 0), duration: step * 0.95, midi: 55 + (k % 4 === 3 ? 2 : 0), velocity: 0.8, syllable: s }));
       const annVoice = megaphone(opts.intro?.take ?? renderSinger(annNotes, annNotes.length * step + 2, sr, `${seed}:intro`, { formantScale: 1.03, openQuotient: 0.5, breathiness: 0.1, vibratoCents: 0, scoopCents: 0 }), sr, 1);
       addMono(annVoice, 1.6, (gRef * 1.1) / (rmsOf(annVoice) || 1), 0.15, 0.2);
-      lyrics.push({ section: 'intro', text: introText, sung: ann.syllables.map(romanizeSyl).join(' '), notes: annNotes.length });
+      lyrics.push({ section: 'intro', text: introText, sung: opts.intro?.take ? introText : ann.syllables.map(romanizeSyl).join(' '), notes: opts.intro?.take ? 0 : annNotes.length });
       // count-in: a crushed snare roll in 16ths, getting louder through the last intro bar
       const roll = new Float32Array(at(barSec) + 1);
       const s16 = barSec / 16;

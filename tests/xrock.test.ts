@@ -238,3 +238,29 @@ describe('VOICEVOX pitch stabiliser', () => {
     expect(q.f0.slice(41)).toEqual(f0.slice(41)); // the glide out stays
   });
 });
+
+describe('PSYLO irregular riffs', () => {
+  it('replaces the looped riff with grouped, polymetric and Euclidean bars; snare stays on 2 and 4, kick follows the chords', async () => {
+    const { psyloBaseSong, psyloRiffPlan, psyloSong } = await import('@sonova/composition-engine');
+    const { buildInstruments } = await import('../scripts/lib.ts');
+    const { dnas } = await buildInstruments();
+    const band = { guitar: dnas[0], drums: dnas[1], voice: dnas[2] };
+    const plan = psyloRiffPlan(psyloBaseSong(band, 'zig-psylo-0001'));
+    const riffA = plan.filter((p) => p.section === 'riffA').map((p) => p.pattern);
+    expect(riffA[0]).toBe('Rm.Rm.Rm.Rm.RmRm'); // 3+3+3+3+2+2
+    expect(riffA[3].endsWith('ss')).toBe(true);
+    const riffB = plan.filter((p) => p.section === 'riffB').map((p) => p.pattern);
+    expect(new Set(riffB).size).toBe(riffB.length); // the 5-step cell lands differently in every bar
+    expect(plan.every((p) => p.pattern.length === 16)).toBe(true);
+    const song = psyloSong(band, 'zig-psylo-0001');
+    expect(psyloSong(band, 'zig-psylo-0001').events).toEqual(song.events);
+    const bar = plan.find((p) => p.section === 'riffA')!.bar;
+    const inBar = song.events.filter((e) => e.bar === bar);
+    const slotOf = (t: number) => Math.round((t - bar * song.barSec) / (song.barSec / 16));
+    expect(inBar.filter((e) => e.drum === 'snare').map((e) => e.slot).sort((a, b) => a - b)).toEqual([4, 12]);
+    const chordSlots = inBar.filter((e) => e.part === 'guitar' && e.kind === 'chord' && !e.palmMute).map((e) => slotOf(e.time));
+    expect(chordSlots).toEqual([0, 3, 6, 9, 12, 14]);
+    const kicks = new Set(inBar.filter((e) => e.drum === 'kick').map((e) => slotOf(e.time)));
+    chordSlots.forEach((s) => expect(kicks.has(s)).toBe(true));
+  });
+});

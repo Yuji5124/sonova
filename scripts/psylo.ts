@@ -8,8 +8,9 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { PNG } from 'pngjs';
-import { decodeWav, engineVersions, psyloSong, psyloVocalPlan, renderToyRiot, rockToMidi, romajiToMorae, setKana, verifyAudio, PSYLO_LYRICS, PSYLO_VERSION, type ExternalTake, type KanaNote } from '@sonova/composition-engine';
+import { decodeWav, engineVersions, psyloSong, psyloVocalPlan, renderToyRiot, rockToMidi, psyloRiffPlan, psyloBaseSong, setKana, verifyAudio, PSYLO_LYRICS, PSYLO_VERSION, type ExternalTake, type KanaNote } from '@sonova/composition-engine';
 import { MALE_VOICES, singLine, voicevoxAvailable } from './lib-voicevox.ts';
+import { speakEnglish } from './lib-tts.ts';
 import type { SpectroImage } from '@sonova/synthesis-engine';
 import { ROOT, buildInstruments, rel, writeJson, writeStereoWav } from './lib.ts';
 
@@ -64,11 +65,11 @@ for (const line of plan) {
       { x: await sing('kotarouOko', { transpose: 12 }), pan: 0, gain: 0.42, fx: 'rock-light' },
     ];
 }
-// the intro announcement (spoken on a monotone, then the megaphone in renderToyRiot)
-const ann = romajiToMorae(PSYLO_LYRICS.intro);
-const step = 60 / song.bpm / 2;
-const annKana: KanaNote[] = ann.morae.map((m, k) => ({ lyric: m, time: 0.2 + k * step + (k >= ann.breaks[0] ? step * 2 : 0), duration: step * 0.95, midi: 55 + (k % 4 === 3 ? 2 : 0), velocity: 0.8 }));
-const annTake = (await singLine(annKana, annKana.length * step + 2, SR, V.takehiroTsun.id, { stabilize, cacheDir: CACHE, label: 'intro' })).x;
+// the opening announcement, in English (Piper + LibriTTS if configured, else espeak-ng), 0.2 s into its take
+const speech = speakEnglish(PSYLO_LYRICS.intro, SR);
+const annTake = new Float32Array(Math.round(0.2 * SR) + speech.x.length);
+annTake.set(speech.x, Math.round(0.2 * SR));
+console.log(`announcement: ${speech.engine} · ${(speech.x.length / SR).toFixed(2)} s`);
 
 const vocalCredit = [...credits].join(' / ');
 console.log(`vocal: VOICEVOX (${vocalCredit}) · stabilize ${stabilize}`);
@@ -86,7 +87,7 @@ try {
 }
 const v = verifyAudio(decodeWav(bytes), { sampleRate: 44100, channels: 2, bitsPerSample: 16, minDurationSec: 140, maxPeakDbfs: -0.9, maxSilentRatio: 0.03 });
 const mmss = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
-writeJson(join(EXP, `${WORK}.json`), { workNumber: WORK, title: song.title, seed, engines: { ...engineVersions(), psylo: PSYLO_VERSION }, sources: sources.map((s) => ({ name: s.name, sha256: s.sha256 })), bpm: song.bpm, key: song.key, durationSec: song.durationSec, sections: song.sections.map((s) => ({ name: s.name, start: s.start, bars: s.bars })), lyrics: r.lyrics, layers: r.layers, vocal: { engine: 'VOICEVOX Engine 0.26.0 (song API, CPU)', query_style: '6000 波音リツ (sing)', stabilize, credits: [...credits], score: vocalScore }, render: { ms: r.render.renderMs, stems: r.render.stems, master: r.render.master }, verification: v, wav: rel(`${base}.wav`) });
+writeJson(join(EXP, `${WORK}.json`), { workNumber: WORK, title: song.title, seed, engines: { ...engineVersions(), psylo: PSYLO_VERSION }, sources: sources.map((s) => ({ name: s.name, sha256: s.sha256 })), bpm: song.bpm, key: song.key, durationSec: song.durationSec, sections: song.sections.map((s) => ({ name: s.name, start: s.start, bars: s.bars })), lyrics: r.lyrics, layers: r.layers, announcement: { text: PSYLO_LYRICS.intro, engine: speech.engine, credit: speech.credit }, riffs: psyloRiffPlan(psyloBaseSong(band, seed)).map((p) => ({ section: p.section, bar: p.bar, pattern: p.pattern })), vocal: { engine: 'VOICEVOX Engine 0.26.0 (song API, CPU)', query_style: '6000 波音リツ (sing)', stabilize, credits: [...credits], score: vocalScore }, render: { ms: r.render.renderMs, stems: r.render.stems, master: r.render.master }, verification: v, wav: rel(`${base}.wav`) });
 console.log(`${WORK} "${song.title}" ${song.bpm} BPM ${song.durationSec.toFixed(1)}s · render ${(r.render.renderMs / 1000).toFixed(1)}s · peak ${v.peakDbfs} RMS ${v.rmsDbfs} · ${v.ok ? 'OK' : 'NG ' + v.problems.join(',')}`);
 const md = `# ${WORK} — PSYLO (サイロ)
 
@@ -101,6 +102,27 @@ PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) �
 - **安定化 ${stabilize}**: 各母音の入り 40 ms (しゃくり) と終わり 30 ms (次の音へのつなぎ) は残し、その間の音程を楽譜の音へ ${Math.round(stabilize * 100)}% 寄せ、細かい揺れをならした (\`scripts/lib-voicevox.ts\` の \`stabilizePitch\`)。\`PSYLO_STABILIZE=0\` でエンジンそのままの歌い方
 - サビ: 玄野武宏 (ツンギレ・ノーマル) の2声を左右に、白上虎太郎 (おこ) が1オクターブ上 (= A案の原調、ロー F#5) で重なる
 - 実在の歌手の声は使っていない (hide 本人の声も複製していない)
+- **オープニングのアナウンス (英語)**: "${PSYLO_LYRICS.intro}" — ${speech.engine}。${speech.credit}。メガホンを通してラジオのコラージュに乗せる
+
+## 変則リフ
+
+生成器のリフは1小節の同じパターンの繰り返し、A メロは8分の刻みだけだったので、次のパターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
+\`R\` = アクセントのパワーコード、\`P\` = 別の音のパワーコード、\`m\` = ブリッジミュート、\`s\` = 32分のスタッター、\`.\` = 休み (1文字 = 16分)
+
+| 区間 | 考え方 | 例 |
+|---|---|---|
+| riffA | 3+3+3+3+2+2 のアクセント (4/4 の中で 7/8 のようにつんのめる)。4小節目は 3+3+2+3+3+2 に組み替えて32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | \`${psyloRiffPlan(psyloBaseSong(band, seed)).find((p) => p.section === 'riffA')!.pattern}\` |
+| riffB | 5ステップのセル \`Rm.Pm\` を小節線をまたいで流すポリメーター (TidalCycles の \`{…}%16\`)。アクセントが毎小節ずれる | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffB').map((p) => p.pattern).join(' ')}\` |
+| riffA2 | riffA と、毎小節回転するユークリッドリズム E(7,16) (Toussaint / Strudel の \`iter\`) が交互 | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffA2').map((p) => p.pattern).slice(0, 2).join(' ')}\` |
+| riffA3・outro | E(5,16) のコードと E(3,8) のミュートのクロスリズム、2ステップずつ回転 | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffA3').map((p) => p.pattern).slice(0, 2).join(' ')}\` |
+| verse | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | \`Rm.Rm.Rm.Rm.R.m.\` / \`R...........m.mm\` |
+
+参考にした GitHub リポジトリ (考え方だけを参考にし、コードは使っていない・同梱していない):
+
+- [tidalcycles/Tidal](https://github.com/tidalcycles/Tidal) (GPL-3.0) — ポリメーター \`{…}%16\`
+- [Strudel](https://codeberg.org/uzu/strudel) (AGPL-3.0, 旧 github.com/tidalcycles/strudel) — \`iter\` (毎周期の回転)・\`ply\` (音の細分化)
+- [brianhouse/bjorklund](https://github.com/brianhouse/bjorklund) — ユークリッドリズム (Toussaint の論文)。SONOVA の \`euclid\` を使用
+- [rhasspy/piper](https://github.com/rhasspy/piper) (MIT) — 英語アナウンスの音声合成 (LibriTTS の声、CC BY 4.0)。無い環境では [espeak-ng](https://github.com/espeak-ng/espeak-ng) (GPL-3.0)
 
 ## 構成
 

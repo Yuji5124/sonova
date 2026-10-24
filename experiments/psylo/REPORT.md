@@ -1,7 +1,7 @@
 # ZIG-PSYLO-0001 — PSYLO (サイロ)
 
 自動生成: `npm run psylo` (VOICEVOX Engine が必要)。音声 `output/psylo/ZIG-PSYLO-0001.wav` / `.mp3` / `.mid` (Git 管理外)。
-160 BPM · B minor (サビは D major) · 2:46 · 検証 OK (peak -1 dBFS, RMS -13.369 dBFS)
+160 BPM · B minor (サビは D major) · 2:46 · 検証 OK (peak -1 dBFS, RMS -13.384 dBFS)
 
 PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) を、SONOVA-TOYRIOT-0001「Tin Wings Riot」男声版と同じ作り方 (ラジオのイントロ、メガホンの A メロ、ダブル + 1オクターブ上のギャング・コーラスのサビ) で1曲にした。歌詞・旋律はすべてオリジナル。
 
@@ -11,6 +11,27 @@ PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) �
 - **安定化 0.75**: 各母音の入り 40 ms (しゃくり) と終わり 30 ms (次の音へのつなぎ) は残し、その間の音程を楽譜の音へ 75% 寄せ、細かい揺れをならした (`scripts/lib-voicevox.ts` の `stabilizePitch`)。`PSYLO_STABILIZE=0` でエンジンそのままの歌い方
 - サビ: 玄野武宏 (ツンギレ・ノーマル) の2声を左右に、白上虎太郎 (おこ) が1オクターブ上 (= A案の原調、ロー F#5) で重なる
 - 実在の歌手の声は使っていない (hide 本人の声も複製していない)
+- **オープニングのアナウンス (英語)**: "Good evening. This is Radio Psyence. Close your eyes... the show is about to begin." — Piper (en-us-libritts-high.onnx, speaker 3 = LibriTTS 6701)。Voice: Piper (MIT) + LibriTTS (CC BY 4.0)。メガホンを通してラジオのコラージュに乗せる
+
+## 変則リフ
+
+生成器のリフは1小節の同じパターンの繰り返し、A メロは8分の刻みだけだったので、次のパターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
+`R` = アクセントのパワーコード、`P` = 別の音のパワーコード、`m` = ブリッジミュート、`s` = 32分のスタッター、`.` = 休み (1文字 = 16分)
+
+| 区間 | 考え方 | 例 |
+|---|---|---|
+| riffA | 3+3+3+3+2+2 のアクセント (4/4 の中で 7/8 のようにつんのめる)。4小節目は 3+3+2+3+3+2 に組み替えて32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | `Rm.Rm.Rm.Rm.RmRm` |
+| riffB | 5ステップのセル `Rm.Pm` を小節線をまたいで流すポリメーター (TidalCycles の `{…}%16`)。アクセントが毎小節ずれる | `Rm.PmRm.PmRm.PmR m.PmRm.PmRm.PmRm mPmRm.PmRm.PmRm. PmRm.PmRm.PmR.ss` |
+| riffA2 | riffA と、毎小節回転するユークリッドリズム E(7,16) (Toussaint / Strudel の `iter`) が交互 | `Rm.Rm.Rm.Rm.RmRm R.P.P.mPmPmPmPm.` |
+| riffA3・outro | E(5,16) のコードと E(3,8) のミュートのクロスリズム、2ステップずつ回転 | `R..mP.mPm.Pm.Pm. R.P..P.mP.mP.mPm` |
+| verse | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | `Rm.Rm.Rm.Rm.R.m.` / `R...........m.mm` |
+
+参考にした GitHub リポジトリ (考え方だけを参考にし、コードは使っていない・同梱していない):
+
+- [tidalcycles/Tidal](https://github.com/tidalcycles/Tidal) (GPL-3.0) — ポリメーター `{…}%16`
+- [Strudel](https://codeberg.org/uzu/strudel) (AGPL-3.0, 旧 github.com/tidalcycles/strudel) — `iter` (毎周期の回転)・`ply` (音の細分化)
+- [brianhouse/bjorklund](https://github.com/brianhouse/bjorklund) — ユークリッドリズム (Toussaint の論文)。SONOVA の `euclid` を使用
+- [rhasspy/piper](https://github.com/rhasspy/piper) (MIT) — 英語アナウンスの音声合成 (LibriTTS の声、CC BY 4.0)。無い環境では [espeak-ng](https://github.com/espeak-ng/espeak-ng) (GPL-3.0)
 
 ## 構成
 
@@ -37,7 +58,7 @@ PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) �
 
 ## 歌詞 (オリジナル)
 
-- **intro**: mamonaku / sho o ga hajimarimasu
+- **intro**: Good evening. This is Radio Psyence. Close your eyes... the show is about to begin.
 - **verse1**: tojita mabuta no / ura gawa de / dare mo shiranai / maku ga agaru
 - **verse2**: fuan mo ikari mo / kagami no mae / tanoshisa mo / namida mo narande
 - **pre1**: oto ni nare / motto soto e

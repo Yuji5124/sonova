@@ -8,7 +8,7 @@
     "synth": "sonova-synth/1.0.0",
     "generator": "sonova-generator/1.0.0",
     "composition": "sonova-composition/1.0.0",
-    "psylo": "sonova-psylo/1.0.0"
+    "psylo": "sonova-psylo/1.1.0"
   },
   "sources": [
     {
@@ -134,9 +134,9 @@
   "lyrics": [
     {
       "section": "intro",
-      "text": "ma-mo-na-ku / sho o ga ha-ji-ma-ri-ma-su",
-      "sung": "ma mo na ku so o ka ha si ma ri ma su",
-      "notes": 13
+      "text": "Good evening. This is Radio Psyence. Close your eyes... the show is about to begin.",
+      "sung": "Good evening. This is Radio Psyence. Close your eyes... the show is about to begin.",
+      "notes": 0
     },
     {
       "section": "verse1",
@@ -201,6 +201,198 @@
     "歌: VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎 の男声。Aメロはメガホン (650 Hz–3.4 kHz、歪み、ビット落ち) + 短いスラップ / Bメロは素の声とメガホンの 2 声 / サビはロック・ボーカルの処理 (ハイパス、1.1 kHz の鼻にかかった中域、3.3 kHz の抜け、テープのような歪み、速いレベラー) で左右のダブル + 1 オクターブ上のギャング・ボーカル、付点 8 分のエコー",
     "テープストップ: サビ2 の最後の 1 小節、バンド全体の再生速度が 1 → 0 に落ちて音程ごと止まる → ブリッジ",
     "終わり: 最後の 2 小節で曲がラジオの帯域に縮み、雑音と一緒に遠ざかる"
+  ],
+  "announcement": {
+    "text": "Good evening. This is Radio Psyence. Close your eyes... the show is about to begin.",
+    "engine": "Piper (en-us-libritts-high.onnx, speaker 3 = LibriTTS 6701)",
+    "credit": "Voice: Piper (MIT) + LibriTTS (CC BY 4.0)"
+  },
+  "riffs": [
+    {
+      "section": "riffA",
+      "bar": 6,
+      "pattern": "Rm.Rm.Rm.Rm.RmRm"
+    },
+    {
+      "section": "riffA",
+      "bar": 7,
+      "pattern": "Rm.Rm.Rm.Rm.RmRm"
+    },
+    {
+      "section": "riffA",
+      "bar": 8,
+      "pattern": "Rm.Rm.Rm.Rm.RmRm"
+    },
+    {
+      "section": "riffA",
+      "bar": 9,
+      "pattern": "Rm.Rm.RmRm.Rm.ss"
+    },
+    {
+      "section": "verse1",
+      "bar": 10,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 11,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 12,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 13,
+      "pattern": "R...........m.mm"
+    },
+    {
+      "section": "verse1",
+      "bar": 14,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 15,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 16,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse1",
+      "bar": 17,
+      "pattern": "R...........m.mm"
+    },
+    {
+      "section": "riffB",
+      "bar": 30,
+      "pattern": "Rm.PmRm.PmRm.PmR"
+    },
+    {
+      "section": "riffB",
+      "bar": 31,
+      "pattern": "m.PmRm.PmRm.PmRm"
+    },
+    {
+      "section": "riffB",
+      "bar": 32,
+      "pattern": "mPmRm.PmRm.PmRm."
+    },
+    {
+      "section": "riffB",
+      "bar": 33,
+      "pattern": "PmRm.PmRm.PmR.ss"
+    },
+    {
+      "section": "verse2",
+      "bar": 34,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse2",
+      "bar": 35,
+      "pattern": "Rmm.mmPm.mmRm.P."
+    },
+    {
+      "section": "verse2",
+      "bar": 36,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse2",
+      "bar": 37,
+      "pattern": "R...........m.mm"
+    },
+    {
+      "section": "verse2",
+      "bar": 38,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse2",
+      "bar": 39,
+      "pattern": "Rmm.mmPm.mmRm.P."
+    },
+    {
+      "section": "verse2",
+      "bar": 40,
+      "pattern": "Rm.Rm.Rm.Rm.R.m."
+    },
+    {
+      "section": "verse2",
+      "bar": 41,
+      "pattern": "R...........m.mm"
+    },
+    {
+      "section": "riffA2",
+      "bar": 74,
+      "pattern": "Rm.Rm.Rm.Rm.RmRm"
+    },
+    {
+      "section": "riffA2",
+      "bar": 75,
+      "pattern": "R.P.P.mPmPmPmPm."
+    },
+    {
+      "section": "riffA2",
+      "bar": 76,
+      "pattern": "Rm.Rm.Rm.Rm.RmRm"
+    },
+    {
+      "section": "riffA2",
+      "bar": 77,
+      "pattern": "RPmPmPmPm.P.P.ss"
+    },
+    {
+      "section": "riffA3",
+      "bar": 98,
+      "pattern": "R..mP.mPm.Pm.Pm."
+    },
+    {
+      "section": "riffA3",
+      "bar": 99,
+      "pattern": "R.P..P.mP.mP.mPm"
+    },
+    {
+      "section": "riffA3",
+      "bar": 100,
+      "pattern": "Rm.Pm.P..P..P.m."
+    },
+    {
+      "section": "riffA3",
+      "bar": 101,
+      "pattern": "RP.mPm.Pm.Pm.sss"
+    },
+    {
+      "section": "outro",
+      "bar": 102,
+      "pattern": "R..mP.mPm.Pm.Pm."
+    },
+    {
+      "section": "outro",
+      "bar": 103,
+      "pattern": "R.P..P.mP.mP.mPm"
+    },
+    {
+      "section": "outro",
+      "bar": 104,
+      "pattern": "Rm.Pm.P..P..P.m."
+    },
+    {
+      "section": "outro",
+      "bar": 105,
+      "pattern": "RP.mPm.Pm.Pm.mP."
+    },
+    {
+      "section": "outro",
+      "bar": 106,
+      "pattern": "R.P.mP.mP.m.P..P"
+    }
   ],
   "vocal": {
     "engine": "VOICEVOX Engine 0.26.0 (song API, CPU)",
@@ -1606,7 +1798,7 @@
     ]
   },
   "render": {
-    "ms": 89590,
+    "ms": 91217,
     "stems": {
       "guitarL": {
         "gainDb": -8.7,
@@ -1625,15 +1817,15 @@
         "samples": 7342650
       },
       "drums": {
-        "gainDb": 1.4,
+        "gainDb": 1.3,
         "samples": 7342650
       }
     },
     "master": {
-      "inputPeak": 1.7429603338241577,
-      "inputRms": 0.18580861408867438,
-      "appliedGainDb": 2.1186831195608598,
-      "maxReductionDb": -7.944432924677458,
+      "inputPeak": 1.7323540449142456,
+      "inputRms": 0.1850928312161184,
+      "appliedGainDb": 2.152208029386875,
+      "maxReductionDb": -7.924941267618272,
       "outputPeak": 0.8912509083747864
     }
   },
@@ -1645,12 +1837,12 @@
     "bitsPerSample": 16,
     "durationSec": 166.5,
     "peakDbfs": -1,
-    "rmsDbfs": -13.369,
+    "rmsDbfs": -13.384,
     "clippedSamples": 0,
-    "dcOffset": 0.00001347,
+    "dcOffset": 0.00001276,
     "silences": [],
     "silentRatio": 0,
-    "stereoCorrelation": 0.824
+    "stereoCorrelation": 0.819
   },
   "wav": "output/psylo/ZIG-PSYLO-0001.wav"
 }
