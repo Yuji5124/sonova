@@ -24,9 +24,12 @@ export interface InstrumentPreset {
    * folder), except the harp, whose names are true pitch. Default 12.
    */
   nameOffset?: number;
+  /** per-articulation override of nameOffset (the solo violin's sustained notes are named at true pitch, its spiccato an octave low) */
+  artOffset?: Record<string, number>;
 }
 
 export const INSTRUMENTS: Record<string, InstrumentPreset> = {
+  violin: { name: 'Solo Violin', family: 'strings', arts: { sus: 'Strings/Solo Violin/Arco Vib', spic: 'Strings/Solo Violin/spic' }, sustained: ['sus'], release: 0.35, artOffset: { sus: 0, spic: 12 } },
   violins: { name: 'Violins', family: 'strings', arts: { sus: 'Strings/Violin Section/susVib', spic: 'Strings/Violin Section/Spic', pizz: 'Strings/Violin Section/Pizz', trem: 'Strings/Violin Section/Trem' }, sustained: ['sus', 'trem'], release: 0.4 },
   violas: { name: 'Violas', family: 'strings', arts: { sus: 'Strings/Viola Section/susvib', spic: 'Strings/Viola Section/spic', pizz: 'Strings/Viola Section/pizz', trem: 'Strings/Viola Section/trem' }, sustained: ['sus', 'trem'], release: 0.4 },
   celli: { name: 'Celli', family: 'strings', arts: { sus: 'Strings/Cello Section/susvib', spic: 'Strings/Cello Section/spic', pizz: 'Strings/Cello Section/pizzT', trem: 'Strings/Cello Section/trem' }, sustained: ['sus', 'trem'], release: 0.45 },
@@ -37,8 +40,8 @@ export const INSTRUMENTS: Record<string, InstrumentPreset> = {
   clarinet: { name: 'Clarinet', family: 'woodwinds', arts: { sus: 'Woodwinds/Clarinet/susLong', stac: 'Woodwinds/Clarinet/stac' }, sustained: ['sus'], release: 0.25 },
   bassoon: { name: 'Bassoon', family: 'woodwinds', arts: { sus: 'Woodwinds/Bassoon/sus', stac: 'Woodwinds/Bassoon/stac' }, sustained: ['sus'], release: 0.3 },
   horn: { name: 'Horn', family: 'brass', arts: { sus: 'Brass/F Horn/sus', stac: 'Brass/F Horn/stac' }, sustained: ['sus'], release: 0.35 },
-  trumpet: { name: 'Trumpet', family: 'brass', arts: { sus: 'Brass/Trumpet/sus' }, sustained: ['sus'], release: 0.3 },
-  trombone: { name: 'Trombone', family: 'brass', arts: { sus: 'Brass/Tenor Trombone/sus' }, sustained: ['sus'], release: 0.35 },
+  trumpet: { name: 'Trumpet', family: 'brass', arts: { sus: 'Brass/Trumpet/sus', stac: 'Brass/Trumpet/stac' }, sustained: ['sus'], release: 0.3 },
+  trombone: { name: 'Trombone', family: 'brass', arts: { sus: 'Brass/Tenor Trombone/sus', stac: 'Brass/Tenor Trombone/stac' }, sustained: ['sus'], release: 0.35 },
   tuba: { name: 'Tuba', family: 'brass', arts: { sus: 'Brass/Tuba/sus' }, sustained: ['sus'], release: 0.4 },
   timpani: { name: 'Timpani', family: 'percussion', arts: { hit: 'Percussion/Timpani', roll: 'Percussion/Timpani/Rolls' }, sustained: ['roll'], release: 1.2 },
   glock: { name: 'Glockenspiel', family: 'percussion', arts: { hit: 'Percussion/Glock' }, sustained: [], release: 1.5 },
@@ -108,7 +111,7 @@ export class SampleLibrary {
     const files = readdirSync(dir).filter((f) => /\.wav$/i.test(f) && statSync(join(dir, f)).isFile() && !(p.skip?.test(f) ?? false)).sort();
     const parsed = files.map((f) => ({ f, ...parseSampleName(f) }));
     const zones: SampleZone[] = parsed.map((q) => {
-      const z: SampleZone = { path: join(dir, q.f), midi: q.midi === undefined ? -1 : q.midi + (p.nameOffset ?? 12), layer: 0, layers: 1, rr: q.rr };
+      const z: SampleZone = { path: join(dir, q.f), midi: q.midi === undefined ? -1 : q.midi + (p.artOffset?.[art] ?? p.nameOffset ?? 12), layer: 0, layers: 1, rr: q.rr };
       if (z.midi < 0) {
         z.audio = decodeWavAny(readFileSync(z.path));
         z.midi = estimateMidi(z.audio);

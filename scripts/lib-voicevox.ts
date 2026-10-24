@@ -55,7 +55,7 @@ async function post(path: string, body: unknown): Promise<Response> {
  * requests give slightly different curves — while synthesis from a fixed query is. So queries are
  * frozen to `cacheDir` (one JSON per score) and reused: same score → same audio, every time.
  */
-export async function singLine(notes: KanaNote[], seconds: number, sr: number, styleId: number, o: { transpose?: number; cents?: number; delay?: number; cacheDir?: string; label?: string; stabilize?: number } = {}): Promise<{ x: Float32Array; phonemes: string[] }> {
+export async function singLine(notes: KanaNote[], seconds: number, sr: number, styleId: number, o: { transpose?: number; cents?: number; delay?: number; cacheDir?: string; label?: string; stabilize?: number; consonantOnly?: number[] } = {}): Promise<{ x: Float32Array; phonemes: string[] }> {
   const fps = 93.75;
   const shift = o.delay ?? 0;
   const fr = (t: number) => Math.round((t + shift) * fps);
@@ -99,6 +99,7 @@ export async function singLine(notes: KanaNote[], seconds: number, sr: number, s
     }
   }
   if (o.stabilize) stabilizePitch(query, score, o.stabilize);
+  if (o.consonantOnly?.length) consonantOnly(query, new Set(o.consonantOnly.map((i) => `n${i}`)));
   if (o.cents) query.f0 = query.f0.map((f: number) => f * Math.pow(2, o.cents! / 1200));
   const wav = new Uint8Array(await (await post(`/frame_synthesis?speaker=${styleId}`, query)).arrayBuffer());
   const d = decodeWav(wav);
@@ -156,4 +157,17 @@ export function stabilizePitch(query: { f0: number[]; phonemes: Array<{ phoneme:
     at += p.frame_length;
   }
   query.f0 = out;
+}
+
+/**
+ * Sing only the consonant of some notes: the vowel after it fades out within 2 frames (≈ 21 ms).
+ * Used for the S of "TEARS" (kana ズ = z + u): the English final consonant is not sung as "zu".
+ */
+export function consonantOnly(query: { volume: number[]; phonemes: Array<{ phoneme: string; frame_length: number; note_id: string | null }> }, ids: Set<string>): void {
+  const VOWELS = new Set(['a', 'i', 'u', 'e', 'o', 'N', 'A', 'I', 'U', 'E', 'O']);
+  let at = 0;
+  for (const p of query.phonemes) {
+    if (p.note_id && ids.has(p.note_id) && VOWELS.has(p.phoneme)) for (let k = 0; k < p.frame_length; k++) query.volume[at + k] *= k === 0 ? 0.45 : k === 1 ? 0.15 : 0;
+    at += p.frame_length;
+  }
 }

@@ -301,3 +301,4 @@ export * from './series/glossolalia.ts';
 export * from './series/toyriot.ts';
 export * from './series/psylo.ts';
 export * from './series/nobody.ts';
+export * from './series/happytears.ts';

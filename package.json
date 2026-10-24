@@ -32,6 +32,7 @@
     "psylo:voices": "tsx scripts/psylo-voices.ts",
     "psylo:announcers": "tsx scripts/psylo-announcers.ts",
     "nobody": "tsx scripts/nobody.ts",
+    "happytears": "tsx scripts/happytears.ts",
     "od:fetch": "tsx scripts/od-fetch-samples.ts",
     "od:phase2": "tsx scripts/od-phase2.ts",
     "v11:eval": "tsx scripts/v11-eval.ts",

@@ -1,0 +1,4047 @@
+{
+  "title": "HAPPY TEARS",
+  "reading": "ハッピー・ティアーズ",
+  "series": "ZIG — FREAKTION SONG 002 / Phase 0",
+  "concept": "もうここにはいない人が残した音楽を、未来を生きる ZIG が今も聴いている。楽しくて笑ってしまう、でももう会えないと思うと悲しい。それでも音楽を残してくれたことに感謝している。EMOTION COLLISION × TIME CROSS — 喜びと悲しみ、過去と未来を同時に鳴らす",
+  "engine": "sonova-happytears/0.1.0",
+  "targetLufs": -14,
+  "stems": [
+    {
+      "id": "vocal",
+      "label": "ボーカル"
+    },
+    {
+      "id": "drums",
+      "label": "ドラム・打楽器"
+    },
+    {
+      "id": "bass",
+      "label": "ベース"
+    },
+    {
+      "id": "guitar",
+      "label": "ギター"
+    },
+    {
+      "id": "happy",
+      "label": "HAPPY (弦・ブラス・グロッケン)"
+    },
+    {
+      "id": "tears",
+      "label": "TEARS (チェロ・コントラバス・バスクラ・バリサク)"
+    }
+  ],
+  "lyrics": {
+    "original": {
+      "Aメロ｜過去の君": [
+        "古いフィルムに　明日の色が",
+        "まだ知らない夢を　照らしてた",
+        "笑い飛ばした　小さな傷が",
+        "今じゃ誰かの　宝物"
+      ],
+      "Bメロ｜未来の僕": [
+        "止まった時計が　酔っぱらって",
+        "昨日と明日を　飲み干した",
+        "君がいないと　知っているのに",
+        "壊れたラジオが　笑いだす"
+      ],
+      "サビ｜二つの時間が重なる": [
+        "HAPPY〜！ TEAR〜S！",
+        "笑いながら　空を見上げて",
+        "HAPPY〜！ TEAR〜S！",
+        "泣きながら　明日を鳴らす",
+        "昨日の君が　笑うたび",
+        "明日の僕に　涙が降る",
+        "HAPPY〜！ TEAR〜S！",
+        "まだ終わらない　この歌が"
+      ],
+      "ラスト｜ありがとう": [
+        "君の知らない　未来の街で",
+        "僕らは今日も　歌っている",
+        "悲しいくらい　楽しい夜に",
+        "また君の曲を　かけてみる",
+        "HAPPY〜！ TEAR〜S！",
+        "ありがとう　こんなに楽しい音楽を"
+      ]
+    },
+    "sungInDemos": [
+      {
+        "section": "Bメロ (抜粋)",
+        "lines": [
+          "止まった時計が　酔っぱらって",
+          "昨日と明日を　飲み干した"
+        ]
+      },
+      {
+        "section": "サビ (抜粋)",
+        "lines": [
+          "HAPPY〜！ TEAR〜S！",
+          "笑いながら　空を見上げて",
+          "HAPPY〜！ TEAR〜S！",
+          "泣きながら　明日を鳴らす"
+        ]
+      },
+      {
+        "section": "ラスト (抜粋)",
+        "lines": [
+          "HAPPY〜！ TEAR〜S！",
+          "ありがとう"
+        ]
+      }
+    ],
+    "hook": [
+      {
+        "word": "HAP",
+        "kana": "ハ",
+        "accent": true,
+        "beats": 0.5,
+        "note": "D4",
+        "how": "強く短く。続く ッ は休符で表す"
+      },
+      {
+        "word": "PY〜",
+        "kana": "ピ",
+        "accent": false,
+        "beats": 2.5,
+        "note": "A4",
+        "how": "完全5度上へ跳ねて母音 i を伸ばす (高揚)"
+      },
+      {
+        "word": "TEAR〜",
+        "kana": "ティ + ア",
+        "accent": true,
+        "beats": 2.5,
+        "note": "A4 → F♯4 → E4",
+        "how": "ティで当て、母音 a を伸ばしながら一段下がる (泣き声の揺れ)"
+      },
+      {
+        "word": "S！",
+        "kana": "ズ",
+        "accent": false,
+        "beats": 0.25,
+        "note": "E4",
+        "how": "子音 z だけ。母音 u は消す (英語の末尾子音を伸ばさない)"
+      }
+    ]
+  },
+  "paradeSeeds": [
+    {
+      "seed": "parade-00",
+      "relay": [
+        "guitar",
+        "pizz",
+        "bassClarinet",
+        "image"
+      ],
+      "materials": [
+        "metal",
+        "ice"
+      ],
+      "trip": 2,
+      "bend": -1
+    },
+    {
+      "seed": "parade-01",
+      "relay": [
+        "guitar",
+        "pizz",
+        "bassClarinet",
+        "image"
+      ],
+      "materials": [
+        "gravel",
+        "ice"
+      ],
+      "trip": 3,
+      "bend": 6
+    },
+    {
+      "seed": "parade-02",
+      "relay": [
+        "guitar",
+        "image",
+        "bariSax",
+        "pizz"
+      ],
+      "materials": [
+        "metal",
+        "mosaic"
+      ],
+      "trip": 2,
+      "bend": -1
+    },
+    {
+      "seed": "parade-03",
+      "relay": [
+        "guitar",
+        "bariSax",
+        "pizz",
+        "image"
+      ],
+      "materials": [
+        "rust",
+        "water"
+      ],
+      "trip": 2,
+      "bend": 1
+    },
+    {
+      "seed": "parade-04",
+      "relay": [
+        "guitar",
+        "image",
+        "bariSax",
+        "pizz"
+      ],
+      "materials": [
+        "gravel",
+        "water"
+      ],
+      "trip": 3.5,
+      "bend": 1
+    },
+    {
+      "seed": "parade-05",
+      "relay": [
+        "guitar",
+        "image",
+        "bariSax",
+        "pizz"
+      ],
+      "materials": [
+        "metal",
+        "ice"
+      ],
+      "trip": 3,
+      "bend": 6
+    }
+  ],
+  "licenses": [
+    {
+      "what": "オーケストラ (バイオリン・ソロバイオリン・ビオラ・チェロ・コントラバス・ホルン・トランペット・トロンボーン・チューバ・ティンパニ・グロッケンシュピール)",
+      "source": "VSCO 2 Community Edition (Versilian Studios) https://github.com/sgossner/VSCO-2-CE",
+      "license": "CC0 1.0 (パブリックドメイン相当、クレジット不要・商用可)"
+    },
+    {
+      "what": "バリトンサックス・バスクラリネット",
+      "source": "SONOVA の物理モデル (デジタル導波管、STK の Clarinet / Saxofony モデルを参考に自作)",
+      "license": "自作コード (サンプル音源なし)"
+    },
+    {
+      "what": "ギター・ベース・ドラム・ロータム",
+      "source": "SONOVA のロックレンダラー (弦の物理モデル、モード合成ドラム)",
+      "license": "自作コード"
+    },
+    {
+      "what": "変異する電子音 (C)",
+      "source": "SONOVA v1.1 の画像楽器 (手続き画像から作った DNA)",
+      "license": "自作コード・自作画像"
+    },
+    {
+      "what": "歌声",
+      "source": "VOICEVOX Engine 0.26.0 (LGPL v3 / 別ライセンス) の歌唱機能、CPU",
+      "license": "音声ライブラリごとの規約。公開時に「VOICEVOX:玄野武宏」「VOICEVOX:白上虎太郎」のクレジットが必要"
+    },
+    {
+      "what": "作詞・作曲・編曲",
+      "source": "オリジナル (歌詞は依頼者の草案を原文のまま保存し、その抜粋を歌唱)",
+      "license": "—"
+    }
+  ],
+  "notUsed": [
+    "University of Iowa MIS (バスクラリネットのサンプルがある): この環境からは取得できなかった (HTTP 403)",
+    "サクソフォンのサンプル: VSCO-2-CE には無く、ライセンスの明確な無料サンプルを確認できなかったので物理モデルで作った"
+  ],
+  "demos": [
+    {
+      "id": "A",
+      "title": "BRASS RIFF",
+      "goal": "最もライブで盛り上がる。歪みギターとバリトンサックスが1つのリフを分け合う",
+      "bpm": 160,
+      "bars": 20,
+      "durationSec": 30.2,
+      "sections": [
+        {
+          "name": "イントロ",
+          "from": 0,
+          "to": 4,
+          "text": "ギター (1–2拍) とバリトンサックス (3–4拍) が交互に1つのリフを作る",
+          "start": 0,
+          "end": 6
+        },
+        {
+          "name": "Bメロ",
+          "from": 4,
+          "to": 8,
+          "text": "「止まった時計が 酔っぱらって / 昨日と明日を 飲み干した」",
+          "start": 6,
+          "end": 12
+        },
+        {
+          "name": "サビ",
+          "from": 8,
+          "to": 16,
+          "text": "HAPPY〜! TEAR〜S! ×2 — 笑いながら空を見上げて / 泣きながら明日を鳴らす",
+          "start": 12,
+          "end": 24
+        },
+        {
+          "name": "ラスト",
+          "from": 16,
+          "to": 20,
+          "text": "HAPPY〜! TEAR〜S! と「ありがとう」、明るい D で終わる",
+          "start": 24,
+          "end": 30
+        }
+      ],
+      "chords": [
+        {
+          "bars": "1–4 (イントロ)",
+          "chords": "D – A/C♯ – Bm – G→Gm",
+          "why": "明るい I から下降ベース、最後の小節で G が Gm (同主短調からの借用 iv) に沈む"
+        },
+        {
+          "bars": "5–8 (Bメロ)",
+          "chords": "Bm – G – Em – A",
+          "why": "酔っぱらった時計: 短調寄りで A に向かう"
+        },
+        {
+          "bars": "9–16 (サビ)",
+          "chords": "D – A/C♯ – Bm – G→Gm ×2",
+          "why": "Pattern A を元に、4小節目だけ G→Gm。「見上げて」の D を伸ばしたまま和音が一瞬だけ陰る"
+        },
+        {
+          "bars": "17–20 (ラスト)",
+          "chords": "D – A/C♯ – G→Gm – D",
+          "why": "「ありがとう」の小節で Gm を通り、明るい D に着地"
+        }
+      ],
+      "riffs": [
+        {
+          "name": "RIFF A — BRASS RESPONSE",
+          "text": "ギターが1–2拍に D5・m・D5・E5 を弾いて止まり、3–4拍の休符をバリトンサックスが A–C–D–A–D と埋める。サビでも TEARS の小節でサックスが答える"
+        },
+        {
+          "name": "ストリングス",
+          "text": "サビの間ずっと、バイオリン (スピッカート) がコードの音を2オクターブ上で8分の上昇アルペジオ"
+        },
+        {
+          "name": "チェロの嘆き",
+          "text": "サビの4小節ごとに D – C♯ – B – B♭ と半音ずつ下がる (明るい和音の下で泣き続ける)"
+        }
+      ],
+      "instrumentation": {
+        "happy": [
+          "バイオリン (VSCO スピッカート・持続)",
+          "グロッケンシュピール",
+          "トランペット (スタッカート)",
+          "オーケストラヒット (弦+トランペット+トロンボーン+ティンパニ)"
+        ],
+        "tears": [
+          "チェロ (VSCO)",
+          "コントラバス (VSCO)",
+          "バリトンサックス (SONOVA 物理モデル)"
+        ],
+        "band": [
+          "歪みギター左右 (SONOVA 弦モデル)",
+          "ベース",
+          "ドラム (SONOVA モード合成)"
+        ]
+      },
+      "discoveries": [
+        {
+          "name": "サックスがギターの続きを弾く",
+          "text": "ギターの休符にバリトンサックスが入ると、2つの楽器で1本のリフに聞こえる (と設計した)。サビでも TEARS の伸ばしの下でサックスが答え、悲しい低音が「返事」になる"
+        }
+      ],
+      "credits": [
+        "VOICEVOX:玄野武宏",
+        "VOICEVOX:白上虎太郎"
+      ],
+      "vocals": [
+        {
+          "part": "ZIG (lead)",
+          "voice": "玄野武宏 ノーマル",
+          "transpose": 0,
+          "consonantOnly": [
+            29,
+            48,
+            66
+          ],
+          "notes": [
+            {
+              "lyric": "ト",
+              "midi": 59,
+              "time": 6,
+              "duration": 0.188
+            },
+            {
+              "lyric": "マ",
+              "midi": 59,
+              "time": 6.188,
+              "duration": 0.094
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 6.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ト",
+              "midi": 61,
+              "time": 6.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ケ",
+              "midi": 59,
+              "time": 6.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "イ",
+              "midi": 57,
+              "time": 6.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 59,
+              "time": 7.125,
+              "duration": 0.375
+            },
+            {
+              "lyric": "ヨ",
+              "midi": 62,
+              "time": 7.5,
+              "duration": 0.094
+            },
+            {
+              "lyric": "パ",
+              "midi": 62,
+              "time": 7.688,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 61,
+              "time": 7.875,
+              "duration": 0.094
+            },
+            {
+              "lyric": "テ",
+              "midi": 59,
+              "time": 8.063,
+              "duration": 0.563
+            },
+            {
+              "lyric": "キ",
+              "midi": 55,
+              "time": 9,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ノ",
+              "midi": 57,
+              "time": 9.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ウ",
+              "midi": 59,
+              "time": 9.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ト",
+              "midi": 62,
+              "time": 9.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 9.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "シ",
+              "midi": 62,
+              "time": 9.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "タ",
+              "midi": 59,
+              "time": 10.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 57,
+              "time": 10.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ノ",
+              "midi": 59,
+              "time": 10.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ミ",
+              "midi": 62,
+              "time": 10.688,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ホ",
+              "midi": 64,
+              "time": 10.875,
+              "duration": 0.188
+            },
+            {
+              "lyric": "シ",
+              "midi": 66,
+              "time": 11.063,
+              "duration": 0.188
+            },
+            {
+              "lyric": "タ",
+              "midi": 64,
+              "time": 11.25,
+              "duration": 0.563
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 14.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 15.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.688,
+              "duration": 0.188
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 16.875,
+              "duration": 0.75
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 20.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 21.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 21.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.688,
+              "duration": 0.938
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 25.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 27,
+              "duration": 0.188
+            },
+            {
+              "lyric": "リ",
+              "midi": 64,
+              "time": 27.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 27.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ト",
+              "midi": 64,
+              "time": 27.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ウ",
+              "midi": 62,
+              "time": 27.75,
+              "duration": 0.938
+            }
+          ]
+        },
+        {
+          "part": "joy (喜び)",
+          "voice": "玄野武宏 喜び",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 14.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 15.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.688,
+              "duration": 0.188
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 16.875,
+              "duration": 0.75
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 20.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 21.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 21.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.688,
+              "duration": 0.938
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 25.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.438,
+              "duration": 0.094
+            }
+          ]
+        },
+        {
+          "part": "sorrow (悲しみ)",
+          "voice": "玄野武宏 悲しみ",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 14.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 15.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.688,
+              "duration": 0.188
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 16.875,
+              "duration": 0.75
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.625,
+              "duration": 0.188
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 20.813,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.188,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.375,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.563,
+              "duration": 0.188
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 21.75,
+              "duration": 0.188
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 21.938,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.125,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.313,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.688,
+              "duration": 0.938
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 25.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.438,
+              "duration": 0.094
+            }
+          ]
+        },
+        {
+          "part": "gang (+1 oct)",
+          "voice": "白上虎太郎 わーい",
+          "transpose": 12,
+          "consonantOnly": [
+            5,
+            11,
+            17
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 12,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 12.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 13.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 13.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 14.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 14.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 18,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 18.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 19.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 19.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 20.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 20.438,
+              "duration": 0.094
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 24,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 24.281,
+              "duration": 0.844
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 25.5,
+              "duration": 0.188
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 25.688,
+              "duration": 0.469
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 26.156,
+              "duration": 0.281
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 26.438,
+              "duration": 0.094
+            }
+          ]
+        }
+      ],
+      "files": {
+        "mix": "A-mix.mp3",
+        "stems": {
+          "vocal": {
+            "file": "A-vocal.mp3",
+            "rmsDb": -22.9
+          },
+          "drums": {
+            "file": "A-drums.mp3",
+            "rmsDb": -22.5
+          },
+          "bass": {
+            "file": "A-bass.mp3",
+            "rmsDb": -25.5
+          },
+          "guitar": {
+            "file": "A-guitar.mp3",
+            "rmsDb": -24.7
+          },
+          "happy": {
+            "file": "A-happy.mp3",
+            "rmsDb": -28.2
+          },
+          "tears": {
+            "file": "A-tears.mp3",
+            "rmsDb": -26.7
+          }
+        }
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30.2,
+        "peakDbfs": -1.865,
+        "rmsDbfs": -17.396,
+        "clippedSamples": 0,
+        "dcOffset": -0.001537,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.768,
+        "lufs": -14
+      }
+    },
+    {
+      "id": "B",
+      "title": "ORCHESTRA RIOT",
+      "goal": "幸福と悲しみが最も同時に感じられる。弦と金管が前、ロックバンドが下で走る",
+      "bpm": 156,
+      "bars": 20,
+      "durationSec": 30.93,
+      "sections": [
+        {
+          "name": "イントロ",
+          "from": 0,
+          "to": 4,
+          "text": "ティンパニとロータムを軽く歪ませ、ギターと 3+3+2 で同時に叩く。ホルンがフックの形を先に吹く",
+          "start": 0,
+          "end": 6.15
+        },
+        {
+          "name": "Bメロ",
+          "from": 4,
+          "to": 8,
+          "text": "「止まった時計が 酔っぱらって / 昨日と明日を 飲み干した」",
+          "start": 6.15,
+          "end": 12.31
+        },
+        {
+          "name": "サビ",
+          "from": 8,
+          "to": 16,
+          "text": "HAPPY〜! TEAR〜S! ×2 — 笑いながら空を見上げて / 泣きながら明日を鳴らす",
+          "start": 12.31,
+          "end": 24.62
+        },
+        {
+          "name": "ラスト",
+          "from": 16,
+          "to": 20,
+          "text": "HAPPY〜! TEAR〜S! と「ありがとう」、明るい D で終わる",
+          "start": 24.62,
+          "end": 30.77
+        }
+      ],
+      "chords": [
+        {
+          "bars": "1–4 (イントロ)",
+          "chords": "Bm – G – D – A",
+          "why": "Pattern B (悲しみから浮上)。短調から始まり、D・A で明るさへ上がる"
+        },
+        {
+          "bars": "5–8 (Bメロ)",
+          "chords": "G – D/F♯ – Em – A",
+          "why": "下降ベース (G–F♯–E) の上で時計が酔う"
+        },
+        {
+          "bars": "9–16 (サビ)",
+          "chords": "Bm – G – D – A | Bm – G – D – G→Gm",
+          "why": "同じフックを短調の Bm で始め、「泣きながら」の最後で G→Gm に陰らせる"
+        },
+        {
+          "bars": "17–20 (ラスト)",
+          "chords": "Bm – G – G→Gm – D",
+          "why": "最後は長調の D に浮かび上がる"
+        }
+      ],
+      "riffs": [
+        {
+          "name": "RIFF B — DISTORTED PERCUSSION",
+          "text": "ギターのパワーコードとティンパニ・ロータムを同じ 3+3+2 のリズム (0, 0.75, 1.5, 2.5, 3.25 拍) で同時に。打楽器は 200 Hz より上だけ歪ませ、低音はきれいなまま分ける"
+        },
+        {
+          "name": "ストリングスとブラス",
+          "text": "サビは長い音のバイオリン・ビオラ・ソロバイオリン (高音)、TEARS の小節でトランペットのファンファーレ、各サビの頭でオーケストラヒット"
+        },
+        {
+          "name": "悲しみの低音",
+          "text": "チェロとバスクラリネットが D – C♯ – B – B♭ の嘆きの線を1オクターブ違いで、コントラバスが和音の根音"
+        }
+      ],
+      "instrumentation": {
+        "happy": [
+          "バイオリン・ビオラ (VSCO 持続・トレモロ・ピチカート)",
+          "ソロバイオリン (VSCO, 高音)",
+          "ホルン・トランペット (VSCO)",
+          "オーケストラヒット"
+        ],
+        "tears": [
+          "チェロ (VSCO)",
+          "コントラバス (VSCO)",
+          "バスクラリネット (SONOVA 物理モデル)"
+        ],
+        "band": [
+          "ギター",
+          "ベース",
+          "ドラム",
+          "ティンパニ (VSCO) とロータム (SONOVA) を歪ませた打楽器"
+        ]
+      },
+      "discoveries": [
+        {
+          "name": "歪んだティンパニ",
+          "text": "ティンパニの 200 Hz より上だけを歪ませると、低い胴鳴りはオーケストラのまま、アタックがギターのパワーコードと一体になる (帯域を分けた設計)"
+        }
+      ],
+      "credits": [
+        "VOICEVOX:玄野武宏",
+        "VOICEVOX:白上虎太郎"
+      ],
+      "vocals": [
+        {
+          "part": "ZIG (lead)",
+          "voice": "玄野武宏 ノーマル",
+          "transpose": 0,
+          "consonantOnly": [
+            29,
+            48,
+            66
+          ],
+          "notes": [
+            {
+              "lyric": "ト",
+              "midi": 59,
+              "time": 6.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "マ",
+              "midi": 59,
+              "time": 6.346,
+              "duration": 0.096
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 6.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ト",
+              "midi": 61,
+              "time": 6.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ケ",
+              "midi": 59,
+              "time": 6.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "イ",
+              "midi": 57,
+              "time": 7.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 59,
+              "time": 7.308,
+              "duration": 0.385
+            },
+            {
+              "lyric": "ヨ",
+              "midi": 62,
+              "time": 7.692,
+              "duration": 0.096
+            },
+            {
+              "lyric": "パ",
+              "midi": 62,
+              "time": 7.885,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 61,
+              "time": 8.077,
+              "duration": 0.096
+            },
+            {
+              "lyric": "テ",
+              "midi": 59,
+              "time": 8.269,
+              "duration": 0.577
+            },
+            {
+              "lyric": "キ",
+              "midi": 55,
+              "time": 9.231,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ノ",
+              "midi": 57,
+              "time": 9.423,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ウ",
+              "midi": 59,
+              "time": 9.615,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ト",
+              "midi": 62,
+              "time": 9.808,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 10,
+              "duration": 0.192
+            },
+            {
+              "lyric": "シ",
+              "midi": 62,
+              "time": 10.192,
+              "duration": 0.192
+            },
+            {
+              "lyric": "タ",
+              "midi": 59,
+              "time": 10.385,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 57,
+              "time": 10.577,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ノ",
+              "midi": 59,
+              "time": 10.769,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ミ",
+              "midi": 62,
+              "time": 10.962,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ホ",
+              "midi": 64,
+              "time": 11.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "シ",
+              "midi": 66,
+              "time": 11.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "タ",
+              "midi": 64,
+              "time": 11.538,
+              "duration": 0.577
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.596,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.846,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 14.038,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.519,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.808,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 15,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15.192,
+              "duration": 0.192
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.385,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.577,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.769,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.962,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 16.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 17.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.308,
+              "duration": 0.769
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.462,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.75,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 20,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 20.192,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.673,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.962,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 21.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 22.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.5,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.692,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.885,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 23.077,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 23.269,
+              "duration": 0.962
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.615,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.904,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 26.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.346,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.827,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 27.115,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 27.692,
+              "duration": 0.192
+            },
+            {
+              "lyric": "リ",
+              "midi": 64,
+              "time": 27.885,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 28.077,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ト",
+              "midi": 64,
+              "time": 28.269,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ウ",
+              "midi": 62,
+              "time": 28.462,
+              "duration": 0.962
+            }
+          ]
+        },
+        {
+          "part": "joy (喜び)",
+          "voice": "玄野武宏 喜び",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.596,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.846,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 14.038,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.519,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.808,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 15,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15.192,
+              "duration": 0.192
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.385,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.577,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.769,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.962,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 16.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 17.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.308,
+              "duration": 0.769
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.462,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.75,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 20,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 20.192,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.673,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.962,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 21.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 22.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.5,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.692,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.885,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 23.077,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 23.269,
+              "duration": 0.962
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.615,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.904,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 26.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.346,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.827,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 27.115,
+              "duration": 0.096
+            }
+          ]
+        },
+        {
+          "part": "sorrow (悲しみ)",
+          "voice": "玄野武宏 悲しみ",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.596,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.846,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 14.038,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.519,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.808,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 15,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15.192,
+              "duration": 0.192
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.385,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.577,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.769,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.962,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 16.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 17.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.308,
+              "duration": 0.769
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.462,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.75,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 20,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 20.192,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.673,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.962,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 21.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.346,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.538,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.731,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.923,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 22.115,
+              "duration": 0.192
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.5,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.692,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.885,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 23.077,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 23.269,
+              "duration": 0.962
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.615,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.904,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 26.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.346,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.827,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 27.115,
+              "duration": 0.096
+            }
+          ]
+        },
+        {
+          "part": "gang (+1 oct)",
+          "voice": "白上虎太郎 わーい",
+          "transpose": 12,
+          "consonantOnly": [
+            5,
+            11,
+            17
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 12.308,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 12.596,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 13.846,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 14.038,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 14.519,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 14.808,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 18.462,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 18.75,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 20,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 20.192,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 20.673,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 20.962,
+              "duration": 0.096
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 24.615,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 24.904,
+              "duration": 0.865
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 26.154,
+              "duration": 0.192
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 26.346,
+              "duration": 0.481
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 26.827,
+              "duration": 0.288
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 27.115,
+              "duration": 0.096
+            }
+          ]
+        }
+      ],
+      "files": {
+        "mix": "B-mix.mp3",
+        "stems": {
+          "vocal": {
+            "file": "B-vocal.mp3",
+            "rmsDb": -22.8
+          },
+          "drums": {
+            "file": "B-drums.mp3",
+            "rmsDb": -24.4
+          },
+          "bass": {
+            "file": "B-bass.mp3",
+            "rmsDb": -26.4
+          },
+          "guitar": {
+            "file": "B-guitar.mp3",
+            "rmsDb": -28.5
+          },
+          "happy": {
+            "file": "B-happy.mp3",
+            "rmsDb": -23.9
+          },
+          "tears": {
+            "file": "B-tears.mp3",
+            "rmsDb": -25.2
+          }
+        }
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30.93,
+        "peakDbfs": -1.015,
+        "rmsDbfs": -17.559,
+        "clippedSamples": 0,
+        "dcOffset": -0.002102,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.71,
+        "lufs": -14
+      }
+    },
+    {
+      "id": "C",
+      "title": "BROKEN PARADE",
+      "goal": "最も予想外で、もう一度聴きたくなる。行進曲が何度もつまずく",
+      "bpm": 158,
+      "bars": 20,
+      "durationSec": 30.56,
+      "sections": [
+        {
+          "name": "イントロ",
+          "from": 0,
+          "to": 4,
+          "text": "1つのフレーズが小節ごとに guitar → bariSax → pizz → image へ受け渡される (種 parade-03)",
+          "start": 0,
+          "end": 6.08
+        },
+        {
+          "name": "Bメロ",
+          "from": 4,
+          "to": 8,
+          "text": "「止まった時計が 酔っぱらって / 昨日と明日を 飲み干した」",
+          "start": 6.08,
+          "end": 12.15
+        },
+        {
+          "name": "サビ",
+          "from": 8,
+          "to": 16,
+          "text": "HAPPY〜! TEAR〜S! ×2 — 笑いながら空を見上げて / 泣きながら明日を鳴らす",
+          "start": 12.15,
+          "end": 24.3
+        },
+        {
+          "name": "ラスト",
+          "from": 16,
+          "to": 20,
+          "text": "HAPPY〜! TEAR〜S! と「ありがとう」、明るい D で終わる",
+          "start": 24.3,
+          "end": 30.38
+        }
+      ],
+      "chords": [
+        {
+          "bars": "1–4 (イントロ)",
+          "chords": "D – F♯m – G – G→Gm",
+          "why": "Pattern C (未解決の幸福) をそのまま行進曲に"
+        },
+        {
+          "bars": "5–8 (Bメロ)",
+          "chords": "Bm – G – C – A",
+          "why": "C は D の ♭VII (同主短調からの借用)。酔った時計が一瞬違う調に迷い込む"
+        },
+        {
+          "bars": "9–16 (サビ)",
+          "chords": "D – F♯m – G – G→Gm | D – F♯m – Em7 – G→Gm",
+          "why": "「空を見上げて」「明日を鳴らす」の最後で G→Gm"
+        },
+        {
+          "bars": "17–20 (ラスト)",
+          "chords": "D – F♯m – G→Gm – D",
+          "why": ""
+        }
+      ],
+      "riffs": [
+        {
+          "name": "RIFF C — MUTATING ORCHESTRA",
+          "text": "パレードのフレーズ (根音・3度・5度・6度…の8音) を、イントロの4小節で guitar → bariSax → pizz → image の順に受け渡す。4小節目は +1 半音ずれる。サビでは SONOVA の画像楽器 (rust → water) が答える"
+        },
+        {
+          "name": "歪んだ打楽器",
+          "text": "行進曲の裏拍でロータムを強く歪ませ (低域はそのまま)、スネアのロール"
+        },
+        {
+          "name": "低音管楽器",
+          "text": "チューバのオンパ (VSCO) と、バリトンサックス・バスクラリネット (SONOVA 物理モデル)"
+        }
+      ],
+      "instrumentation": {
+        "happy": [
+          "バイオリン (VSCO 持続・ピチカート)",
+          "グロッケンシュピール",
+          "オーケストラヒット",
+          "SONOVA 画像楽器 (変異する音色)"
+        ],
+        "tears": [
+          "チェロ (VSCO 持続・ピチカート)",
+          "コントラバス (VSCO ピチカート)",
+          "チューバ (VSCO)",
+          "バリトンサックス・バスクラリネット (SONOVA 物理モデル)"
+        ],
+        "band": [
+          "ギター",
+          "ベース",
+          "行進曲のドラム",
+          "歪ませたロータム"
+        ]
+      },
+      "discoveries": [
+        {
+          "name": "つまずく行進曲",
+          "text": "最後のフックの前 (16小節目の 3 拍目から) でバンドがテープストップしてつまずき、次の小節で何もなかったように立ち直る",
+          "seed": "parade-03",
+          "settings": {
+            "seed": "parade-03",
+            "relay": [
+              "guitar",
+              "bariSax",
+              "pizz",
+              "image"
+            ],
+            "materials": [
+              "rust",
+              "water"
+            ],
+            "trip": 2,
+            "bend": 1
+          }
+        }
+      ],
+      "credits": [
+        "VOICEVOX:玄野武宏",
+        "VOICEVOX:白上虎太郎"
+      ],
+      "vocals": [
+        {
+          "part": "ZIG (lead)",
+          "voice": "玄野武宏 ノーマル",
+          "transpose": 0,
+          "consonantOnly": [
+            29,
+            48,
+            66
+          ],
+          "notes": [
+            {
+              "lyric": "ト",
+              "midi": 59,
+              "time": 6.076,
+              "duration": 0.19
+            },
+            {
+              "lyric": "マ",
+              "midi": 59,
+              "time": 6.266,
+              "duration": 0.095
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 6.456,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ト",
+              "midi": 61,
+              "time": 6.646,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ケ",
+              "midi": 59,
+              "time": 6.835,
+              "duration": 0.19
+            },
+            {
+              "lyric": "イ",
+              "midi": 57,
+              "time": 7.025,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 59,
+              "time": 7.215,
+              "duration": 0.38
+            },
+            {
+              "lyric": "ヨ",
+              "midi": 62,
+              "time": 7.595,
+              "duration": 0.095
+            },
+            {
+              "lyric": "パ",
+              "midi": 62,
+              "time": 7.785,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 61,
+              "time": 7.975,
+              "duration": 0.095
+            },
+            {
+              "lyric": "テ",
+              "midi": 59,
+              "time": 8.165,
+              "duration": 0.57
+            },
+            {
+              "lyric": "キ",
+              "midi": 55,
+              "time": 9.114,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ノ",
+              "midi": 57,
+              "time": 9.304,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ウ",
+              "midi": 59,
+              "time": 9.494,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ト",
+              "midi": 62,
+              "time": 9.684,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 9.873,
+              "duration": 0.19
+            },
+            {
+              "lyric": "シ",
+              "midi": 62,
+              "time": 10.063,
+              "duration": 0.19
+            },
+            {
+              "lyric": "タ",
+              "midi": 59,
+              "time": 10.253,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 57,
+              "time": 10.443,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ノ",
+              "midi": 59,
+              "time": 10.633,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ミ",
+              "midi": 62,
+              "time": 10.823,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ホ",
+              "midi": 64,
+              "time": 11.013,
+              "duration": 0.19
+            },
+            {
+              "lyric": "シ",
+              "midi": 66,
+              "time": 11.203,
+              "duration": 0.19
+            },
+            {
+              "lyric": "タ",
+              "midi": 64,
+              "time": 11.392,
+              "duration": 0.57
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.152,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.437,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.671,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.861,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.335,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.62,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.81,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15,
+              "duration": 0.19
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.19,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.38,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.57,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.759,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.949,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.139,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.329,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.519,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.709,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.899,
+              "duration": 0.19
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.089,
+              "duration": 0.759
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.228,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.513,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.747,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.937,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.411,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.696,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.886,
+              "duration": 0.19
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.076,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.266,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.456,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.646,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.835,
+              "duration": 0.19
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.025,
+              "duration": 0.19
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.215,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.405,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.595,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.785,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.975,
+              "duration": 0.949
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.304,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.589,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.823,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.013,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.487,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.772,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 27.342,
+              "duration": 0.19
+            },
+            {
+              "lyric": "リ",
+              "midi": 64,
+              "time": 27.532,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 27.722,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ト",
+              "midi": 64,
+              "time": 27.911,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ウ",
+              "midi": 62,
+              "time": 28.101,
+              "duration": 0.949
+            }
+          ]
+        },
+        {
+          "part": "joy (喜び)",
+          "voice": "玄野武宏 喜び",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.152,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.437,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.671,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.861,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.335,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.62,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.81,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15,
+              "duration": 0.19
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.19,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.38,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.57,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.759,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.949,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.139,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.329,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.519,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.709,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.899,
+              "duration": 0.19
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.089,
+              "duration": 0.759
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.228,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.513,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.747,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.937,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.411,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.696,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.886,
+              "duration": 0.19
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.076,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.266,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.456,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.646,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.835,
+              "duration": 0.19
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.025,
+              "duration": 0.19
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.215,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.405,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.595,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.785,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.975,
+              "duration": 0.949
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.304,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.589,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.823,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.013,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.487,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.772,
+              "duration": 0.095
+            }
+          ]
+        },
+        {
+          "part": "sorrow (悲しみ)",
+          "voice": "玄野武宏 悲しみ",
+          "transpose": 0,
+          "consonantOnly": [
+            5,
+            24,
+            42
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 12.152,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 12.437,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 13.671,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 13.861,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 14.335,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 14.62,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ワ",
+              "midi": 62,
+              "time": 14.81,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 15,
+              "duration": 0.19
+            },
+            {
+              "lyric": "イ",
+              "midi": 66,
+              "time": 15.19,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 15.38,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 64,
+              "time": 15.57,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 62,
+              "time": 15.759,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ソ",
+              "midi": 66,
+              "time": 15.949,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 67,
+              "time": 16.139,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 69,
+              "time": 16.329,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ミ",
+              "midi": 69,
+              "time": 16.519,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 71,
+              "time": 16.709,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ゲ",
+              "midi": 69,
+              "time": 16.899,
+              "duration": 0.19
+            },
+            {
+              "lyric": "テ",
+              "midi": 62,
+              "time": 17.089,
+              "duration": 0.759
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 18.228,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 18.513,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 19.747,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 19.937,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 20.411,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 20.696,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ナ",
+              "midi": 59,
+              "time": 20.886,
+              "duration": 0.19
+            },
+            {
+              "lyric": "キ",
+              "midi": 62,
+              "time": 21.076,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 64,
+              "time": 21.266,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ガ",
+              "midi": 62,
+              "time": 21.456,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 59,
+              "time": 21.646,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 57,
+              "time": 21.835,
+              "duration": 0.19
+            },
+            {
+              "lyric": "シ",
+              "midi": 59,
+              "time": 22.025,
+              "duration": 0.19
+            },
+            {
+              "lyric": "タ",
+              "midi": 62,
+              "time": 22.215,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ヲ",
+              "midi": 64,
+              "time": 22.405,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ナ",
+              "midi": 66,
+              "time": 22.595,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ラ",
+              "midi": 64,
+              "time": 22.785,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ス",
+              "midi": 62,
+              "time": 22.975,
+              "duration": 0.949
+            },
+            {
+              "lyric": "ハ",
+              "midi": 62,
+              "time": 24.304,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 69,
+              "time": 24.589,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 69,
+              "time": 25.823,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 66,
+              "time": 26.013,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 64,
+              "time": 26.487,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 64,
+              "time": 26.772,
+              "duration": 0.095
+            }
+          ]
+        },
+        {
+          "part": "gang (+1 oct)",
+          "voice": "白上虎太郎 わーい",
+          "transpose": 12,
+          "consonantOnly": [
+            5,
+            11,
+            17
+          ],
+          "notes": [
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 12.152,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 12.437,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 13.671,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 13.861,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 14.335,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 14.62,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 18.228,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 18.513,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 19.747,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 19.937,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 20.411,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 20.696,
+              "duration": 0.095
+            },
+            {
+              "lyric": "ハ",
+              "midi": 74,
+              "time": 24.304,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ピ",
+              "midi": 81,
+              "time": 24.589,
+              "duration": 0.854
+            },
+            {
+              "lyric": "ティ",
+              "midi": 81,
+              "time": 25.823,
+              "duration": 0.19
+            },
+            {
+              "lyric": "ア",
+              "midi": 78,
+              "time": 26.013,
+              "duration": 0.475
+            },
+            {
+              "lyric": "ア",
+              "midi": 76,
+              "time": 26.487,
+              "duration": 0.285
+            },
+            {
+              "lyric": "ズ",
+              "midi": 76,
+              "time": 26.772,
+              "duration": 0.095
+            }
+          ]
+        }
+      ],
+      "files": {
+        "mix": "C-mix.mp3",
+        "stems": {
+          "vocal": {
+            "file": "C-vocal.mp3",
+            "rmsDb": -22.4
+          },
+          "drums": {
+            "file": "C-drums.mp3",
+            "rmsDb": -22.8
+          },
+          "bass": {
+            "file": "C-bass.mp3",
+            "rmsDb": -25.9
+          },
+          "guitar": {
+            "file": "C-guitar.mp3",
+            "rmsDb": -26
+          },
+          "happy": {
+            "file": "C-happy.mp3",
+            "rmsDb": -26.5
+          },
+          "tears": {
+            "file": "C-tears.mp3",
+            "rmsDb": -24.7
+          }
+        }
+      },
+      "verification": {
+        "ok": true,
+        "problems": [],
+        "sampleRate": 44100,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "durationSec": 30.56,
+        "peakDbfs": -1,
+        "rmsDbfs": -17.298,
+        "clippedSamples": 0,
+        "dcOffset": -0.001909,
+        "silences": [],
+        "silentRatio": 0,
+        "stereoCorrelation": 0.778,
+        "lufs": -14
+      }
+    }
+  ]
+}
