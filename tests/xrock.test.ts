@@ -168,3 +168,28 @@ describe('TOYRIOT', () => {
     expect(bandEnergyDb(spec, 1400, 1600) - bandEnergyDb(spec, 90, 110)).toBeGreaterThan(15);
   });
 });
+
+describe('TOYRIOT with an external (VOICEVOX) singer', () => {
+  it('turns the romaji lyrics into real kana morae, including ッ and ン', async () => {
+    const { romajiToMorae } = await import('@sonova/composition-engine');
+    expect(romajiToMorae('ka-ra-p-po no / to-n-de-ke').morae).toEqual(['カ', 'ラ', 'ッ', 'ポ', 'ノ', 'ト', 'ン', 'デ', 'ケ']);
+    expect(romajiToMorae('ka-ra-p-po no / to-n-de-ke').breaks).toEqual([5, 9]);
+  });
+  it('puts kana on a melody: ッ shortens the note before it, lines stay monophonic, line ends breathe', async () => {
+    const { setKana } = await import('@sonova/composition-engine');
+    const notes = Array.from({ length: 10 }, (_, k) => ({ time: k * 0.2, duration: 0.25, midi: 60 + (k % 3), velocity: 0.8 }));
+    const out = setKana(notes, 'ka-ra-p-po / no');
+    expect(out.map((n) => n.lyric).slice(0, 3)).toEqual(['カ', 'ラ', 'ポ']);
+    expect(out[1].duration).toBeLessThan(0.2 * 0.6); // ラ is cut short by the ッ
+    out.forEach((n, i) => i > 0 && expect(n.time).toBeGreaterThanOrEqual(out[i - 1].time + out[i - 1].duration - 1e-9));
+    expect(out.every((n) => n.lyric !== 'ッ')).toBe(true);
+  });
+  it('the rock vocal chain keeps the voice band and stays bounded', async () => {
+    const { rockVocal } = await import('@sonova/composition-engine');
+    const x = new Float32Array(SR).map((_, i) => 0.3 * Math.sin((2 * Math.PI * 60 * i) / SR) + 0.3 * Math.sin((2 * Math.PI * 1150 * i) / SR));
+    const y = rockVocal(x, SR, 1);
+    const spec = averageSpectrum(y, SR, SR / 4, SR);
+    expect(bandEnergyDb(spec, 1100, 1200) - bandEnergyDb(spec, 50, 70)).toBeGreaterThan(15);
+    expect(y.every((v) => Number.isFinite(v) && Math.abs(v) < 2)).toBe(true);
+  });
+});

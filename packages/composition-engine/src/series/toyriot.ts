@@ -129,6 +129,206 @@ function tone(midi: number, dur: number, sr: number, seed: string): Float32Array
   return out;
 }
 
+// ---- kana for an external singing engine (VOICEVOX): the real phonemes, not the approximations ----
+const KANA: Record<string, string> = {
+  a: 'ア', i: 'イ', u: 'ウ', e: 'エ', o: 'オ',
+  ka: 'カ', ki: 'キ', ku: 'ク', ke: 'ケ', ko: 'コ', ga: 'ガ', gi: 'ギ', gu: 'グ', ge: 'ゲ', go: 'ゴ',
+  sa: 'サ', shi: 'シ', su: 'ス', se: 'セ', so: 'ソ', za: 'ザ', ji: 'ジ', zu: 'ズ', ze: 'ゼ', zo: 'ゾ',
+  ta: 'タ', chi: 'チ', tsu: 'ツ', te: 'テ', to: 'ト', da: 'ダ', de: 'デ', do: 'ド',
+  na: 'ナ', ni: 'ニ', nu: 'ヌ', ne: 'ネ', no: 'ノ', ha: 'ハ', hi: 'ヒ', fu: 'フ', he: 'ヘ', ho: 'ホ',
+  ba: 'バ', bi: 'ビ', bu: 'ブ', be: 'ベ', bo: 'ボ', pa: 'パ', pi: 'ピ', pu: 'プ', pe: 'ペ', po: 'ポ',
+  ma: 'マ', mi: 'ミ', mu: 'ム', me: 'メ', mo: 'モ', ya: 'ヤ', yu: 'ユ', yo: 'ヨ',
+  ra: 'ラ', ri: 'リ', ru: 'ル', re: 'レ', ro: 'ロ', wa: 'ワ', wo: 'オ', n: 'ン',
+  sha: 'シャ', shu: 'シュ', sho: 'ショ', cha: 'チャ', chu: 'チュ', cho: 'チョ', ja: 'ジャ', ju: 'ジュ', jo: 'ジョ',
+};
+const VOWEL_KANA: Record<string, string> = { a: 'ア', i: 'イ', u: 'ウ', e: 'エ', o: 'オ', n: 'ン' };
+
+/** romaji → kana morae (ッ for a doubled consonant, ン for moraic n), with phrase breaks */
+export function romajiToMorae(text: string): { morae: string[]; breaks: number[] } {
+  const morae: string[] = [];
+  const breaks: number[] = [];
+  for (const phrase of text.split('/')) {
+    for (const word of phrase.trim().split(/\s+/))
+      for (const raw of word.split('-')) {
+        const s = raw.toLowerCase();
+        if (s === 'p' || s === 't' || s === 'k') morae.push('ッ');
+        else if (KANA[s]) morae.push(KANA[s]);
+      }
+    breaks.push(morae.length);
+  }
+  return { morae, breaks };
+}
+
+export interface KanaNote {
+  time: number;
+  duration: number;
+  midi: number;
+  velocity: number;
+  /** one kana mora; a melisma repeats the previous vowel */
+  lyric: string;
+}
+
+const vowelOf = (k: string) => {
+  const last = [...'アイウエオン'].find((v) => k.endsWith(v)) ?? '';
+  if (last) return last;
+  const r = Object.entries(KANA).find(([, v]) => v === k)?.[0] ?? 'a';
+  return VOWEL_KANA[r.at(-1)!] ?? 'ア';
+};
+
+/** Put kana on a melody: same phrasing rules as the built-in singer. ッ shortens the note before it. */
+export function setKana(notes: Array<{ time: number; duration: number; midi: number; velocity: number; slide?: boolean }>, text: string): KanaNote[] {
+  const { morae, breaks } = romajiToMorae(text);
+  const out: KanaNote[] = [];
+  let mi = 0;
+  let melisma = 0;
+  notes.forEach((n, k) => {
+    const prev = notes[k - 1];
+    const small = n.slide && prev && Math.abs(n.midi - prev.midi) <= 2;
+    const atBreak = breaks.includes(mi % morae.length) && mi % morae.length !== 0;
+    // the end of a lyric line: breathe (rest) on the leftover short notes instead of stretching a vowel
+    if (atBreak && n.duration < 0.5 && melisma < 3) {
+      melisma++;
+      return;
+    }
+    if (out.length && small && melisma < 2) {
+      melisma++;
+      out.push({ time: n.time, duration: n.duration, midi: n.midi, velocity: n.velocity, lyric: vowelOf(out[out.length - 1].lyric) });
+      return;
+    }
+    melisma = 0;
+    let m = morae[mi % morae.length];
+    if (m === 'ッ') {
+      // a held stop: cut the previous note short and sing the next mora here
+      const last = out[out.length - 1];
+      if (last) last.duration = Math.min(last.duration, (n.time - last.time) * 0.55);
+      mi++;
+      m = morae[mi % morae.length];
+    }
+    out.push({ time: n.time, duration: n.duration, midi: n.midi, velocity: n.velocity, lyric: m });
+    mi++;
+  });
+  // a sung line is monophonic: no note runs into the next one
+  for (let i = 0; i + 1 < out.length; i++) out[i].duration = Math.min(out[i].duration, out[i + 1].time - out[i].time);
+  return out;
+}
+
+// ---- the song --------------------------------------------------------------------------------
+export function toyRiotSong(band: RockBand, seed: string): RockSong {
+  return generateRock(band, seed, 'Tin Wings Riot', {
+    bpm: { value: 172, reason: '90 年代後半の J-ロック/インダストリアル・ポップの勢い (パンクの 8 ビートが速すぎない速さ)' },
+    rootPc: { value: 4, reason: 'E: ギターの開放弦の最低音 (標準チューニングの 6 弦) で一番太く鳴る調' },
+    bars: { value: { intro: 6, outro: 6 }, reason: 'イントロのラジオのコラージュと、最後にラジオが切れる時間' },
+  });
+}
+
+export type VocalStyle = 'megaphone' | 'pre' | 'chorus';
+export interface VocalLine {
+  section: string;
+  style: VocalStyle;
+  text: string;
+  /** mix position of the take's sample 0 (the section start minus a 0.3 s pre-roll) */
+  offset: number;
+  seconds: number;
+  melody: Array<{ time: number; duration: number; midi: number; velocity: number; slide?: boolean }>;
+}
+
+/** The vocal melody of every section (absolute times). Shared by the built-in singer and external engines. */
+export function toyRiotVocalPlan(song: RockSong, seed: string): VocalLine[] {
+  const barSec = song.barSec;
+  const sec = (n: string) => song.sections.find((s) => s.name === n)!;
+  const chordRoot = (bar: number) => {
+    const c = song.events.find((e) => e.part === 'guitar' && e.kind === 'chord' && e.bar === bar);
+    return c ? Math.min(...c.midis!) : 40;
+  };
+  const line = (name: string, style: VocalStyle, text: string, melody: VocalLine['melody']): VocalLine => {
+    const s = sec(name);
+    return { section: name, style, text, offset: s.start - 0.3, seconds: s.end - s.start + 1.5, melody };
+  };
+  const out: VocalLine[] = [];
+  for (const name of ['verse1', 'verse2']) {
+    const s = sec(name);
+    const notes: VocalLine['melody'] = [];
+    const vr = new Rng(`verse:${seed}:${name}`);
+    // a punky, talky line: 8ths with gaps, chord tones of the bar around E3–B3, the 4th bar of each 4 answers higher
+    for (let b = 0; b < s.bars; b++) {
+      const root = chordRoot(s.startBar + b);
+      const pcs = [0, 3, 7, 10].map((iv) => 52 + ((root + iv - 52) % 12 + 12) % 12);
+      for (let k = 0; k < 8; k++) {
+        if (k === 7 || (k === 0 && b % 2 === 1) || vr.next() < 0.15) continue;
+        const hi = b % 4 === 3 ? 5 : 0;
+        const m = pcs[Math.floor(vr.next() * pcs.length)] + hi;
+        notes.push({ time: s.start + b * barSec + k * (barSec / 8), duration: barSec / 8 * (k === 6 ? 1.8 : 0.9), midi: m, velocity: 0.75 + 0.2 * vr.next() });
+      }
+    }
+    out.push(line(name, 'megaphone', TOYRIOT_LYRICS[name as 'verse1' | 'verse2'], notes));
+  }
+  for (const name of ['pre1', 'pre2', 'pre3']) {
+    const s = sec(name);
+    const notes: VocalLine['melody'] = [];
+    // rising quarter notes on the chord's third and fifth: a staircase into the chorus
+    for (let b = 0; b < s.bars; b++) {
+      const root = chordRoot(s.startBar + b);
+      for (let k = 0; k < 4; k++) {
+        const m = 55 + ((root + [4, 7, 7, 12][k] - 55) % 12 + 12) % 12 + Math.floor(b / 2) * 2;
+        notes.push({ time: s.start + b * barSec + k * (barSec / 4), duration: barSec / 4 * 0.95, midi: m, velocity: 0.8 + 0.05 * b });
+      }
+    }
+    out.push(line(name, 'pre', TOYRIOT_LYRICS.pre, notes));
+  }
+  for (const s of song.sections.filter((x) => x.name.startsWith('chorus'))) {
+    const lead = song.events.filter((e) => e.part === 'lead' && e.kind === 'note' && e.time >= s.start && e.time < s.end);
+    const fold = (m: number) => {
+      let x = m;
+      while (x > 66) x -= 12;
+      while (x < 54) x += 12;
+      return x;
+    };
+    out.push(line(s.name, 'chorus', TOYRIOT_LYRICS.chorus, lead.map((e) => ({ time: e.time, duration: e.duration!, midi: fold(e.midi!), velocity: e.velocity!, slide: e.slide }))));
+  }
+  return out;
+}
+
+/**
+ * A rock vocal chain in the spirit of late-90s industrial pop (own DSP): high-pass, a nasal mid push,
+ * presence, tape-like saturation, then a fast leveller so the voice sits on top of the guitars.
+ */
+export function rockVocal(x: Float32Array, sr: number, drive = 1): Float32Array {
+  const hp = new Biquad('highpass', 140, 0.7, sr);
+  const nasal = new Biquad('peaking', 1150, 1.1, sr, 4);
+  const pres = new Biquad('peaking', 3300, 0.9, sr, 3);
+  const lp = new Biquad('lowpass', 9500, 0.7, sr);
+  const r = rmsOf(x) || 1;
+  const y = new Float32Array(x.length);
+  let env = 0;
+  for (let i = 0; i < x.length; i++) {
+    let v = pres.process(nasal.process(hp.process(x[i] / (r * 3))));
+    v = drive_(v, 1 + 1.8 * drive);
+    v = lp.process(v);
+    // leveller: 4:1 above −14 dB of the line's own level, 2 ms attack / 80 ms release
+    const a = Math.abs(v);
+    env += (a - env) * (a > env ? 1 - Math.exp(-1 / (0.002 * sr)) : 1 - Math.exp(-1 / (0.08 * sr)));
+    const th = 0.2;
+    const g = env > th ? Math.pow(env / th, 1 / 4 - 1) : 1;
+    y[i] = v * g * r * 3;
+  }
+  return y;
+}
+const drive_ = (x: number, k: number) => Math.tanh(x * k) / Math.tanh(k);
+
+/** a take from an external singing engine, already aligned to the line's `offset`, at the render's sample rate */
+export interface ExternalTake {
+  x: Float32Array;
+  pan: number;
+  gain: number;
+  /** which processing the take gets */
+  fx: 'megaphone' | 'rock' | 'rock-light' | 'clean';
+}
+export interface ToyRiotOptions {
+  /** section → takes (e.g. VOICEVOX). Without it the built-in physical-model singer sings. */
+  vocals?: Record<string, ExternalTake[]>;
+  vocalCredit?: string;
+}
+
 // ---- the song --------------------------------------------------------------------------------
 export interface ToyRiotResult {
   song: RockSong;
@@ -137,18 +337,10 @@ export interface ToyRiotResult {
   layers: string[];
 }
 
-export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage, log: (m: string) => void = () => undefined): ToyRiotResult {
-  const song = generateRock(band, seed, 'Tin Wings Riot', {
-    bpm: { value: 172, reason: '90 年代後半の J-ロック/インダストリアル・ポップの勢い (パンクの 8 ビートが速すぎない速さ)' },
-    rootPc: { value: 4, reason: 'E: ギターの開放弦の最低音 (標準チューニングの 6 弦) で一番太く鳴る調' },
-    bars: { value: { intro: 6, outro: 6 }, reason: 'イントロのラジオのコラージュと、最後にラジオが切れる時間' },
-  });
+export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage, log: (m: string) => void = () => undefined, opts: ToyRiotOptions = {}): ToyRiotResult {
+  const song = toyRiotSong(band, seed);
   const barSec = song.barSec;
   const sec = (n: string) => song.sections.find((s) => s.name === n)!;
-  const chordRoot = (bar: number) => {
-    const c = song.events.find((e) => e.part === 'guitar' && e.kind === 'chord' && e.bar === bar);
-    return c ? Math.min(...c.midis!) : 40;
-  };
   const lyrics: ToyRiotResult['lyrics'] = [];
   const layers: string[] = [];
 
@@ -309,58 +501,23 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
       layers.push('おもちゃのキーボード: リフの区間で、粗い矩形波 (奇数倍音だけ・ビット落ち・安っぽいビブラート) の対旋律');
 
       // ---- 5. vocals ----
-      const voices: Array<{ section: string; notes: SungNote[]; style: 'megaphone' | 'pre' | 'chorus'; text: string }> = [];
-      for (const name of ['verse1', 'verse2']) {
-        const s = sec(name);
-        const notes: Array<{ time: number; duration: number; midi: number; velocity: number }> = [];
-        const vr = new Rng(`verse:${seed}:${name}`);
-        // a punky, talky line: 8ths with gaps, chord tones of the bar around E3–B3, the 4th bar of each 4 answers higher
-        for (let b = 0; b < s.bars; b++) {
-          const root = chordRoot(s.startBar + b);
-          const pcs = [0, 3, 7, 10].map((iv) => 52 + ((root + iv - 52) % 12 + 12) % 12);
-          for (let k = 0; k < 8; k++) {
-            if (k === 7 || (k === 0 && b % 2 === 1) || vr.next() < 0.15) continue;
-            const hi = b % 4 === 3 ? 5 : 0;
-            const m = pcs[Math.floor(vr.next() * pcs.length)] + hi;
-            notes.push({ time: s.start + b * barSec + k * (barSec / 8), duration: barSec / 8 * (k === 6 ? 1.8 : 0.9), midi: m, velocity: 0.75 + 0.2 * vr.next() });
-          }
-        }
-        voices.push({ section: name, notes: setWords(notes, TOYRIOT_LYRICS[name as 'verse1' | 'verse2']), style: 'megaphone', text: TOYRIOT_LYRICS[name as 'verse1'] });
-      }
-      for (const name of ['pre1', 'pre2', 'pre3']) {
-        const s = sec(name);
-        const notes: Array<{ time: number; duration: number; midi: number; velocity: number }> = [];
-        // rising quarter notes on the chord's third and fifth: a staircase into the chorus
-        for (let b = 0; b < s.bars; b++) {
-          const root = chordRoot(s.startBar + b);
-          for (let k = 0; k < 4; k++) {
-            const m = 55 + ((root + [4, 7, 7, 12][k] - 55) % 12 + 12) % 12 + Math.floor(b / 2) * 2;
-            notes.push({ time: s.start + b * barSec + k * (barSec / 4), duration: barSec / 4 * 0.95, midi: m, velocity: 0.8 + 0.05 * b });
-          }
-        }
-        voices.push({ section: name, notes: setWords(notes, TOYRIOT_LYRICS.pre), style: 'pre', text: TOYRIOT_LYRICS.pre });
-      }
-      for (const s of song.sections.filter((x) => x.name.startsWith('chorus'))) {
-        const lead = song.events.filter((e) => e.part === 'lead' && e.kind === 'note' && e.time >= s.start && e.time < s.end);
-        const fold = (m: number) => {
-          let x = m;
-          while (x > 66) x -= 12;
-          while (x < 54) x += 12;
-          return x;
-        };
-        const notes = lead.map((e) => ({ time: e.time, duration: e.duration!, midi: fold(e.midi!), velocity: e.velocity!, slide: e.slide }));
-        voices.push({ section: s.name, notes: setWords(notes, TOYRIOT_LYRICS.chorus), style: 'chorus', text: TOYRIOT_LYRICS.chorus });
-      }
+      const voices = toyRiotVocalPlan(song, seed).map((l) => ({ ...l, notes: setWords(l.melody, l.text) }));
       const hall = { left: new Float32Array(len), right: new Float32Array(len) };
       for (const v of voices) {
         log(`vocal ${v.section}`);
         const s = sec(v.section);
-        const off = s.start - 0.3;
+        const off = v.offset;
         const rel = v.notes.map((n) => ({ ...n, time: n.time - off }));
         const segSec = s.end - s.start + 1.5;
         const base = { formantScale: 1.03, openQuotient: 0.5, breathiness: 0.12, vibratoCents: 18, scoopCents: 45 };
         const takes: Array<{ x: Float32Array; pan: number; g: number }> = [];
-        if (v.style === 'megaphone') takes.push({ x: megaphone(renderSinger(rel, segSec, sr, `${seed}:${v.section}`, base), sr, 0.9), pan: 0, g: 1 });
+        const ext = opts.vocals?.[v.section];
+        if (ext) {
+          for (const t of ext) {
+            const x = t.fx === 'megaphone' ? megaphone(t.x, sr, 0.85) : t.fx === 'rock' ? rockVocal(t.x, sr, 1) : t.fx === 'rock-light' ? rockVocal(t.x, sr, 0.4) : t.x;
+            takes.push({ x, pan: t.pan, g: t.gain });
+          }
+        } else if (v.style === 'megaphone') takes.push({ x: megaphone(renderSinger(rel, segSec, sr, `${seed}:${v.section}`, base), sr, 0.9), pan: 0, g: 1 });
         else if (v.style === 'pre') {
           takes.push({ x: renderSinger(rel, segSec, sr, `${seed}:${v.section}`, base), pan: -0.12, g: 0.8 });
           takes.push({ x: megaphone(renderSinger(rel, segSec, sr, `${seed}:${v.section}:m`, { ...base, formantScale: 1.06 }), sr, 0.5), pan: 0.12, g: 0.6 });
@@ -369,7 +526,7 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
           takes.push({ x: renderSinger(rel.map((n) => ({ ...n, time: n.time + 0.014, midi: n.midi + 0.07 })), segSec, sr, `${seed}:${v.section}:R`, { ...base, breathiness: 0.16, vibratoRate: 5.0 }), pan: 0.35, g: 0.85 });
           takes.push({ x: renderSinger(rel.map((n) => ({ ...n, midi: n.midi + 12 })), segSec, sr, `${seed}:${v.section}:oct`, { ...base, formantScale: 1.12, openQuotient: 0.6, breathiness: 0.2 }), pan: 0, g: 0.42 });
         }
-        const target = gRef * (v.style === 'chorus' ? 1.5 : 1.35);
+        const target = gRef * (v.style === 'chorus' ? 1.5 : 1.35) * (ext ? 1.08 : 1);
         const dry = new Float32Array(takes[0].x.length);
         for (const tk of takes) {
           const g = (target * tk.g) / (rmsOf(tk.x) || 1);
@@ -392,7 +549,9 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
         wet.left[i] += hall.left[i];
         wet.right[i] += hall.right[i];
       }
-      layers.push('歌: Aメロはメガホン (650 Hz–3.4 kHz、歪み、ビット落ち) + 短いスラップ / Bメロは素の声とメガホンの 2 声 / サビは左右のダブル + 1 オクターブ上のコーラス、付点 8 分のエコー');
+      layers.push(opts.vocals
+        ? `歌: ${opts.vocalCredit ?? '外部の歌声合成'} の男声。Aメロはメガホン (650 Hz–3.4 kHz、歪み、ビット落ち) + 短いスラップ / Bメロは素の声とメガホンの 2 声 / サビはロック・ボーカルの処理 (ハイパス、1.1 kHz の鼻にかかった中域、3.3 kHz の抜け、テープのような歪み、速いレベラー) で左右のダブル + 1 オクターブ上のギャング・ボーカル、付点 8 分のエコー`
+        : '歌: Aメロはメガホン (650 Hz–3.4 kHz、歪み、ビット落ち) + 短いスラップ / Bメロは素の声とメガホンの 2 声 / サビは左右のダブル + 1 オクターブ上のコーラス、付点 8 分のエコー');
 
       // ---- 6. tape stop at the end of chorus 2 (the band slows down to nothing) ----
       log('tape stop');

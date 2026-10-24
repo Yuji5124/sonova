@@ -24,7 +24,7 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | SONOVA 004 | **音が空間を作る** — 部屋の共鳴モードが音を決め、音が部屋を変形させる (SONOVA-SPACE-0001, 77秒、glTF アニメーション) | ✅ [experiments/s004/REPORT.md](experiments/s004/REPORT.md) |
 | ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
 | 拡張ロック | **SONOVA-XROCK-0001** *Five Ways Out of the Song* (3分36秒) — ロックを 時間・テンポ・リズム・音高・声 の 5 方向に押し広げる | ✅ [experiments/xrock/REPORT.md](experiments/xrock/REPORT.md) |
-| TOYRIOT | **SONOVA-TOYRIOT-0001** *Tin Wings Riot* (2:35, 172 BPM) — 90 年代後半の日本のインダストリアル/オルタナ・ポップロックの作り方を参考にしたオリジナル曲 (ラジオのコラージュ、メガホンの歌、ドラムマシン、フランジャー、おもちゃのキーボード、テープストップ)。歌詞もオリジナル | ✅ [experiments/toyriot/REPORT.md](experiments/toyriot/REPORT.md) · `npm run toyriot` |
+| TOYRIOT | **SONOVA-TOYRIOT-0001** *Tin Wings Riot* (2:35, 172 BPM) — 90 年代後半の日本のインダストリアル/オルタナ・ポップロックの作り方を参考にしたオリジナル曲 (ラジオのコラージュ、メガホンの歌、ドラムマシン、フランジャー、おもちゃのキーボード、テープストップ)。歌詞もオリジナル。**歌は VOICEVOX の男声** (VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎、ロック・ボーカルの処理)。VOICEVOX が無い環境では内蔵の歌手で歌う | ✅ [experiments/toyriot/REPORT.md](experiments/toyriot/REPORT.md) · `npm run toyriot` (VOICEVOX Engine を起動しておく) · 声の聴き比べ `npm run toyriot:voices` |
 | ORCHESTRA × DIGITAL | フルオーケストラ (VSCO-2-CE、CC0 の録音) と電子音楽を対等に一曲にする制作。Phase 1 調査・Phase 2 の 4 つの実験まで | 🔄 [docs/orchestra-digital.md](docs/orchestra-digital.md) |
 | 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 
@@ -111,7 +111,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 69 テスト
+npm test             # 72 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 
