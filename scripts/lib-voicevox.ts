@@ -47,7 +47,7 @@ async function post(path: string, body: unknown): Promise<Response> {
  * requests give slightly different curves — while synthesis from a fixed query is. So queries are
  * frozen to `cacheDir` (one JSON per score) and reused: same score → same audio, every time.
  */
-export async function singLine(notes: KanaNote[], seconds: number, sr: number, styleId: number, o: { transpose?: number; cents?: number; delay?: number; cacheDir?: string; label?: string } = {}): Promise<{ x: Float32Array; phonemes: string[] }> {
+export async function singLine(notes: KanaNote[], seconds: number, sr: number, styleId: number, o: { transpose?: number; cents?: number; delay?: number; cacheDir?: string; label?: string; stabilize?: number } = {}): Promise<{ x: Float32Array; phonemes: string[] }> {
   const fps = 93.75;
   const shift = o.delay ?? 0;
   const fr = (t: number) => Math.round((t + shift) * fps);
@@ -90,6 +90,7 @@ export async function singLine(notes: KanaNote[], seconds: number, sr: number, s
       query = JSON.parse(readFileSync(file, 'utf8'));
     }
   }
+  if (o.stabilize) stabilizePitch(query, score, o.stabilize);
   if (o.cents) query.f0 = query.f0.map((f: number) => f * Math.pow(2, o.cents! / 1200));
   const wav = new Uint8Array(await (await post(`/frame_synthesis?speaker=${styleId}`, query)).arrayBuffer());
   const d = decodeWav(wav);
@@ -108,4 +109,43 @@ export async function singLine(notes: KanaNote[], seconds: number, sr: number, s
     x[i] = y1 + 0.5 * f * (y2 - y0 + f * (2 * y0 - 5 * y1 + 4 * y2 - y3 + f * (3 * (y1 - y2) + y3 - y0)));
   }
   return { x, phonemes: query.phonemes.map((p: { phoneme: string }) => p.phoneme) };
+}
+
+/**
+ * "A steadier singer": inside each vowel (after a 40 ms onset, which keeps the scoop into the note)
+ * the pitch is pulled toward the written note — f0 = target·(f0/target)^(1−α) — and the remaining
+ * wobble is smoothed (±3 frames). Consonants, unvoiced frames (f0 = 0) and the last 30 ms of a note
+ * (the glide into the next one) are left alone. Deterministic: it only edits the frozen query.
+ */
+export function stabilizePitch(query: { f0: number[]; phonemes: Array<{ phoneme: string; frame_length: number; note_id: string | null }> }, score: Array<{ key: number | null; id?: string }>, alpha: number): void {
+  const keyOf = new Map(score.filter((n) => n.id).map((n) => [n.id!, n.key!]));
+  const VOWELS = new Set(['a', 'i', 'u', 'e', 'o', 'N']);
+  const f0 = query.f0;
+  const out = f0.slice();
+  const onset = 4; // frames ≈ 43 ms
+  const tail = 3; // frames ≈ 32 ms
+  let at = 0;
+  for (const p of query.phonemes) {
+    const key = p.note_id ? keyOf.get(p.note_id) : undefined;
+    if (key !== undefined && VOWELS.has(p.phoneme)) {
+      const target = 440 * Math.pow(2, (key - 69) / 12);
+      const a = at + Math.min(onset, Math.floor(p.frame_length / 3));
+      const b = at + p.frame_length - Math.min(tail, Math.floor(p.frame_length / 4));
+      for (let i = a; i < b; i++) {
+        if (f0[i] <= 0) continue;
+        // ramp the pull in over 3 frames so the onset stays smooth
+        const w = alpha * Math.min(1, (i - a + 1) / 3);
+        let sum = 0;
+        let n = 0;
+        for (let k = Math.max(a, i - 3); k <= Math.min(b - 1, i + 3); k++)
+          if (f0[k] > 0) {
+            sum += Math.log(f0[k] / target);
+            n++;
+          }
+        out[i] = target * Math.exp((sum / n) * (1 - w));
+      }
+    }
+    at += p.frame_length;
+  }
+  query.f0 = out;
 }

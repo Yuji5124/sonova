@@ -28,6 +28,8 @@
     "xrock": "tsx scripts/xrock.ts",
     "toyriot": "tsx scripts/toyriot.ts",
     "toyriot:voices": "tsx scripts/toyriot-voices.ts",
+    "psylo": "tsx scripts/psylo.ts",
+    "psylo:voices": "tsx scripts/psylo-voices.ts",
     "od:fetch": "tsx scripts/od-fetch-samples.ts",
     "od:phase2": "tsx scripts/od-phase2.ts"
   },

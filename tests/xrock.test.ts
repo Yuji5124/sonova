@@ -193,3 +193,48 @@ describe('TOYRIOT with an external (VOICEVOX) singer', () => {
     expect(y.every((v) => Number.isFinite(v) && Math.abs(v) < 2)).toBe(true);
   });
 });
+
+describe('ZIG — PSYLO on the TOYRIOT production', () => {
+  it('the chorus carries the Pattern A hook: サ, a long イ, ロー held two beats, an octave down for the male lead', async () => {
+    const { PSYLO_CHORUS, PSYLO_MALE_TRANSPOSE, psyloSong, psyloVocalPlan } = await import('@sonova/composition-engine');
+    const { buildInstruments } = await import('../scripts/lib.ts');
+    const { dnas } = await buildInstruments();
+    const song = psyloSong({ guitar: dnas[0], drums: dnas[1], voice: dnas[2] }, 'zig-psylo-0001');
+    expect(song.bpm).toBe(160);
+    const plan = psyloVocalPlan(song);
+    const choruses = plan.filter((l) => l.style === 'chorus');
+    expect(choruses.length).toBeGreaterThanOrEqual(3);
+    const spb = 60 / song.bpm;
+    for (const l of choruses) {
+      const s = song.sections.find((x) => x.name === l.section)!;
+      const k = l.kana!;
+      expect(k.map((n) => n.lyric).join('')).toContain('ヒカレサイロ');
+      const ro = k.at(-1)!;
+      expect(ro.lyric).toBe('ロ');
+      expect(ro.midi).toBe(78 + PSYLO_MALE_TRANSPOSE);
+      expect(ro.duration).toBeCloseTo(2 * spb, 9);
+      expect(ro.time).toBeCloseTo(s.start + 30 * spb, 9);
+      // monophonic and inside the section
+      k.forEach((n, i) => i > 0 && expect(n.time).toBeGreaterThanOrEqual(k[i - 1].time + k[i - 1].duration - 1e-9));
+      expect(ro.time + ro.duration).toBeLessThanOrEqual(s.end + 1e-9);
+    }
+    expect(PSYLO_CHORUS.filter(([l]) => l === 'ッ' || l === 'ー')).toEqual([]);
+  });
+});
+
+describe('VOICEVOX pitch stabiliser', () => {
+  it('pulls the vowel toward the written note and calms the wobble, leaving the onset and consonants', async () => {
+    const { stabilizePitch } = await import('../scripts/lib-voicevox.ts');
+    const target = 440 * 2 ** ((57 - 69) / 12);
+    // consonant (4 frames, unvoiced) + vowel (40 frames): 30 cents flat with ±40 cents vibrato-ish wobble
+    const f0 = [0, 0, 0, 0, ...Array.from({ length: 40 }, (_, i) => target * 2 ** ((-30 + 40 * Math.sin(i * 1.3)) / 1200))];
+    const q = { f0: f0.slice(), phonemes: [{ phoneme: 'k', frame_length: 4, note_id: 'n0' }, { phoneme: 'a', frame_length: 40, note_id: 'n0' }] };
+    stabilizePitch(q, [{ id: 'n0', key: 57 }], 0.75);
+    const cents = (f: number) => 1200 * Math.log2(f / target);
+    expect(q.f0.slice(0, 4)).toEqual([0, 0, 0, 0]);
+    expect(q.f0.slice(4, 8)).toEqual(f0.slice(4, 8)); // the onset (scoop) stays
+    const mid = q.f0.slice(12, 40).map(cents);
+    expect(Math.max(...mid.map(Math.abs))).toBeLessThan(15);
+    expect(q.f0.slice(41)).toEqual(f0.slice(41)); // the glide out stays
+  });
+});

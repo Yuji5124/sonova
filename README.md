@@ -25,6 +25,7 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
 | 拡張ロック | **SONOVA-XROCK-0001** *Five Ways Out of the Song* (3分36秒) — ロックを 時間・テンポ・リズム・音高・声 の 5 方向に押し広げる | ✅ [experiments/xrock/REPORT.md](experiments/xrock/REPORT.md) |
 | TOYRIOT | **SONOVA-TOYRIOT-0001** *Tin Wings Riot* (2:35, 172 BPM) — 90 年代後半の日本のインダストリアル/オルタナ・ポップロックの作り方を参考にしたオリジナル曲 (ラジオのコラージュ、メガホンの歌、ドラムマシン、フランジャー、おもちゃのキーボード、テープストップ)。歌詞もオリジナル。**歌は VOICEVOX の男声** (VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎、ロック・ボーカルの処理)。VOICEVOX が無い環境では内蔵の歌手で歌う | ✅ [experiments/toyriot/REPORT.md](experiments/toyriot/REPORT.md) · `npm run toyriot` (VOICEVOX Engine を起動しておく) · 声の聴き比べ `npm run toyriot:voices` |
+| PSYLO | **ZIG-PSYLO-0001** *PSYLO* (2:46, 160 BPM, B minor / サビ D major) — PSYENCE WORKSHOP の PSYLO A案 (フック「サイロー」) を TOYRIOT 男声版の作り方で1曲に (ラジオのイントロのアナウンス、メガホンの A メロ、プリコーラス、ダブル + 1オクターブ上のギャング・ボーカルのサビ×4)。歌詞・旋律はオリジナル。歌は VOICEVOX の男声 (VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎)、**音程の安定化** (母音の中の音程を楽譜へ75%寄せ、揺れをならす) つき | ✅ [experiments/psylo/REPORT.md](experiments/psylo/REPORT.md) · `npm run psylo` (VOICEVOX Engine が必要) · フックの声の聴き比べ `npm run psylo:voices` |
 | ORCHESTRA × DIGITAL | フルオーケストラ (VSCO-2-CE、CC0 の録音) と電子音楽を対等に一曲にする制作。Phase 1 調査・Phase 2 の 4 つの実験まで | 🔄 [docs/orchestra-digital.md](docs/orchestra-digital.md) |
 | 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 

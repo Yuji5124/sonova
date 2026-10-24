@@ -230,6 +230,8 @@ export interface VocalLine {
   offset: number;
   seconds: number;
   melody: Array<{ time: number; duration: number; midi: number; velocity: number; slide?: boolean }>;
+  /** optional fixed kana per note (absolute times) — when the words were written note by note */
+  kana?: KanaNote[];
 }
 
 /** The vocal melody of every section (absolute times). Shared by the built-in singer and external engines. */
@@ -327,6 +329,13 @@ export interface ToyRiotOptions {
   /** section → takes (e.g. VOICEVOX). Without it the built-in physical-model singer sings. */
   vocals?: Record<string, ExternalTake[]>;
   vocalCredit?: string;
+  /** another song on the same production (PSYLO): its arrangement and vocal plan */
+  song?: RockSong;
+  plan?: VocalLine[];
+  /** the intro announcement: words, and optionally an external take that starts at 1.6 s */
+  intro?: { text: string; take?: Float32Array };
+  /** level of the lead guitar inside the choruses (default 0.45: steps back for the voice) */
+  chorusLead?: number;
 }
 
 // ---- the song --------------------------------------------------------------------------------
@@ -338,7 +347,7 @@ export interface ToyRiotResult {
 }
 
 export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage, log: (m: string) => void = () => undefined, opts: ToyRiotOptions = {}): ToyRiotResult {
-  const song = toyRiotSong(band, seed);
+  const song = opts.song ?? toyRiotSong(band, seed);
   const barSec = song.barSec;
   const sec = (n: string) => song.sections.find((s) => s.name === n)!;
   const lyrics: ToyRiotResult['lyrics'] = [];
@@ -350,7 +359,7 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
       for (const c of song.sections.filter((s) => s.name.startsWith('chorus'))) {
         const a = Math.round(c.start * sampleRate);
         const z = Math.min(lead.length, Math.round(c.end * sampleRate));
-        for (let i = a; i < z; i++) lead[i] *= 0.45;
+        for (let i = a; i < z; i++) lead[i] *= opts.chorusLead ?? 0.45;
       }
     },
     beforeReverb: ({ mix, wet, guitarL, guitarR, drums, drumGain, sampleRate: sr }) => {
@@ -398,12 +407,13 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
       }
       addMono(radio, 0, gRef * 0.5 / (rmsOf(radio) || 1), -0.2, 0.15);
       // the mic test, through the megaphone, landing on the dial's quiet spot
-      const ann = romajiToSyllables(TOYRIOT_LYRICS.intro);
+      const introText = opts.intro?.text ?? TOYRIOT_LYRICS.intro;
+      const ann = romajiToSyllables(introText);
       const step = 60 / song.bpm / 2;
       const annNotes: SungNote[] = ann.syllables.map((s, k) => ({ time: 0.2 + k * step + (k >= ann.breaks[0] ? step * 2 : 0), duration: step * 0.95, midi: 55 + (k % 4 === 3 ? 2 : 0), velocity: 0.8, syllable: s }));
-      const annVoice = megaphone(renderSinger(annNotes, annNotes.length * step + 2, sr, `${seed}:intro`, { formantScale: 1.03, openQuotient: 0.5, breathiness: 0.1, vibratoCents: 0, scoopCents: 0 }), sr, 1);
+      const annVoice = megaphone(opts.intro?.take ?? renderSinger(annNotes, annNotes.length * step + 2, sr, `${seed}:intro`, { formantScale: 1.03, openQuotient: 0.5, breathiness: 0.1, vibratoCents: 0, scoopCents: 0 }), sr, 1);
       addMono(annVoice, 1.6, (gRef * 1.1) / (rmsOf(annVoice) || 1), 0.15, 0.2);
-      lyrics.push({ section: 'intro', text: TOYRIOT_LYRICS.intro, sung: ann.syllables.map(romanizeSyl).join(' '), notes: annNotes.length });
+      lyrics.push({ section: 'intro', text: introText, sung: ann.syllables.map(romanizeSyl).join(' '), notes: annNotes.length });
       // count-in: a crushed snare roll in 16ths, getting louder through the last intro bar
       const roll = new Float32Array(at(barSec) + 1);
       const s16 = barSec / 16;
@@ -501,7 +511,7 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
       layers.push('おもちゃのキーボード: リフの区間で、粗い矩形波 (奇数倍音だけ・ビット落ち・安っぽいビブラート) の対旋律');
 
       // ---- 5. vocals ----
-      const voices = toyRiotVocalPlan(song, seed).map((l) => ({ ...l, notes: setWords(l.melody, l.text) }));
+      const voices = (opts.plan ?? toyRiotVocalPlan(song, seed)).map((l) => ({ ...l, notes: setWords(l.melody, l.text) }));
       const hall = { left: new Float32Array(len), right: new Float32Array(len) };
       for (const v of voices) {
         log(`vocal ${v.section}`);
@@ -543,7 +553,7 @@ export function renderToyRiot(band: RockBand, seed: string, image: SpectroImage,
           hall.left[o + i] += dry[i] * (v.style === 'chorus' ? 0.3 : 0.15);
           hall.right[o + i] += dry[i] * (v.style === 'chorus' ? 0.3 : 0.15);
         }
-        lyrics.push({ section: v.section, text: v.text, sung: v.notes.filter((n) => n.syllable).map((n) => romanizeSyl(n.syllable!)).join(' '), notes: v.notes.length });
+        lyrics.push({ section: v.section, text: v.text, sung: ext && v.kana ? v.kana.map((k) => k.lyric).join('') : v.notes.filter((n) => n.syllable).map((n) => romanizeSyl(n.syllable!)).join(' '), notes: v.notes.length });
       }
       for (let i = 0; i < len; i++) {
         wet.left[i] += hall.left[i];
