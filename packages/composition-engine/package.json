@@ -12,6 +12,8 @@
     "@sonova/instrument-dna": "*",
     "@sonova/synthesis-engine": "*",
     "@sonova/music-generator": "*",
-    "@tonejs/midi": "^2.0.28"
+    "@tonejs/midi": "^2.0.28",
+    "@sonova/orchestra-engine": "*",
+    "@sonova/evaluation": "*"
   }
 }

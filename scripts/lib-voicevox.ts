@@ -32,9 +32,17 @@ export async function voicevoxAvailable(): Promise<boolean> {
 }
 
 async function post(path: string, body: unknown): Promise<Response> {
-  const r = await fetch(`${VOICEVOX_URL}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-  if (!r.ok) throw new Error(`VOICEVOX ${path}: HTTP ${r.status} ${await r.text()}`);
-  return r;
+  // a dropped connection (the engine busy with a long take) is retried; HTTP errors are not
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const r = await fetch(`${VOICEVOX_URL}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      if (!r.ok) throw Object.assign(new Error(`VOICEVOX ${path}: HTTP ${r.status} ${await r.text()}`), { http: true });
+      return r;
+    } catch (e) {
+      if ((e as { http?: boolean }).http || attempt >= 3) throw e;
+      await new Promise((ok) => setTimeout(ok, 1000 * attempt));
+    }
+  }
 }
 
 /**
