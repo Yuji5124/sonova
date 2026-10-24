@@ -1,7 +1,7 @@
 # ZIG-PSYLO-0001 — PSYLO (サイロ)
 
 自動生成: `npm run psylo` (VOICEVOX Engine が必要)。音声 `output/psylo/ZIG-PSYLO-0001.wav` / `.mp3` / `.mid` (Git 管理外)。
-160 BPM · B minor (サビは D major) · 2:46 · 検証 OK (peak -1 dBFS, RMS -13.384 dBFS)
+160 BPM · B minor (サビは D major) · 2:46 · 検証 OK (peak -1 dBFS, RMS -13.374 dBFS)
 
 PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) を、SONOVA-TOYRIOT-0001「Tin Wings Riot」男声版と同じ作り方 (ラジオのイントロ、メガホンの A メロ、ダブル + 1オクターブ上のギャング・コーラスのサビ) で1曲にした。歌詞・旋律はすべてオリジナル。
 
@@ -15,16 +15,15 @@ PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) �
 
 ## 変則リフ
 
-生成器のリフは1小節の同じパターンの繰り返し、A メロは8分の刻みだけだったので、次のパターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
+オープニング (イントロ・riffA・A メロ1・サビ1) は生成器のリフ `R.m..mnnPPm...PP` のまま。**サビ1のあと (0:45 の riffB) から**次の変則パターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
 `R` = アクセントのパワーコード、`P` = 別の音のパワーコード、`m` = ブリッジミュート、`s` = 32分のスタッター、`.` = 休み (1文字 = 16分)
 
 | 区間 | 考え方 | 例 |
 |---|---|---|
-| riffA | 3+3+3+3+2+2 のアクセント (4/4 の中で 7/8 のようにつんのめる)。4小節目は 3+3+2+3+3+2 に組み替えて32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | `Rm.Rm.Rm.Rm.RmRm` |
 | riffB | 5ステップのセル `Rm.Pm` を小節線をまたいで流すポリメーター (TidalCycles の `{…}%16`)。アクセントが毎小節ずれる | `Rm.PmRm.PmRm.PmR m.PmRm.PmRm.PmRm mPmRm.PmRm.PmRm. PmRm.PmRm.PmR.ss` |
-| riffA2 | riffA と、毎小節回転するユークリッドリズム E(7,16) (Toussaint / Strudel の `iter`) が交互 | `Rm.Rm.Rm.Rm.RmRm R.P.P.mPmPmPmPm.` |
+| verse2 | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | `Rm.Rm.Rm.Rm.R.m.` / `R...........m.mm` |
+| riffA2 | 前半2小節はオープニングのリフが戻り、後半で崩れる: 3+3+3+3+2+2 のアクセント → 回転するユークリッドリズム E(7,16) (Toussaint / Strudel の `iter`) と32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | `Rm.Rm.Rm.Rm.RmRm RPmPmPmPm.P.P.ss` |
 | riffA3・outro | E(5,16) のコードと E(3,8) のミュートのクロスリズム、2ステップずつ回転 | `R..mP.mPm.Pm.Pm. R.P..P.mP.mP.mPm` |
-| verse | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | `Rm.Rm.Rm.Rm.R.m.` / `R...........m.mm` |
 
 参考にした GitHub リポジトリ (考え方だけを参考にし、コードは使っていない・同梱していない):
 

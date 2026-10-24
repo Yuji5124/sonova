@@ -106,16 +106,15 @@ PSYENCE WORKSHOP の PSYLO A案 (サビ8小節・フック「サイロー」) �
 
 ## 変則リフ
 
-生成器のリフは1小節の同じパターンの繰り返し、A メロは8分の刻みだけだったので、次のパターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
+オープニング (イントロ・riffA・A メロ1・サビ1) は生成器のリフ \`${psyloBaseSong(band, seed).riffText}\` のまま。**サビ1のあと (0:45 の riffB) から**次の変則パターンに差し替えた (スネアは2・4拍のまま、キックとベースは新しいアクセントに付いていく)。
 \`R\` = アクセントのパワーコード、\`P\` = 別の音のパワーコード、\`m\` = ブリッジミュート、\`s\` = 32分のスタッター、\`.\` = 休み (1文字 = 16分)
 
 | 区間 | 考え方 | 例 |
 |---|---|---|
-| riffA | 3+3+3+3+2+2 のアクセント (4/4 の中で 7/8 のようにつんのめる)。4小節目は 3+3+2+3+3+2 に組み替えて32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | \`${psyloRiffPlan(psyloBaseSong(band, seed)).find((p) => p.section === 'riffA')!.pattern}\` |
 | riffB | 5ステップのセル \`Rm.Pm\` を小節線をまたいで流すポリメーター (TidalCycles の \`{…}%16\`)。アクセントが毎小節ずれる | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffB').map((p) => p.pattern).join(' ')}\` |
-| riffA2 | riffA と、毎小節回転するユークリッドリズム E(7,16) (Toussaint / Strudel の \`iter\`) が交互 | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffA2').map((p) => p.pattern).slice(0, 2).join(' ')}\` |
+| verse2 | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | \`Rm.Rm.Rm.Rm.R.m.\` / \`R...........m.mm\` |
+| riffA2 | 前半2小節はオープニングのリフが戻り、後半で崩れる: 3+3+3+3+2+2 のアクセント → 回転するユークリッドリズム E(7,16) (Toussaint / Strudel の \`iter\`) と32分のスタッター。音は B・D・E・F (♭5)・C (♭2) | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffA2').map((p) => p.pattern).join(' ')}\` |
 | riffA3・outro | E(5,16) のコードと E(3,8) のミュートのクロスリズム、2ステップずつ回転 | \`${psyloRiffPlan(psyloBaseSong(band, seed)).filter((p) => p.section === 'riffA3').map((p) => p.pattern).slice(0, 2).join(' ')}\` |
-| verse | 3つずつの刻み (R m .) をずらして置き、4小節ごとにストップ (1発と空白、メガホンの声だけになる) | \`Rm.Rm.Rm.Rm.R.m.\` / \`R...........m.mm\` |
 
 参考にした GitHub リポジトリ (考え方だけを参考にし、コードは使っていない・同梱していない):
 

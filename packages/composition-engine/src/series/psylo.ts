@@ -147,13 +147,15 @@ export function psyloRiffPlan(song: RockSong): PsyloRiffBar[] {
     for (let b = 0; b < sec.bars; b++) {
       const bar = sec.startBar + b;
       const last = b === sec.bars - 1;
-      if (n === 'riffA' || n === 'riffA2') {
-        // 3+3+3+3+2+2, and the 4th bar regroups (3+3+2+3+3+2) and stutters into the next section
-        let row = b % 4 === 3 ? grouped([3, 3, 2, 3, 3, 2]) : grouped([3, 3, 3, 3, 2, 2]);
-        if (n === 'riffA2' && b % 2 === 1) row = euclidRow(7, b * 3); // the reprise answers itself with a rotated E(7,16)
-        if (b % 4 === 3) row = row.slice(0, 14) + 'ss';
+      // the opening (intro, riffA, verse1, chorus1) keeps the generator's riff; the irregular bars start
+      // after the first chorus. riffA2 begins as the opening riff and breaks up in its 2nd half.
+      if (n === 'riffA' || n === 'verse1' || (n === 'riffA2' && b < 2)) continue;
+      if (n === 'riffA2') {
+        // 3+3+3+3+2+2, then a rotated E(7,16) that stutters into the next section
+        let row = b === 2 ? grouped([3, 3, 3, 3, 2, 2]) : euclidRow(7, b * 3);
+        if (last) row = row.slice(0, 14) + 'ss';
         // B, B, D, E, F (♭5), C (♭2): the tritone and the half step give the industrial edge
-        add(n, bar, row, b % 2 === 0 ? [0, 0, 3, 5, 0, 6] : [0, 1, 0, 5, 6, 3]);
+        add(n, bar, row, b === 2 ? [0, 0, 3, 5, 0, 6] : [0, 1, 0, 5, 6, 3]);
       } else if (n === 'riffB') {
         // polymeter: the 5-step cell R m . P m runs straight across the bar lines
         const cell = 'Rm.Pm';
@@ -172,8 +174,8 @@ export function psyloRiffPlan(song: RockSong): PsyloRiffBar[] {
       } else if (n.startsWith('verse')) {
         // the chug, displaced: groups of three 16ths (R m m) over the bar; every 4th bar is stop-time
         // (one hit and space for the megaphone voice, then a pickup)
-        const row = b % 4 === 3 ? 'R...........m.mm' : n === 'verse2' && b % 2 === 1 ? 'Rmm.mmPm.mmRm.P.' : 'Rm.Rm.Rm.Rm.R.m.';
-        add(n, bar, row, n === 'verse2' && b % 2 === 1 ? [0, 3, 0, 5] : [0]);
+        const row = b % 4 === 3 ? 'R...........m.mm' : b % 2 === 1 ? 'Rmm.mmPm.mmRm.P.' : 'Rm.Rm.Rm.Rm.R.m.';
+        add(n, bar, row, b % 2 === 1 ? [0, 3, 0, 5] : [0]);
       }
     }
   }

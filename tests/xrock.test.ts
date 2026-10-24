@@ -240,21 +240,26 @@ describe('VOICEVOX pitch stabiliser', () => {
 });
 
 describe('PSYLO irregular riffs', () => {
-  it('replaces the looped riff with grouped, polymetric and Euclidean bars; snare stays on 2 and 4, kick follows the chords', async () => {
+  it('keeps the opening riff, then (from riffB) grouped, polymetric and Euclidean bars; snare on 2 and 4, kick follows the chords', async () => {
     const { psyloBaseSong, psyloRiffPlan, psyloSong } = await import('@sonova/composition-engine');
     const { buildInstruments } = await import('../scripts/lib.ts');
     const { dnas } = await buildInstruments();
     const band = { guitar: dnas[0], drums: dnas[1], voice: dnas[2] };
-    const plan = psyloRiffPlan(psyloBaseSong(band, 'zig-psylo-0001'));
-    const riffA = plan.filter((p) => p.section === 'riffA').map((p) => p.pattern);
-    expect(riffA[0]).toBe('Rm.Rm.Rm.Rm.RmRm'); // 3+3+3+3+2+2
-    expect(riffA[3].endsWith('ss')).toBe(true);
+    const base = psyloBaseSong(band, 'zig-psylo-0001');
+    const plan = psyloRiffPlan(base);
+    const song = psyloSong(band, 'zig-psylo-0001');
+    expect(psyloSong(band, 'zig-psylo-0001').events).toEqual(song.events);
+    // the opening is untouched: every event up to the end of chorus 1 is the generator's
+    const firstChange = song.sections.find((s) => s.name === 'riffB')!.start;
+    expect(plan.every((p) => p.bar * song.barSec >= firstChange - 1e-9)).toBe(true);
+    expect(song.events.filter((e) => e.time < firstChange)).toEqual(base.events.filter((e) => e.time < firstChange));
     const riffB = plan.filter((p) => p.section === 'riffB').map((p) => p.pattern);
     expect(new Set(riffB).size).toBe(riffB.length); // the 5-step cell lands differently in every bar
     expect(plan.every((p) => p.pattern.length === 16)).toBe(true);
-    const song = psyloSong(band, 'zig-psylo-0001');
-    expect(psyloSong(band, 'zig-psylo-0001').events).toEqual(song.events);
-    const bar = plan.find((p) => p.section === 'riffA')!.bar;
+    const a2 = plan.filter((p) => p.section === 'riffA2');
+    expect(a2.map((p) => p.pattern)[0]).toBe('Rm.Rm.Rm.Rm.RmRm'); // 3+3+3+3+2+2 in its 2nd half
+    expect(a2.at(-1)!.pattern.endsWith('ss')).toBe(true);
+    const bar = a2[0].bar;
     const inBar = song.events.filter((e) => e.bar === bar);
     const slotOf = (t: number) => Math.round((t - bar * song.barSec) / (song.barSec / 16));
     expect(inBar.filter((e) => e.drum === 'snare').map((e) => e.slot).sort((a, b) => a - b)).toEqual([4, 12]);

@@ -209,66 +209,6 @@
   },
   "riffs": [
     {
-      "section": "riffA",
-      "bar": 6,
-      "pattern": "Rm.Rm.Rm.Rm.RmRm"
-    },
-    {
-      "section": "riffA",
-      "bar": 7,
-      "pattern": "Rm.Rm.Rm.Rm.RmRm"
-    },
-    {
-      "section": "riffA",
-      "bar": 8,
-      "pattern": "Rm.Rm.Rm.Rm.RmRm"
-    },
-    {
-      "section": "riffA",
-      "bar": 9,
-      "pattern": "Rm.Rm.RmRm.Rm.ss"
-    },
-    {
-      "section": "verse1",
-      "bar": 10,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 11,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 12,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 13,
-      "pattern": "R...........m.mm"
-    },
-    {
-      "section": "verse1",
-      "bar": 14,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 15,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 16,
-      "pattern": "Rm.Rm.Rm.Rm.R.m."
-    },
-    {
-      "section": "verse1",
-      "bar": 17,
-      "pattern": "R...........m.mm"
-    },
-    {
       "section": "riffB",
       "bar": 30,
       "pattern": "Rm.PmRm.PmRm.PmR"
@@ -327,16 +267,6 @@
       "section": "verse2",
       "bar": 41,
       "pattern": "R...........m.mm"
-    },
-    {
-      "section": "riffA2",
-      "bar": 74,
-      "pattern": "Rm.Rm.Rm.Rm.RmRm"
-    },
-    {
-      "section": "riffA2",
-      "bar": 75,
-      "pattern": "R.P.P.mPmPmPmPm."
     },
     {
       "section": "riffA2",
@@ -1798,14 +1728,14 @@
     ]
   },
   "render": {
-    "ms": 91217,
+    "ms": 95065,
     "stems": {
       "guitarL": {
         "gainDb": -8.7,
         "samples": 7342650
       },
       "guitarR": {
-        "gainDb": -8.7,
+        "gainDb": -8.8,
         "samples": 7342650
       },
       "bass": {
@@ -1817,15 +1747,15 @@
         "samples": 7342650
       },
       "drums": {
-        "gainDb": 1.3,
+        "gainDb": 1.4,
         "samples": 7342650
       }
     },
     "master": {
-      "inputPeak": 1.7323540449142456,
-      "inputRms": 0.1850928312161184,
-      "appliedGainDb": 2.152208029386875,
-      "maxReductionDb": -7.924941267618272,
+      "inputPeak": 1.7424601316452026,
+      "inputRms": 0.1857487856130902,
+      "appliedGainDb": 2.1214803376544484,
+      "maxReductionDb": -7.944737233522977,
       "outputPeak": 0.8912509083747864
     }
   },
@@ -1837,12 +1767,12 @@
     "bitsPerSample": 16,
     "durationSec": 166.5,
     "peakDbfs": -1,
-    "rmsDbfs": -13.384,
+    "rmsDbfs": -13.374,
     "clippedSamples": 0,
-    "dcOffset": 0.00001276,
+    "dcOffset": 0.000007922,
     "silences": [],
     "silentRatio": 0,
-    "stereoCorrelation": 0.819
+    "stereoCorrelation": 0.82
   },
   "wav": "output/psylo/ZIG-PSYLO-0001.wav"
 }
