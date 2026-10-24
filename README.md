@@ -24,6 +24,9 @@ MUSIC BOUNDARY × MUSIC GENERATOR
 | SONOVA 004 | **音が空間を作る** — 部屋の共鳴モードが音を決め、音が部屋を変形させる (SONOVA-SPACE-0001, 77秒、glTF アニメーション) | ✅ [experiments/s004/REPORT.md](experiments/s004/REPORT.md) |
 | ロック版 002–004 | 同じ原理を ROCK-0001 のバンドで: **ROCK-GROW** (3分48秒)・**ROCK-HEAL** (2分45秒、修復なし版つき)・**ROCK-SPACE** (3分21秒) | ✅ [experiments/rock-series/](experiments/rock-series/) |
 | 拡張ロック | **SONOVA-XROCK-0001** *Five Ways Out of the Song* (3分36秒) — ロックを 時間・テンポ・リズム・音高・声 の 5 方向に押し広げる | ✅ [experiments/xrock/REPORT.md](experiments/xrock/REPORT.md) |
+| TOYRIOT | **SONOVA-TOYRIOT-0001** *Tin Wings Riot* (2:35, 172 BPM) — 90 年代後半の日本のインダストリアル/オルタナ・ポップロックの作り方を参考にしたオリジナル曲 (ラジオのコラージュ、メガホンの歌、ドラムマシン、フランジャー、おもちゃのキーボード、テープストップ)。歌詞もオリジナル。**歌は VOICEVOX の男声** (VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎、ロック・ボーカルの処理)。VOICEVOX が無い環境では内蔵の歌手で歌う | ✅ [experiments/toyriot/REPORT.md](experiments/toyriot/REPORT.md) · `npm run toyriot` (VOICEVOX Engine を起動しておく) · 声の聴き比べ `npm run toyriot:voices` |
+| PSYLO | **ZIG-PSYLO-0001** *PSYLO* (2:46, 160 BPM, B minor / サビ D major) — PSYENCE WORKSHOP の PSYLO A案 (フック「サイロー」) を TOYRIOT 男声版の作り方で1曲に (英語のラジオ・アナウンスのイントロ (Piper + LibriTTS / espeak-ng)、サビ1のあとから**変則リフ** (3+3+3+3+2+2、5ステップのポリメーター、回転するユークリッドリズム — TidalCycles / Strudel / bjorklund の考え方)、メガホンの A メロ、プリコーラス、ダブル + 1オクターブ上のギャング・ボーカルのサビ×4)。歌詞・旋律はオリジナル。歌は VOICEVOX の男声 (VOICEVOX:玄野武宏 / VOICEVOX:白上虎太郎)、**音程の安定化** (母音の中の音程を楽譜へ75%寄せ、揺れをならす) つき | ✅ [experiments/psylo/REPORT.md](experiments/psylo/REPORT.md) · `npm run psylo` (VOICEVOX Engine が必要) · フックの声の聴き比べ `npm run psylo:voices` · 英語アナウンスの声の聴き比べ `npm run psylo:announcers` |
+| ORCHESTRA × DIGITAL | フルオーケストラ (VSCO-2-CE、CC0 の録音) と電子音楽を対等に一曲にする制作。Phase 1 調査・Phase 2 の 4 つの実験まで | 🔄 [docs/orchestra-digital.md](docs/orchestra-digital.md) |
 | 4, 5, 7 | 3D・文章・コードの読み込み、シリーズ管理 | 未着手 (設計のみ) |
 
 結果: [experiments/REPORT.md](experiments/REPORT.md) / 評価: [docs/evaluation-phase0-3.md](docs/evaluation-phase0-3.md)
@@ -96,7 +99,7 @@ npm run rock:series            # 3 曲 (各 3 分ほど)。grow / heal / space �
 | テンポ | ナンカロウのテンポカノン（nanc-in-a-can/canon-generator の考え方） | ブリッジでリフを 3:4:5 の 3 つのテンポで重ね、ソロの 1 拍目で同時に着地 |
 | リズム | リセット・リズム（tmhglnd/risset-rhythm-effect・MIT の考え方） | カノンの下で永遠に加速し続けて聴こえるドラム |
 | 音高 | シェパード=リセットのグリッサンド | 最後のサビの前、終わらずに上がり続ける 6 本の弦 |
-| 声 | トークボックス（Peterson & Barney の母音フォルマント） | リードが "everything is an instrument" の母音でしゃべる |
+| 声 | トークボックス（Peterson & Barney の母音フォルマント）＋ 声道の物理モデルの歌手（Kelly–Lochbaum、Pink Trombone の考え方） | リードが "everything is an instrument" の母音でしゃべり、サビ（0:46〜）では歌手が**何語でもない言葉**でフックを歌う。言葉の音は夕焼けの画像から決まる。声は男女の中間（声道 16 cm）から始まり、サビごとに人の声の範囲の外へ（13 cm / 19.9 cm）、音程に同調した弦の共鳴が育つ |
 
 ```bash
 npm run xrock        # 約4分
@@ -109,7 +112,7 @@ Node.js 22.12 以上（Windows / macOS / Linux）。
 ```bash
 npm install
 npm run dev          # SONOVA LAB → http://localhost:5173
-npm test             # 56 テスト
+npm test             # 72 テスト
 npm run build        # 型検査 + 本番ビルド (apps/sonova-lab/dist)
 ```
 

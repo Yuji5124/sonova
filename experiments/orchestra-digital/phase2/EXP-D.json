@@ -1,0 +1,1186 @@
+{
+ "id": "EXP-D",
+ "title": "BOW INTO WIRE",
+ "question": "4. オーケストラの音色を電子音へ連続的に変形できるか (+5. 第三の現象)",
+ "bridge": "TIMBRE BRIDGE (倍音分析 → 加算合成の双子 → 変形) と逆方向 (電子のリズム → 弦・ティンパニ・ハープ)",
+ "seconds": 32,
+ "notes": [
+  "チェロ (サンプル susvib_B1_v3_1.wav, 実音 MIDI 47) の分析: 倍音の重心 4.68×f0、立ち上がり 0.275s、雑音成分 0.001、倍音 1–8: 1 0.1814 0.6246 0.1714 0.1183 0.186 0.1031 0.0579",
+  "0–15 秒: 実際のチェロ → 同じ倍音の加算合成の双子に受け渡し (1.5–11 秒) → 双子の倍音を伸ばす・偶数倍音を持ち上げる・雑音の暈 (7–15 秒) → 同じチェロの録音から切った粒の凍結",
+  "15–32 秒: 電子の確率的リズム (100 BPM, euclid 9/16 + 12 %) → 各音の包絡から奏法を決めてオーケストラへ: blip→spic, noise→spic, click→spic, blip→harp, click→violins spiccato, noise→violins spiccato, sub→timpani。19–27 秒は両方が同時 (同じ発音時刻)"
+ ],
+ "metrics": {
+  "lufs": -18,
+  "lra": 3.26,
+  "peakDbfs": -2.18,
+  "envelopeCorrelation": -0.18,
+  "onsetCoincidence": 0.77,
+  "pitchClassSimilarity": 0.9,
+  "registerOverlap": 0.27,
+  "compositeDensityRatio": 1.01
+ },
+ "mix": {
+  "peakDbfs": -2.2,
+  "lufs": -18,
+  "lra": 3.4,
+  "crestDb": 18.6,
+  "masterGainDb": 3.5
+ },
+ "tracks": [
+  {
+   "id": "vc",
+   "name": "Celli",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.2,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "va",
+   "name": "Violas",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.15,
+    "depth": 0.45,
+    "width": 1
+   }
+  },
+  {
+   "id": "twin",
+   "name": "Additive twin",
+   "kind": "electronic",
+   "place": {
+    "pan": 0.2,
+    "depth": 0.3,
+    "width": 1
+   }
+  },
+  {
+   "id": "freeze",
+   "name": "Granular freeze",
+   "kind": "electronic",
+   "place": {
+    "pan": 0,
+    "depth": 0.4,
+    "width": 1
+   }
+  },
+  {
+   "id": "erhythm",
+   "name": "Glitch rhythm",
+   "kind": "electronic",
+   "place": {
+    "pan": 0.1,
+    "depth": 0.15,
+    "width": 1
+   }
+  },
+  {
+   "id": "spic",
+   "name": "Violins spic",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.4,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "pizz",
+   "name": "Celli pizz",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.35,
+    "depth": 0.35,
+    "width": 1
+   }
+  },
+  {
+   "id": "timp",
+   "name": "Timpani",
+   "kind": "orchestra",
+   "place": {
+    "pan": 0.05,
+    "depth": 0.6,
+    "width": 1
+   }
+  },
+  {
+   "id": "harp",
+   "name": "Harp",
+   "kind": "orchestra",
+   "place": {
+    "pan": -0.2,
+    "depth": 0.45,
+    "width": 1
+   }
+  }
+ ],
+ "score": {
+  "title": "SONOVA — ORCHESTRA × DIGITAL · EXP-D BOW INTO WIRE",
+  "bpm": 90,
+  "parts": [
+   {
+    "id": "vc",
+    "name": "Celli",
+    "kind": "orchestra",
+    "instrument": "celli",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 4.3500000000000005,
+      "midi": 48,
+      "vel": 0.7,
+      "why": "the source of the morph",
+      "art": "sus"
+     },
+     {
+      "t": 4.2,
+      "dur": 3.35,
+      "midi": 51,
+      "vel": 0.7,
+      "why": "the source of the morph",
+      "art": "sus"
+     },
+     {
+      "t": 7.4,
+      "dur": 3.9499999999999997,
+      "midi": 50,
+      "vel": 0.7,
+      "why": "the source of the morph",
+      "art": "sus"
+     },
+     {
+      "t": 11.2,
+      "dur": 4.75,
+      "midi": 43,
+      "vel": 0.7,
+      "why": "the source of the morph",
+      "art": "sus"
+     },
+     {
+      "t": 30,
+      "dur": 2.5,
+      "midi": 36,
+      "vel": 0.6,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "va",
+    "name": "Violas",
+    "kind": "orchestra",
+    "instrument": "violas",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 15.5,
+      "midi": 55,
+      "vel": 0.35,
+      "art": "sus"
+     }
+    ]
+   },
+   {
+    "id": "twin",
+    "name": "Additive twin",
+    "kind": "electronic",
+    "instrument": "additive",
+    "notes": [
+     {
+      "t": 0,
+      "dur": 4.3500000000000005,
+      "midi": 48,
+      "vel": 0.7,
+      "why": "additive twin from the analysed cello partials (centroid 4.68×f0)"
+     },
+     {
+      "t": 4.2,
+      "dur": 3.35,
+      "midi": 51,
+      "vel": 0.7,
+      "why": "additive twin from the analysed cello partials (centroid 4.68×f0)"
+     },
+     {
+      "t": 7.4,
+      "dur": 3.9499999999999997,
+      "midi": 50,
+      "vel": 0.7,
+      "why": "additive twin from the analysed cello partials (centroid 4.68×f0)"
+     },
+     {
+      "t": 11.2,
+      "dur": 4.75,
+      "midi": 43,
+      "vel": 0.7,
+      "why": "additive twin from the analysed cello partials (centroid 4.68×f0)"
+     }
+    ]
+   },
+   {
+    "id": "freeze",
+    "name": "Granular freeze",
+    "kind": "electronic",
+    "instrument": "granular",
+    "notes": [
+     {
+      "t": 9,
+      "dur": 11,
+      "midi": 48,
+      "vel": 0.5,
+      "why": "grains frozen at 55 % of the same cello sample"
+     }
+    ]
+   },
+   {
+    "id": "erhythm",
+    "name": "Glitch rhythm",
+    "kind": "electronic",
+    "instrument": "glitch",
+    "notes": [
+     {
+      "t": 15.15,
+      "dur": 0.15,
+      "midi": 79,
+      "vel": 0.47710710298269987,
+      "why": "blip"
+     },
+     {
+      "t": 15.45,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.6436621634289623,
+      "why": "blip"
+     },
+     {
+      "t": 15.75,
+      "dur": 0.15,
+      "midi": 67,
+      "vel": 0.6805617215111852,
+      "why": "blip"
+     },
+     {
+      "t": 15.9,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 16.2,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.46544891949743034,
+      "why": "click"
+     },
+     {
+      "t": 16.5,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 16.8,
+      "dur": 0.15,
+      "midi": 86,
+      "vel": 0.47308127814903855,
+      "why": "blip"
+     },
+     {
+      "t": 16.95,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.5897926402278244,
+      "why": "click"
+     },
+     {
+      "t": 17.25,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.48375609489157795,
+      "why": "blip"
+     },
+     {
+      "t": 17.55,
+      "dur": 0.15,
+      "midi": 79,
+      "vel": 0.4825197281315923,
+      "why": "blip"
+     },
+     {
+      "t": 17.7,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 17.85,
+      "dur": 0.15,
+      "midi": 79,
+      "vel": 0.5755463150329888,
+      "why": "blip"
+     },
+     {
+      "t": 18.15,
+      "dur": 0.15,
+      "midi": 86,
+      "vel": 0.7178079697303474,
+      "why": "blip"
+     },
+     {
+      "t": 18.3,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 18.6,
+      "dur": 0.15,
+      "midi": 67,
+      "vel": 0.7824064307846129,
+      "why": "blip"
+     },
+     {
+      "t": 18.9,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 19.2,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.6736366698518396,
+      "why": "blip"
+     },
+     {
+      "t": 19.35,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6161404418759049,
+      "why": "click"
+     },
+     {
+      "t": 19.65,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.5093356647528708,
+      "why": "click"
+     },
+     {
+      "t": 19.95,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.5918607208877802,
+      "why": "blip"
+     },
+     {
+      "t": 20.25,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.8360675967298448,
+      "why": "blip"
+     },
+     {
+      "t": 20.55,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.5622518240474165,
+      "why": "click"
+     },
+     {
+      "t": 20.7,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 21,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.694336340110749,
+      "why": "click"
+     },
+     {
+      "t": 21.3,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 21.6,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6631949191913009,
+      "why": "click"
+     },
+     {
+      "t": 21.75,
+      "dur": 0.15,
+      "midi": 67,
+      "vel": 0.4795108247548342,
+      "why": "blip"
+     },
+     {
+      "t": 22.05,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.6574702495709062,
+      "why": "blip"
+     },
+     {
+      "t": 22.2,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 1,
+      "why": "sub"
+     },
+     {
+      "t": 22.35,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7592493656091392,
+      "why": "click"
+     },
+     {
+      "t": 22.65,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6961476110853255,
+      "why": "click"
+     },
+     {
+      "t": 22.95,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7250445162877441,
+      "why": "click"
+     },
+     {
+      "t": 23.1,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 23.4,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.7950178909115493,
+      "why": "blip"
+     },
+     {
+      "t": 23.7,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 23.85,
+      "dur": 0.15,
+      "midi": 79,
+      "vel": 0.786809967737645,
+      "why": "blip"
+     },
+     {
+      "t": 24,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8363219968043267,
+      "why": "click"
+     },
+     {
+      "t": 24.15,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7289492821320891,
+      "why": "click"
+     },
+     {
+      "t": 24.45,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8333115727640689,
+      "why": "click"
+     },
+     {
+      "t": 24.75,
+      "dur": 0.15,
+      "midi": 67,
+      "vel": 0.7930312868207694,
+      "why": "blip"
+     },
+     {
+      "t": 25.049999999999997,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.845809717848897,
+      "why": "click"
+     },
+     {
+      "t": 25.35,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.5758101775310933,
+      "why": "click"
+     },
+     {
+      "t": 25.5,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 25.799999999999997,
+      "dur": 0.15,
+      "midi": 79,
+      "vel": 0.7243331277742981,
+      "why": "blip"
+     },
+     {
+      "t": 26.1,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 26.4,
+      "dur": 0.15,
+      "midi": 82,
+      "vel": 0.47661893498152497,
+      "why": "blip"
+     },
+     {
+      "t": 26.549999999999997,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7279740928672254,
+      "why": "click"
+     },
+     {
+      "t": 26.85,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.753656211309135,
+      "why": "click"
+     },
+     {
+      "t": 27.15,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.5589634600095451,
+      "why": "blip"
+     },
+     {
+      "t": 27.299999999999997,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 27.45,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.5378949210979045,
+      "why": "click"
+     },
+     {
+      "t": 27.75,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.6802293089218439,
+      "why": "blip"
+     },
+     {
+      "t": 27.9,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 28.2,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7421916953288019,
+      "why": "click"
+     },
+     {
+      "t": 28.5,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 28.799999999999997,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6557432397268712,
+      "why": "click"
+     },
+     {
+      "t": 28.95,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6001829746179284,
+      "why": "click"
+     },
+     {
+      "t": 29.25,
+      "dur": 0.15,
+      "midi": 67,
+      "vel": 0.4832815582863987,
+      "why": "blip"
+     },
+     {
+      "t": 29.549999999999997,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.6445828658528626,
+      "why": "blip"
+     },
+     {
+      "t": 29.85,
+      "dur": 0.15,
+      "midi": 86,
+      "vel": 0.5448317344300448,
+      "why": "blip"
+     },
+     {
+      "t": 30.15,
+      "dur": 0.15,
+      "midi": 86,
+      "vel": 0.645978721510619,
+      "why": "blip"
+     },
+     {
+      "t": 30.299999999999997,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 30.6,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7716620367020368,
+      "why": "click"
+     },
+     {
+      "t": 30.9,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.8,
+      "why": "noise"
+     },
+     {
+      "t": 31.2,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7613170916214586,
+      "why": "click"
+     },
+     {
+      "t": 31.349999999999998,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.6140556496568024,
+      "why": "click"
+     },
+     {
+      "t": 31.65,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.7908138774335385,
+      "why": "click"
+     },
+     {
+      "t": 31.8,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 1,
+      "why": "sub"
+     },
+     {
+      "t": 31.95,
+      "dur": 0.15,
+      "midi": 60,
+      "vel": 0.4538310036994517,
+      "why": "click"
+     }
+    ]
+   },
+   {
+    "id": "spic",
+    "name": "Violins spiccato",
+    "kind": "orchestra",
+    "instrument": "violins",
+    "notes": [
+     {
+      "t": 19.35,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.26037752773430267,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 19.65,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.2405564048201988,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 20.55,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.40200693057265824,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 20.7,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.6077155555555555,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 21,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.5863284649824102,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 21.3,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.7337955555555558,
+      "why": "noise (decay 0.08 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 21.6,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.643859102880657,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 22.35,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.7592493656091392,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 22.65,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.6961476110853255,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 22.95,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.7250445162877441,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 23.1,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 23.7,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 24,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.8363219968043267,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 24.15,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.7289492821320891,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 24.45,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.8333115727640689,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 25.049999999999997,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.845809717848897,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 25.35,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.5758101775310933,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 25.5,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 26.1,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 26.549999999999997,
+      "dur": 0.15,
+      "midi": 81,
+      "vel": 0.7279740928672254,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 26.85,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.753656211309135,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 27.299999999999997,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 27.45,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.5378949210979045,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 27.9,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 28.2,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.7421916953288019,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 28.5,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 28.799999999999997,
+      "dur": 0.15,
+      "midi": 74,
+      "vel": 0.6557432397268712,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 28.95,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.6001829746179284,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 30.299999999999997,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 30.6,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.7716620367020368,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 30.9,
+      "dur": 0.15,
+      "midi": 77,
+      "vel": 0.8,
+      "why": "noise (decay 0.07 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 31.2,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.7613170916214586,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 31.349999999999998,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.6140556496568024,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 31.65,
+      "dur": 0.15,
+      "midi": 69,
+      "vel": 0.7908138774335385,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     },
+     {
+      "t": 31.95,
+      "dur": 0.15,
+      "midi": 62,
+      "vel": 0.4538310036994517,
+      "why": "click (decay 0.00 s) → violins spiccato",
+      "art": "spic"
+     }
+    ]
+   },
+   {
+    "id": "pizz",
+    "name": "Celli pizz",
+    "kind": "orchestra",
+    "instrument": "celli",
+    "notes": []
+   },
+   {
+    "id": "timp",
+    "name": "Timpani",
+    "kind": "orchestra",
+    "instrument": "timpani",
+    "notes": [
+     {
+      "t": 22.2,
+      "dur": 1,
+      "midi": 43,
+      "vel": 1,
+      "why": "sub (decay 0.31 s) → timpani",
+      "art": "hit"
+     },
+     {
+      "t": 31.8,
+      "dur": 1,
+      "midi": 43,
+      "vel": 1,
+      "why": "sub (decay 0.31 s) → timpani",
+      "art": "hit"
+     }
+    ]
+   },
+   {
+    "id": "harp",
+    "name": "Harp",
+    "kind": "orchestra",
+    "instrument": "harp",
+    "notes": [
+     {
+      "t": 19.2,
+      "dur": 0.5,
+      "midi": 82,
+      "vel": 0.2746042460391588,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 19.95,
+      "dur": 0.5,
+      "midi": 82,
+      "vel": 0.32102196689441587,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 20.25,
+      "dur": 0.5,
+      "midi": 82,
+      "vel": 0.5231228504538821,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 21.75,
+      "dur": 0.5,
+      "midi": 67,
+      "vel": 0.47384993307370077,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 22.05,
+      "dur": 0.5,
+      "midi": 74,
+      "vel": 0.6574702495709062,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 23.4,
+      "dur": 0.5,
+      "midi": 82,
+      "vel": 0.7950178909115493,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 23.85,
+      "dur": 0.5,
+      "midi": 79,
+      "vel": 0.786809967737645,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 24.75,
+      "dur": 0.5,
+      "midi": 67,
+      "vel": 0.7930312868207694,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 25.799999999999997,
+      "dur": 0.5,
+      "midi": 79,
+      "vel": 0.7243331277742981,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 26.4,
+      "dur": 0.5,
+      "midi": 82,
+      "vel": 0.47661893498152497,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 27.15,
+      "dur": 0.5,
+      "midi": 74,
+      "vel": 0.5589634600095451,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 27.75,
+      "dur": 0.5,
+      "midi": 74,
+      "vel": 0.6802293089218439,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 29.25,
+      "dur": 0.5,
+      "midi": 67,
+      "vel": 0.4832815582863987,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 29.549999999999997,
+      "dur": 0.5,
+      "midi": 74,
+      "vel": 0.6445828658528626,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 29.85,
+      "dur": 0.5,
+      "midi": 86,
+      "vel": 0.5448317344300448,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     },
+     {
+      "t": 30.15,
+      "dur": 0.5,
+      "midi": 86,
+      "vel": 0.645978721510619,
+      "why": "blip (decay 0.07 s) → harp",
+      "art": "pluck"
+     }
+    ]
+   }
+  ]
+ }
+}

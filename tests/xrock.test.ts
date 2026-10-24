@@ -78,3 +78,194 @@ describe('XROCK techniques', () => {
     expect(bandEnergyDb(si, f2i - 100, f2i + 100) - bandEnergyDb(si, f2a - 100, f2a + 100)).toBeGreaterThan(6);
   });
 });
+
+describe('XROCK singer', () => {
+  it('vowels of the vocal tract land in the right formant order', async () => {
+    const { renderSinger } = await import('@sonova/synthesis-engine');
+    const f2 = (v: 'a' | 'e' | 'i' | 'o' | 'u') => {
+      const x = renderSinger([{ time: 0.1, duration: 1.2, midi: 45, velocity: 0.9, syllable: { vowel: v } }], 1.5, SR, 't', { vibratoCents: 0, breathiness: 0 });
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 16384);
+      // the strongest harmonic between 700 and 2600 Hz approximates F2
+      let best = 0;
+      let at = 0;
+      for (let k = 7; k * 110 < 2600; k++) {
+        const e = bandEnergyDb(spec, k * 110 - 30, k * 110 + 30);
+        if (e > best || at === 0) {
+          best = e;
+          at = k * 110;
+        }
+      }
+      return at;
+    };
+    const [i, e, a, u] = [f2('i'), f2('e'), f2('a'), f2('u')];
+    expect(i).toBeGreaterThan(a);
+    expect(e).toBeGreaterThan(a);
+    expect(a).toBeGreaterThan(u);
+  });
+
+  it('the invented language follows its source and the refrain repeats', async () => {
+    const { inventLanguage, setLyrics } = await import('@sonova/composition-engine');
+    const dark = { dna_hash: 'x', name: 'dark', harmonics: { brightness: 0.05 }, attack: 0.7, decay: 1.6 } as never;
+    const bright = { dna_hash: 'y', name: 'bright', harmonics: { brightness: 0.95 }, attack: 0.01, decay: 0.2 } as never;
+    const d = inventLanguage(dark, 's');
+    const b = inventLanguage(bright, 's');
+    expect(d.vowels.u).toBeGreaterThan(b.vowels.u);
+    expect(b.vowels.i).toBeGreaterThan(d.vowels.i);
+    expect(b.onsets.k).toBeGreaterThan(d.onsets.k);
+    expect(b.codaProb).toBeGreaterThan(d.codaProb);
+    expect(inventLanguage(dark, 's')).toEqual(d);
+    const notes = Array.from({ length: 24 }, (_, k) => ({ time: k * 0.25, duration: k % 8 === 7 ? 1 : 0.2, midi: 60 + (k % 5), velocity: 0.8, slide: k % 3 === 2 }));
+    const one = setLyrics(notes, d, 'lyr');
+    expect(setLyrics(notes, d, 'lyr').text).toBe(one.text);
+    expect(one.sung.filter((n) => n.syllable === null).length).toBeGreaterThan(0); // melismas
+    expect(one.text.split(' / ').length).toBeGreaterThan(2); // phrases end on long notes
+  });
+});
+
+describe('XROCK voice journey', () => {
+  it('a shorter tract moves the resonances up without changing the pitch; the ring stays stable', async () => {
+    const { renderSinger, tractLengthCm } = await import('@sonova/synthesis-engine');
+    const sing = (formantScale: number, ring = 0) => renderSinger([{ time: 0.1, duration: 1.2, midi: 57, velocity: 0.9, syllable: { vowel: 'i' } }], 1.5, SR, 't', { formantScale, ring, vibratoCents: 0, breathiness: 0, scoopCents: 0 });
+    const centroid = (x: Float32Array) => {
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 8192);
+      let num = 0;
+      let den = 0;
+      spec.mag.forEach((m, k) => {
+        const hz = k * spec.binHz;
+        if (hz > 1200 && hz < 5000) {
+          num += hz * m;
+          den += m;
+        }
+      });
+      return num / den;
+    };
+    const pitchPeak = (x: Float32Array) => {
+      const spec = averageSpectrum(x, SR, Math.round(0.5 * SR), Math.round(1.2 * SR), 16384);
+      return bandEnergyDb(spec, 215, 225) - bandEnergyDb(spec, 180, 200);
+    };
+    const human = sing(1);
+    const small = sing(1.3);
+    expect(centroid(small)).toBeGreaterThan(centroid(human) * 1.1);
+    expect(pitchPeak(small)).toBeGreaterThan(10); // still sings A3 (220 Hz)
+    expect(tractLengthCm(1.07)).toBeCloseTo(16, 0);
+    const ringing = sing(1.3, 0.8);
+    expect(ringing.every((v) => Number.isFinite(v))).toBe(true);
+  });
+});
+
+describe('TOYRIOT', () => {
+  it('turns romaji lyrics into singer syllables (moraic n as coda, voiced consonants approximated)', async () => {
+    const { romajiToSyllables, romanizeSyl } = await import('@sonova/composition-engine');
+    const r = romajiToSyllables('to-n-de-ke / ze-n-bu');
+    expect(r.syllables.map(romanizeSyl)).toEqual(['ton', 'te', 'ke', 'sen', 'vu']);
+    expect(r.breaks).toEqual([3, 5]);
+  });
+  it('the megaphone keeps the voice band and removes the low end', async () => {
+    const { megaphone } = await import('@sonova/composition-engine');
+    const x = new Float32Array(SR).map((_, i) => Math.sin((2 * Math.PI * 100 * i) / SR) + 0.3 * Math.sin((2 * Math.PI * 1500 * i) / SR));
+    const y = megaphone(x, SR, 1);
+    const spec = averageSpectrum(y, SR, SR / 4, SR);
+    expect(bandEnergyDb(spec, 1400, 1600) - bandEnergyDb(spec, 90, 110)).toBeGreaterThan(15);
+  });
+});
+
+describe('TOYRIOT with an external (VOICEVOX) singer', () => {
+  it('turns the romaji lyrics into real kana morae, including ッ and ン', async () => {
+    const { romajiToMorae } = await import('@sonova/composition-engine');
+    expect(romajiToMorae('ka-ra-p-po no / to-n-de-ke').morae).toEqual(['カ', 'ラ', 'ッ', 'ポ', 'ノ', 'ト', 'ン', 'デ', 'ケ']);
+    expect(romajiToMorae('ka-ra-p-po no / to-n-de-ke').breaks).toEqual([5, 9]);
+  });
+  it('puts kana on a melody: ッ shortens the note before it, lines stay monophonic, line ends breathe', async () => {
+    const { setKana } = await import('@sonova/composition-engine');
+    const notes = Array.from({ length: 10 }, (_, k) => ({ time: k * 0.2, duration: 0.25, midi: 60 + (k % 3), velocity: 0.8 }));
+    const out = setKana(notes, 'ka-ra-p-po / no');
+    expect(out.map((n) => n.lyric).slice(0, 3)).toEqual(['カ', 'ラ', 'ポ']);
+    expect(out[1].duration).toBeLessThan(0.2 * 0.6); // ラ is cut short by the ッ
+    out.forEach((n, i) => i > 0 && expect(n.time).toBeGreaterThanOrEqual(out[i - 1].time + out[i - 1].duration - 1e-9));
+    expect(out.every((n) => n.lyric !== 'ッ')).toBe(true);
+  });
+  it('the rock vocal chain keeps the voice band and stays bounded', async () => {
+    const { rockVocal } = await import('@sonova/composition-engine');
+    const x = new Float32Array(SR).map((_, i) => 0.3 * Math.sin((2 * Math.PI * 60 * i) / SR) + 0.3 * Math.sin((2 * Math.PI * 1150 * i) / SR));
+    const y = rockVocal(x, SR, 1);
+    const spec = averageSpectrum(y, SR, SR / 4, SR);
+    expect(bandEnergyDb(spec, 1100, 1200) - bandEnergyDb(spec, 50, 70)).toBeGreaterThan(15);
+    expect(y.every((v) => Number.isFinite(v) && Math.abs(v) < 2)).toBe(true);
+  });
+});
+
+describe('ZIG — PSYLO on the TOYRIOT production', () => {
+  it('the chorus carries the Pattern A hook: サ, a long イ, ロー held two beats, an octave down for the male lead', async () => {
+    const { PSYLO_CHORUS, PSYLO_MALE_TRANSPOSE, psyloSong, psyloVocalPlan } = await import('@sonova/composition-engine');
+    const { buildInstruments } = await import('../scripts/lib.ts');
+    const { dnas } = await buildInstruments();
+    const song = psyloSong({ guitar: dnas[0], drums: dnas[1], voice: dnas[2] }, 'zig-psylo-0001');
+    expect(song.bpm).toBe(160);
+    const plan = psyloVocalPlan(song);
+    const choruses = plan.filter((l) => l.style === 'chorus');
+    expect(choruses.length).toBeGreaterThanOrEqual(3);
+    const spb = 60 / song.bpm;
+    for (const l of choruses) {
+      const s = song.sections.find((x) => x.name === l.section)!;
+      const k = l.kana!;
+      expect(k.map((n) => n.lyric).join('')).toContain('ヒカレサイロ');
+      const ro = k.at(-1)!;
+      expect(ro.lyric).toBe('ロ');
+      expect(ro.midi).toBe(78 + PSYLO_MALE_TRANSPOSE);
+      expect(ro.duration).toBeCloseTo(2 * spb, 9);
+      expect(ro.time).toBeCloseTo(s.start + 30 * spb, 9);
+      // monophonic and inside the section
+      k.forEach((n, i) => i > 0 && expect(n.time).toBeGreaterThanOrEqual(k[i - 1].time + k[i - 1].duration - 1e-9));
+      expect(ro.time + ro.duration).toBeLessThanOrEqual(s.end + 1e-9);
+    }
+    expect(PSYLO_CHORUS.filter(([l]) => l === 'ッ' || l === 'ー')).toEqual([]);
+  });
+});
+
+describe('VOICEVOX pitch stabiliser', () => {
+  it('pulls the vowel toward the written note and calms the wobble, leaving the onset and consonants', async () => {
+    const { stabilizePitch } = await import('../scripts/lib-voicevox.ts');
+    const target = 440 * 2 ** ((57 - 69) / 12);
+    // consonant (4 frames, unvoiced) + vowel (40 frames): 30 cents flat with ±40 cents vibrato-ish wobble
+    const f0 = [0, 0, 0, 0, ...Array.from({ length: 40 }, (_, i) => target * 2 ** ((-30 + 40 * Math.sin(i * 1.3)) / 1200))];
+    const q = { f0: f0.slice(), phonemes: [{ phoneme: 'k', frame_length: 4, note_id: 'n0' }, { phoneme: 'a', frame_length: 40, note_id: 'n0' }] };
+    stabilizePitch(q, [{ id: 'n0', key: 57 }], 0.75);
+    const cents = (f: number) => 1200 * Math.log2(f / target);
+    expect(q.f0.slice(0, 4)).toEqual([0, 0, 0, 0]);
+    expect(q.f0.slice(4, 8)).toEqual(f0.slice(4, 8)); // the onset (scoop) stays
+    const mid = q.f0.slice(12, 40).map(cents);
+    expect(Math.max(...mid.map(Math.abs))).toBeLessThan(15);
+    expect(q.f0.slice(41)).toEqual(f0.slice(41)); // the glide out stays
+  });
+});
+
+describe('PSYLO irregular riffs', () => {
+  it('keeps the opening riff, then (from riffB) grouped, polymetric and Euclidean bars; snare on 2 and 4, kick follows the chords', async () => {
+    const { psyloBaseSong, psyloRiffPlan, psyloSong } = await import('@sonova/composition-engine');
+    const { buildInstruments } = await import('../scripts/lib.ts');
+    const { dnas } = await buildInstruments();
+    const band = { guitar: dnas[0], drums: dnas[1], voice: dnas[2] };
+    const base = psyloBaseSong(band, 'zig-psylo-0001');
+    const plan = psyloRiffPlan(base);
+    const song = psyloSong(band, 'zig-psylo-0001');
+    expect(psyloSong(band, 'zig-psylo-0001').events).toEqual(song.events);
+    // the opening is untouched: every event up to the end of chorus 1 is the generator's
+    const firstChange = song.sections.find((s) => s.name === 'riffB')!.start;
+    expect(plan.every((p) => p.bar * song.barSec >= firstChange - 1e-9)).toBe(true);
+    expect(song.events.filter((e) => e.time < firstChange)).toEqual(base.events.filter((e) => e.time < firstChange));
+    const riffB = plan.filter((p) => p.section === 'riffB').map((p) => p.pattern);
+    expect(new Set(riffB).size).toBe(riffB.length); // the 5-step cell lands differently in every bar
+    expect(plan.every((p) => p.pattern.length === 16)).toBe(true);
+    const a2 = plan.filter((p) => p.section === 'riffA2');
+    expect(a2.map((p) => p.pattern)[0]).toBe('Rm.Rm.Rm.Rm.RmRm'); // 3+3+3+3+2+2 in its 2nd half
+    expect(a2.at(-1)!.pattern.endsWith('ss')).toBe(true);
+    const bar = a2[0].bar;
+    const inBar = song.events.filter((e) => e.bar === bar);
+    const slotOf = (t: number) => Math.round((t - bar * song.barSec) / (song.barSec / 16));
+    expect(inBar.filter((e) => e.drum === 'snare').map((e) => e.slot).sort((a, b) => a - b)).toEqual([4, 12]);
+    const chordSlots = inBar.filter((e) => e.part === 'guitar' && e.kind === 'chord' && !e.palmMute).map((e) => slotOf(e.time));
+    expect(chordSlots).toEqual([0, 3, 6, 9, 12, 14]);
+    const kicks = new Set(inBar.filter((e) => e.drum === 'kick').map((e) => slotOf(e.time)));
+    chordSlots.forEach((s) => expect(kicks.has(s)).toBe(true));
+  });
+});

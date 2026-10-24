@@ -19,3 +19,6 @@ output/*
 .env.*
 sonova.config.local.json
 scripts/.scratch/
+
+# third-party sample data (downloaded by npm run od:fetch)
+vendor/

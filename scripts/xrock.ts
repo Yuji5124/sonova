@@ -56,6 +56,7 @@ writeJson(join(EXP, `${WORK}.json`), {
   risset: r.risset,
   shepard: r.shepard,
   talkbox: r.talkbox,
+  singer: r.singer,
   render: { ms: r.render.renderMs, stems: r.render.stems, master: r.render.master },
   verification: v,
   wav: rel(`${base}.wav`),
@@ -79,7 +80,33 @@ const md = `# ${WORK} — ${song.title}
 | テンポ | **ナンカロウのテンポカノン**（収束点。[nanc-in-a-can/canon-generator](https://github.com/nanc-in-a-can/canon-generator) の考え方、Nemire 2012） | ブリッジ ${mmss(sec('bridge').start)}–${mmss(sec('bridge').end)} | 同じリフを 3 声が違うテンポで弾き、遅い順に入って、ソロの頭 ${mmss(r.canon.convergence)} で同時に着地する |
 | リズム | **リセット・リズム**（永遠に加速し続けて聴こえるドラム。Stowell 2011、[tmhglnd/risset-rhythm-effect](https://github.com/tmhglnd/risset-rhythm-effect)・MIT の考え方） | カノンの下 ${mmss(r.risset.start)}– | サビ1 の 1 小節目のドラムを ${r.risset.layers} 層、テンポが 2 倍ずつ違う層を sin² でつなぐ。1 メガ小節 ${r.risset.megabarSec} 秒で ${r.risset.layers === 3 ? 8 : 2 ** r.risset.layers} 倍に加速 (${r.risset.hits} 打) |
 | 音高 | **シェパード=リセットのグリッサンド**（終わらずに上がり続ける音。Shepard 1964、Risset 1969） | pre3 ${mmss(sec('pre3').start)}–${mmss(sec('pre3').end)} | 6 本の KS 弦（主音と 5 度 × 3 オクターブ）が ${r.shepard.octaveSec} 秒で 1 オクターブずつ上がる。音量の鐘形はアンプの**後**にかけるので、歪んでも錯覚が崩れない |
-| 声 | **トークボックス**（母音のフォルマント。Peterson & Barney 1952 の値） | 曲全体のリード | リードの ${r.talkbox.notes} 音に、"${r.talkbox.text}" の母音 ${r.talkbox.vowels.join('-')} を順に当てる。3 つの時間変化する帯域フィルター |
+| 声 | **トークボックス**（母音のフォルマント。Peterson & Barney 1952 の値）と**声道の物理モデルの歌手**（Kelly & Lochbaum 1962 / Pink Trombone の考え方） | 曲全体のリード、サビでは何語でもない言葉の歌 | リードの ${r.talkbox.notes} 音に、"${r.talkbox.text}" の母音 ${r.talkbox.vowels.join('-')} を順に当てる。3 つの時間変化する帯域フィルター |
+
+## 何語でもない歌 (${mmss(sec('chorus1').start)}〜 すべてのサビ)
+
+サビでは、リードのフック (トークボックスのギター) と同じ旋律を**歌手**が歌う。言葉は実在しない言語で、音は声になった素材 (夕焼け) から決めた。
+
+- 声: 声門のパルス (Rosenberg) → 44 区間の声道 (Kelly–Lochbaum の導波管。Neil Thapen の Pink Trombone と同じ考え方、独自実装) → 唇。子音は声道を狭める・閉じる・乱流の雑音を入れて作る
+- 子音は拍の少し前、母音が拍の上に来る (歌手の発音の仕方)。小さなスライドは母音を伸ばしたまま音程だけ動く (メリスマ)
+- サビ3・4 は 2 人で歌う (ダブル)。最後のサビはギターが 1 オクターブ上、声は元の高さ、歌詞の一部が変わる
+- 響き: 「歌い手のフォルマント」(約 3 kHz、Sundberg) を持ち上げ、声だけの長いホール (45 ms の初期遅延) と付点 8 分のピンポンディレイ
+- 細部: 音節の頭で下からすくい上げる (35 セント)、フレーズの終わりで音程が落ちる、ビブラートの速さが揺れる、音量の微小な揺れ (シマー)、フレーズの前の吸気
+
+### 声の旅: 男女の中間から、人の声ではない波長へ
+
+声道の長さ (= 共鳴の波長) と、音程に同調した「弦の共鳴」(波長 = 1 周期) の量をサビごとに変える。大人の声道は約 14〜18 cm。
+
+| サビ | 声道 (cm) | 弦の共鳴 | 声門の開き (開放率) | 内容 |
+|---|---|---|---|---|
+${r.singer.choruses.map((c) => `| ${c.section} | ${c.tractCm.join(' / ')} | ${c.ring.join(' / ')} | ${c.openQuotient.join(' / ')} | ${c.note} |`).join('\n')}
+- 歌手が入るとトークボックスのギターは −8 dB 下がって歌を支える
+
+${r.singer.language.rules.map((x) => `- ${x}`).join('\n')}
+- 語彙 (9 語): ${r.singer.language.words.map((w) => `*${w}*`).join('、')}
+
+| サビ | 開始 | 歌詞 (/ = 長い音で息継ぎ) |
+|---|---|---|
+${r.singer.choruses.map((c) => `| ${c.section}${c.doubled ? ' (2人)' : ''} | ${mmss(c.start)} | ${c.lyrics} |`).join('\n')}
 
 ## テンポカノン
 

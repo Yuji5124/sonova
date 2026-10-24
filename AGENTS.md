@@ -27,6 +27,8 @@ npm run rock             # SONOVA-ROCK-0001 (約2分のレンダリング)
 npm run s002 / s003 / s004  # SONOVA 002 育つ楽器 / 003 自己修復 / 004 空間
 npm run rock:series      # 002–004 のロック版 3 曲 (output/rock-series, experiments/rock-series)
 npm run xrock            # SONOVA-XROCK-0001 拡張ロック (output/xrock, experiments/xrock)
+npm run od:fetch         # ORCHESTRA × DIGITAL: VSCO-2-CE (CC0) を vendor/ に取得 (コミットしない)
+npm run od:phase2        # ORCHESTRA × DIGITAL の 4 つの実験 (48 kHz/24-bit, MP3, ステム)
 npm run soundvault:register -- --vault <dir> [--dry-run]
 npm run soundvault:verify   -- --vault <dir>
 ```
