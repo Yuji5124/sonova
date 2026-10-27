@@ -1,0 +1,16 @@
+{
+  "title": "TIN LANTERN",
+  "author": "Claude (Sonnet 5.5)",
+  "romaji": {
+    "verse1": "ne-mu-re-na-i ma-chi no u-e / a-ka-i a-ka-ri ga yu-re-te-i-ru / da-re mo i-na-i ya-ne de / bo-ku wa u-ta wo sa-ga-shi-te-ru",
+    "verse2": "hi-bi-wa-re-ta su-pi-i-ka-a / ki-no-o no tsu-zu-ki wo na-ra-su / ko-e ga ka-re-te mo i-i / yo-a-ke ni to-do-ke-ta-i",
+    "pre": "mo-t-to ta-ka-ku / a-ka-ri wo to-mo-se",
+    "chorus": "to-mo-se ra-n-ta-n yo-ru wo ko-e-te / wa-re-ta so-ra ni hi wo tsu-ke-ro / ki-e-na-i o-to de u-ta-u-n-da / to-mo-se ra-n-ta-n i-ma su-gu-ni"
+  },
+  "text": {
+    "verse1": "眠れない街の上 / 赤い灯りが揺れている / 誰もいない屋根で / 僕は歌を探してる",
+    "verse2": "ひび割れたスピーカー / 昨日の続きを鳴らす / 声が枯れてもいい / 夜明けに届けたい",
+    "pre": "もっと高く / 灯りをともせ",
+    "chorus": "灯せ ランタン 夜を越えて / 割れた空に 火をつけろ / 消えない音で 歌うんだ / 灯せ ランタン 今すぐに"
+  }
+}

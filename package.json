@@ -19,6 +19,7 @@
     "verify:wav": "tsx scripts/verify-output.ts",
     "soundvault:register": "tsx scripts/soundvault-register.ts",
     "soundvault:verify": "tsx scripts/soundvault-verify.ts",
+    "zig:daily": "tsx scripts/zig-daily.ts",
     "verify:lab": "tsx scripts/verify-lab-browser.ts",
     "rock": "tsx scripts/rock.ts",
     "s002": "tsx scripts/sonova-002.ts",

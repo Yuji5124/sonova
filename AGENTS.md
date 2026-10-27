@@ -31,6 +31,7 @@ npm run od:fetch         # ORCHESTRA × DIGITAL: VSCO-2-CE (CC0) を vendor/ に
 npm run od:phase2        # ORCHESTRA × DIGITAL の 4 つの実験 (48 kHz/24-bit, MP3, ステム)
 npm run soundvault:register -- --vault <dir> [--dry-run]
 npm run soundvault:verify   -- --vault <dir>
+npm run zig:daily -- --vault <dir> [--dry-run]   # ZIG デイリー曲 (docs/zig-daily.md)。SOUNDVAULT へはユーザー承認 (PR のマージ) 経由
 ```
 
 `phase2` は `SONOVA_CREATED_AT` を指定すると generation.json の日時が固定され、差分が出にくい。

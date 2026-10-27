@@ -159,6 +159,22 @@ export function romajiToMorae(text: string): { morae: string[]; breaks: number[]
   return { morae, breaks };
 }
 
+/**
+ * Tokens of a romaji lyric that the singer cannot sing (they would be silently skipped otherwise).
+ * Syllables are split by '-', words by ' ', lines by '/'; p / t / k alone mean a held stop (ッ).
+ */
+export function romajiProblems(text: string): string[] {
+  const bad: string[] = [];
+  for (const phrase of text.split('/'))
+    for (const word of phrase.trim().split(/\s+/))
+      for (const raw of word.split('-')) {
+        const s = raw.toLowerCase();
+        if (!s || s === 'p' || s === 't' || s === 'k') continue;
+        if (!KANA[s]) bad.push(raw);
+      }
+  return bad;
+}
+
 export interface KanaNote {
   time: number;
   duration: number;
@@ -235,7 +251,9 @@ export interface VocalLine {
 }
 
 /** The vocal melody of every section (absolute times). Shared by the built-in singer and external engines. */
-export function toyRiotVocalPlan(song: RockSong, seed: string): VocalLine[] {
+export type SongLyrics = Pick<typeof TOYRIOT_LYRICS, 'verse1' | 'verse2' | 'pre' | 'chorus'>;
+
+export function toyRiotVocalPlan(song: RockSong, seed: string, lyrics: SongLyrics = TOYRIOT_LYRICS): VocalLine[] {
   const barSec = song.barSec;
   const sec = (n: string) => song.sections.find((s) => s.name === n)!;
   const chordRoot = (bar: number) => {
@@ -262,7 +280,7 @@ export function toyRiotVocalPlan(song: RockSong, seed: string): VocalLine[] {
         notes.push({ time: s.start + b * barSec + k * (barSec / 8), duration: barSec / 8 * (k === 6 ? 1.8 : 0.9), midi: m, velocity: 0.75 + 0.2 * vr.next() });
       }
     }
-    out.push(line(name, 'megaphone', TOYRIOT_LYRICS[name as 'verse1' | 'verse2'], notes));
+    out.push(line(name, 'megaphone', lyrics[name as 'verse1' | 'verse2'], notes));
   }
   for (const name of ['pre1', 'pre2', 'pre3']) {
     const s = sec(name);
@@ -275,7 +293,7 @@ export function toyRiotVocalPlan(song: RockSong, seed: string): VocalLine[] {
         notes.push({ time: s.start + b * barSec + k * (barSec / 4), duration: barSec / 4 * 0.95, midi: m, velocity: 0.8 + 0.05 * b });
       }
     }
-    out.push(line(name, 'pre', TOYRIOT_LYRICS.pre, notes));
+    out.push(line(name, 'pre', lyrics.pre, notes));
   }
   for (const s of song.sections.filter((x) => x.name.startsWith('chorus'))) {
     const lead = song.events.filter((e) => e.part === 'lead' && e.kind === 'note' && e.time >= s.start && e.time < s.end);
@@ -285,7 +303,7 @@ export function toyRiotVocalPlan(song: RockSong, seed: string): VocalLine[] {
       while (x < 54) x += 12;
       return x;
     };
-    out.push(line(s.name, 'chorus', TOYRIOT_LYRICS.chorus, lead.map((e) => ({ time: e.time, duration: e.duration!, midi: fold(e.midi!), velocity: e.velocity!, slide: e.slide }))));
+    out.push(line(s.name, 'chorus', lyrics.chorus, lead.map((e) => ({ time: e.time, duration: e.duration!, midi: fold(e.midi!), velocity: e.velocity!, slide: e.slide }))));
   }
   return out;
 }

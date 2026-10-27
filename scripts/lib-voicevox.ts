@@ -11,6 +11,8 @@ import { decodeWav } from '@sonova/composition-engine';
 import type { KanaNote } from '@sonova/composition-engine';
 
 export const VOICEVOX_URL = process.env.VOICEVOX_URL ?? 'http://127.0.0.1:50021';
+/** read at call time so a test (or a wrapper script) can point at another engine */
+const baseUrl = () => process.env.VOICEVOX_URL ?? 'http://127.0.0.1:50021';
 export const SING_QUERY_STYLE = 6000;
 
 export const MALE_VOICES: Record<string, { id: number; name: string; credit: string }> = {
@@ -24,7 +26,7 @@ export const MALE_VOICES: Record<string, { id: number; name: string; credit: str
 
 export async function voicevoxAvailable(): Promise<boolean> {
   try {
-    const r = await fetch(`${VOICEVOX_URL}/version`, { signal: AbortSignal.timeout(1500) });
+    const r = await fetch(`${baseUrl()}/version`, { signal: AbortSignal.timeout(1500) });
     return r.ok;
   } catch {
     return false;
@@ -32,7 +34,7 @@ export async function voicevoxAvailable(): Promise<boolean> {
 }
 
 async function post(path: string, body: unknown): Promise<Response> {
-  const r = await fetch(`${VOICEVOX_URL}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const r = await fetch(`${baseUrl()}${path}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   if (!r.ok) throw new Error(`VOICEVOX ${path}: HTTP ${r.status} ${await r.text()}`);
   return r;
 }
