@@ -12,7 +12,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFile
 import { dirname, join } from 'node:path';
 import { PNG } from 'pngjs';
 import { generateRock, ROCK_VERSION } from '@sonova/music-generator';
-import { PSYLO_VERSION, ROCK_RENDER_VERSION, ZIG_DAILY_REFERENCES, applyPsyloRiffs, engineVersions, isStamp, jstStamp, renderRock, rockToMidi, zigDailyPlan, type ZigDailyPlan } from '@sonova/composition-engine';
+import { PSYLO_VERSION, ROCK_RENDER_VERSION, applyPsyloRiffs, zigDailyReferences, type ZigLyrics, engineVersions, isStamp, jstStamp, renderRock, rockToMidi, zigDailyPlan, type ZigDailyPlan } from '@sonova/composition-engine';
 import { SoundvaultError, inspectVault, registerAsset, type AssetMetadata, type RegisterResult, type SoundRecord } from '@sonova/soundvault-adapter';
 import type { SpectroImage } from '@sonova/synthesis-engine';
 import { buildInstruments, writeStereoWav } from './lib.ts';
@@ -30,6 +30,16 @@ export interface RenderedSong {
   sources: Array<{ name: string; sha256: string }>;
   instruments: Array<{ instrument_id: string; dna_hash: string; name: string }>;
   renderMs: number;
+  /** present when the song is sung */
+  vocal?: {
+    /** 'VOICEVOX Engine …' or 'SONOVA 内蔵の歌手' */
+    engine: string;
+    /** credits that must be shown when the audio is shared (VOICEVOX voices) */
+    credits: string[];
+    /** why the built-in singer was used instead of VOICEVOX (empty when VOICEVOX sang) */
+    fallbackReason?: string;
+    stabilize?: number;
+  };
 }
 export type Renderer = (plan: ZigDailyPlan, outDir: string, log: (m: string) => void) => Promise<RenderedSong>;
 
@@ -46,6 +56,8 @@ export interface ZigDailyOptions {
   render?: Renderer;
   log?: (m: string) => void;
   minDurationSec?: number;
+  /** Lyrics of the day (already validated with checkZigLyrics). With a vocal renderer the song is sung. */
+  lyrics?: ZigLyrics;
 }
 
 export type ZigDailyStatus = 'registered' | 'skipped-existing' | 'dry-run' | 'failed';
@@ -63,12 +75,11 @@ export interface ZigDailyResult {
   runLogPath?: string;
 }
 
-/** The real renderer: image-instrument band → generated rock song with the irregular riffs → WAV. CPU only. */
-export const renderZigDaily: Renderer = async (plan, outDir, log) => {
+/** The image-made instruments (guitar, drums, voice) and the picture the rock renderer reads. Shared by both renderers. */
+export async function bandAndImage() {
   const { dnas, sources } = await buildInstruments();
   const [bark, tower, sunset] = dnas;
   const band = { guitar: bark, drums: tower, voice: sunset };
-  const song = applyPsyloRiffs(generateRock(band, plan.seed, plan.title, plan.rockOptions));
   const png = PNG.sync.read(readFileSync(sources[0].path));
   const W = 160;
   const H = 72;
@@ -79,6 +90,13 @@ export const renderZigDaily: Renderer = async (plan, outDir, log) => {
       lum[y * W + x] = (0.2126 * png.data[i] + 0.7152 * png.data[i + 1] + 0.0722 * png.data[i + 2]) / 255;
     }
   const image: SpectroImage = { width: W, height: H, lum };
+  return { dnas, sources, band, image };
+}
+
+/** The real renderer: image-instrument band → generated rock song with the irregular riffs → WAV. CPU only. */
+export const renderZigDaily: Renderer = async (plan, outDir, log) => {
+  const { dnas, sources, band, image } = await bandAndImage();
+  const song = applyPsyloRiffs(generateRock(band, plan.seed, plan.title, plan.rockOptions));
   const out = renderRock(song, band, image, 44100, log);
   mkdirSync(outDir, { recursive: true });
   const wavPath = join(outDir, `${plan.fileStem}.wav`);
@@ -154,11 +172,11 @@ export async function runZigDaily(o: ZigDailyOptions): Promise<ZigDailyResult> {
     const takenNames = new Set(sounds.map((s) => s.name));
     const taken = (p: ZigDailyPlan) => takenNames.has(p.displayName) || sounds.some((s) => s.id.includes(p.workNumber.toLowerCase().replace(/-/g, '_')) || s.file.includes(p.fileStem));
     let sequence = 1;
-    let plan = zigDailyPlan(stamp, { sequence, takenNames });
+    let plan = zigDailyPlan(stamp, { sequence, takenNames, title: o.lyrics?.title });
     while (taken(plan)) {
       sequence++;
       if (sequence > 99) return finish({ status: 'failed', message: `${stamp} の連番が使い切られています`, error: 'no-free-sequence' });
-      plan = zigDailyPlan(stamp, { sequence, takenNames });
+      plan = zigDailyPlan(stamp, { sequence, takenNames, title: o.lyrics?.title });
     }
     log(`plan: ${plan.workNumber} "${plan.displayName}" ${plan.key} ${plan.bpm} BPM seed ${plan.seed}`);
 
@@ -176,6 +194,9 @@ export async function runZigDaily(o: ZigDailyOptions): Promise<ZigDailyResult> {
 
     // 5) register (verification, no-overwrite, rollback all live in the adapter)
     const createdAt = new Date().toISOString();
+    const vocal = rendered.vocal;
+    const voicevox = !!vocal && vocal.credits.length > 0;
+    const references = zigDailyReferences(!!vocal);
     const meta: AssetMetadata = {
       workNumber: plan.workNumber,
       title: plan.title,
@@ -187,10 +208,10 @@ export async function runZigDaily(o: ZigDailyOptions): Promise<ZigDailyResult> {
       seed: plan.seed,
       algorithms: ['拡張 Karplus–Strong + アンプ帰還', 'WDF ダイオードクリッパー', 'モーダル打楽器', 'セルオートマトンのリズム', '変則リフ (ポリメーター / ユークリッドリズムの回転)'],
       engines: { ...rendered.engines, zig_daily: plan.version },
-      license: 'Original',
+      license: voicevox ? `Original。歌声は VOICEVOX (${vocal!.credits.join(' / ')}) — 公開時はクレジット表記が必要` : 'Original',
       createdAt,
-      description: `ZIG名義のデイリー曲 ${plan.stamp} (${plan.dateIso})。${rendered.key}・インストゥルメンタルのロック。参照元と生成条件は sonova.references / sonova.generation に記録。`,
-      tags: ['zig', 'zig-daily', 'rock', 'instrumental', 'original', 'generative', plan.stamp],
+      description: `ZIG名義のデイリー曲 ${plan.stamp} (${plan.dateIso})。${rendered.key}・${vocal ? `歌入りのロック (歌詞はオリジナル、作詞: ${o.lyrics?.author ?? '不明'})` : 'インストゥルメンタルのロック'}。参照元と生成条件は sonova.references / sonova.generation に記録。`,
+      tags: ['zig', 'zig-daily', 'rock', ...(vocal ? ['vocal', ...(voicevox ? ['voicevox'] : [])] : ['instrumental']), 'original', 'generative', plan.stamp],
       sonovaFiles: [],
       displayName: plan.displayName,
       fileStem: plan.fileStem,
@@ -198,15 +219,16 @@ export async function runZigDaily(o: ZigDailyOptions): Promise<ZigDailyResult> {
       projectIds: ['sonova', 'sonova-zig'],
       author: 'ZIG',
       extra: {
-        zigDaily: { stamp: plan.stamp, dateIso: plan.dateIso, timezone: plan.timezone, sequence: plan.sequence, version: plan.version },
-        references: ZIG_DAILY_REFERENCES,
+        zigDaily: { stamp: plan.stamp, dateIso: plan.dateIso, timezone: plan.timezone, sequence: plan.sequence, version: plan.version, ...(vocal ? { vocal: { engine: vocal.engine, credits: vocal.credits, author: o.lyrics?.author } } : {}) },
+        references,
+        ...(vocal && o.lyrics ? { lyrics: { author: o.lyrics.author, text: o.lyrics.text, romaji: o.lyrics.romaji } } : {}),
         generation: {
           key: rendered.key,
           bpm: rendered.bpm,
           durationSec: rendered.durationSec,
           riff: rendered.riffText,
           sections: rendered.sections,
-          vocals: 'なし (インストゥルメンタル。歌声・歌詞・外部の音声エンジンは使っていない)',
+          vocals: vocal ? `あり: ${vocal.engine}${vocal.credits.length ? ` (${vocal.credits.join(' / ')})` : ''}${vocal.fallbackReason ? `。VOICEVOX を使えなかった理由: ${vocal.fallbackReason}` : ''}。歌詞はこの日のために書いたオリジナル` : 'なし (インストゥルメンタル。歌声・歌詞・外部の音声エンジンは使っていない)',
           runtime: 'ローカル CPU のみ。有料 API・クラウド AI・API キー・GPU は不使用',
           renderMs: rendered.renderMs,
         },
@@ -238,11 +260,12 @@ export async function runZigDaily(o: ZigDailyOptions): Promise<ZigDailyResult> {
       displayName: plan.displayName,
       seed: plan.seed,
       generation: { key: rendered.key, bpm: rendered.bpm, durationSec: rendered.durationSec, riff: rendered.riffText, sections: rendered.sections, derivations: rendered.derivations, engines: meta.engines, renderMs: rendered.renderMs },
-      references: ZIG_DAILY_REFERENCES,
+      references,
+      ...(vocal && o.lyrics ? { vocal: { ...vocal, lyrics: { author: o.lyrics.author, text: o.lyrics.text, romaji: o.lyrics.romaji } } } : {}),
       sources: rendered.sources,
       audio: { file: reg.file, format: reg.format, wavSha256: reg.wavSha256, fileSha256: reg.fileSha256, verification: reg.verification },
       registration: { status: reg.status, soundvaultId: reg.soundvaultId, registeredAt: reg.record.createdAt, vaultGitHead: info.gitHead ?? null },
-      license: 'Original',
+      license: meta.license,
     });
     return finish({ status: 'registered', message: `登録しました: ${plan.displayName} → ${reg.file}`, plan, soundvaultId: reg.soundvaultId, file: reg.file, recordPath });
   } catch (err) {
