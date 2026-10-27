@@ -124,7 +124,22 @@ export interface AssetMetadata {
   tags: string[];
   /** Repo-relative paths of the DNA / structure JSON inside SONOVA. */
   sonovaFiles: string[];
+  /**
+   * Optional overrides (used by the ZIG daily songs). All default to the original SONOVA behaviour,
+   * so existing registrations are unchanged.
+   */
+  /** SOUNDVAULT `name`; default `<workNumber> <title>`. */
+  displayName?: string;
+  /** File name without extension, `[A-Za-z0-9._-]` only; default `sonova-<work>-<title>`. */
+  fileStem?: string;
+  collections?: string[];
+  projectIds?: string[];
+  author?: string;
+  /** Merged into the record's `sonova` object (e.g. references, generation conditions). */
+  extra?: Record<string, unknown>;
 }
+
+const SAFE_STEM = /^[A-Za-z0-9][A-Za-z0-9._-]{0,120}$/;
 
 export interface RegisterOptions {
   vaultDir: string;
@@ -184,7 +199,7 @@ function buildRecord(meta: AssetMetadata, file: string, format: string, size: nu
   const typeLabel = { INSTRUMENT: '独自楽器の単体音源', EXPERIMENT: '音楽実験', COMPOSITION: '完成曲' }[meta.type];
   return {
     id,
-    name: `${meta.workNumber} ${meta.title}`,
+    name: meta.displayName ?? `${meta.workNumber} ${meta.title}`,
     file,
     category,
     tags: [...new Set([category.toLowerCase(), 'sonova', meta.type.toLowerCase(), 'generative', ...meta.tags])],
@@ -196,13 +211,14 @@ function buildRecord(meta: AssetMetadata, file: string, format: string, size: nu
     sampleRate: verification.sampleRate,
     license: meta.license,
     source: `SONOVA (https://github.com/Yuji5124/sonova): ${meta.sources.map((s) => s.name).join(', ')} から生成。seed ${meta.seed}`,
-    author: 'SONOVA (Claude Code) for Yuji5124',
+    author: meta.author ?? 'SONOVA (Claude Code) for Yuji5124',
     favorite: false,
     notes: `${typeLabel}。${meta.description}${meta.bpm ? `${meta.bpm} BPM。` : ''}`,
-    collections: [COLLECTION_MAP[meta.type]],
-    projectIds: [SONOVA_PROJECT.id],
+    collections: meta.collections ?? [COLLECTION_MAP[meta.type]],
+    projectIds: meta.projectIds ?? [SONOVA_PROJECT.id],
     createdAt: now,
     sonova: {
+      ...(meta.extra ?? {}),
       workNumber: meta.workNumber,
       title: meta.title,
       assetType: meta.type,
@@ -252,7 +268,8 @@ export function registerAsset(opts: RegisterOptions): RegisterResult {
   if (mode === 'ogg' && !ffmpegAvailable()) throw new SoundvaultError('ffmpeg が見つかりません (OGG 変換には ffmpeg が必要)');
   const format = useOgg ? 'ogg' : 'wav';
   const category = CATEGORY_MAP[opts.meta.type];
-  const stem = `sonova-${workSlug(opts.meta.workNumber)}-${slugify(opts.meta.title) || 'untitled'}`;
+  if (opts.meta.fileStem !== undefined && !SAFE_STEM.test(opts.meta.fileStem)) throw new SoundvaultError(`fileStem が不正です (英数字と . _ - のみ): ${opts.meta.fileStem}`);
+  const stem = opts.meta.fileStem ?? `sonova-${workSlug(opts.meta.workNumber)}-${slugify(opts.meta.title) || 'untitled'}`;
   const file = `/sounds/${category.toLowerCase()}/${stem}.${format}`;
   const absPath = join(vault, 'public', file);
   const id = soundvaultIdFor(opts.meta, format);
@@ -280,6 +297,9 @@ export function registerAsset(opts: RegisterOptions): RegisterResult {
   }
   const otherOwner = sounds.find((s) => s.file === file);
   if (otherOwner) throw new SoundvaultError(`${file} は既に別の素材 (${otherOwner.id}) が使用しています`);
+  const displayName = opts.meta.displayName ?? `${opts.meta.workNumber} ${opts.meta.title}`;
+  const sameName = sounds.find((s) => s.name === displayName);
+  if (sameName) throw new SoundvaultError(`名前 "${displayName}" は既に別の素材 (${sameName.id}) が使用しています`);
   if (existsSync(absPath)) throw new SoundvaultError(`${file} がディスク上に既に存在します (sounds.json 未登録)。手動で確認してください。`);
 
   // Encode to a temp file first.
